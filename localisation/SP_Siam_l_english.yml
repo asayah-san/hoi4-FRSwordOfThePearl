@@ -51,7 +51,7 @@
  SIA_supported_farmers:0 "Supported the Farmers"
  SIA_womens_sufferage:0 "Womens Sufferage"
  SIA_government_strikes:0 "Government Strikes"
- SIA_a_new_siam:0 "A New Siam"
+ SIA_the_new_siam:0 "The New Siam"
 
  ##### Custom Flag #####
  SIA_SNAP_ELECTIONS_FLAG:0 "The current Government have agreed to call on snap elections"
@@ -189,7 +189,7 @@
  SIA_infrastructure_nationalization_desc:0 ""
  SIA_absorb_foreign_investments:0 "Absorb Foreign Investments"
  SIA_absorb_foreign_investments_desc:0 ""
- SIA_exile_reactionaries:0 "Exiles Reactionaries"
+ SIA_exile_reactionaries:0 "Exile Reactionaries"
  SIA_exile_reactionaries_desc:0 ""
  SIA_purge_reactionaries:0 "Purge Reactionaries"
  SIA_purge_reactionaries_desc:0 ""

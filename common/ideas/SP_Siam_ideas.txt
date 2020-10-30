@@ -71,7 +71,7 @@ ideas = {
             picture = generic_goods_red_bonus
 
             modifier = {
-                production_speed_building_factor = 0.1
+                production_speed_buildings_factor = 0.1
             }
         }
 
@@ -183,7 +183,7 @@ ideas = {
                 conscription_factor = 0.15
                 industrial_capacity_factory = 0.05
                 industrial_capacity_dockyard = 0.05
-                production_speed_building_factor = 0.05
+                production_speed_buildings_factor = 0.05
             }
         }
 
@@ -191,7 +191,7 @@ ideas = {
             allowed = { original_tag = SIA }
 
             modifier = {
-                production_speed_building_factor = 0.05
+                production_speed_buildings_factor = 0.05
                 production_factory_max_efficiency_factor = 0.1
                 political_power_gain = 0.15
             }
@@ -263,7 +263,7 @@ ideas = {
 
             modifier = {
                 consumer_goods_factor = -0.15
-                production_speed_building_factor = 0.2
+                production_speed_buildings_factor = 0.2
                 industrial_capacity_factory = 0.2
                 industrial_capacity_dockyard = 0.2
             }
@@ -289,7 +289,7 @@ ideas = {
 
             modifier = {
                 consumer_goods_factor = 0.30
-                production_speed_building_factor = -0.50
+                production_speed_buildings_factor = -0.50
                 industrial_capacity_factory = -0.50
                 industrial_capacity_dockyard = -0.50
             }

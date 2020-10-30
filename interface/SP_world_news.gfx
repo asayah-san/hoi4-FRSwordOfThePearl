@@ -1,6 +1,15 @@
 
 spriteTypes = {
 
+	spriteType = {
+		name = "GFX_news_event_ASEAN_founded"
+		texturefile = "gfx/event_pictures/ASEAN/news_event_ASEAN_founded.tga"
+	}
+	spriteType = {
+		name = "GFX_news_event_ASEAN_country_left"
+		texturefile = "gfx/event_pictures/ASEAN/news_event_ASEAN_country_left.tga"
+	}
+
     spriteType = {
 		name = "GFX_news_event_PHI_independence"
 		texturefile = "gfx/event_pictures/PHI/news_event_PHI_independence.dds"
@@ -8,6 +17,10 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_news_event_PHI_manila_uprising2"
 		texturefile = "gfx/event_pictures/PHI/news_event_PHI_manila_uprising2.dds"
+	}
+	spriteType = {
+		name = "GFX_news_event_PHI_army_coup"
+		texturefile = "gfx/event_pictures/PHI/news_event_PHI_army_coup.tga"
 	}
 
 }

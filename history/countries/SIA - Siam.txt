@@ -75,6 +75,31 @@ set_popularities = {
 }
 
 create_country_leader = {
+	name = "Song Noppakul"
+	desc = "POLITICS_SONG_NOPPAKUL_DESC"
+	picture = "gfx/leaders/SIA/Portrait_Siam_Song_Noppakul.tga"
+	expire = "2012.11.27"
+	ideology = vanguardist_subtype
+	traits = { permanent_revolutionary }
+}
+create_country_leader = {
+	name = "Song Noppakul"
+	desc = "POLITICS_SONG_NOPPAKUL_DESC"
+	picture = "gfx/leaders/SIA/Portrait_Siam_Song_Noppakul.tga"
+	expire = "2012.11.27"
+	ideology = collectivist_subtype
+	traits = { permanent_revolutionary }
+}
+create_country_leader = {
+	name = "Song Noppakul"
+	desc = "POLITICS_SONG_NOPPAKUL_DESC"
+	picture = "gfx/leaders/SIA/Portrait_Siam_Song_Noppakul.tga"
+	expire = "2012.11.27"
+	ideology = libertarian_socialist_subtype
+	traits = { permanent_revolutionary }
+}
+
+create_country_leader = {
 	name = "Rama VII"
 	desc = "POLITICS_RAMA_VII_DESC"
 	picture = "Portrait_Siam_Rama_VII.tga"

@@ -25,7 +25,7 @@ news_event = {
     id = news.2
     title = news.2.t
     desc = news.2.d
-    picture = GFX_news_event_PHI_manila_uprising2
+    picture = GFX_news_event_PHI_army_coup
 
     is_triggered_only = yes
     
@@ -99,6 +99,11 @@ news_event = {
     id = news.6
     title = news.6.t
     desc = news.6.d
+    picture = GFX_news_event_ASEAN_founded
+
+    major = yes
+
+    show_major = { NOT = { tag = PHI } }
 
     is_triggered_only = yes
 
@@ -112,6 +117,11 @@ news_event = {
     id = news.7
     title = news.7.t
     desc = news.7.d
+    picture = GFX_news_event_ASEAN_country_left
+
+    major = yes
+
+    show_major = { NOT = { tag = PHI } }
 
     is_triggered_only = yes
 

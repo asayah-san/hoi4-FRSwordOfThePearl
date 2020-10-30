@@ -22,7 +22,7 @@
   news.5.a:0 "Concerning."
 
   news.6.t:0 "Philippines founds ASEAN"
-  news.6.d:0 "After archiving independence from the United States, the Philippines have been becoming an industrial powerhouse in South East Asia, rivaling the Empire of Japan. Today, they have announced an economic organization that aims to freely trade with neighboring countries, strenghtening relations along the way."
+  news.6.d:0 "[This.GetNewspaperHeader]After archiving independence from the United States, the Philippines have been becoming an industrial powerhouse in South East Asia, rivaling the Empire of Japan. Today, they have announced an economic organization that aims to freely trade with neighboring countries, strenghtening relations along the way."
   news.6.a:0 "Intriguing."
 
   news.7.t:0 "[From.GetNameDefCap] leaves ASEAN"

@@ -1059,7 +1059,12 @@ focus_tree = {
         prerequisite = { focus = SIA_workers_victory }
         completion_reward = {
             set_cosmetic_tag = SIA_republic
-            set_country_flag = SIA_king_abdicated
+            hidden_effect = {
+                set_country_flag = SIA_king_abdicated
+                kill_ideology_leader = vanguardist
+                kill_ideology_leader = collectivist
+                kill_ideology_leader = libertarian_socialist
+            }
         }
     }
 
