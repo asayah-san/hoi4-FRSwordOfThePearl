@@ -1,0 +1,121 @@
+﻿
+
+add_namespace = news
+
+# Democratic Election Held
+news_event = {
+    id = news.1
+    title = news.1.t
+    desc = news.1.d
+    picture = GFX_news_event_PHI_independence
+
+    is_triggered_only = yes
+
+    major = yes
+
+    show_major = { NOT = { tag = PHI } }
+
+    option = {
+        name = news.1.a
+    }
+}
+
+# Army Takeover of the Philippines
+news_event = {
+    id = news.2
+    title = news.2.t
+    desc = news.2.d
+    picture = GFX_news_event_PHI_manila_uprising2
+
+    is_triggered_only = yes
+    
+    major = yes
+
+    show_major = { NOT = { tag = PHI } }
+
+    option = {
+        name = news.2.a
+    }
+}
+
+# Socialist Takeover of the Philippines
+news_event = {
+    id = news.3
+    title = news.3.t
+    desc = news.3.d
+    picture = GFX_news_event_PHI_manila_uprising2
+
+    is_triggered_only = yes
+    
+    major = yes
+
+    show_major = { NOT = { tag = PHI } }
+    
+    
+    option = {
+        name = news.3.a
+    }
+}
+
+# NatPop Takeover of the Philippines
+news_event = {
+    id = news.4
+    title = news.4.t
+    desc = news.4.d
+    picture = GFX_news_event_PHI_manila_uprising2
+    
+    major = yes
+
+    show_major = { NOT = { tag = PHI } }
+    
+    
+    is_triggered_only = yes
+
+    option = {
+        name = news.4.a
+    }
+}
+
+# Valkist Takeover of the Philippines
+news_event = {
+    id = news.5
+    title = news.5.t
+    desc = news.5.d
+    picture = GFX_news_event_PHI_manila_uprising2
+
+    is_triggered_only = yes
+    
+    major = yes
+
+    show_major = { NOT = { tag = PHI } }
+    
+    option = {
+        name = news.5.a
+    }
+}
+
+# ASEAN founded
+news_event = {
+    id = news.6
+    title = news.6.t
+    desc = news.6.d
+
+    is_triggered_only = yes
+
+    option = {
+        name = news.6.a
+    }
+}
+
+# Country leaves ASEAN
+news_event = {
+    id = news.7
+    title = news.7.t
+    desc = news.7.d
+
+    is_triggered_only = yes
+
+    option = {
+        name = news.7.a
+    }
+}

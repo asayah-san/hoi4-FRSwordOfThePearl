@@ -1,0 +1,509 @@
+PHI_the_kaiserreich = {
+
+    PHI_restore_the_kaiserreich = {
+        allowed = { original_tag = PHI }
+
+        visible = { has_full_control_of_state = 64 }
+
+        fire_only_once = yes
+
+        complete_effect = {
+            every_state = {
+                limit = {
+                    is_core_of = GER
+                }
+                add_core_of = DEU
+                remove_core_of = GER
+            }
+
+            release = DEU
+
+            if = { 
+                limit = { has_dlc = "Together for Victory" } 
+                set_autonomy = {
+                    target = DEU
+                    autonomy_state = autonomy_dominion
+                }
+            }
+            if = {
+                limit = { NOT = { has_dlc = "Together for Victory" } }
+                puppet = DEU
+            }
+            
+            hidden_effect = {
+                PHI = { 
+                    give_guarantee = DEU
+                    remove_ideas = PHI_german_imperial_family
+                }
+                DEU = { 
+                    set_cosmetic_tag = DEU_kaiser
+                    give_guarantee = PHI
+                    add_opinion_modifier = {
+                        target = PHI
+                        modifier = restored_the_kaiser
+                    }
+
+                   set_politics = {
+                        ruling_party = authoritarian_democrat
+                        elections_allowed = no
+                    }
+                    set_popularities = {
+                        vanguardist = 2
+                        collectivist = 4
+                        libertarian_socialist = 6
+                        social_democrat = 12
+                        social_liberal = 8
+                        market_liberal = 4
+                        social_conservative = 14
+                        authoritarian_democrat = 26
+                        paternal_autocrat = 2
+                        national_populist = 8
+                        valkist = 14
+                    }
+
+                    set_party_name = {
+                        ideology = authoritarian_democrat
+                        name = DEU_authoritarian_democrat_transitionary
+                        long_name = DEU_authoritarian_democrat_transitionary_long
+                    }
+
+                    create_country_leader = {
+                        name = "Wilhelm III"
+                        desc = "POLITICS_WILHELM_III_DESC"
+                        picture = "Portrait_Germany_Wilhelm_III.tga"
+                        expire = "1965.1.1"
+                        ideology = social_democrat_subtype
+                        traits = {
+                        }
+                    }
+                    create_country_leader = {
+                        name = "Wilhelm III"
+                        desc = "POLITICS_WILHELM_III_DESC"
+                        picture = "Portrait_Germany_Wilhelm_III.tga"
+                        expire = "1965.1.1"
+                        ideology = social_liberal_subtype
+                        traits = {
+                        }
+                    }
+                    create_country_leader = {
+                        name = "Wilhelm III"
+                        desc = "POLITICS_WILHELM_III_DESC"
+                        picture = "gfx/leaders/DKR/Portrait_Germany_Wilhelm_III.tga"
+                        expire = "1965.1.1"
+                        ideology = market_liberal_subtype
+                        traits = {
+                        }
+                    }
+                    create_country_leader = {
+                        name = "Wilhelm III"
+                        desc = "POLITICS_WILHELM_III_DESC"
+                        picture = "Portrait_Germany_Wilhelm_III.tga"
+                        expire = "1965.1.1"
+                        ideology = social_conservative_subtype
+                        traits = {
+                        }
+                    }
+                    create_country_leader = {
+                        name = "Wilhelm III"
+                        desc = "POLITICS_WILHELM_III_DESC"
+                        picture = "Portrait_Germany_Wilhelm_III.tga"
+                        expire = "1965.1.1"
+                        ideology = authoritarian_democrat_subtype
+                        traits = {
+                        }
+                    }
+                    create_country_leader = {
+                        name = "Wilhelm III"
+                        desc = "POLITICS_WILHELM_III_DESC"
+                        picture = "Portrait_Germany_Wilhelm_III.tga"
+                        expire = "1965.1.1"
+                        ideology = paternal_autocrat_subtype
+                        traits = {
+                        }
+                    }
+                    create_country_leader = {
+                        name = "Wilhelm III"
+                        desc = "POLITICS_WILHELM_III_DESC"
+                        picture = "Portrait_Germany_Wilhelm_III.tga"
+                        expire = "1965.1.1"
+                        ideology = national_populist_subtype
+                        traits = {
+                        }
+                    }
+                    create_country_leader = {
+                        name = "Wilhelm III"
+                        desc = "POLITICS_WILHELM_III_DESC"
+                        picture = "Portrait_Germany_Wilhelm_III.tga"
+                        expire = "1965.1.1"
+                        ideology = valkist_subtype
+                        traits = {
+                        }
+                    }
+                    load_oob = "DEU_1936"
+                }
+                diplomatic_relation = {
+                    country = DKR
+                    relation = military_access
+                    active = yes
+                }
+
+            }
+        }
+    }
+}
+
+PHI_occupation_of_germany = {
+
+    PHI_found_the_german_federation = {
+        allowed = { original_tag = PHI }
+
+        visible = { has_full_control_of_state = 64 }
+
+        fire_only_once = yes
+
+        complete_effect = {
+            every_state = {
+                limit = {
+                    is_core_of = GER
+                }
+                add_core_of = DEU
+                remove_core_of = GER
+            }
+
+            release = DEU
+
+            if = { 
+                limit = { has_dlc = "Together for Victory" } 
+                set_autonomy = {
+                    target = DEU
+                    autonomy_state = autonomy_dominion
+                }
+            }
+            if = {
+                limit = { NOT = { has_dlc = "Together for Victory" } }
+                puppet = DEU
+            }
+            
+            hidden_effect = {
+                PHI = { give_guarantee = DEU }
+                DEU = { 
+                    give_guarantee = PHI
+
+                    set_politics = {
+                        ruling_party = authoritarian_democrat
+                        elections_allowed = no
+                    }
+                    set_popularities = {
+                        vanguardist = 2
+                        collectivist = 4
+                        libertarian_socialist = 6
+                        social_democrat = 12
+                        social_liberal = 8
+                        market_liberal = 4
+                        social_conservative = 14
+                        authoritarian_democrat = 26
+                        paternal_autocrat = 2
+                        national_populist = 8
+                        valkist = 14
+                    }
+
+                    set_party_name = {
+                        ideology = authoritarian_democrat
+                        name = DEU_authoritarian_democrat_transitionary
+                        long_name = DEU_authoritarian_democrat_transitionary_long
+                    }
+
+                    create_country_leader = {
+                        name = "Armed Forces of the Philippines"
+                        desc = "POLITICS_ARMED_FORCES_OF_THE_PHILIPPINES_DESC"
+                        picture = "Portrait_Germany_Armed_Forces_of_the_Philippines.tga"
+                        expire = "1965.1.1"
+                        ideology = authoritarian_democrat_subtype
+                        traits = {}
+                    }
+                }
+                diplomatic_relation = {
+                    country = DEU
+                    relation = military_access
+                    active = yes
+                }
+            }
+        }
+    }
+}
+
+PHI_war_decisions = {
+
+    PHI_whitepeace_uk = {
+        allowed = { original_tag = PHI }
+
+        visible = { has_war_with = ENG }
+
+        fire_only_once = yes
+
+        available = {
+            custom_trigger_tooltip = {
+                tooltip = PHI_controls_british_holdings
+
+                # Malaya
+                has_full_control_of_state = 336 
+                has_full_control_of_state = 819
+                has_full_control_of_state = 820
+                has_full_control_of_state = 821
+                has_full_control_of_state = 333
+                has_full_control_of_state = 944
+
+                # Indonesia
+                has_full_control_of_state = 334
+                has_full_control_of_state = 943
+                has_full_control_of_state = 951
+                has_full_control_of_state = 790
+                has_full_control_of_state = 672
+                has_full_control_of_state = 797
+                has_full_control_of_state = 335
+                has_full_control_of_state = 711
+                has_full_control_of_state = 822
+                has_full_control_of_state = 823
+                has_full_control_of_state = 667
+
+                # Burma
+                has_full_control_of_state = 288
+                has_full_control_of_state = 640
+                has_full_control_of_state = 812
+                has_full_control_of_state = 805 
+            }
+        }
+
+        complete_effect = {
+            ENG = { country_event = { id = PHI.62 days = 1 } }
+        }
+    }
+
+    PHI_whitepeace_france = {
+        allowed = { original_tag = PHI }
+
+        visible = { has_war_with = FRA }
+
+        available = {
+            custom_trigger_tooltip = {
+                tooltip = PHI_controls_french_holdings
+
+                # Laos
+                has_full_control_of_state = 959
+                has_full_control_of_state = 960
+                has_full_control_of_state = 670 
+
+                # Vietnam
+                has_full_control_of_state = 286
+                has_full_control_of_state = 961
+                has_full_control_of_state = 671
+                has_full_control_of_state = 958
+
+                # Cambodia
+                has_full_control_of_state = 962
+                has_full_control_of_state = 741
+                has_full_control_of_state = 963
+            } 
+        }
+
+        complete_effect = {
+            FRA = { country_event = { id = PHI.62 days = 1 } }
+        }
+    }
+
+}
+
+PHI_post_war_decisions = {
+
+    PHI_civilian_administration_japan = {
+        allowed = { original_tag = PHI }
+
+        visible = { has_full_control_of_state = 282 }
+
+        complete_effect = {
+            release = JAP
+            if = { 
+                limit = { has_dlc = "Together for Victory" } 
+                set_autonomy = {
+                    target = JAP
+                    autonomy_state = autonomy_colony
+                }
+            }
+            if = {
+                limit = { NOT = { has_dlc = "Together for Victory" } }
+                puppet = JAP
+            }
+
+            hidden_effect = {
+                JAP = {
+                    load_focus_tree = generic_focus
+                    set_popularities = {
+                        libertarian_socialist = 4
+                        social_democrat = 3
+                        social_liberal = 6
+                        market_liberal = 17
+                        social_conservative = 18
+                        authoritarian_democrat = 37
+                        national_populist = 15
+                    }
+                    set_politics = {
+                        ruling_party = authoritarian_democrat
+                        elections_allowed = no
+                    }
+                    set_party_name = {
+                        ideology = authoritarian_democrat
+                        long_name = PHI_authoritarian_democrat_post_war_long
+                        name = PHI_authoritarian_democrat_post_war
+                    }
+
+                    if = {
+                        limit = { PHI = { has_idea = SP_asean_member } }
+                        add_ideas = SP_asean_member
+                    }
+                }
+            }
+        }
+    }
+
+    PHI_civilian_administration_korea = {
+        allowed = { original_tag = PHI }
+
+        visible = { has_full_control_of_state = 525 }
+
+        complete_effect = {
+            release = KOR
+            if = { 
+                limit = { has_dlc = "Together for Victory" } 
+                set_autonomy = {
+                    target = KOR
+                    autonomy_state = autonomy_colony
+                }
+            }
+            if = {
+                limit = { NOT = { has_dlc = "Together for Victory" } }
+                puppet = KOR
+            }
+
+            hidden_effect = {
+                KOR = {
+                    load_focus_tree = generic_focus
+                    set_popularities = {
+                        libertarian_socialist = 4
+                        social_democrat = 3
+                        social_liberal = 6
+                        market_liberal = 17
+                        social_conservative = 18
+                        authoritarian_democrat = 37
+                        national_populist = 15
+                    }
+                    set_politics = {
+                        ruling_party = authoritarian_democrat
+                        elections_allowed = no
+                    }
+                    set_party_name = {
+                        ideology = authoritarian_democrat
+                        long_name = PHI_authoritarian_democrat_post_war_long
+                        name = PHI_authoritarian_democrat_post_war
+                    }
+
+                    if = {
+                        limit = { PHI = { has_idea = SP_asean_member } }
+                        add_ideas = SP_asean_member
+                    }
+                }
+            }
+        }
+    }
+}
+
+PHI_state_fundings = {
+
+    PHI_fund_research_and_development = {
+        allowed = { original_tag = PHI }
+
+        cost = 50
+
+        available = { NOT = { has_country_flag  = PHI_FUNDING_IN_PROGRESS } }
+
+        modifier = {
+            consumer_goods_factor = 0.05
+            research_speed_factor = 0.1
+        }
+
+        complete_effect = { set_country_flag = PHI_FUNDING_IN_PROGRESS }
+
+        remove_effect = { clr_country_flag = PHI_FUNDING_IN_PROGRESS }
+
+        fire_only_once = no
+        days_remove = 120
+        days_re_enable = 360
+    }
+
+    PHI_prioritize_construction = {
+        allowed = { original_tag = PHI }
+
+        cost = 50
+
+        available = { NOT = { has_country_flag  = PHI_FUNDING_IN_PROGRESS } }
+
+        modifier = {
+            consumer_goods_factor = 0.05
+            production_speed_buildings_factor = 0.1
+            industry_repair_factor = 0.1
+        }
+
+        complete_effect = { set_country_flag = PHI_FUNDING_IN_PROGRESS }
+
+        remove_effect = { clr_country_flag = PHI_FUNDING_IN_PROGRESS }
+
+        fire_only_once = no
+        days_remove = 120
+        days_re_enable = 360
+    }
+
+    PHI_aid_workers = {
+        allowed = { original_tag = PHI }
+
+        cost = 50
+
+        available = { NOT = { has_country_flag  = PHI_FUNDING_IN_PROGRESS } }
+
+        modifier = {
+            consumer_goods_factor = 0.05
+            industrial_capacity_factory = 0.1
+            industrial_capacity_dockyard = 0.1
+        }
+
+        complete_effect = { set_country_flag = PHI_FUNDING_IN_PROGRESS }
+
+        remove_effect = { clr_country_flag = PHI_FUNDING_IN_PROGRESS }
+
+        fire_only_once = no
+        days_remove = 120
+        days_re_enable = 360
+    }
+
+    PHI_start_social_services = {
+        allowed = { original_tag = PHI }
+
+        cost = 50
+
+        available = { NOT = { has_country_flag  = PHI_FUNDING_IN_PROGRESS } }
+
+        modifier = {
+            consumer_goods_factor = 0.05
+            political_power_gain = 0.1
+            stability_weekly = 0.1
+            monthly_population = 0.1
+        }
+
+        complete_effect = { set_country_flag = PHI_FUNDING_IN_PROGRESS }
+
+        remove_effect = { clr_country_flag = PHI_FUNDING_IN_PROGRESS }
+
+        fire_only_once = no
+        days_remove = 120
+        days_re_enable = 360
+    }
+
+}

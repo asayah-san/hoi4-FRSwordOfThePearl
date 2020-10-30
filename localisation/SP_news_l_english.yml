@@ -1,0 +1,30 @@
+﻿l_english:
+
+  ### News Events ###
+  news.1.t:0 "Democracy Prevails in the Philippines"
+  news.1.d:0 "[This.GetNewspaperHeader]Having just achieved independence from the United States, the Philippines faced today perhaps one of the most serious challenges any new country could face. Inspired by the democratic ideals of the French Republic and the United States, disgruntled common men marched on Manila to demand the Interim Government to hold new elections.\n\nTheir attempt was quickly accepted as loyalists units in the army reaffirmed their support for the call of new elections; to preserve the democratic foundations of the country."
+  news.1.a:0 "The United States taught them well."
+
+  news.2.t:0 "The Army Takes Power in the Philippines"
+  news.2.d:0 "[This.GetNewspaperHeader]Having just achieved independence from the United States, the Philippines faced today perhaps one of the most serious challenges any new country could face. With public dissatisfaction against the current administration rising, disgruntled army officers marched on Manila to support rebelling peasants and workers.\n\nTheir attempt was quickly thwarted as army units intervened in and drove the rebellious army out of the capital and many key points. However, the army decided to seize the power for themselves, with a cabinet of military commanders put in place to ensure the safety of the Philippines 'for the foreseeable future'."
+  news.2.a:0 "Concerning."
+
+  news.3.t:0 "Socialism Spreads to the Philippines"
+  news.3.d:0 "[This.GetNewspaperHeader]Having just achieved independence from the United States, the Philippines faced today perhaps one of the most serious challenges any new country could face. With public dissatisfaction against the current administration rising, disgruntled army officers marched on Manila to support rebelling peasants and workers.\n\nIt seems the army's support for Syndicalism was more widespread then expected, and the army rapidly declared support for the Syndicalist movement. Now left with no army outside of a few loyalist divisions and not wanting to see the archipelago descend into another bloody civil war, the government signed power over to the Syndicalist movement's leader."
+  news.3.a:0 "Even in Asia, liberalism isn't safe!"
+
+  news.4.t:0 "Aguinaldo takes over the Philippines"
+  news.4.d:0 "[This.GetNewspaperHeader]Having just achieved independence from the United States, the Philippines faced today perhaps one of the most serious challenges any new country could face. With public dissatisfaction against the current administration rising, disgruntled army officers marched on Manila to support rebelling peasants and workers.\n\nIt seems the army's support for the former revolutionary Emilio Aguinaldo was more widespread then expected, and the army rapidly declared support for the Nationalist movement. Now left with no army outside of a few loyalist divisions and not wanting to see the archipelago descend into another bloody civil war, the government signed power over to former General Emilio Aguinaldo."
+  news.4.a:0 "The king has returned it seems"
+
+  news.5.t:0 "Valkists takes over the Philippines"
+  news.5.d:0 "[This.GetNewspaperHeader]Having just achieved independence from the United States, the Philippines faced today perhaps one of the most serious challenges any new country could face. With public dissatisfaction against the current administration rising, disgruntled army officers marched on Manila to support rebelling peasants and workers.\n\nIt seems the army's support for the Valkist movement was more widespread then expected, and the army rapidly declared support for the so-called, Pro-Filipino movement. Now left with no army outside of a few loyalist divisions and not wanting to see the archipelago descend into another bloody civil war, the government signed power over to leaders of the Valkist Party."
+  news.5.a:0 "Concerning."
+
+  news.6.t:0 "Philippines founds ASEAN"
+  news.6.d:0 "After archiving independence from the United States, the Philippines have been becoming an industrial powerhouse in South East Asia, rivaling the Empire of Japan. Today, they have announced an economic organization that aims to freely trade with neighboring countries, strenghtening relations along the way."
+  news.6.a:0 "Intriguing."
+
+  news.7.t:0 "[From.GetNameDefCap] leaves ASEAN"
+  news.7.d:0 "[This.GetNewspaperHeader]The [From.GetAdjective] Government has announced that they are leaving the economic organization for South East Asian nations founded by the Philippines. It is unclear why they are leaving, but sources say that the Philippines has much more influence in internal politics of member countries."
+  news.7.a:0 "Intriguing."

@@ -1,0 +1,309 @@
+ideas = {
+
+    country = {
+
+        SIA_socialist_symphaties = {
+            allowed = { original_tag = SIA }
+
+            picture = trotskyite_plot_purged
+
+            modifier = {
+                recruitable_population_factor = -0.25
+                industrial_capacity_factory = -0.25
+            }
+        }
+
+        SIA_high_unemployment_rate = {
+            allowed = { original_tag = SIA }
+
+            picture = great_depression
+
+            modifier = {
+                consumer_goods_factor = 0.15
+            }
+        }
+
+        SIA_low_literacy_among_the_population = {
+            allowed = { original_tag = SIA }
+
+            picture = raj_risk_of_famine
+
+            modifier = {
+                research_speed_factor = -0.50
+            }
+        }
+
+        SIA_ineffective_governance = {
+            allowed = { original_tag = SIA }
+
+            picture = generic_disjointed_gov
+
+            modifier = {
+                political_power_gain = -0.2
+                stability_factor = -0.2
+                war_support_factor = -0.2
+            }
+        }
+
+        SIA_private_arms_factories = {
+            allowed = { original_tag = SIA }
+
+            picture = generic_production_bonus
+
+            modifier = {
+                production_factory_max_efficiency_factor = 0.1
+            }
+        }
+
+        SIA_stable_currency = {
+            allowed = { original_tag = SIA }
+
+            picture = new_deal
+
+            modifier = {
+                consumer_goods_factor = -0.02
+            }
+        }
+
+        SIA_government_partnerships = {
+            allowed = { original_tag = SIA }
+
+            picture = generic_goods_red_bonus
+
+            modifier = {
+                production_speed_building_factor = 0.1
+            }
+        }
+
+        SIA_state_welfare = {
+            allowed = { original_tag = SIA }
+
+            picture = raj_risk_of_famine
+
+            modifier = {
+                industrial_capacity_factory = 0.15
+                industrial_capacity_dockyard = 0.15
+            }
+        }
+
+        SIA_saigon_military_academy = {
+            allowed = { original_tag = SIA }
+
+            picture = generic_infantry_bonus
+
+            modifier = {
+                training_time_factor = -0.1
+            }
+        }
+
+        SIA_the_new_siam = {
+            allowed = { original_tag = SIA }
+
+            picture = generic_morale_bonus
+
+            modifier = {
+                political_power_gain = 0.15
+                stability_factor = 0.15
+                war_support_factor = 0.15
+            }
+        }
+
+        SIA_corporations_appeased = {
+            allowed = { original_tag = SIA }
+
+            picture = new_deal
+
+            modifier = {
+                production_factory_max_efficiency_factor = 0.15
+            }
+        }
+
+        SIA_special_higher_police = {
+            allowed = { original_tag = SIA }
+
+            picture = generic_spy_intel
+
+            modifier = {
+                enemy_partisan_effect = -0.25
+				subversive_activites_upkeep = -0.25
+				foreign_subversive_activites = -0.25
+            }
+        }
+
+        SIA_nationalist_thoughts = {
+            allowed = { original_tag = SIA }
+
+            picture = ast_abandon_the_westminster_system
+
+            modifier = {
+                surrender_limit = 0.05
+                conscription = 0.05
+                army_core_attack_factor = 0.05
+	            army_core_defence_factor = 0.05
+            }
+        }
+
+        SIA_reserve_units = {
+            allowed = { original_tag = SIA }
+
+            picture = generic_manpower_bonus
+
+            modifier = {
+                conscription_factor = 0.05
+            }
+        }
+
+        SIA_economic_protectionism = {
+            allowed = { original_tag = SIA }
+
+            picture = generic_foreign_capital
+
+            modifier = {
+                industrial_capacity_factory = 0.1
+                industrial_capacity_dockyard = 0.1
+            }
+        }
+
+        SIA_liberal_economics = {
+            allowed = { original_tag = SIA }
+
+            picture = generic_foreign_capital
+
+            modifier = {
+                production_factory_max_efficiency_factor = 0.1
+            }
+        }
+
+        SIA_indigenous_integration = {
+            allowed = { original_tag = SIA }
+
+            picture = prc_low_popular_support3
+
+            modifier = {
+                conscription_factor = 0.15
+                industrial_capacity_factory = 0.05
+                industrial_capacity_dockyard = 0.05
+                production_speed_building_factor = 0.05
+            }
+        }
+
+        SIA_government_union_cooperation = {
+            allowed = { original_tag = SIA }
+
+            modifier = {
+                production_speed_building_factor = 0.05
+                production_factory_max_efficiency_factor = 0.1
+                political_power_gain = 0.15
+            }
+        }
+
+        SIA_labour_code = {
+            allowed = { original_tag = SIA }
+
+            modifier = {
+                consumer_goods_factor = 0.03
+                industrial_capacity_factory = 0.1
+                industrial_capacity_dockyard = 0.1
+            }
+        }
+
+        SIA_no_income_tax = {
+            allowed = { original_tag = SIA }
+
+            picture = chi_hyper_inflation
+
+            modifier = {
+                consumer_goods_factor = 0.02
+                industrial_capacity_factory = 0.05
+                industrial_capacity_dockyard = 0.05
+            }
+        }
+
+        SIA_corporate_taxes = {
+            allowed = { original_tag = SIA }
+
+            picture = chi_hyper_inflation5
+
+            modifier = {
+                consumer_goods_factor = -0.02
+                production_factory_max_efficiency_factor = -0.05
+            }
+        }
+
+        SIA_supported_farmers = {
+            allowed = { original_tag = SIA }
+
+            picture = generic_agrarian_reform
+
+            modifier = {
+                consumer_goods_factor = -0.05
+                attrition = -0.2
+            }
+
+        }
+
+        SIA_royalist_sentiments = {
+            allowed = { original_tag = SIA }
+
+            picture = ROM_king_carol_ii_handled
+
+            modifier = {
+                stability_factor = -0.25
+                war_support_factor = -0.25
+                conscription_factor = -0.25
+                army_core_attack_factor = -0.3
+                army_core_defence_factor = -0.3
+            }
+        }
+
+        SIA_foreign_investments = {
+            allowed = { original_tag = SIA }
+
+            picture = generic_foreign_capital
+
+            modifier = {
+                consumer_goods_factor = -0.15
+                production_speed_building_factor = 0.2
+                industrial_capacity_factory = 0.2
+                industrial_capacity_dockyard = 0.2
+            }
+        }
+
+        SIA_womens_sufferage = {
+            allowed = { original_tag = SIA }
+
+            picture = INC_female_vietcong
+
+            modifier = {
+                conscription_factor = 0.15
+                stability_factor = 0.05
+                industrial_capacity_factory = 0.05
+                industrial_capacity_dockyard = 0.05
+            }
+        }
+
+        SIA_government_strikes = {
+            allowed = { original_tag = SIA }
+
+            picture = NOR_labour_conflicts
+
+            modifier = {
+                consumer_goods_factor = 0.30
+                production_speed_building_factor = -0.50
+                industrial_capacity_factory = -0.50
+                industrial_capacity_dockyard = -0.50
+            }
+        }
+
+        SIA_a_new_siam = {
+            allowed = { original_tag = SIA }
+
+            modifier = {
+                surrender_limit = 0.05
+                conscription = 0.05
+                army_core_attack_factor = 0.05
+	            army_core_defence_factor = 0.05
+            }
+        }
+    }
+}

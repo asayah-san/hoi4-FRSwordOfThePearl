@@ -1,0 +1,293 @@
+﻿add_namespace = SIA
+
+# Corruption Allegations
+country_event = {
+    id = SIA.1
+    title = SIA.1.t
+    desc = SIA.1.d
+    picture = report_event_iww_demonstration
+
+    fire_only_once = yes
+
+    mean_time_to_happen = {
+        days = 1
+    }
+
+    trigger = {
+        original_tag = SIA
+        date > 1937.2.20
+        NOT = { has_country_flag = SIA_AFTERMATH_OF_THE_CRISIS_FLAG }
+    }
+
+    option = {
+        name = SIA.1.a
+
+        add_political_power = -500
+        hidden_effect = {
+            country_event = { id = SIA.2 days = 72 }
+            complete_national_focus = SIA_government_in_crisis
+        }
+    }
+}
+
+# Documents released for Corruption allegations
+country_event = {
+    id = SIA.2
+    title = SIA.2.t
+    desc = SIA.2.d
+
+    is_triggered_only = yes
+
+    option = {
+        name = SIA.2.a
+
+        add_stability = -0.15
+        hidden_effect = {
+            country_event = { id = SIA.3 days = 30 }
+        }
+    }
+
+    option = {
+        name = SIA.2.b
+
+        add_stability = 0.15
+        hidden_effect = {
+            country_event = { id = SIA.4 days = 30 }
+        }
+    }
+}
+
+# Government Strikes
+country_event = {
+    id = SIA.3
+    title = SIA.3.t
+    desc = SIA.3.d
+
+    is_triggered_only = yes
+
+    option = {
+        name = SIA.3.a
+
+        add_ideas = SIA_government_strikes
+        hidden_effect = {
+            country_event = { id = SIA.5 days = 15 }
+        }
+    }
+
+    option = {
+        name = SIA.3.b
+
+        hidden_effect = {
+            set_country_flag = SIA_SNAP_ELECTIONS_FLAG
+            country_event = { id = SIA.4 days = 30 }
+        }
+    }
+}
+
+# Snap Elections
+country_event = {
+    id = SIA.4
+    title = SIA.4.t
+    desc = SIA.4.d
+
+    is_triggered_only = yes
+
+    option = {
+        name = SIA.4.a
+
+        remove_ideas = SIA_government_strikes
+        set_politics = {
+            ruling_party = social_democrat
+            elections_allowed = no
+        }
+
+        hidden_effect = {
+            add_popularity = {
+                ideology = social_democrat
+                popularity = 0.25
+            }
+            set_country_flag = SIA_OPPOSITION_VICTORY_FLAG
+            swap_ideas = {
+                remove_idea = GEN_HOG_Ade
+                add_idea = GEN_HOG_Sde
+            }
+            swap_ideas = {
+                remove_idea = GEN_ECO_Ade
+                add_idea = GEN_ECO_Sde
+            }
+            swap_ideas = {
+                remove_idea = GEN_SEC_Ade
+                add_idea = GEN_SEC_Sde
+            }
+            swap_ideas = {
+                remove_idea = GEN_FOR_Ade
+                add_idea = GEN_FOR_Sde
+            }
+        }
+    }
+
+    option = {
+        name = SIA.4.b
+
+        remove_ideas = SIA_government_strikes
+        set_politics = {
+            ruling_party = social_liberal
+            elections_allowed = no
+        }
+
+        hidden_effect = {
+            add_popularity = {
+                ideology = social_liberal
+                popularity = 0.25
+            }
+            set_country_flag = SIA_LIBERAL_VICTORY_FLAG
+            swap_ideas = {
+                remove_idea = GEN_HOG_Ade
+                add_idea = GEN_HOG_Sli
+            }
+            swap_ideas = {
+                remove_idea = GEN_ECO_Ade
+                add_idea = GEN_ECO_Sli
+            }
+            swap_ideas = {
+                remove_idea = GEN_SEC_Ade
+                add_idea = GEN_SEC_Sli
+            }
+            swap_ideas = {
+                remove_idea = GEN_FOR_Ade
+                add_idea = GEN_FOR_Sli
+            }
+        }
+    }
+
+    option = {
+        name = SIA.4.c
+
+        remove_ideas = SIA_government_strikes
+        set_politics = {
+            ruling_party = social_conservative
+            elections_allowed = no
+        }
+
+        hidden_effect = {
+            add_popularity = {
+                ideology = social_conservative
+                popularity = 0.25
+            }
+            set_country_flag = SIA_CONSERVATIVE_VICTORY_FLAG
+            swap_ideas = {
+                remove_idea = GEN_HOG_Ade
+                add_idea = GEN_HOG_Sco
+            }
+            swap_ideas = {
+                remove_idea = GEN_ECO_Ade
+                add_idea = GEN_ECO_Sco
+            }
+            swap_ideas = {
+                remove_idea = GEN_SEC_Ade
+                add_idea = GEN_SEC_Sco
+            }
+            swap_ideas = {
+                remove_idea = GEN_FOR_Ade
+                add_idea = GEN_FOR_Sco
+            }
+        }
+    }
+
+    option = {
+        name = SIA.4.e
+
+        trigger = {
+            has_idea = SIA_government_strikes
+        }
+
+        set_politics = {
+            ruling_party = vanguardist
+            elections_allowed = no
+        }
+
+        remove_ideas = SIA_government_strikes
+        hidden_effect = {
+            add_popularity = {
+                ideology = vanguardist
+                popularity = 0.25
+            }
+            set_country_flag = SIA_WORKERS_VICTORY_FLAG
+            swap_ideas = {
+                remove_idea = GEN_HOG_Ade
+                add_idea = GEN_HOG_Van
+            }
+            swap_ideas = {
+                remove_idea = GEN_ECO_Ade
+                add_idea = GEN_HOG_Van
+            }
+            swap_ideas = {
+                remove_idea = GEN_SEC_Ade
+                add_idea = GEN_SEC_Van
+            }
+            swap_ideas = {
+                remove_idea = GEN_FOR_Ade
+                add_idea = GEN_FOR_Van
+            }
+        }
+    }
+}
+
+# King's Coup Preparation
+country_event = {
+    id = SIA.5
+    title = SIA.5.t
+    desc = SIA.5.d
+
+    is_triggered_only = yes
+
+    option = {
+        name = SIA.5.a
+
+        add_popularity = {
+            ideology = paternal_autocrat
+            popularity = 0.05
+        }
+        hidden_effect = {
+            country_event = { id = SIA.6 days = 30 }
+        }
+    }
+}
+
+# King's Coup
+country_event = {
+    id = SIA.6
+    title = SIA.6.t
+    desc = SIA.6.d
+
+    is_triggered_only = yes
+
+    option = {
+        name = SIA.6.a
+
+        remove_ideas = SIA_government_strikes
+        hidden_effect = {
+            set_country_flag = SIA_ROYAL_INTERVENTION
+            add_popularity = {
+                ideology = paternal_autocrat
+                popularity = 0.25
+            }
+            swap_ideas = {
+                remove_idea = GEN_HOG_Ade
+                add_idea = GEN_HOG_Pau
+            }
+            swap_ideas = {
+                remove_idea = GEN_ECO_Ade
+                add_idea = GEN_ECO_Pau
+            }
+            swap_ideas = {
+                remove_idea = GEN_SEC_Ade
+                add_idea = GEN_SEC_Pau
+            }
+            swap_ideas = {
+                remove_idea = GEN_FOR_Ade
+                add_idea = GEN_FOR_Pau
+            }
+        }
+    }
+}

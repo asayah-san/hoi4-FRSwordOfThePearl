@@ -1,0 +1,32 @@
+spriteTypes = {
+
+    # Head of Government #
+	spriteType = {
+		name = "GFX_idea_DKR_Eirk_Koch_Weser"
+		texturefile = "gfx/interface/ideas/GER/ministers/GER_Eirk_Koch_Weser.tga"
+	}
+
+	# Foreign Minister #
+	spriteType = {
+		name = "GFX_idea_DKR_Wilhelm_Roepke_FOR_SLI"
+		texturefile = "gfx/interface/ideas/GER/ministers/GER_Wilhelm_Roepke.tga"
+	}
+	
+	# Economic Minister #
+	spriteType = {
+		name = "GFX_idea_DKR_Hermann_Dietrich_ECO_SLI"
+		texturefile = "gfx/interface/ideas/GER/ministers/GER_Hermann_Dietrich.tga"
+	}
+
+	# Security Minister #
+	spriteType = {
+		name = "GFX_idea_DKR_Otto_Gessler_SEC_SLI"
+		texturefile = "gfx/interface/ideas/GER/ministers/GER_Dr_Otto_Gessler.tga"
+	}
+
+	# Intelligence Minister #
+	spriteType = { #Auto-Generated
+		name = "GFX_idea_GER_Karl_Sack_int_mli"
+		texturefile = "gfx/interface/ideas/GER/ministers/GER_Karl_Sack.tga"
+	}
+}

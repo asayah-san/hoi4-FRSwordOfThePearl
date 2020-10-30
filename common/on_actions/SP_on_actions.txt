@@ -1,0 +1,32 @@
+on_actions = {
+
+    on_annex = {
+        effect = {
+            if = { 
+                limit = { 
+                    AND = {
+                        PHI = { exists = no }
+                        UFC = { exists = yes }
+                    }
+                } 
+                every_state = {
+                    limit = { is_core_of = UFC }
+                    remove_core_of = PHI
+                }
+            }
+
+            if = {
+                limit = {
+                    AND = {
+                        PHI = { exists = yes }
+                        UFC = { exists = no }
+                    }
+                }
+                every_state = {
+                    limit = { is_core_of = PHI }
+                    remove_core_of = UFC
+                }
+            }
+        }
+    }
+}

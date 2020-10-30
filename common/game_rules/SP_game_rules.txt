@@ -1,0 +1,22 @@
+PHI_ai_behavior = {
+	name = "PHI_AI_BEHAVIOR"
+	group = "RULE_GROUP_AI_BEHAVIOR"
+	default = {
+		name = DEMOCRATIC_BASTION
+		text = PHI_RULE_DEMOCRATIC_BASTION
+		desc = PHI_RULE_DEMOCRATIC_BASTION_DESC
+		allow_achievements = yes
+	}
+	option = {
+		name = CHALLENGE_JAPAN
+		text = PHI_RULE_CHALLENGE_JAPAN
+		desc = PHI_RULE_CHALLENGE_JAPAN_DESC
+		allow_achievements = yes
+	}
+	option = {
+		name = TESTING_IMPERIALISM
+		text = PHI_RULE_TESTING_IMPERIALISM
+		desc = PHI_RULE_TESTING_IMPERIALISM_DESC
+		allow_achievements = yes
+	}
+}

@@ -1,0 +1,79 @@
+ideas = {
+
+    country = {
+
+        VIN_socialist_symphaties = {
+            allowed = { original_tag = VIN }
+
+            picture = trotskyite_plot_purged
+
+            modifier = {
+                recruitable_population_factor = -0.25
+                industrial_capacity_factory = -0.25
+            }
+        }
+
+        VIN_ineffective_governance = {
+            allowed = { original_tag = VIN }
+
+            picture = generic_disjointed_gov
+
+            modifier = {
+                political_power_gain = -0.2
+                stability_factor = -0.2
+                war_support_factor = -0.2
+            }
+        }
+
+        VIN_private_arms_factories = {
+            allowed = { original_tag = VIN }
+
+            picture = generic_production_bonus
+
+            modifier = {
+                production_factory_max_efficiency_factor = 0.1
+            }
+        }
+
+        VIN_stable_currency = {
+            allowed = { original_tag = VIN }
+
+            picture = new_deal
+
+            modifier = {
+                consumer_goods_factor = -0.02
+            }
+        }
+
+        VIN_government_partnerships = {
+            allowed = { original_tag = VIN }
+
+            picture = generic_goods_red_bonus
+
+            modifier = {
+                production_speed_building_factor = 0.1
+            }
+        }
+
+        VIN_state_welfare = {
+            allowed = { original_tag = VIN }
+
+            picture = raj_risk_of_famine
+
+            modifier = {
+                industrial_capacity_factory = 0.15
+                industrial_capacity_dockyard = 0.15
+            }
+        }
+
+        VIN_saigon_military_academy = {
+            allowed = { original_tag = VIN }
+
+            picture = generic_infantry_bonus
+
+            modifier = {
+                training_time_factor = -0.1
+            }
+        }
+    }
+}

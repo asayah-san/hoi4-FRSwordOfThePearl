@@ -1,0 +1,13 @@
+
+spriteTypes = {
+
+    spriteType = {
+		name = "GFX_news_event_PHI_independence"
+		texturefile = "gfx/event_pictures/PHI/news_event_PHI_independence.dds"
+	}
+	spriteType = {
+		name = "GFX_news_event_PHI_manila_uprising2"
+		texturefile = "gfx/event_pictures/PHI/news_event_PHI_manila_uprising2.dds"
+	}
+
+}

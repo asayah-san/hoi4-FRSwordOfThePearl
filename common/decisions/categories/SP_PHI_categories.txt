@@ -1,0 +1,68 @@
+PHI_war_decisions = {
+
+    icon = generic_political_actions
+
+    allowed = { original_tag = PHI }
+
+    priority = { base = 5 }
+
+    visible = { 
+        OR = {
+            has_war_with = ENG
+            has_war_with = USA
+            has_war_with = JAP
+            has_war_with = FRA
+        }
+    }
+
+}
+
+PHI_the_kaiserreich = {
+    icon = generic_monarchism
+
+    allowed = { original_tag = PHI }
+
+    priority = { base = 5 }
+
+    visible = { 
+        GER = { exists = no }
+        PHI = { has_country_flag = PHI_GER_IMPERIAL_FAMILY }
+    }
+}
+
+PHI_occupation_of_germany = {
+    icon = generic_political_actions
+
+    allowed = { original_tag = PHI }
+
+    priority = { base = 5 }
+
+    visible = {
+        GER = { exists = no }
+        PHI = { NOT = { has_country_flag = PHI_GER_IMPERIAL_FAMILY } }
+    }
+}
+
+PHI_post_war_decisions = {
+
+    icon = generic_political_actions
+
+    allowed = { original_tag = PHI }
+
+    priority = { base = 5 }
+
+    visible = { has_war = no }
+}
+
+PHI_state_fundings = {
+
+    icon = generic_political_actions
+
+    allowed = { original_tag = PHI }
+
+    priority = { base = 5 }
+
+    visible = {
+        has_completed_focus = PHI_funding_for_state_investments
+    }
+}
