@@ -1,6 +1,4 @@
-﻿
-
-add_namespace = ASEAN
+﻿add_namespace = ASEAN
 
 # ASEAN
 country_event = {

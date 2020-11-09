@@ -126,9 +126,11 @@ country_event = {
     }
 
     immediate = {
-        add_popularity = {
-            ideology = authoritarian_democrat
-            popularity = -0.20
+        hidden_effect = {
+            add_popularity = {
+                ideology = authoritarian_democrat
+                popularity = -0.05
+            }
         }
     }
     
@@ -146,7 +148,7 @@ country_event = {
             }
         }
 
-        custom_effect_tooltip = PHI_new_elections_called
+        custom_effect_tooltip = PHI_new_elections_called_effect
         hidden_effect = {
             set_country_flag = PHI_DEMOCRACY_RETURNS_FLAG
             country_event = { id = phi.5 days = 30 }
@@ -174,7 +176,7 @@ country_event = {
             }
         }
 
-        custom_effect_tooltip = PHI_new_elections_suppressed
+        custom_effect_tooltip = PHI_new_elections_suppressed_effect
         hidden_effect = {
             country_event = { id = phi.6 days = 14 }
         }
@@ -191,9 +193,11 @@ country_event = {
     is_triggered_only = yes
 
     immediate = {
-        add_popularity = {
-            ideology = authoritarian_democrat
-            popularity = -0.05
+        hidden_effect = {
+            add_popularity = {
+                ideology = authoritarian_democrat
+                popularity = -0.05
+            }
         }
     }
 
@@ -239,7 +243,7 @@ country_event = {
     }
 
     option = {
-        name = phi.3.b
+        name = phi.5.b
 
         custom_effect_tooltip = PHI_pp_victory_effect
         hidden_effect = {
@@ -280,7 +284,7 @@ country_event = {
     }
 
     option = {
-        name = phi.3.c
+        name = phi.5.c
 
         ai_chance = {
             factor = 10
@@ -405,6 +409,10 @@ country_event = {
             modifier = {
                 factor = 2
                 has_country_flag = PHI_CHALLENGE_JAPAN_BEHAVIOR
+            }
+            modifier = {
+                factor = 2
+                has_country_flag = PHI_TESTING_IMPERIALISM_BEHAVIOR
             }
         }
 
@@ -1020,7 +1028,7 @@ country_event = {
     option = {
         name = phi.25.a
 
-        custom_effect_tooltip = PHI_communist_revolt
+        custom_effect_tooltip = PHI_communist_revolt_effect
         hidden_effect = {
 
             release = UFC
@@ -1647,56 +1655,59 @@ country_event = {
 
         if = {
             limit = { tag = ENG }
-            if = {
-                limit = { ENG = { controls_state = 819 } }
-                transfer_state = 819
-            }
-            if = {
-                limit = { ENG = { controls_state = 820 } }
-                transfer_state = 820
-            }
-            if = {
-                limit = { ENG = { controls_state = 336 } }
-                transfer_state = 336
-            }
-            if = {
-                limit = { ENG = { controls_state = 336 } }
-                transfer_state = 336
-            }
-            if = {
-                limit = { ENG = { controls_state = 821 } }
-                transfer_state = 821
-            }
-            if = {
-                limit = { ENG = { controls_state = 711 } }
-                transfer_state = 711
-            }
-            if = {
-                limit = { ENG = { controls_state = 712 } }
-                transfer_state = 712
-            }
-            if = {
-                limit = { ENG = { controls_state = 288 } }
-                transfer_state = 288
-            }
-            if = {
-                limit = { ENG = { controls_state = 640 } }
-                transfer_state = 640
-            }
-            if = {
-                limit = { ENG = { controls_state = 805 } }
-                transfer_state = 805
-            }
-            if = {
-                limit = { ENG = { controls_state = 812 } }
-                transfer_state = 812
-            }
-            if = {
-                limit = { BEA = { exists = yes is_subject_of = ENG } }
-                annex_country = {
-                    target = BEA
-                    transfer_troops = no
+            PHI = {
+                if = {
+                    limit = { ENG = { controls_state = 819 } }
+                    transfer_state = 819
                 }
+                if = {
+                    limit = { ENG = { controls_state = 820 } }
+                    transfer_state = 820
+                }
+                if = {
+                    limit = { ENG = { controls_state = 336 } }
+                    transfer_state = 336
+                }
+                if = {
+                    limit = { ENG = { controls_state = 336 } }
+                    transfer_state = 336
+                }
+                if = {
+                    limit = { ENG = { controls_state = 821 } }
+                    transfer_state = 821
+                }
+                if = {
+                    limit = { ENG = { controls_state = 711 } }
+                    transfer_state = 711
+                }
+                if = {
+                    limit = { ENG = { controls_state = 712 } }
+                    transfer_state = 712
+                }
+                if = {
+                    limit = { ENG = { controls_state = 288 } }
+                    transfer_state = 288
+                }
+                if = {
+                    limit = { ENG = { controls_state = 640 } }
+                    transfer_state = 640
+                }
+                if = {
+                    limit = { ENG = { controls_state = 805 } }
+                    transfer_state = 805
+                }
+                if = {
+                    limit = { ENG = { controls_state = 812 } }
+                    transfer_state = 812
+                }
+                if = {
+                    limit = { BEA = { exists = yes is_subject_of = ENG } }
+                    annex_country = {
+                        target = BEA
+                        transfer_troops = no
+                    }
+                }
+                country_event = { id = phi.40 }
             }
         }
             
@@ -2083,7 +2094,7 @@ country_event = {
     option = {
         name = phi.48.a
 
-        custom_effect_tooltip = PHI_transfer_colonial_territories
+        custom_effect_tooltip = PHI_transfer_colonial_territories_effect
         hidden_effect = {
             if = {
                 limit = { tag = ENG }

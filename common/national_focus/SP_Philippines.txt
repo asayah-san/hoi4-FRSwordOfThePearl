@@ -2485,9 +2485,11 @@ focus_tree = {
         y = 12
         cost = 10
         available_if_capitulated = yes
-        mutually_exclusive = { focus = PHI_purcahse_air_equipment }
-        prerequisite = { focus = PHI_our_place_in_the_sphere }
-        prerequisite = { focus = PHI_purchase_british_air_equipment }
+        mutually_exclusive = { focus = PHI_purchase_air_equipment }
+        prerequisite = { 
+            focus = PHI_our_place_in_the_sphere
+            focus = PHI_protection_from_the_empire
+        }
         completion_reward = {
             if = {
                 limit = { is_in_faction_with = JAP }
@@ -2571,7 +2573,7 @@ focus_tree = {
         }
     }
 
-    # Purchase British Air Equipment
+    # Purchase Air Equipment
     focus = {
         id = PHI_purchase_air_equipment
         icon = GFX_goal_generic_air_fighter
@@ -2620,8 +2622,8 @@ focus_tree = {
         y = 13
         cost = 10
         prerequisite = { 
-            focus = PHI_request_japanese_naval_vessels 
-            focus = PHI_purchase_british_air_equipment
+            focus = PHI_purchase_naval_equipment
+            focus = PHI_purchase_air_equipment
         }
         available_if_capitulated = yes
         completion_reward = {
@@ -2683,7 +2685,7 @@ focus_tree = {
                     target = PHI
                     modifier = diplomatic_mission
                 }
-                country_event = { id = phi.36 }
+                country_event = { id = phi.33 }
             }
         }
     }
@@ -2735,7 +2737,7 @@ focus_tree = {
     focus = {
         id = PHI_demand_british_colonial_holdings
         icon = GFX_goal_generic_more_territorial_claims
-        x = 15
+        x = 14
         y = 12
         cost = 5
         available_if_capitulated = no
@@ -2775,10 +2777,7 @@ focus_tree = {
             has_full_control_of_state = 944
         }
         bypass = { MAL = { exists = yes } }
-        prerequisite = { 
-            focus = PHI_demand_british_colonial_holdings
-            focus = PHI_guardian_of_the_pacific
-        }
+        prerequisite = { focus = PHI_demand_british_colonial_holdings }
         completion_reward = {
             hidden_effect = {
                 every_state = {
@@ -2844,10 +2843,7 @@ focus_tree = {
             has_full_control_of_state = 667
         }
         bypass = { INS = { exists = yes } }
-        prerequisite = { 
-            focus = PHI_demand_british_colonial_holdings
-            focus = PHI_guardian_of_the_pacific
-        }
+        prerequisite = { focus = PHI_demand_british_colonial_holdings }
         completion_reward = {
             hidden_effect = {
                 every_state = {
@@ -2913,10 +2909,7 @@ focus_tree = {
             has_full_control_of_state = 805 
         }
         bypass = { BRM = { exists = yes } }
-        prerequisite = { 
-            focus = PHI_demand_british_colonial_holdings
-            focus = PHI_guardian_of_the_pacific
-        }
+        prerequisite = { focus = PHI_demand_british_colonial_holdings }
         completion_reward = {
             hidden_effect = {
                 BRM = {
@@ -2954,7 +2947,7 @@ focus_tree = {
     focus = {
         id = PHI_demand_french_colonial_holdings
         icon = GFX_goal_generic_more_territorial_claims
-        x = 19
+        x = 20
         y = 12
         cost = 5
         available_if_capitulated = no
@@ -2989,10 +2982,7 @@ focus_tree = {
             has_full_control_of_state = 741
             has_full_control_of_state = 963
         }
-        prerequisite = { 
-            focus = PHI_demand_french_colonial_holdings
-            focus = PHI_steal_indochina
-        }
+        prerequisite = { focus = PHI_demand_french_colonial_holdings }
         completion_reward = {
             hidden_effect = {
                 every_state = {
@@ -3045,10 +3035,7 @@ focus_tree = {
             has_full_control_of_state = 1009
         }
         bypass = { VIN = { exists = yes } }
-        prerequisite = { 
-            focus = PHI_demand_french_colonial_holdings
-            focus = PHI_steal_indochina
-        }
+        prerequisite = { focus = PHI_demand_french_colonial_holdings }
         completion_reward = {
             hidden_effect = {
                 every_state = {
@@ -3103,10 +3090,7 @@ focus_tree = {
             has_full_control_of_state = 670
         }
         bypass = { LAO = { exists = yes } }
-        prerequisite = { 
-            focus = PHI_demand_french_colonial_holdings
-            focus = PHI_steal_indochina
-        }
+        prerequisite = { focus = PHI_demand_french_colonial_holdings }
         completion_reward = {
             hidden_effect = {
                 every_state = {
@@ -3234,7 +3218,7 @@ focus_tree = {
         y = 12
         cost = 10
         available_if_capitulated = yes
-        mutually_exclusive = { focus = PHI_acquire_firepower }
+        mutually_exclusive = { focus = PHI_acquire_foreign_firepower }
         prerequisite = { 
             focus = PHI_military_pact_with_the_germans
             focus = PHI_defense_treaty_with_america
@@ -3322,9 +3306,9 @@ focus_tree = {
         }
     }
 
-    # Purchase Firepower
+    # Purchase Foreign Firepower
     focus = {
-        id = PHI_acquire_firepower
+        id = PHI_acquire_foreign_firepower
         icon = GFX_goal_generic_army_artillery
         x = 26
         y = 12
@@ -3355,7 +3339,7 @@ focus_tree = {
         y = 14
         cost = 10
         available_if_capitulated = yes
-        prerequisite = { focus = PHI_acquire_firepower  }
+        prerequisite = { focus = PHI_acquire_foreign_firepower }
         prerequisite = { focus = PHI_joint_army_exercises }
         completion_reward = {
             add_ideas = PHI_american_support
@@ -3371,8 +3355,8 @@ focus_tree = {
         cost = 10
         available_if_capitulated = yes
         prerequisite = { 
-            focus = PHI_acquire_firepower 
-            focus = PHI_purchase_air_equipment
+            focus = PHI_acquire_foreign_firepower
+            focus = PHI_purchase_tank_equipment
         }
         completion_reward = {
             add_tech_bonus = {
