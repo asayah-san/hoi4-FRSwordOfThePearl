@@ -599,6 +599,24 @@ ideas = {
             }
         }
 
+        PHI_Emilio_Aguinaldo_SEC_PAT = {
+            allowed = { original_tag = PHI }
+            picture = PHL_Emilio_Aguinaldo
+            available = {
+                OR = {
+                    has_government = authoritarian_democrat
+                    has_government = paternal_autocrat
+                    has_government = national_populist
+                    has_government = valkist
+                }
+            }
+            traits = {
+                security_minister
+                paternal_autocrat
+                sec_crime_fighter
+            }
+        }
+
         PHI_Jose_Yulo_SEC_NAT = {
             allowed = { original_tag = PHI }
             picture = PHL_Jose_Yulo

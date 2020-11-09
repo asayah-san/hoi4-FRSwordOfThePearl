@@ -1,3 +1,17 @@
+PHI_seato = {
+
+    icon = generic_political_actions
+
+    allowed = { original_tag = PHI }
+
+    priority = { base = 10 }
+
+    visible = { 
+        has_completed_focus = PHI_no_more_colonialism
+        is_factor_leader = yes
+    }
+}
+
 PHI_war_decisions = {
 
     icon = generic_political_actions

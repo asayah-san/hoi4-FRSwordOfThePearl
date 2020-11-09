@@ -801,7 +801,7 @@ focus_tree = {
 
     # Atomic Research
     focus = {
-        id = SIA_atomic_researchGFX_goal_battleship
+        id = SIA_atomic_research
         icon = GFX_focus_research
         x = 26
         y = 6
@@ -1034,7 +1034,7 @@ focus_tree = {
         x = 52
         y = 1
         cost = 0
-        allowed = { always = no }
+        available = { has_country_flag = SIA_SNAP_ELECTIONS_FLAG }
         prerequisite = { focus = SIA_government_in_crisis }
     }
 

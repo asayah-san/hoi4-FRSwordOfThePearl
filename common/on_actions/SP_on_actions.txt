@@ -1,29 +1,28 @@
 on_actions = {
 
+    # ROOT is the winner
+    # FROM gets annexed
     on_annex = {
         effect = {
             if = { 
                 limit = { 
-                    AND = {
-                        PHI = { exists = no }
-                        UFC = { exists = yes }
-                    }
+                    ROOT = { tag = UFC }
+                    FROM = { tag = ROOT }
                 } 
                 every_state = {
-                    limit = { is_core_of = UFC }
-                    remove_core_of = PHI
+                    limit = { is_core_of = PHI }
+                    add_core_of = UFC
                 }
             }
 
             if = {
                 limit = {
-                    AND = {
-                        PHI = { exists = yes }
-                        UFC = { exists = no }
-                    }
+                    ROOT = { tag = PHI }
+                    FROM = { tag = UFC }
                 }
                 every_state = {
-                    limit = { is_core_of = PHI }
+                    limit = { is_core_of = UFC }
+                    add_core_of = PHI
                     remove_core_of = UFC
                 }
             }

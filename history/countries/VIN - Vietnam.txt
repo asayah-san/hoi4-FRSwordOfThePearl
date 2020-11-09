@@ -54,7 +54,8 @@ add_ideas = {
 	GEN_FOR_Col
 	GEN_ECO_Col
 	GEN_SEC_Col
-	VIN_ineffective_governance
+	VIN_unstable_state
+	VIN_bandits
 
 	presidential_republic
 }

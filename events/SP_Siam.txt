@@ -51,7 +51,9 @@ country_event = {
         name = SIA.2.b
 
         add_stability = 0.15
+        retire_ideology_leader = national_populist
         hidden_effect = {
+            set_country_flag = SIA_SNAP_ELECTIONS_FLAG
             country_event = { id = SIA.4 days = 30 }
         }
     }
@@ -77,6 +79,7 @@ country_event = {
     option = {
         name = SIA.3.b
 
+        retire_ideology_leader = national_populist
         hidden_effect = {
             set_country_flag = SIA_SNAP_ELECTIONS_FLAG
             country_event = { id = SIA.4 days = 30 }
@@ -95,6 +98,7 @@ country_event = {
     option = {
         name = SIA.4.a
 
+        remove_ideas = SIA_figurehead_monarch
         remove_ideas = SIA_government_strikes
         set_politics = {
             ruling_party = social_democrat
@@ -108,19 +112,19 @@ country_event = {
             }
             set_country_flag = SIA_OPPOSITION_VICTORY_FLAG
             swap_ideas = {
-                remove_idea = GEN_HOG_Ade
+                remove_idea = GEN_HOG_Npo
                 add_idea = GEN_HOG_Sde
             }
             swap_ideas = {
-                remove_idea = GEN_ECO_Ade
+                remove_idea = GEN_ECO_Npo
                 add_idea = GEN_ECO_Sde
             }
             swap_ideas = {
-                remove_idea = GEN_SEC_Ade
+                remove_idea = GEN_SEC_Npo
                 add_idea = GEN_SEC_Sde
             }
             swap_ideas = {
-                remove_idea = GEN_FOR_Ade
+                remove_idea = GEN_FOR_Npo
                 add_idea = GEN_FOR_Sde
             }
         }
@@ -129,6 +133,7 @@ country_event = {
     option = {
         name = SIA.4.b
 
+        remove_ideas = SIA_figurehead_monarch
         remove_ideas = SIA_government_strikes
         set_politics = {
             ruling_party = social_liberal
@@ -142,19 +147,19 @@ country_event = {
             }
             set_country_flag = SIA_LIBERAL_VICTORY_FLAG
             swap_ideas = {
-                remove_idea = GEN_HOG_Ade
+                remove_idea = GEN_HOG_Npo
                 add_idea = GEN_HOG_Sli
             }
             swap_ideas = {
-                remove_idea = GEN_ECO_Ade
+                remove_idea = GEN_ECO_Npo
                 add_idea = GEN_ECO_Sli
             }
             swap_ideas = {
-                remove_idea = GEN_SEC_Ade
+                remove_idea = GEN_SEC_Npo
                 add_idea = GEN_SEC_Sli
             }
             swap_ideas = {
-                remove_idea = GEN_FOR_Ade
+                remove_idea = GEN_FOR_Npo
                 add_idea = GEN_FOR_Sli
             }
         }
@@ -163,6 +168,7 @@ country_event = {
     option = {
         name = SIA.4.c
 
+        remove_ideas = SIA_figurehead_monarch
         remove_ideas = SIA_government_strikes
         set_politics = {
             ruling_party = social_conservative
@@ -176,19 +182,19 @@ country_event = {
             }
             set_country_flag = SIA_CONSERVATIVE_VICTORY_FLAG
             swap_ideas = {
-                remove_idea = GEN_HOG_Ade
+                remove_idea = GEN_HOG_Npo
                 add_idea = GEN_HOG_Sco
             }
             swap_ideas = {
-                remove_idea = GEN_ECO_Ade
+                remove_idea = GEN_ECO_Npo
                 add_idea = GEN_ECO_Sco
             }
             swap_ideas = {
-                remove_idea = GEN_SEC_Ade
+                remove_idea = GEN_SEC_Npo
                 add_idea = GEN_SEC_Sco
             }
             swap_ideas = {
-                remove_idea = GEN_FOR_Ade
+                remove_idea = GEN_FOR_Npo
                 add_idea = GEN_FOR_Sco
             }
         }
@@ -214,19 +220,19 @@ country_event = {
             }
             set_country_flag = SIA_WORKERS_VICTORY_FLAG
             swap_ideas = {
-                remove_idea = GEN_HOG_Ade
+                remove_idea = GEN_HOG_Npo
                 add_idea = GEN_HOG_Van
             }
             swap_ideas = {
-                remove_idea = GEN_ECO_Ade
+                remove_idea = GEN_ECO_Npo
                 add_idea = GEN_HOG_Van
             }
             swap_ideas = {
-                remove_idea = GEN_SEC_Ade
+                remove_idea = GEN_SEC_Npo
                 add_idea = GEN_SEC_Van
             }
             swap_ideas = {
-                remove_idea = GEN_FOR_Ade
+                remove_idea = GEN_FOR_Npo
                 add_idea = GEN_FOR_Van
             }
         }
@@ -265,27 +271,24 @@ country_event = {
     option = {
         name = SIA.6.a
 
+        remove_ideas = SIA_figurehead_monarch
         remove_ideas = SIA_government_strikes
         hidden_effect = {
             set_country_flag = SIA_ROYAL_INTERVENTION
-            add_popularity = {
-                ideology = paternal_autocrat
-                popularity = 0.25
-            }
             swap_ideas = {
-                remove_idea = GEN_HOG_Ade
+                remove_idea = GEN_HOG_Npo
                 add_idea = GEN_HOG_Pau
             }
             swap_ideas = {
-                remove_idea = GEN_ECO_Ade
+                remove_idea = GEN_ECO_Npo
                 add_idea = GEN_ECO_Pau
             }
             swap_ideas = {
-                remove_idea = GEN_SEC_Ade
+                remove_idea = GEN_SEC_Npo
                 add_idea = GEN_SEC_Pau
             }
             swap_ideas = {
-                remove_idea = GEN_FOR_Ade
+                remove_idea = GEN_FOR_Npo
                 add_idea = GEN_FOR_Pau
             }
         }

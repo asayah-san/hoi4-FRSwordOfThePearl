@@ -28,3 +28,8 @@
   news.7.t:0 "[From.GetNameDefCap] leaves ASEAN"
   news.7.d:0 "[This.GetNewspaperHeader]The [From.GetAdjective] Government has announced that they are leaving the economic organization for South East Asian nations founded by the Philippines. It is unclear why they are leaving, but sources say that the Philippines has much more influence in internal politics of member countries."
   news.7.a:0 "Intriguing."
+
+  news.8.t:0 "[PHI.GetNameCap] occupies Sabah"
+  news.8.d:0 "[This.GetNewspaperHeader]While the independence war of the Insulindians are still raging, the Philippine Government have just seized the moment and have landed troops in the Sabah region, completely occuping the area. There are reports from resistance with local British and Insulindian battalions but was completely pacified hours later."
+  news.8.a:0 "Give that back!"
+  news.8.b:0 "Interesting."

@@ -22,5 +22,9 @@ spriteTypes = {
 		name = "GFX_news_event_PHI_army_coup"
 		texturefile = "gfx/event_pictures/PHI/news_event_PHI_army_coup.tga"
 	}
+	spriteType = {
+		name = "GFX_news_event_PHI_sabah_occupied"
+		texturefile = "gfx/event_pictures/PHI/news_event_PHI_sabah_occupied.tga"
+	}
 
 }

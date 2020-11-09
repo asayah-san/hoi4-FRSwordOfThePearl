@@ -2,6 +2,16 @@ ideas = {
 
     country = {
 
+        SIA_figurehead_monarch = {
+            allowed = { original_tag = SIA }
+
+            picture = ROM_king_carol_ii_handled
+
+            modifier = {
+                political_power_gain = -0.15
+            }
+        }
+
         SIA_socialist_symphaties = {
             allowed = { original_tag = SIA }
 

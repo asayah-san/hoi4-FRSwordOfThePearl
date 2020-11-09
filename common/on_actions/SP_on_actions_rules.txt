@@ -1,0 +1,39 @@
+on_actions = {
+
+    on_startup = {
+        effect = {
+            PHI = {
+                if = {
+                    limit = {
+                        has_game_rule = {
+                            rule = PHI_AI_BEHAVIOR
+                            option = DEMOCRATIC_BASTION
+                        }
+                    }
+                    set_country_flag = PHI_AI_CHOSEN
+                    set_country_flag = PHI_DEMOCRATIC_BASTION_BEHAVIOR
+                }
+                if = {
+                    limit = {
+                        has_game_rule = {
+                            rule = PHI_AI_BEHAVIOR
+                            option = CHALLENGE_JAPAN
+                        }
+                    }
+                    set_country_flag = PHI_AI_CHOSEN
+                    set_country_flag = PHI_CHALLENGE_JAPAN_BEHAVIOR
+                }
+                if = {
+                    limit = {
+                        has_game_rule = {
+                            rule = PHI_AI_BEHAVIOR
+                            option = TESTING_IMPERIALISM
+                        }
+                    }
+                    set_country_flag = PHI_AI_CHOSEN
+                    set_country_flag = PHI_TESTING_IMPERIALISM
+                }
+            }
+        }
+    }
+}

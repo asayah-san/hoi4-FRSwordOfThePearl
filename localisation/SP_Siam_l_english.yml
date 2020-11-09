@@ -25,7 +25,10 @@
  SIA_valkist_party_long:0 "Pak Chart Sangkhom (Social Nation Party)"
 
  ##### Ideas #####
+ SIA_figurehead_monarch:0 "Figurehead Monarch"
+ SIA_figurehead_monarch_desc:0 "With the election of Prime Minister Phibunsongkhram, he has assumed control over the government, while the King still reigns, he has little to no influence on the government."
  SIA_socialist_symphaties:0 "Socialist Symphaties"
+ SIA_socialist_symphaties_desc:0 "Some refugees from Indochina were socialists, and therefore influencing our citizens with their corrupt ideology."
  SIA_high_unemployment_rate:0 "High Unemployment Rate"
  SIA_low_literacy_among_the_population:0 "Low Literacy among the Population"
  SIA_ineffective_governance:0 "Ineffective Governance"

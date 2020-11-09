@@ -8,6 +8,6 @@ tags={
 	"Gameplay"
 	"National Focuses"
 }
-supported_version="1.9.*"
+supported_version="1.10.*"
 path="/home/isaiahcollins/.local/share/Paradox Interactive/Hearts of Iron IV/mod/sword"
 remote_file_id="2244542661"

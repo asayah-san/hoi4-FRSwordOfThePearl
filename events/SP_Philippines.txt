@@ -1,10 +1,79 @@
-﻿add_namespace = PHI
+﻿add_namespace = phi
 
-# Democratic Protests
-country_event {
-    id = PHI.1
-    title = PHI.1.t
-    desc = PHI.1.d
+# Refugees from Germany
+country_event = {
+    id = phi.1
+    title = phi.1.t
+    desc = phi.1.d
+
+    fire_only_once = yes
+
+    mean_time_to_happen = {
+        days = 1
+    }
+
+    trigger = {
+        original_tag = PHI
+        GER = { has_completed_focus = GER_form_govt }
+    }
+
+    option = {
+        name = phi.1.a
+
+        ai_chance = {
+            factor = 100
+
+            modifier = {
+                factor = 2
+                num_of_divisions < 20
+            }
+        }
+
+        add_timed_idea = {
+            idea = PHI_german_refugees
+            days = 710
+        }
+        hidden_effect = {
+            country_event = { id = phi.2 days = 35 }
+        }
+    }
+
+    option = {
+        name = phi.1.b
+        add_political_power = -10
+    }
+}
+
+# German Imperial Family
+country_event = {
+    id = phi.2
+    title = phi.2.t
+    desc = phi.2.d
+    
+    is_triggered_only = yes
+
+    option = {
+        name = phi.2.a
+
+        ai_chance = {
+            factor = 40
+        }
+
+        hidden_effect = {
+            set_country_flag = PHI_GERMAN_IMPERIAL_FAMILY
+        }
+    }
+
+    option = {
+        name = phi.2.b
+    }
+}
+
+# Status of the KALIBAPI Party
+country_event = {
+    id = phi.3
+    title = phi.3.t
+    desc = phi.3.d
     picture = report_event_iww_demonstration
 
     fire_only_once = yes
@@ -15,39 +84,32 @@ country_event {
 
     trigger = {
         original_tag = PHI
-        date > 1936.2.20
-        OR = {
-            has_government = authoritarian_democrat
-            has_government = paternal_autocrat
-            has_government = national_populist
+        date > 1936.4.5
+        NOT = {
             has_government = valkist
         }
     }
 
     option = {
-        name = PHI.1.a
-        custom_effect_tooltip = PHI_new_elections_called
-        set_country_flag = PHI_RETURN_OF_DEMOCRACY
-        hidden_effect = {
-            add_stability = 0.1
-            add_war_support = 0.2
-            PHI = { country_event = { id = PHI.2 days = 21 } }
-        }
+        name = phi.3.a
+        add_political_power = 50
     }
+
     option = {
-        name = PHI.1.b
-        hidden_effect = { PHI = { country_event = { id = PHI.3 days = 7 } } }
-        ai_chance = { factor = 0 }
-        custom_effect_tooltip = PHI_new_elections_suppressed
+        name = phi.3.b
+        add_political_power = 100
+        hidden_effect = {
+            set_country_flag = PHI_KALIBAPI_ALLOWED
+        }
     }
 }
 
-# New Elections
+# Question of Elections
 country_event = {
-    id = PHI.2
-    title = PHI.2.t
-    desc = PHI.2.d
-    picture = GFX_report_event_election_vote
+    id = phi.4
+    title = phi.4.t
+    desc = phi.4.d
+    picture = report_event_iww_demonstration
 
     fire_only_once = yes
 
@@ -55,30 +117,100 @@ country_event = {
         days = 1
     }
 
-    is_triggered_only = yes
+    trigger = {
+        original_tag = PHI
+        date > 1936.9.24
+        NOT = {
+            has_government = valkist
+        }
+    }
 
+    immediate = {
+        add_popularity = {
+            ideology = authoritarian_democrat
+            popularity = -0.20
+        }
+    }
+    
     option = {
-        name = PHI.2.a
+        name = phi.4.a
+        add_stability = 0.1
+        add_war_support = 0.2
 
-        set_politics = {
-            ruling_party = market_liberal
-            elections_allowed = no
+        ai_chance = {
+            factor = 20
+
+            modifier = {
+                factor = 10
+                has_country_flag = PHI_DEMOCRATIC_BASTION_BEHAVIOR
+            }
         }
 
+        custom_effect_tooltip = PHI_new_elections_called
         hidden_effect = {
-            news_event = { id = news.1 days = 1 }
+            set_country_flag = PHI_DEMOCRACY_RETURNS_FLAG
+            country_event = { id = phi.5 days = 30 }
+        }
+    }
 
-            set_popularities = {
-                vanguardist = 8
-                collectivist = 12
-                libertarian_socialist = 7
-                social_democrat = 13
-                social_liberal = 10
-                market_liberal = 33
-                social_conservative = 17
-            }
+    option = {
+        name = phi.4.b
+
+        add_popularity = {
+            ideology = authoritarian_democrat
+            popularity = -0.05
+        }
+
+        ai_chance = {
+            factor = 20
             
-            set_country_flag = PHI_ELECTION_LIBERAL_VICTORY
+            modifier = {
+                factor = 10
+                has_country_flag = PHI_TESTING_IMPERIALISM_BEHAVIOR
+            }
+            modifier = {
+                factor = 10
+                has_country_flag = PHI_CHALLENGE_JAPAN_BEHAVIOR
+            }
+        }
+
+        custom_effect_tooltip = PHI_new_elections_suppressed
+        hidden_effect = {
+            country_event = { id = phi.6 days = 14 }
+        }
+    }
+}
+
+# [GetYear] Elections
+country_event = {
+    id = phi.5
+    title = phi.5.t
+    desc = phi.5.d
+    picture = GFX_report_event_election_vote
+
+    is_triggered_only = yes
+
+    immediate = {
+        add_popularity = {
+            ideology = authoritarian_democrat
+            popularity = -0.05
+        }
+    }
+
+    option = {
+        name = phi.5.a
+
+        custom_effect_tooltip = PHI_lp_victory_effect
+        hidden_effect = {
+            add_popularity = {
+                ideology = market_liberal
+                popularity = 0.2
+            }
+
+            set_politics = {
+                ruling_party = market_liberal
+                elections_allowed = no
+            }
 
             swap_ideas = {
                 remove_idea = PHI_Jose_P_Laurel_HoG_ADE
@@ -99,34 +231,27 @@ country_event = {
                 remove_idea = PHI_Benigno_Aquino_Sr_SEC_ADE
                 add_idea = PHI_Roman_Apolinario_SEC_MLI
             }
-            
+
+            set_country_flag = PHI_LP_VICTORY_FLAG
+            news_event = { id = news.1 days = 1 }
+            remove_ideas = PHI_thirst_for_democracy
         }
-        remove_ideas = PHI_thirst_for_democracy
     }
 
     option = {
-        name = PHI.2.b
+        name = phi.3.b
 
-        set_politics = {
-            ruling_party = social_democrat
-            elections_allowed = no
-        }
-
+        custom_effect_tooltip = PHI_pp_victory_effect
         hidden_effect = {
-            news_event = { id = news.1 days = 1 }
-
-            set_popularities = {
-                vanguardist = 4
-                collectivist = 11
-                libertarian_socialist = 5
-                social_democrat = 29
-                social_liberal = 14
-                market_liberal = 9
-                social_conservative = 18
-                authoritarian_democrat = 10
+            add_popularity = {
+                ideology = social_democrat
+                popularity = 0.2
             }
-            
-            set_country_flag = PHI_ELECTION_SOC_DEM_VICTORY
+
+            set_politics = {
+                ruling_party = social_democrat
+                elections_allowed = no
+            }
 
             swap_ideas = {
                 remove_idea = PHI_Jose_P_Laurel_HoG_ADE
@@ -147,238 +272,69 @@ country_event = {
                 remove_idea = PHI_Benigno_Aquino_Sr_SEC_ADE
                 add_idea = PHI_Jose_M_Crisol_SEC_SDE
             }
-        }
 
-        remove_ideas = PHI_thirst_for_democracy
+            set_country_flag = PHI_PP_VICTORY_FLAG
+            news_event = { id = news.1 days = 1 }
+            remove_ideas = PHI_thirst_for_democracy
+        }
     }
 
     option = {
-        name = PHI.2.c
+        name = phi.3.c
 
-        set_politics = {
-            ruling_party = social_conservative
-            elections_allowed = no
+        ai_chance = {
+            factor = 10
+
+            modifier = {
+                factor = 10
+
+                modifier = {
+                    factor = 2
+                    has_country_flag = PHI_DEMOCRATIC_BASTION_BEHAVIOR
+                }
+            }
         }
 
+        custom_effect_tooltip = PHI_np_victory_effect
         hidden_effect = {
-            news_event = { id = news.1 days = 1}
-            
-            set_popularities = {
-                vanguardist = 5
-                collectivist = 12
-                libertarian_socialist = 6
-                social_democrat = 14
-                social_liberal = 19
-                market_liberal = 12
-                social_conservative = 32
+            add_popularity = {
+                ideology = social_conservative
+                popularity = 0.2
             }
-            
-            set_country_flag = PHI_ELECTION_CONSERVATIVE_VICTORY
+
+            set_politics = {
+                ruling_party = social_conservative
+                elections_allowed = no
+            }
 
             swap_ideas = {
                 remove_idea = PHI_Jose_P_Laurel_HoG_ADE
                 add_idea = PHI_Manuel_Quezon_HoG_SCO
             }
-
-            add_ideas = PHI_Ferdinand_Marcos_FOR_SCO
-            add_ideas = PHI_Serafin_Fausto_ECO_SCO 
-
             swap_ideas = {
                 remove_idea = PHI_Benigno_Aquino_Sr_SEC_ADE
                 add_idea = PHI_Tirano_Craveza_SEC_SCO
             }
-        }
+            add_ideas = PHI_Ferdinand_Marcos_FOR_SCO
+            add_ideas = PHI_Serafin_Fausto_ECO_SCO
 
-        remove_ideas = PHI_thirst_for_democracy
-    }
-}
-
-# Stabitity and Order
-country_event = {
-    id = PHI.3
-    title = PHI.3.t
-    desc = PHI.3.d
-    picture = GFX_report_event_german_troops_paris
-
-    is_triggered_only = yes
-
-    option = {
-        name = PHI.3.a
-        add_popularity = {
-                ideology = national_populist
-                popularity = 0.05
-        }
-        add_popularity = {
-                ideology = valkist
-                popularity = 0.05
-        }
-
-        hidden_effect = {
-            PHI = { country_event = { id = PHI.4 days = 14 } }
+            set_country_flag = PHI_NP_VICTORY_FLAG
+            news_event = { id = news.1 days = 1 }
+            remove_ideas = PHI_thirst_for_democracy
         }
     }
 
     option = {
-        name = PHI.3.b
+        name = phi.3.e
+        trigger = { has_country_flag = PHI_KALIBAPI_ALLOWED }
 
-        ai_chance = {
-            factor = 0
-        }
-
-        add_popularity = {
-                ideology = collectivist
-                popularity = 0.05
-        }
-        add_popularity = {
-                ideology = vanguardist
-                popularity = 0.05
-        }
-        add_popularity = {
-                ideology = libertarian_socialist
-                popularity = 0.05
-        }
-        hidden_effect = {
-            PHI = { country_event = { id = PHI.13 days = 21 } }
-        }
-    }
-}
-
-# Cooperation or Subjugation
-country_event = {
-    id = PHI.4
-    title = PHI.4.t
-    desc = PHI.4.d
-    picture = GFX_report_event_generic_riot
-
-    is_triggered_only = yes
-
-    option = {
-        name = PHI.4.a
-        add_political_power = 50
-        add_stability = 0.05
+        custom_effect_tooltip = PHI_kalibapi_victory_effect
         hidden_effect = {
             add_popularity = {
                 ideology = valkist
-                popularity = 0.05
+                popularity = 0.20
             }
-            add_popularity = {
-                ideology = national_populist
-                popularity = 0.05
-            }
-            PHI = { country_event = { id = PHI.6 days = 21 } }
-        }
-    }
 
-    option = {
-        name = PHI.4.b
-        add_political_power = -50
-        hidden_effect = {
-            PHI = { country_event = { id = PHI.9   days = 30 } }
-        }
-    }
-}
-
-# KBL Reforms
-country_event = {
-    id = PHI.5
-    title = PHI.5.t
-    desc = PHI.5.d
-    picture = GFX_report_event_generic_riot
-
-    is_triggered_only = yes
-
-    option = {
-        name = PHI.5.a
-        add_political_power = 50
-        hidden_effect = {
-            PHI = { country_event = { id = PHI.6 days = 21 } }
-        }
-    }
-
-    option = {
-        name = PHI.5.b
-
-        hidden_effect = {
-            PHI = { country_event = { id = PHI.9 days = 3 } }
-        }
-        add_political_power = -50
-    }
-}
-
-# Valkists Secret Meetings
-country_event = {
-    id = PHI.6
-    title = PHI.6.t
-    desc = PHI.6.d
-    picture = GFX_report_event_german_italian_plot
-
-    is_triggered_only = yes
-
-    option = {
-        name = PHI.6.a
-
-        hidden_effect = {
-            PHI = { country_event = { id = PHI.7 days = 3 } }
-        }
-        add_political_power = 50
-    }
-
-    option = {
-        name = PHI.6.b
-
-        hidden_effect = {
-            PHI = { country_event = { id = PHI.9 days = 3 } }
-        }
-        add_political_power = -50
-    }
-}
-
-# Valkism Spreads to the Military
-country_event = {
-    id = PHI.7
-    title = PHI.7.t
-    desc = PHI.7.d
-    picture = GFX_report_event_german_italian_plot
-
-    is_triggered_only = yes
-
-    option = {
-        name = PHI.7.a
-
-        hidden_effect = {
-            PHI = { country_event = { id = PHI.8 days = 14 } }
-        }
-        add_political_power = 50
-    }
-
-    option = {
-        name = PHI.7.b
-
-        hidden_effect = {
-            PHI = { country_event = { id = PHI.9 days = 7 } }
-        }
-        add_political_power = -50
-    }
-}
-
-# March on Manila
-country_event = {
-    id = PHI.8
-    title = PHI.8.t
-    desc = PHI.8.d
-    picture = GFX_report_event_spain_civil_war_volunteers_02
-
-    is_triggered_only = yes
-
-    option = {
-        name = PHI.8.a
-        hidden_effect = {
-            news_event = { id = news.5 days = 1 }
-
-            add_popularity = {
-                ideology = valkist
-                popularity = 0.2
-            }
             set_politics = {
                 ruling_party = valkist
                 elections_allowed = no
@@ -393,45 +349,138 @@ country_event = {
                 remove_idea = PHI_Jose_P_Laurel_HoG_ADE
                 add_idea = PHI_Jorge_B_Vargas_HoG_VAL
             }
-
             add_ideas = PHI_Ferdinand_Marcos_FOR_SCO
-            add_ideas = PHI_Serafin_Fausto_ECO_SCO 
+            add_ideas = PHI_Serafin_Fausto_ECO_SCO
 
-            swap_ideas = {
-                remove_idea = PHI_Benigno_Aquino_Sr_SEC_ADE
-                add_idea = PHI_Jose_G_Lukban_SEC_VAL
+            set_country_flag = PHI_KALIBAPI_VICTORY_FLAG
+            news_event = { id = news.5 days = 1 }
+        }
+    }
+}
+
+# CBCP Denounces our Decision
+country_event = {
+    id = phi.6
+    title = phi.6.t
+    desc = phi.6.d
+    picture = report_event_iww_demonstration
+
+    is_triggered_only = yes
+
+    option = {
+        name = phi.6.a
+        add_political_power = -100
+        add_popularity = {
+            ideology = authoritarian_democrat
+            popularity = -0.05
+        }
+    }
+}
+
+# Protests!
+country_event = {
+    id = phi.7
+    title = phi.7.t
+    desc = phi.7.d
+    picture = report_event_iww_demonstration
+
+    is_triggered_only = yes
+
+    option = {
+        name = phi.7.a
+
+        add_political_power = 100
+        hidden_effect = {
+            set_country_flag = PHI_DEMOCRACY_RETURNS_FLAG
+            country_event = { id = phi.4 days = 30 }
+        }
+    }
+
+    option = {
+        name = phi.7.b
+
+        ai_chance = {
+            factor = 100
+
+            modifier = {
+                factor = 2
+                has_country_flag = PHI_CHALLENGE_JAPAN_BEHAVIOR
             }
+        }
+
+        add_political_power = -100
+        hidden_effect = {
+            country_event = { id = phi.8 days = 7 }
+        }
+    }
+}
+
+# Army in the Streets
+country_event = {
+    id = phi.8
+    title = phi.8.t
+    desc = phi.8.d
+    picture = report_event_iww_demonstration
+
+    is_triggered_only = yes
+
+    option = {
+        name = phi.8.a
+
+        ai_chance = {
+            factor = 10
+
+            modifier = {
+                factor = 2
+                has_country_flag = PHI_CHALLENGE_JAPAN_BEHAVIOR
+            }
+        }
+
+        hidden_effect = {
+            country_event = { id = phi.9 days = 2 }
+        }
+    }
+
+    option = {
+        name = phi.8.b
+
+        ai_chance = {
+            factor = 10
+            
+            modifier = {
+                factor = 2
+                has_country_flag = PHI_TESTING_IMPERIALISM_BEHAVIOR
+            }
+        }
+
+        hidden_effect = {
+            country_event = { id = phi.10 days = 7 }
         }
     }
 }
 
 # Army Coup
 country_event = {
-    id = PHI.9
-    title = PHI.9.t
-    desc = PHI.9.d
+    id = phi.9
+    title = phi.9.t
+    desc = phi.9.d
     picture = GFX_report_event_romanian_soldiers
 
     is_triggered_only = yes
 
     option = {
-        name = PHI.9.a
+        name = phi.9.a
+        
+        custom_effect_tooltip = PHI_army_coup_effect
         hidden_effect = {
-            news_event = { id = news.2 days = 1 }
+            add_popularity = {
+                ideology = paternal_autocrat
+                popularity = 0.20
+            }
 
-            set_country_flag = PHI_MILITARY_JUNTA_CONTINUES
             set_politics = {
                 ruling_party = paternal_autocrat
                 elections_allowed = no
-            }
-            set_popularities = {
-                social_democrat = 6
-                social_liberal = 8
-                market_liberal = 10
-                social_conservative = 16
-                authoritarian_democrat = 10
-                paternal_autocrat = 35
-                national_populist = 15
             }
 
             swap_ideas = {
@@ -443,82 +492,289 @@ country_event = {
             add_ideas = PHI_Vicente_P_Lim_FOR_PAT
             add_ideas = PHI_Ramon_Alcaraz_ECO_PAT
             add_ideas = PHI_Rafael_Jalandoni_SEC_PAT
+            set_country_flag = PHI_MILITARY_JUNTA_FLAG
         }
     }
 }
 
-# Nationalist Militias
+# Protests turning Violent
 country_event = {
-    id = PHI.10
-    title = PHI.10.t
-    desc = PHI.10.d
+    id = phi.10
+    title = phi.10.t
+    desc = phi.10.d
+    picture = GFX_report_event_german_troops_paris
+
+    is_triggered_only = yes
+
+    option = {
+        name = phi.10.a
+
+        hidden_effect = {
+            set_country_flag = PHI_DEMOCRACY_RETURNS_FLAG
+            country_event = { id = phi.4 days = 20 }
+        }
+    }
+
+    option = {
+        name = phi.10.b
+
+        ai_chance = {
+            factor = 10
+
+            modifier = {
+                factor = 20
+                has_country_flag = PHI_TESTING_IMPERIALISM_BEHAVIOR
+            }
+        }
+
+        hidden_effect = {
+            country_event = { id = phi.11 days = 10 }
+        }
+    }
+}
+
+# Union Strike
+country_event = {
+    id = phi.11
+    title = phi.11.t
+    desc = phi.11.d
+    picture = report_event_iww_demonstration
+
+    is_triggered_only = yes
+
+    option = {
+        name = phi.11.a
+        add_ideas = PHI_worker_strikes1
+        hidden_effect = {
+            country_event = { id = phi.12 days = 30 }
+        }
+    }
+
+}
+
+# Expanded Union Strike
+country_event = {
+    id = phi.12
+    title = phi.12.t
+    desc = phi.12.d
+    picture = GFX_report_event_generic_strikes
+
+    is_triggered_only = yes
+
+    option = {
+        name = phi.12.a
+
+        ai_chance = {
+            factor = 10
+
+            modifier = {
+                factor = 10
+                has_country_flag = PHI_TESTING_IMPERIALISM_BEHAVIOR
+            }
+        }
+
+        swap_ideas = {
+            remove_idea = PHI_worker_strikes1
+            add_idea = PHI_worker_strikes2
+        }
+        hidden_effect = {
+            country_event = { id = phi.13 days = 18 }
+        }
+    }
+
+    option = {
+        name = phi.12.b
+
+        hidden_effect = {
+            set_country_flag = PHI_DEMOCRACY_RETURNS_FLAG
+            country_event = { id = phi.4 days = 30 }
+        }
+    }
+}
+
+# Socialist Army
+country_event = {
+    id = phi.13
+    title = phi.13.t
+    desc = phi.13.d
+    picture = GFX_report_event_spain_civil_war_volunteers_02
+
+    is_triggered_only = yes
+
+    option = {
+        name = phi.a
+        hidden_effect = {
+            country_event = { id = phi.9 days = 10 }
+        }
+    }
+
+    option = {
+        name = phi.b
+        hidden_effect = {
+            country_event = { id = phi.14 days = 21 }
+        }
+    }
+
+    option = {
+        name = phi.c
+        
+        ai_chance = {
+            factor = 10
+
+            modifier = {
+                factor = 10
+                has_country_flag = PHI_TESTING_IMPERIALISM_BEHAVIOR
+            }
+        }
+
+        hidden_effect = {
+            country_event = { id = phi.15 days = 30 }
+        }
+    }
+}
+
+# Trade Unions
+country_event = {
+    id = phi.14
+    title = phi.14.t
+    desc = phi.14.d
+    picture = GFX_report_event_german_italian_plot
+
+    is_triggered_only = yes
+
+    immediate = { 
+        remove_ideas = PHI_worker_strikes1
+        remove_ideas = PHI_worker_strikes2 
+    }
+
+    option = {
+        name = phi.14.a
+
+        custom_effect_tooltip = PHI_socialist_republic_effect
+        hidden_effect = {
+            add_popularity = {
+                ideology = libertarian_socialist
+                popularity = 0.2
+            }
+
+            set_politics = {
+                ruling_party = libertarian_socialist
+                elections_allowed = no
+            }
+
+            swap_ideas = {
+                remove_idea = PHI_Jose_P_Laurel_HoG_ADE
+                add_idea = PHI_Crisanto_Evangelista_HoG_LIB
+            }
+            swap_ideas = {
+                remove_idea = PHI_Ferdinand_Marcos_FOR_SCO
+                add_idea = PHI_Casto_Alejandro_FOR_SYN
+            }
+            swap_ideas = {
+                remove_idea = PHI_Serafin_Fausto_ECO_SCO
+                add_idea = PHI_Herminegildo_Cruz_ECO_SYN
+            }
+            swap_ideas = {
+                remove_idea = PHI_Benigno_Aquino_Sr_SEC_ADE
+                add_idea = PHI_Guillermo_Capadocia_SEC_SYN
+            }
+
+            news_event = { id = news.3 days = 1 }
+            set_country_flag = PHI_SOCIALIST_REPUBLIC_FLAG
+            remove_ideas = PHI_thirst_for_democracy
+        }
+    }
+}
+
+# Aguinaldo in the Government
+country_event = {
+    id = phi.15
+    title = phi.15.t
+    desc = phi.15.d
+    picture = report_event_iww_demonstration
+
+    is_triggered_only = yes
+
+    option = {
+        name = phi.15.a
+
+        ai_chance = {
+            factor = 10
+
+            modifier = {
+                factor = 20
+                has_country_flag = PHI_TESTING_IMPERIALISM_BEHAVIOR
+            }
+        }
+
+        swap_ideas = {
+            remove_idea = PHI_Benigno_Aquino_Sr_SEC_ADE
+            add_idea = PHI_Emilio_Aguinaldo_SEC_PAT
+        }
+        hidden_effect = {
+            country_event = { id = phi.16 days = 7 }
+        }
+    }
+
+    option = {
+        name = phi.15.b
+        hidden_effect = {
+            country_event = { id = phi.9 days = 20 }
+        }
+    }
+}
+
+# Aguinaldo Negotiations
+country_event = {
+    id = phi.16
+    title = phi.16.t
+    desc = phi.16.d
     picture = GFX_report_event_albanian_partisans
 
     is_triggered_only = yes
 
     option = {
-        name = PHI.10.a
+        name = phi.16.a
+        add_political_power = 100
         hidden_effect = {
-            PHI = { country_event = { id = PHI.11 days = 21 } }
+            country_event = { id = phi.17 days = 14 }
         }
     }
 }
 
-# Nationalist Campaigns
+# NatPop sentiments in the Army
 country_event = {
-    id = PHI.11
-    title = PHI.11.t
-    desc = PHI.11.d
-    picture = GFX_report_event_election_vote
-
-    is_triggered_only = yes
-
-    option = {
-        name = PHI.11.a
-
-        hidden_effect = {
-            add_popularity = {
-                ideology = national_populist
-                popularity = 0.1
-            }
-            PHI = { country_event = { id = PHI.12 days = 21 } }
-        }
-    }
-
-    option = {
-        name = PHI.11.b
-        add_stability = -0.1
-        add_war_support = -0.15
-        hidden_effect = {
-            PHI = { country_event = { id = PHI.9 days = 7 } }
-        }
-    }
-}
-
-# Nationalist Coup
-country_event = {
-    id = PHI.12
-    title = PHI.12.t
-    desc = PHI.12.d
-
-    is_triggered_only = yes
-
+    id = phi.17
+    title = phi.17.t
+    desc = phi.17.d
     picture = GFX_report_event_german_troops_paris
 
-    option = {
-        name = PHI.12.a
-        hidden_effect = {
-            news_event = { id = news.4 days = 1 }
+    is_triggered_only = yes
 
-            create_country_leader = {
-                name = "Jose P. Laurel"
-                desc = "POLITICS_Jose_P_Laurel_DESC"
-                picture = "Portrait_Philippines_Jose_P_Laurel.tga"
-                expire = "1970.1.26"
-                ideology = authoritarian_democrat_subtype
-                traits = { }
-            }
-            
+    option = {
+        name = phi.17.a
+
+        add_popularity = {
+            ideology = national_populist
+            popularity = 0.05
+        }
+    }
+}
+
+# King Returns
+country_event = {
+    id = phi.18
+    title = phi.18.t
+    desc = phi.18.d
+    picture = GFX_report_event_journalists_speech
+
+    is_triggered_only = yes
+
+    option = {
+        name = phi.18.a
+
+        custom_effect_tooltip = PHI_aguinaldo_coup_effect
+        hidden_effect = {
             add_popularity = {
                 ideology = national_populist
                 popularity = 0.15
@@ -529,135 +785,146 @@ country_event = {
                 elections_allowed = no
             }
 
-            set_country_flag = PHI_AGUINALDO_COUP_SUCCESS
-
             swap_ideas = {
                 remove_idea = presidential_republic
                 add_idea = republican_dictatorship
             }
-
             swap_ideas = {
                 remove_idea = PHI_Jose_P_Laurel_HoG_ADE
                 add_idea = PHI_Emilio_Aguinaldo_HoG_NAT
             }
-
-            add_ideas = PHI_Ferdinand_Marcos_FOR_SCO
-            add_ideas = PHI_Serafin_Fausto_ECO_SCO 
-
             swap_ideas = {
                 remove_idea = PHI_Benigno_Aquino_Sr_SEC_ADE
                 add_idea = PHI_Jose_Yulo_SEC_NAT
             }
+            add_ideas = PHI_Ferdinand_Marcos_FOR_SCO
+            add_ideas = PHI_Serafin_Fausto_ECO_SCO
+
+            news_event = { id = news.4 days = 1 }
+            set_country_flag = PHI_AGUINALDO_COUP_FLAG
         }
     }
 }
 
-# Strikes
+# Operation Merkeda
 country_event = {
-    id = PHI.13
-    title = PHI.13.t
-    desc = PHI.13.d
-    picture = GFX_report_event_generic_strikes
+    id = phi.19
+    title = phi.19.t
+    desc = phi.19.d
+    picture = GFX_report_event_german_italian_plot
+
+    fire_only_once = yes
+
+    trigger = {
+        original_tag = PHI
+        INS = { 
+            exists = yes 
+            has_war_with = BEA
+        }
+        BEA = {
+            exists = yes
+            has_war_with = INS
+        }
+        ENG = {
+            has_war_with = INS
+        }
+    }
+
+    option = {
+        name = phi.19.a
+        hidden_effect = {
+            country_event = { id = phi.21 days = 7 }
+        }
+    }
+
+    option = {
+        name = phi.19.b
+        add_political_power = -10
+    }
+}
+
+# Sabah Occupation
+country_event = {
+    id = phi.20
+    title = phi.20.t
+    desc = phi.20.d
+    picture = GFX_report_event_dutch_soldiers_indonesia
+
+    is_triggered_only = yes
+
+    immediate = {
+        trasfer_state = 785
+        add_state_core = 785
+
+        INS = {
+            remove_state_core = 785
+            add_state_claim = 785
+
+            country_event = { id = phi.21 }
+        }
+        BEA = {
+            remove_state_core = 785
+            add_state_claim = 785
+
+            country_event = { id = phi.21 }
+        }
+
+        news_event = { id = news.8 }
+    }
+
+    option = {
+        name = phi.20.a
+
+        add_political_power = 100
+    }
+}
+
+# Sabah Occupation NOT PHI
+country_event = {
+    id = phi.21
+    title = phi.21.t
+    desc = phi.21.d
+    picture = GFX_report_event_dutch_soldiers_indonesia
 
     is_triggered_only = yes
 
     option = {
-        name = PHI.13.a
-        add_ideas = PHI_worker_strikes1
-        hidden_effect = {
-            PHI = { country_event = { id = PHI.14 days = 21 } }
+        name = phi.21.a
+
+        ai_chance = {
+            factor = 4
+
+            modifier = {
+                factor = 10
+                num_of_divisions < 50
+                num_of_factories < 100
+            }
+        }
+
+        declare_war_on = {
+            target = PHI
+            type = annex_everything
         }
     }
-}
-
-# General Strikes
-country_event = {
-    id = PHI.14
-    title = PHI.14.t
-    desc = PHI.14.d
-    picture = GFX_report_event_worker_protests
-
-    is_triggered_only = yes
 
     option = {
-        name = PHI.14.a
-        swap_ideas = {
-            remove_idea = PHI_worker_strikes1
-            add_idea = PHI_worker_strikes2
-        }
-        hidden_effect = {
-            PHI = { country_event = { id = PHI.15 days = 21 } }
-        }
+        name = phi.21.b
+        add_political_power = -10
     }
 }
 
-# Change of Cabinet
-country_event = {
-    id = PHI.15
-    title = PHI.15.t
-    desc = PHI.15.d
-    picture = GFX_report_event_journalists_speech
-
-    is_triggered_only = yes
-
-    option = {
-        name = PHI.15.a
-        remove_ideas = PHI_thirst_for_democracy
-        remove_ideas = PHI_worker_strikes2
-        hidden_effect = {
-            news_event = { id = news.3 days = 1 }
-
-            add_popularity = {
-                ideology = libertarian_socialist
-                popularity = 0.15
-            }
-
-            set_politics = {
-                ruling_party = libertarian_socialist
-                elections_allowed = no
-            }
-
-            swap_ideas = {
-                remove_idea = presidential_republic
-                add_idea = workers_republic
-            }
-
-            set_country_flag = PHI_WORKER_VICTORY
-
-            swap_ideas = {
-                remove_idea = PHI_Jose_P_Laurel_HoG_ADE
-                add_idea = PHI_Crisanto_Evangelista_HoG_LIB
-            }
-
-            swap_ideas = {
-                remove_idea = PHI_Ferdinand_Marcos_FOR_SCO
-                add_idea = PHI_Casto_Alejandro_FOR_SYN
-            }
-
-            swap_ideas = {
-                remove_idea = PHI_Serafin_Fausto_ECO_SCO
-                add_idea = PHI_Herminegildo_Cruz_ECO_SYN
-            }
-
-            swap_ideas = {
-                remove_idea = PHI_Benigno_Aquino_Sr_SEC_ADE
-                add_idea = PHI_Guillermo_Capadocia_SEC_SYN
-            }
-        }
-    }
-}
 
 # Seek Foreign Investments
 country_event = {
-    id = PHI.26
-    title = PHI.26.t
-    desc = PHI.26.d
+    id = phi.22
+    title = phi.22.t
+    desc = phi.22.d
     picture = GFX_report_event_hitler_handshake
 
     is_triggered_only = yes
 
     option = {
-        name = PHI.26.a
+        name = phi.22.a
 
         ai_chance = {
             factor = 200
@@ -695,11 +962,11 @@ country_event = {
                     instant_build = yes
                 }
             }
-            country_event = { id = PHI.27 }
+            country_event = { id = phi.23 }
         }
     }
     option = {
-        name = PHI.26.b
+        name = phi.22.b
 
         PHI = {
             hidden_effect = {
@@ -708,48 +975,200 @@ country_event = {
                     modifier = refused_economic_investment
                 }
             }
-            country_event = { id = PHI.28 }
+            country_event = { id = phi.24 }
         }
     }
 }
 
+# [From.GetNameDefCap] Accepted Economic Investment
 country_event = {
-    id = PHI.27
-    title = PHI.27.t
-    desc = PHI.27.d
+    id = phi.23
+    title = phi.23.t
+    desc = phi.23.d
     picture = GFX_report_event_hitler_handshake
 
     is_triggered_only = yes
 
     option = {
-        name = PHI.27.a
+        name = phi.23.a
     }
 }
 
+# [From.GetNameDefCap] Rejected Economic Investment
 country_event = {
-    id = PHI.28
-    title = PHI.28.t
-    desc = PHI.28.d
+    id = phi.24
+    title = phi.24.t
+    desc = phi.24.d
     picture = GFX_report_event_hitler_handshake
 
     is_triggered_only = yes
 
     option = {
-        name = PHI.28.a
+        name = phi.24.a
     }
 }
 
-# Co-Prosperity Sphere
+# Socialist Revolt!
 country_event = {
-    id = PHI.29
-    title = PHI.29.t
-    desc = PHI.29.d
-    picture = GFX_report_event_vienna_award_hungary
+    id = phi.25
+    title = phi.25.t
+    desc = phi.25.d
+    picture = report_event_iww_demonstration
 
     is_triggered_only = yes
 
     option = {
-        name = PHI.29.a
+        name = phi.25.a
+
+        custom_effect_tooltip = PHI_communist_revolt
+        hidden_effect = {
+
+            release = UFC
+            UFC = {
+                #load_oob = "UFC_1936"
+
+                add_state_core = 327
+                transfer_state = 327
+                declare_war_on = {
+                    type = annex_everything
+                    target = PHI
+                }
+            }
+            
+            remove_state_core = 327
+            add_state_claim = 327
+            set_capital = 623
+            load_oob = "PHI_1936_civil_war"
+        }
+    }
+}
+
+# Leftists Imprisoned
+country_event = {
+    id = phi.26
+    title = phi.26.t
+    desc = phi.26.d
+    picture = GFX_report_event_german_italian_plot
+
+    is_triggered_only = yes
+
+    option = {
+        name = phi.26.a
+
+        add_popularity = {
+            ideology = collectivist
+            popularity = -0.05
+        }
+    }
+}
+
+# SEATO Invitation
+country_event = {
+    id = phi.27
+    title = phi.27.t
+    desc = phi.27.d
+    picture = GFX_report_event_dutch_soldiers_indonesia
+
+    is_triggered_only = yes
+
+    option = {
+        name = phi.27.a
+
+        PHI = { country_event = { id = phi.28 } }
+    }
+
+    option = {
+        name = phi.27.b
+
+        PHI = { country_event = { id = phi.29 } }
+    }
+}
+
+# SEATO Invitation Accepted
+country_event = {
+    id = phi.28
+    title = phi.28.t
+    desc = phi.28.d
+    picture = GFX_report_event_dutch_soldiers_indonesia
+
+    is_triggered_only = yes
+
+    option = {
+        name = phi.28.a
+        add_to_faction = FROM 
+    }
+}
+
+# SEATO Invitation Rejected
+country_event = {
+    id = phi.29
+    title = phi.29.t
+    desc = phi.29.d
+    picture = GFX_report_event_dutch_soldiers_indonesia
+
+    is_triggered_only = yes
+
+    option = {
+        name = phi.29.a
+    }
+}
+
+# Faction Joining
+country_event = {
+    id = phi.31
+    picture = GFX_report_event_romanian_soldiers
+
+    title = {
+        text = phi.31.t.jp
+        trigger = { tag = JAP }
+    }
+    title = {
+        text = phi.31.t.de
+        trigger = { tag = GER }
+    }
+    title = {
+        text = phi.31.t.uk
+        trigger = { tag = ENG }
+    }
+    title = {
+        text = phi.31.t.us
+        trigger = { tag = USA }
+    }
+
+    desc = {
+        text = phi.31.d.jp
+        trigger = { tag = JAP }
+    }
+    desc = {
+        text = phi.31.d.de
+        trigger = { tag = GER }
+    }
+    desc = {
+        text = phi.31.uk
+        trigger = { tag = ENG }
+    }
+    desc = {
+        text = phi.31.us
+        trigger = { tag = USA }
+    }
+    is_triggered_only = yes
+
+    option = {
+        name = phi.31.a
+        trigger = {
+            NOT = {
+                tag = JAP
+                tag = GER
+                tag = ENG
+                tag = USA
+            }
+        }
+    }
+
+    # Options for JAP
+    option = {
+        name = phi.31.a.jp
+        trigger = { tag = JAP }
 
         ai_chance = {
             factor = 40
@@ -791,85 +1210,91 @@ country_event = {
         }
 
         if = {
-            limit = { JAP = { is_faction_leader = yes } }
-            JAP = { add_to_faction = PHI }
-        }
-
-        if = {
-            limit = { PHI = { is_faction_leader = yes } }
-            PHI = { add_to_faction = JAP }
-        }
-
-        if = {
             limit = {
                 JAP = { is_faction_leader = no }
                 PHI = { is_faction_leader = no }
             }
-            PHI = { 
+            JAP = {
+                set_rule = { can_create_factions = yes }
                 create_faction = PHI_co-prosperity_sphere
-                add_to_faction = JAP
+                add_to_faction = PHI
+            }
+        }
+
+        if = {
+            limit = {
+                JAP = { is_faction_leader = yes }
+            }
+            JAP = { add_to_faction = PHI }
+        }
+
+        PHI = { 
+            set_country_flag = PHI_SIDED_WITH_A_MAJOR
+            country_event = { id = phi.32 }
+        }
+    }
+    option = {
+        name = phi.31.b.jp
+        trigger = { tag = JAP }
+
+        PHI = { country_event = { id = phi.33 } }
+    }
+
+    # Option for GER
+    option = {
+        name = phi.31.a.de
+        trigger = { tag = GER }
+
+        ai_chance = {
+            factor = 200
+
+            modifier = {
+                factor = 10
+                FRA = { has_war_with = GER }
+            }
+            modifier = {
+                factor = 10
+                ENG = { has_war_with = GER }
+            }
+            modifier = {
+                factor = 10
+                SOV = { has_war_with = GER }
+            }
+            modifier = {
+                factor = 10
+                PHI = { num_of_factories > 50 }
+            }
+            modifier = {
+                factor = 10
+                PHI = { num_of_divisions > 100 }
             }
         }
 
         PHI = {
-            country_event = { id = PHI.30 }
-            hidden_effect = {
-                set_rule = { can_create_factions = yes }
-                set_country_flag = PHI_SIDED_WITH_A_SUPERPOWER
-            }
+            set_country_flag = PHI_SIDED_WITH_A_MAJOR
+            country_event = { id = phi.32 }
+            give_guarantee = GER
         }
+        GER = {
+            diplomatic_relation = {
+                country = PHI
+                relation = military_access
+                active = yes
+            }
+            give_guarantee = PHI
+        }
+    }
+    option = {
+        name = phi.31.b.de
+        trigger = { tag = GER }
 
+        PHI = { country_event = { id = phi.33 } }
     }
 
+    # Option for ENG
     option = {
-        name = PHI.29.b
-
-        PHI = { country_event = { id = PHI.31 } }
-    }
-}
-
-# Japan Accepted
-country_event = {
-    id = PHI.30
-    title = PHI.30.t
-    desc = PHI.30.d
-    picture = GFX_report_event_soviet_german_soldier_handshake
-
-    is_triggered_only = yes
-
-    option = {
-        name = PHI.30.a
-        add_political_power = 50
-    }
-}
-
-# Japan Declined
-country_event = {
-    id = PHI.31
-    title = PHI.31.t
-    desc = PHI.31.d
-    picture = GFX_report_event_vienna_award_hungary
-
-    is_triggered_only = yes
-
-    option = {
-        name = PHI.31.a
-        add_political_power = -50
-    }
-}
-
-
-# Dominion Request
-country_event = {
-    id = PHI.32
-    title = PHI.32.t
-    desc = PHI.32.d
-    picture = GFX_report_event_vienna_award_hungary
-
-    is_triggered_only = yes
-
-    option = {
-        name = PHI.32.a
+        name = phi.31.a.uk
+        trigger = { tag = ENG }
 
         ai_chance = {
             factor = 200
@@ -904,151 +1329,40 @@ country_event = {
             }
         }
 
-        add_to_faction = PHI
+        if = {
+            limit = { ENG = { is_faction_leader = yes } }
+            add_to_faction = yes
+        }
+
+        if = {
+            limit = {
+                FRA = { 
+                    is_faction_leader = yes
+                    is_in_faction_with = ENG
+                }
+            }
+            FRA = { add_to_faction = PHI }
+        }
+
         PHI = {
+            set_country_flag = PHI_SIDED_WITH_A_MAJOR
             set_cosmetic_tag = PHI_UK
-            country_event = { id = PHI.33 }
+            country_event = { id = phi.32 }
         }
-
     }
-
     option = {
-        name = PHI.32.b
-
-        PHI = { country_event = { id = PHI.34 } }
-    }
-}
-
-# UK Accepts
-country_event = {
-    id = PHI.33
-    title = PHI.33.t
-    desc = PHI.33.d
-    picture = GFX_report_event_vienna_award_hungary
-
-    is_triggered_only = yes
-    
-    option = {
-        name = PHI.33.a
-        add_political_power = 50
-    }
-}
-
-# UK Rejects
-country_event = {
-    id = PHI.34
-    title = PHI.34.t
-    desc = PHI.34.d
-    picture = GFX_report_event_vienna_award_hungary
-
-    is_triggered_only = yes
-
-    option = {
-        name = PHI.34.a
-        add_political_power = -50
-    }
-}
-
-# Military Pact with Germany
-country_event = {
-    id = PHI.35
-    title = PHI.35.t
-    desc = PHI.35.d
-    picture = GFX_report_event_vienna_award_hungary
-
-    is_triggered_only = yes
-
-    option = {
-        name = PHI.35.a
-
-        ai_chance = {
-            factor = 200
-
-            modifier = {
-                factor = 10
-                FRA = { has_war_with = GER }
-            }
-            modifier = {
-                factor = 10
-                ENG = { has_war_with = GER }
-            }
-            modifier = {
-                factor = 10
-                SOV = { has_war_with = GER }
-            }
-            modifier = {
-                factor = 10
-                PHI = { num_of_factories > 50 }
-            }
-            modifier = {
-                factor = 10
-                PHI = { num_of_divisions > 100 }
-            }
-        }
+        name = phi.31.b.uk
+        trigger = { tag = ENG }
 
         PHI = {
-            hidden_effect = {
-                set_country_flag = PHI_SIDED_WITH_A_SUPERPOWER
-            }
-            country_event = { id = PHI.36 }
+            country_event = { id = phi.33 }
         }
-        diplomatic_relation = {
-            country = PHI
-            relation = military_access
-            active = yes
-        }
-        give_guarantee = PHI
-        PHI = { give_guarantee = GER }
     }
 
+    # Option for USA
     option = {
-        name = PHI.36.b
-
-        PHI = { country_event = { id = PHI.37 } }
-    }
-}
-
-# Germany Accepts
-country_event = {
-    id = PHI.36
-    title = PHI.36.t
-    desc = PHI.36.d
-    picture = GFX_report_event_vienna_award_hungary
-
-    is_triggered_only = yes
-
-    option = {
-        name = PHI.36.a
-        add_political_power = 50
-    }
-}
-
-# Germany Declined
-country_event = {
-    id = PHI.37
-    title = PHI.37.t
-    desc = PHI.37.d
-    picture = GFX_report_event_vienna_award_hungary
-
-    is_triggered_only = yes
-
-    option = {
-        name = PHI.37.a
-        add_political_power = -50
-    }
-}
-
-# US Mutual Defense Treaty
-country_event = {
-    id = PHI.38
-    title = PHI.38.t
-    desc = PHI.38.d
-    picture = GFX_report_event_vienna_award_hungary
-
-    is_triggered_only = yes
-
-    option = {
-        name = PHI.38.a
+        name = phi.31.a.us
+        trigger = { tag = USA }
 
         ai_chance = {
             factor = 100
@@ -1072,77 +1386,74 @@ country_event = {
         }
 
         if = {
-            limit = { USA = { is_faction_leader = yes } }
+            limit = {
+                USA = { is_faction_leader = yes }
+            }
             add_to_faction = PHI
         }
         if = {
-            limit = { USA = { is_faction_leader = no } }
+            limit = {
+                USA = { is_faction_leader = no }
+                PHI = { is_faction_leader = no }
+            }
             create_faction = PHI_pacific_defense
             add_to_faction = PHI
         }
 
         PHI = {
-            hidden_effect = {
-                set_country_flag = PHI_SIDED_WITH_A_SUPERPOWER
-            }
-            country_event = { id = PHI.39 }
+            set_country_flag = PHI_SIDED_WITH_A_MAJOR
+            country_event = { id = phi.32 }
         }
-        diplomatic_relation = {
-            country = PHI
-            relation = military_access
-            active = yes
-        }
-        give_guarantee = PHI
     }
-
     option = {
-        name = PHI.38.b
+        name = phi.32.b.us
+        trigger = { tag = USA }
 
-        PHI = { country_event = { id = PHI.40 } }
+        PHI = {
+            country_event = { id = phi.33 }
+        }
     }
 }
 
-# US Accepts
+# FROM Accepts to Join Faction
 country_event = {
-    id = PHI.39
-    title = PHI.39.t
-    desc = PHI.39.d
-    picture = GFX_report_event_vienna_award_hungary
+    id = phi.32
+    title = phi.32.t
+    desc = phi.32.d
+    picture = GFX_report_event_generic_sign_treaty3
 
     is_triggered_only = yes
 
     option = {
-        name = PHI.39.a
-        add_political_power = 50
+        name = phi.32.a
     }
 }
 
-# US Declined
+# FROM Rejects Faction Join
 country_event = {
-    id = PHI.40
-    title = PHI.40.t
-    desc = PHI.40.d
-    picture = GFX_report_event_vienna_award_hungary
+    id = phi.33
+    title = phi.33.t
+    desc = phi.33.d
+    picture = GFX_report_event_generic_strikes
 
     is_triggered_only = yes
 
     option = {
-        name = PHI.40.a
-        add_political_power = -50
+        name = phi.33.a
     }
 }
 
 # Soviet Support
 country_event = {
-    id = PHI.41
-    title = PHI.41.t
-    desc = PHI.41.d
-    picture = GFX_report_event_vienna_award_hungary
+    id = phi.33
+    title = phi.33.t
+    desc = phi.33.d
+    picture = GFX_report_event_generic_sign_treaty3
 
     is_triggered_only = yes
 
     option = {
-        name = PHI.41.a
+        name = phi.33.a
 
         ai_chance = {
             factor = 100
@@ -1161,188 +1472,153 @@ country_event = {
             }
         }
 
-        PHI = { 
-            country_event = { id = PHI.42 }
+        PHI = {
+            country_event = { id = phi.34 }
             set_country_flag = PHI_SOV_TRADE
         }
     }
 
     option = {
-        name = PHI.41.b
-        PHI = { country_event = { id = PHI.43 } }
+        name = phi.33.b
+        PHI = {
+            country_event = { id = phi.35 }
+        }
     }
 }
 
 # Soviets Accept
 country_event = {
-    id = PHI.42
-    title = PHI.42.t
-    desc = PHI.42.d
-    picture = GFX_report_event_stalin_02
+    id = phi.34
+    title = phi.34.t
+    desc = phi.34.d
+    picture = GFX_report_stalin_02
 
     is_triggered_only = yes
 
     option = {
-        name = PHI.42.a
-        add_political_power = 50
+        name = phi.34.a
     }
 }
 
 # Soviets Declined
 country_event = {
-    id = PHI.43
-    title = PHI.43.t
-    desc = PHI.43.d
-    picture = GFX_report_event_stalin_02
+    id = phi.35
+    title = phi.35.t
+    desc = phi.35.d
+    picture = GFX_report_stalin_02
 
     is_triggered_only = yes
 
     option = {
-        name = PHI.43.a
-        add_political_power = -50
-    }    
+        name = phi.35.a
+    }
 }
 
-# Trade Treaty - Generic
+# Trade Treaty
 country_event = {
-    id = PHI.44
-    title = PHI.44.t
-    desc = PHI.44.d
-    picture = GFX_report_event_vienna_award_hungary
+    id = phi.36
+    title = phi.36
+    desc = phi.36
+    picture = GFX_report_event_generic_sign_treaty3
 
     is_triggered_only = yes
 
     option = {
-        name = PHI.44.a
+        name = phi.36.a
 
-        if = {
-            limit = { tag = JAP }
-            PHI = { 
-                set_country_flag = PHI_JAP_TRADE
-                country_event = { id = PHI.30 } 
-                add_opinion_modifier = {
-                    target = JAP
-                    modifier = trade_treaty_accepted
-                }
-            }
-        }
-        if = {
-            limit = { tag = ENG }
-            PHI = { 
-                set_country_flag = PHI_ENG_TRADE
-                country_event = { id = PHI.33 } 
-                add_opinion_modifier = {
-                    target = ENG
-                    modifier = trade_treaty_accepted
-                }
-            }
-        }
-        if = {
-            limit = { tag = GER }
-            PHI = { 
-                set_country_flag = PHI_GER_TRADE
-                country_event = { id = PHI.36 }
-                add_opinion_modifier = {
-                    target = GER
-                    modifier = trade_treaty_accepted
-                }
-            }
-        }
-        if = {
-            limit = { tag = USA }
-            PHI = { 
-                set_country_flag = PHI_USA_TRADE
-                country_event = { id = PHI.39 }
-                add_opinion_modifier = {
-                    target = USA
-                    modifier = trade_treaty_accepted
-                }
-            }
-        }
-        if = {
-            limit = { tag = SOV }
-            PHI = {
-                set_country_flag = PHI_SOV_TRADE
-                country_event = { id = PHI.42 }
-                add_opinion_modifier = {
-                    target = SOV
-                    modifier = trade_treaty_accepted
-                }
-            }
+        PHI = {
+            country_event = { id = phi.37 }
         }
     }
-
     option = {
-        name = PHI.44.b
+        name = phi.37.b
         
-        ai_chance = {
-            factor = 0
-        }
-
-        if = {
-            limit = { tag = JAP }
-            PHI = {
-                country_event = { id = PHI.31 }
-                add_opinion_modifier = {
-                    target = JAP
-                    modifier = trade_treaty_refused
-                }
-            }
-        }
-        if = {
-            limit = { tag = ENG }
-            PHI = {
-                country_event = { id = PHI.31 }
-                add_opinion_modifier = {
-                    target = ENG
-                    modifier = trade_treaty_refused
-                }
-            }
-        }
-        if = {
-            limit = { tag = GER }
-            PHI = {
-                country_event = { id = PHI.31 }
-                add_opinion_modifier = {
-                    target = GER
-                    modifier = trade_treaty_refused
-                }
-            }
-        }
-        if = {
-            limit = { tag = USA }
-            PHI = {
-                country_event = { id = PHI.31 }
-                add_opinion_modifier = {
-                    target = USA
-                    modifier = trade_treaty_refused
-                }
-            }
-        }
-        if = {
-            limit = { tag = SOV }
-            PHI = {
-                country_event = { id = PHI.31 }
-                add_opinion_modifier = {
-                    target = SOV
-                    modifier = trade_treaty_refused
-                }
-            }
+        PHI = {
+            country_event = { id = phi.38 }
         }
     }
 }
 
-# Demand British and French Territories in South East Asia
+# FROM accepts trade Treaty
 country_event = {
-    id = PHI.45
-    title = PHI.45.t
-    desc = PHI.45.d
-    picture = GFX_report_event_communist_leader
+    id = phi.37
+    title = phi.37.t
+    desc = phi.37.d
+    picture = GFX_report_event_generic_sign_treaty3
 
     is_triggered_only = yes
 
     option = {
-        name = PHI.45.a
+        name = phi.37.a
+
+        add_opinion_modifier = {
+            target = FROM
+            modifier = trade_treaty_accepted
+        }
+
+        if = {
+            limit = { 
+                FROM = { tag = JAP }
+            }
+            set_country_flag = PHI_JAP_TRADE
+        }
+        if = {
+            limit = {
+                FROM = { tag = ENG }
+            }
+            set_country_flag = PHI_ENG_TRADE
+        }
+        if = {
+            limit = {
+                FROM = { tag = GER }
+            }
+            set_country_flag = PHI_GER_TRADE
+        }
+        if = {
+            limit = {
+                FROM = { tag = USA }
+            }
+            set_country_flag = PHI_USA_TRADE
+        }
+        if = {
+            limit = {
+                FROM = { tag = SOV }
+            }
+            set_country_flag = PHI_SOV_TRADE
+        }
+    }
+}
+
+# FROM rejects Trade Treaty
+country_event = {
+    id = phi.38
+    title = phi.38
+    desc = phi.38
+    picture = GFX_report_event_generic_sign_treaty3
+
+    is_triggered_only = yes
+
+    option = {
+        name = phi.38.a
+
+        add_opinion_modifier = {
+            target = FROM
+            modifier = trade_treaty_refused
+        }
+    }
+}
+
+# Demand the British/French Colonies
+country_event = {
+    id = phi.39
+    title = phi.39.t
+    desc = phi.39.d
+    picture = GFX_report_event_german_troops_paris
+
+    is_triggered_only = yes
+
+    option = {
+        name = phi.39.a
 
         ai_chance = {
             factor = 200
@@ -1357,525 +1633,457 @@ country_event = {
             }
             modifier = {
                 factor = 2
-                ENG = { has_war_with = GER }
+                has_war_with = GER
             }
             modifier = {
                 factor = 2
-                FRA = { has_war_with = GER }
+                has_war_with = JAP
             }
             modifier = {
-                factor = 0.2
-                JAP = { has_war_with = ENG }
-            }
-            modifier = {
-                factor = 0.2
-                JAP = { has_war_with = FRA }
+                factor = 2
+                has_war_with = USA
             }
         }
 
         if = {
             limit = { tag = ENG }
-            PHI = { 
-                country_event = { id = PHI.46 }
-                if = {
-                    limit = { ENG = { controls_state = 819 } }
-                    transfer_state = 819
-                }
-                if = {
-                    limit = { ENG = { controls_state = 820 } }
-                    transfer_state = 820
-                }
-                if = {
-                    limit = { ENG = { controls_state = 336 } }
-                    transfer_state = 336
-                }
-                if = {
-                    limit = { ENG = { controls_state = 336 } }
-                    transfer_state = 336
-                }
-                if = {
-                    limit = { ENG = { controls_state = 821 } }
-                    transfer_state = 821
-                }
-                if = {
-                    limit = { ENG = { controls_state = 711 } }
-                    transfer_state = 711
-                }
-                if = {
-                    limit = { ENG = { controls_state = 712 } }
-                    transfer_state = 712
-                }
-                if = {
-                    limit = { ENG = { controls_state = 288 } }
-                    transfer_state = 288
-                }
-                if = {
-                    limit = { ENG = { controls_state = 640 } }
-                    transfer_state = 640
-                }
-                if = {
-                    limit = { ENG = { controls_state = 805 } }
-                    transfer_state = 805
-                }
-                if = {
-                    limit = { ENG = { controls_state = 812 } }
-                    transfer_state = 812
-                }
-                if = {
-                    limit = { BEA = { exists = yes is_subject_of = ENG } }
-                    annex_country = {
-                        target = BEA
-                        transfer_troops = no
-                    }
+            if = {
+                limit = { ENG = { controls_state = 819 } }
+                transfer_state = 819
+            }
+            if = {
+                limit = { ENG = { controls_state = 820 } }
+                transfer_state = 820
+            }
+            if = {
+                limit = { ENG = { controls_state = 336 } }
+                transfer_state = 336
+            }
+            if = {
+                limit = { ENG = { controls_state = 336 } }
+                transfer_state = 336
+            }
+            if = {
+                limit = { ENG = { controls_state = 821 } }
+                transfer_state = 821
+            }
+            if = {
+                limit = { ENG = { controls_state = 711 } }
+                transfer_state = 711
+            }
+            if = {
+                limit = { ENG = { controls_state = 712 } }
+                transfer_state = 712
+            }
+            if = {
+                limit = { ENG = { controls_state = 288 } }
+                transfer_state = 288
+            }
+            if = {
+                limit = { ENG = { controls_state = 640 } }
+                transfer_state = 640
+            }
+            if = {
+                limit = { ENG = { controls_state = 805 } }
+                transfer_state = 805
+            }
+            if = {
+                limit = { ENG = { controls_state = 812 } }
+                transfer_state = 812
+            }
+            if = {
+                limit = { BEA = { exists = yes is_subject_of = ENG } }
+                annex_country = {
+                    target = BEA
+                    transfer_troops = no
                 }
             }
         }
+            
+
         if = {
-            limit = { tag = FRA }
+            limit = { 
+                tag = FRA
+                FIC = { exists = yes }
+            }
             PHI = {
-                country_event = { id = PHI.47 }
-                if = {
-                    limit = { FIC = { exists = yes is_subject_of = FRA } }
-                    annex_country = {
-                        target = FIC
-                        transfer_troops = no
-                    }
-                }
+                annex_country = { target = FIC transfer_troops = no }
+                country_event = { id = phi.40 }
             }
-
         }
     }
 
     option = {
-        name = PHI.45.b
+        name = phi.39.b
+
+        PHI = { country_event = { id = phi.41 } }
+    }
+}
+
+# Britain/France accepts
+country_event = {
+    id = phi.40
+    title = phi.40.t
+    desc = phi.40.d
+    picture = GFX_report_event_german_troops_paris
+
+    is_triggered_only = yes
+
+    option = {
+        name = phi.40.a
+    }
+}
+
+# Britain/France rejects
+country_event = {
+    id = phi.41
+    title = phi.41.t
+    desc = phi.41.d
+    picture = GFX_report_event_german_italian_plot
+
+    is_triggered_only = yes
+
+    option = {
+        name = phi.40.a
 
         if = {
-            limit = { tag = ENG }
+            limit = { FROM = { tag = ENG } }
+            create_wargoal = {
+                type = take_state_focus
+                target = ENG
+                generator = { 819 820 711 712 336 336 821 }
+            }
+        }
+
+        if = {
+            limit = { FROM = { tag = FRA } }
+            create_wargoal = {
+                target = FIC
+                type = annex_everything
+            }
+        }
+    }
+
+    option = {
+        name = phi.40.b
+    }
+}
+
+# Naval Equipment Purchases
+country_event = {
+    id = phi.42
+    title = phi.42.t
+    desc = phi.42.d
+    picture = GFX_report_event_hitler_handshake
+
+    is_triggered_only = yes
+
+    option = {
+        name = phi.42.a
+
+        if = {
+            limit = { has_dlc = "Man the Guns" }
+            send_equipment = {
+                equipment = ship_hull_submarine_1
+                target = PHI
+                amount = 10
+            }
+            send_equipment = {
+                equipment = ship_hull_light_1
+                target = PHI
+                amount = 10
+            }
+            send_equipment = {
+                equipment = ship_hull_cruiser_1
+                target = PHI
+                amount = 5
+            }
+            set_technology = { basic_ship_hull_submarine = 1 }
+            set_technology = { basic_ship_hull_light = 1 }
+            set_technology = { basic_ship_hull_cruiser = 1 }
+        }
+        if = {
+            limit = { NOT = { has_dlc = "Man the Guns" } }
+            send_equipment = {
+                equipment = submarine_1
+                target = PHI
+                amount = 10
+            }
+            send_equipment = {
+                equipment = destroyer_1
+                target = PHI
+                amount = 10
+            }
+            send_equipment = {
+                equipment = light_cruiser_1
+                target = PHI
+                amount = 5
+            }
             PHI = {
-                country_event = { id = PHI.48 }
+                set_technology = { basic_submarine = 1 }
+                set_technology = { basic_destroyer = 1 }
+                set_technology = { basic_light_cruiser = 1 }
             }
         }
-        if = {
-            limit = { tag = FRA }
-            PHI = {  
-                country_event = { id = PHI.49 }
-            }
-        }
+        PHI = { country_event = { id = phi.46 } }
+    }
+
+    option = {
+        name = phi.42.b
+
+        PHI = { country_event = { id = phi.47 } }
     }
 }
 
-# Britain says YES
+# Aircraft Purchase
 country_event = {
-    id = PHI.46
-    title = PHI.46.t
-    desc = PHI.46.d
-    picture = GFX_report_event_dutch_soldiers_indonesia
-
-    is_triggered_only = yes
-
-    option = {
-        name = PHI.46.a
-        add_political_power = 100
-    }
-}
-
-# France says YES
-country_event = {
-    id = PHI.47
-    title = PHI.47.t
-    desc = PHI.47.d
-    picture = GFX_report_event_dutch_soldiers_indonesia
-
-    is_triggered_only = yes
-
-    option = {
-        name = PHI.47.a
-        add_political_power = 100
-    }
-    
-}
-
-# Britain says no
-country_event = {
-    id = PHI.48
-    title = PHI.48.t
-    desc = PHI.48.d
-    picture = GFX_report_event_chamberlain
-
-    is_triggered_only = yes
-
-    option = {
-        name = PHI.48.a
-        create_wargoal = {
-            type = take_state_focus
-            target = ENG
-            generator = { 819 820 711 712 336 336 821 }
-        }
-    }
-
-    option = {
-        name = PHI.48.b
-        add_political_power = -100
-    }
-}
-
-# France says no
-country_event = {
-    id = PHI.49
-    title = PHI.49.t
-    desc = PHI.49.d
-    picture = GFX_report_event_degaulle_churchill
-
-    is_triggered_only = yes
-
-    option = {
-        name = PHI.49.a
-        create_wargoal = {
-            target = FIC
-            type = annex_everything
-        }
-    }
-
-    option = {
-        name = PHI.49.b
-        add_political_power = -100
-    }
-
-}
-
-# Request Naval Vessels
-country_event = {
-    id = PHI.50
-    title = PHI.50.t
-    desc = PHI.50.d
-    picture = GFX_report_event_destroyers
-
-    is_triggered_only = yes
-
-    option = {
-        name = PHI.50.a
-
-        ai_chance = {
-            factor = 100
-
-            modifier = {
-                factor = 2
-                JAP = { has_government = authoritarian_democrat }
-            }
-            modifier = {
-                factor = 10
-                JAP = { has_government = national_populist }
-            }
-            modifier = {
-                factor = 8
-                PHI = { has_war_with = FRA }
-            }
-            modifier = {
-                factor = 8
-                PHI = { has_war_with = ENG }
-            }
-        }
-
-        PHI = { 
-            country_event = { id = PHI.54 }
-        }
-    }
-
-    option = {
-        name = PHI.50.b
-
-        PHI = {
-            country_event = { id = PHI.58 }
-        }
-    }
-}
-
-# Request Aircraft Equipment
-country_event = {
-    id = PHI.51
-    title = PHI.51.t
-    desc = PHI.51.d
-    picture = GFX_report_event_fighters
-
-    is_triggered_only = yes
-
-    option = {
-        name = PHI.51.a
-
-        ai_chance = {
-            factor = 200
-
-            modifier = {
-                factor = 2
-                ENG = { has_government = authoritarian_democrat }
-            }
-            modifier = {
-                factor = 2
-                GER = { exists = no }
-            }
-            modifier = {
-                factor = 0.4
-                ENG = { has_war_with = GER }
-            }
-        }
-
-        PHI = {
-            country_event = { id = PHI.55 }
-        }
-    }
-
-    option = {
-        name = PHI.51.b
-
-        PHI = {
-            country_event = { id = PHI.59 }
-        }
-    }
-}
-
-# Filipino Panzers
-country_event = {
-    id = PHI.52
-    title = PHI.52.t
-    desc PHI.52.d
-    picture = GFX_report_event_generic_lend_lease
-
-    is_triggered_only = yes
-
-    option = {
-        name = PHI.52.a
-
-        ai_chance = {
-            factor = 100
-
-            modifier = {
-                factor = 10
-                PHI = { has_government = national_populist }
-            }
-            modifier = {
-                factor = 10
-                PHI = { has_war_with = FRA }
-                GER = { has_war_with = FRA }
-            }
-            modifier = {
-                factor = 0.4
-                PHI = { num_of_divisions > 10 }
-            }
-        }
-
-        PHI = {
-            country_event = { id = PHI.56 }
-        }
-    }
-
-    option = {
-        name = PHI.52.b
-        
-        PHI = {
-            country_event = { id = PHI.60 }
-        }
-    }
-}
-
-# American Firepower
-country_event = {
-    id = PHI.53
-    title = PHI.53.t
-    desc = PHI.53.d
-    picture = GFX_report_event_british_artillery
-
-    is_triggered_only = yes
-
-    option = {
-        name = PHI.53.a
-
-        ai_chance = {
-            factor = 200
-
-            modifier = {
-                factor = 10
-                USA = { is_in_faction_with = PHI }
-            }
-            modifier = {
-                factor = 2
-                PHI = { num_of_divisions < 200 }
-            }
-        }
-
-        PHI = {
-            country_event = { id = PHI.57 }
-        }
-    }
-
-    option = {
-        name = PHI.53.b
-
-        PHI = {
-            country_event = { id = PHI.61 }
-        }
-    }
-}
-
-# Japan Accepts
-country_event = {
-    id = PHI.54
-    title = PHI.54.t
-    desc = PHI.54.d
-    picture = GFX_report_event_japan_europe_pact
-
-    is_triggered_only = yes
-
-    option = {
-        name = PHI.54.a
-    }
-}
-
-# United Kingdom Accepts
-country_event = {
-    id = PHI.55
-    title = PHI.55.t
-    desc = PHI.55.d
+    id = phi.43
+    title = phi.43.t
+    desc = phi.43.d
     picture = GFX_report_event_generic_sign_treaty3
 
     is_triggered_only = yes
 
     option = {
-        name = PHI.55.a
-    }
-}
+        name = phi.43.a
 
-# Germany Accepts
-country_event = {
-    id = PHI.56
-    title = PHI.56.t
-    desc = PHI.56.d
-    picture = GFX_report_event_japan_europe_pact
-
-    is_triggered_only = yes
-
-    option = {
-        name = PHI.56.a
-    }
-}
-
-# USA Accepts
-country_event = {
-    id = PHI.57
-    title = PHI.57.t
-    desc = PHI.57.d
-    picture = GFX_report_event_generic_usa_treaty
-
-    is_triggered_only = yes
-
-    option = {
-        name = PHI.57.a
-    }
-}
-
-# Japan Refused
-country_event = {
-    id = PHI.58
-    title = PHI.58.t
-    desc = PHI.58.d
-    picture = GFX_report_event_generic_read_write
-
-    is_triggered_only = yes
-
-    option = {
-        name = PHI.58.a
-    }
-}
-
-# United Kingdom Refused
-country_event = {
-    id = PHI.59
-    title = PHI.59.t
-    desc = PHI.59.d
-    picture = GFX_report_event_canada_treaty
-
-    is_triggered_only = yes
-
-    option = {
-        name = PHI.59.a
-    }
-}
-
-# Germany Refused
-country_event = {
-    id = PHI.60
-    title = PHI.60.t
-    desc = PHI.60.d
-    picture = GFX_report_event_canada_treaty
-
-    is_triggered_only = yes
-
-    option = {
-        name = PHI.60.a
-    }
-}
-
-# USA Refused
-country_event = {
-    id = PHI.61
-    title = PHI.61.t
-    desc = PHI.61.d
-    picture = GFX_report_event_generic_read_write
-
-    is_triggered_only = yes
-
-    option = {
-        name = PHI.61.a
-    }
-}
-
-# Peace Treaty
-country_event = {
-    id = PHI.62
-    title = PHI.62.t
-    desc = PHI.62.d
-    picture = GFX_report_event_vienna_award_hungary
-
-    is_triggered_only = yes
-
-    option = {
-        name = PHI.62.a
-
-        ai_chance = {
-            factor = 200
-
-            modifier = {
-                factor = 10
-                FRA = { has_war_with = GER }
-            }
-            modifier = {
-                factor = 10
-                ENG = { has_war_with = GER }
-            }
-            modifier = {
-                factor = 10
-                ENG = { has_war_with = FRA }
-            }
-            modifier = {
-                factor = 10
-                ENG = { has_war_with = USA }
-            }
-            modifier = {
-                factor = 10
-                JAP = { has_war_with = FRA }
-            }
-            modifier = {
-                factor = 10
-                ENG = { has_war_with = JAP }
-            }
-            modifier = {
-                factor = 0.2
-                num_of_factories > 300
-                num_of_divisions > 300
-            }
+        send_equipment = {
+            equipment = fighter_equipment_1
+            amount = 100
+            target = PHI
+        }
+        send_equipment = {
+            equipment = CAS_equipment_1
+            amount = 100
+            target = PHI
+        }
+        send_equipment = {
+            equipment = nav_bomber_equipment_1
+            amount = 100
+            target = PHI
         }
 
-        custom_effect_tooltip = PHI_transfer_colonial_territories
+        PHI = {
+            if = {
+                limit = {
+                    has_tech = fighter2
+                    NOT = { has_tech = fighter3 }
+                }
+                set_technology = { fighter3 = 1 }
+            }
+            if = {
+                limit = {
+                    has_tech = fighter1
+                    NOT = { has_tech = fighter2 }
+                }
+                set_technology = { fighter2 = 1 }
+            }
+            if = {
+                limit = {
+                    has_tech = CAS2
+                    NOT = { has_tech = CAS3 }
+                }
+                set_technology = { CAS3 = 1 }
+            }
+            if = {
+                limit = {
+                    has_tech = CAS1
+                    NOT = { has_tech = CAS2 }
+                }
+                set_technology = { CAS2 = 1 }
+            }
+            if = {
+                limit = {
+                    has_tech = naval_bomber2
+                    NOT = { has_tech = naval_bomber3 }
+                }
+                set_technology = { naval_bomber3 = 1 }
+            }
+            if = {
+                limit = {
+                    has_tech = naval_bomber1
+                    NOT = { has_tech = naval_bomber2 }
+                }
+                set_technology = { naval_bomber2 = 1 }
+            }
+            country_event = { id = phi.46 }
+        }
+    }
 
+    option = {
+        name = phi.43.b
+
+        PHI = { country_event = { id = phi.47 } }
+    }
+}
+
+# Tank Purchase
+country_event = {
+    id = phi.44
+    title = phi.44.t
+    desc = phi.44.d
+    picture = GFX_report_event_generic_sign_treaty3
+
+    is_triggered_only = yes
+
+    option = {
+        name = phi.44.a
+
+        send_equipment = {
+            equipment = light_tank_equipment_2
+            amount = 100
+            target = PHI
+        }
+        send_equipment = {
+            equipment = medium_tank_equipment_1
+            amount = 100
+            target = PHI
+        }
+        send_equipment = {
+            equipment = heavy_tank_equipment_1
+            amount = 100
+            target = PHI
+        }
+        PHI = {
+            if = {
+                limit = { has_tech = improved_light_tank }
+                set_technology = { advanced_light_tank = 1 }
+            }
+            if = {
+                limit = { 
+                    has_tech = basic_light_tank
+                    NOT = { has_tech = improved_medium_tank }
+                }
+                set_technology = { improved_light_tank = 1 }
+            }
+            if = {
+                limit = { 
+                    has_tech = gwtank
+                    NOT = { has_tech = basic_light_tank }
+                }
+                set_technology = { basic_light_tank = 1 }
+            }
+            if = {
+                limit = { 
+                    has_tech = improved_medium_tank
+                    NOT = { has_tech = advanced_medium_tank }
+                }
+                set_technology = { advanced_medium_tank = 1 }
+            }
+            if = {
+                limit = {
+                    has_tech = basic_medium_tank
+                    NOT = { has_tech = improved_medium_tank }
+                }
+                set_technology = { improved_medium_tank = 1 }
+            }
+            if = {
+                limit = {
+                    has_tech = improved_heavy_tank
+                    NOT = { has_tech = advanced_heavy_tank }
+                }
+                set_technology = { advanced_heavy_tank = 1 }
+            }
+            if = {
+                limit = {
+                    has_tech = basic_heavy_tank
+                    NOT = { has_tech = improved_heavy_tank }
+                }
+                set_technology = { improved_heavy_tank = 1 }
+            }
+            PHI = { country_event = { id = phi.46 } }
+        }
+    }
+    option = {
+        name = phi.44.b
+
+        PHI = { country_event = { id = phi.47 } }
+    }
+}
+
+# Equipment Aid
+country_event = {
+    id = phi.44
+    title = phi.44.t
+    desc = phi.44.d
+    picture = GFX_report_event_election_vote
+
+    is_triggered_only = yes
+
+    option = {
+        name = phi.44.a
+
+        send_equipment = {
+            equipment = artillery_equipment_1
+            amount = 1000
+            target = PHI
+        }
+        send_equipment = {
+            equipment = infantry_equipment_1
+            amount = 1000
+            target = PHI
+        }
+        send_equipment = {
+            equipment = support_equipment_1
+            amount = 1000
+            target = PHI
+        }
+
+        PHI = {
+            country_event = { id = phi.46 }
+        }
+    }
+
+    option = {
+        name = phi.44.b
+
+        PHI = {
+            country_event = { id = phi.47 }
+        }
+    }
+}
+
+# FROM accepts Purchase
+country_event = {
+    id = phi.46
+    title = phi.46.t
+    desc = phi.46.d
+    picture = GFX_report_event_generic_sign_treaty3
+
+    is_triggered_only = yes
+
+    option = {
+        name = phi.46.a
+    }
+}
+
+# FROM rejects Purchase
+country_event = {
+    id = phi.47
+    title = phi.47.t
+    desc = phi.47.d
+    picture = GFX_report_event_generic_sign_treaty3
+
+    is_triggered_only = yes
+
+    option = {
+        name = phi.47.a
+    }
+}
+
+# Peace
+country_event = {
+    id = phi.48
+    title = phi.48.t
+    desc = phi.48.d
+    picture = GFX_report_event_dutch_soldiers_indonesia
+
+    is_triggered_only = yes
+
+    option = {
+        name = phi.48.a
+
+        custom_effect_tooltip = PHI_transfer_colonial_territories
         hidden_effect = {
             if = {
                 limit = { tag = ENG }
@@ -1936,707 +2144,35 @@ country_event = {
     }
 
     option = {
-        name = PHI.62.b
+        name = phi.48.b
 
         add_political_power = -50
         add_stability = -0.05
         add_war_support = -0.05
     }
-    
 }
 
 # Soviet Aid
 country_event = {
-    id = PHI.63
-    title = PHI.63.t
-    desc = PHI.63.d
-    picture = GFX_report_event_generic_lend_lease
+    id = phi.49
+    title = phi.49.t
+    desc = phi.49.d
+    picture = GFX_report_stalin_02
 
     is_triggered_only = yes
 
     option = {
-        name = PHI.63.a
+        name = phi.49.a
+        PHI = { add_ideas = PHI_soviet_aid_military }
+    }
 
-        ai_chance = {
-            factor = 40
-
-            modifier = {
-                factor = 10
-                PHI = { has_government = SOV }
-            }
-            modifier = {
-                factor = 10
-                PHI = { has_war_with = JAP }
-            }
-            modifier = {
-                factor = 10
-                PHI = { has_war_with = ENG }
-                ENG = { has_government = paternal_autocrat }
-            }
-            modifier = {
-                factor = 2
-                ENG = { has_war_with = PHI }
-            }
-            modifier = {
-                factor = 8
-                PHI = { has_war_with = USA }
-            }
-        }
-
-        PHI = { 
-            add_ideas = PHI_soviet_aid_army
-            add_opinion_modifier = {
-                target = SOV
-                modifier = aid_accepted
-            }
-            country_event = { id = PHI.42 }
-        }
+    option =  {
+        name = phi.49.b
+        PHI = { add_ideas = PHI_soviet_aid_industry }
     }
 
     option = {
-        name = PHI.63.b
-
-        PHI = { 
-            add_ideas = PHI_soviet_aid_industry
-            add_opinion_modifier = {
-                target = SOV
-                modifier = aid_accepted
-            }
-            country_event = { id = PHI.42 }
-        }
-    }
-
-    option = {
-        name = PHI.63.c
-
-        add_political_power = -100
-        PHI = {
-            country_event = { id = PHI.43 }
-        }
-    }
-}
-
-# Request to Transfer SE Colonies
-country_event = {
-    id = PHI.64
-    title = PHI.64.t
-    desc = PHI.64.d
-    picture = GFX_report_event_generic_sign_treaty3
-
-    is_triggered_only = yes
-
-    option = {
-        name = PHI.64.a
-
-        ai_chance = {
-            factor = 20
-
-            modifier = {
-                factor = 10
-                has_war_with = GER
-            }
-            modifier = {
-                factor = 10
-                has_war_with = USA
-            }
-            modifier = {
-                factor = 10
-                has_war_with = SOV
-            }
-            modifier = {
-                factor = 0.4
-                num_of_divisions > 200
-            }
-        }
-
-        PHI = { 
-            country_event = { id = PHI.65 }
-            if = {
-                limit = { ENG = { controls_state = 819 } }
-                transfer_state = 819
-            }
-            if = {
-                limit = { ENG = { controls_state = 820 } }
-                transfer_state = 820
-            }
-            if = {
-                limit = { ENG = { controls_state = 336 } }
-                transfer_state = 336
-            }
-            if = {
-                limit = { ENG = { controls_state = 336 } }
-                transfer_state = 336
-            }
-            if = {
-                limit = { ENG = { controls_state = 821 } }
-                transfer_state = 821
-            }
-            if = {
-                limit = { ENG = { controls_state = 711 } }
-                transfer_state = 711
-            }
-            if = {
-                limit = { ENG = { controls_state = 712 } }
-                transfer_state = 712
-            }
-            if = {
-                limit = { ENG = { controls_state = 288 } }
-                transfer_state = 288
-            }
-            if = {
-                limit = { ENG = { controls_state = 640 } }
-                transfer_state = 640
-            }
-            if = {
-                limit = { ENG = { controls_state = 805 } }
-                transfer_state = 805
-            }
-            if = {
-                limit = { ENG = { controls_state = 812 } }
-                transfer_state = 812
-            }
-            if = {
-                limit = { ENG = { controls_state = 1007 } }
-                transfer_state = 1007
-            }
-            if = {
-                limit = { BEA = { exists = yes is_subject_of = ENG } }
-                ENG = { end_puppet = BEA }
-                PHI = { puppet = BEA }
-            }
-        }
-    }
-
-    option = {
-        name = PHI.64.b
-        PHI = { country_event = { id = PHI.66 } }
-        add_political_power = -50
-    }
-}
-
-# UK accepted to transfer SE Asian Colonies
-country_event = {
-    id = PHI.65
-    title = PHI.65.t
-    desc = PHI.65.d
-    picture = GFX_report_event_vienna_award_hungary
-
-    is_triggered_only = yes
-
-    option = {
-        name = PHI.65.a
-        add_political_power = 50
-    }
-}
-
-# UK refused to transfer SE Asian Colonies
-country_event = {
-    id = PHI.66
-    title = PHI.66.t
-    desc = PHI.66.d
-    picture = GFX_report_event_vienna_award_hungary
-
-    is_triggered_only = yes
-
-    option = {
-        name = PHI.66.a
-    }
-}
-
-# Philippines steals Indochina
-country_event = {
-    id = PHI.67
-    title = PHI.67.t
-    desc = PHI.67
-    picture = GFX_report_event_dutch_soldiers_indonesia
-
-    is_triggered_only = yes
-
-    option = {
-        name = PHI.67.a
-
-        ai_chance = {
-            factor = 20
-
-            modifier = {
-                factor = 10
-                has_war_with = no
-            }
-            modifier = {
-                factor = 2
-                has_full_control_of_state = 5
-            }
-            modifier = {
-                factor = 0.5
-                has_war_with = GER
-            }
-        }
-
-        add_political_power = -100
-        add_war_support = -0.10
-        add_stability = -0.05
-        
-        declare_war_on = {
-            target = PHI
-            type = puppet
-        }
-    }
-
-    option = {
-        name = PHI.67.b
-
-        add_political_power = 100
-        add_manpower = 15000
-    }
-}
-
-# Purchase Sabah
-country_event = {
-    id = PHI.68
-    title = PHI.68.t
-    desc = PHI.68.d
-    picture = GFX_report_event_hitler_handshake
-
-    is_triggered_only = yes
-
-    option = {
-        name = PHI.68.a
-
-        if = {
-            limit = { BEA = { controls_state = 785 } }
-            BEA = { 
-                remove_state_core = 785 
-                
-                add_timed_idea = {
-                    idea = PHI_sabah_purchase_s
-                    days = 180
-                }
-            }
-            INS = { 
-                remove_state_core = 785
-                add_state_claim = 785
-            }
-            PHI = { 
-                transfer_state = 785
-                add_state_core = 785
-
-                add_timed_idea = {
-                    idea = PHI_sabah_purchase_b
-                    days = 180
-                }
-                hidden_effect = {
-                    country_event = { id = PHI.69 }
-                }
-            }
-        }
-    }
-
-    option = {
-        name = PHI.68.b
-        add_political_power = -100
-        PHI = { 
-            country_event = { id = PHI.70 }
-        }
-    }
-}
-
-# BEA Accepts Sabah Purchase
-country_event = {
-    id = PHI.69
-    title = PHI.69.t
-    desc = PHI.69.d
-    picture = GFX_report_event_generic_sign_treaty3
-
-    is_triggered_only = yes
-
-    option = {
-        name = PHI.69.a
-        add_political_power = 50
-    }
-}
-
-# BEA Refused Sabah Purchase
-country_event = {
-    id = PHI.70
-    title = PHI.70.t
-    desc = PHI.70.d
-    picture = GFX_report_event_generic_sign_treaty3
-
-    is_triggered_only = yes
-
-    option = {
-        name = PHI.70.a
-        PHI = { add_state_claim = 785 }
-    }
-}
-
-# Purchase Pacific Islands
-country_event = {
-    id = PHI.71
-    title = PHI.71.t
-    desc = PHI.71.d
-    picture = GFX_report_event_hitler_handshake
-
-    is_triggered_only = yes
-
-    option = {
-        name = PHI.71.a
-
-        if = {
-            limit = { 
-                JAP = { 
-                    controls_state = 647
-                    controls_state = 684
-                    
-                } 
-            }
-
-            JAP = {
-                add_timed_idea = {
-                    idea = PHI_island_territories_purchase_s
-                    days = 180
-                }
-                remove_state_core = 647
-                remove_state_core = 684
-            }
-
-            PHI = { 
-                transfer_state = 647
-                transfer_state = 684
-                add_state_core = 647
-                add_state_core = 684
-
-                add_timed_idea = {
-                    idea = PHI_island_territories_purchase_b
-                    days = 180
-                }
-                hidden_effect = {
-                    country_event = { id = PHI.72 }
-                }
-            }
-        }
-    }
-
-    option = {
-        name = PHI.71.b
-        add_political_power = -100
-        PHI = { 
-            country_event = { id = PHI.73 }
-        }
-    }
-}
-
-# JAP Accepts Purchase
-country_event = {
-    id = PHI.72
-    title = PHI.72.t
-    desc = PHI.72.d
-    picture = GFX_report_event_generic_sign_treaty3
-
-    is_triggered_only = yes
-
-    option = {
-        name = PHI.72.a
-        add_political_power = 50
-    }
-}
-
-# JAP Refused Purchase
-country_event = {
-    id = PHI.73
-    title = PHI.73.t
-    desc = PHI.73.d
-    picture = GFX_report_event_generic_sign_treaty3
-
-    is_triggered_only = yes
-
-    option = {
-        name = PHI.73.a
-        PHI = { 
-            add_state_claim = 647
-            add_state_claim = 684
-        }
-    }
-}
-
-# Filipino support in China
-country_event = {
-    id = PHI.74
-    title = PHI.74.t
-    desc = PHI.74.d
-    picture = GFX_report_event_generic_sign_treaty3
-
-    is_triggered_only = yes
-
-    option = {
-        name = PHI.74.a
-
-        CHI = { add_ideas = PHI_filipino_support }
-        PHI = {
-            country_event = { id = PHI.75 }
-        }
-    }
-
-    option = {
-        name = PHI.74.b
-
-        PHI = {
-            country_event = { id = PHI.76 }
-        }
-    }
-}
-
-# China Accepted Support
-country_event = {
-    id = PHI.75
-    title = PHI.75.t
-    desc = PHI.75.d
-    picture = GFX_report_event_generic_lend_lease
-
-    is_triggered_only = yes
-
-    option = {
-        name = PHI.75.a
-        army_experience = 50
-    }
-}
-
-# China Refused Support
-country_event = {
-    id = PHI.76
-    title = PHI.76.t
-    desc = PHI.76.d
-
-    is_triggered_only = yes
-
-    option = {
-        name = PHI.76.a
-        army_experience = 20
-    }
-}
-
-# Chinese Subjugation
-country_event = {
-    id = PHI.77
-    title = PHI.77.t
-    desc = PHI.77.d
-
-    is_triggered_only = yes
-
-    option = {
-        name = PHI.77.a
-        add_stability = 0.1
-
-        ai_chance = {
-            factor = 200
-
-            modifier = {
-                factor = 10
-                PHI = { has_country_flag = PHI_RETURN_OF_DEMOCRACY }
-            }
-            modifier = {
-                factor = 10
-                PHI = { num_of_divisions > 50 }
-            }
-            modifier = {
-                factor = 10
-                PHI = { num_of_factories > 50 }
-            }
-        }
-
-        if = { 
-            limit = { has_dlc = "Together for Victory" } 
-            set_autonomy = {
-                target = CHI
-                autonomy_state = autonomy_colony
-            }
-        }
-        if = {
-            limit = { NOT = { has_dlc = "Together for Victory" } }
-            puppet = CHI
-        }
-
-        if = {
-            limit = { has_war_with = JAP }
-            every_country = {
-                limit = { is_in_faction_with = JAP }
-                white_peace = CHI
-            }
-        }
-    }
-
-    option = {
-        name = PHI.77.b
-
-        add_political_power = 100
-    }
-}
-
-country_event = {
-    id = PHI.78
-    title = PHI.78.t
-    desc = PHI.78.d
-    picture = GFX_report_event_albanian_partisans
-
-    fire_only_once = yes
-
-    mean_time_to_happen = {
-        days = 240
-    }
-
-    trigger = {
-        original_tag = PHI
-        date > 1936.2.20
-    }
-
-    option = {
-        name = PHI.78.a
+        name = phi.49.c
         add_political_power = -10
-    }
-}
-
-# German Refugees
-country_event = {
-    id = PHI.79
-    title = PHI.79.t
-    desc = PHI.79.d
-
-    trigger = {
-        original_tag = PHI
-        GER = { has_completed_focus = GER_form_govt }
-    }
-
-    fire_only_once = yes
-
-    option = {
-        name = PHI.79.a
-
-        ai_chance = {
-            factor = 400
-
-            modifier = {
-                factor = 2
-                num_of_divisions > 30
-            }
-        }
-
-        add_stability = -0.05
-        add_timed_idea = {
-            idea = PHI_german_refugees
-            days = 1440
-        }
-        hidden_effect = {
-            country_event = {
-                id = PHI.83
-                days = 30
-            }
-        }
-    }
-    option = {
-        name = PHI.79.b
-
-        add_stability = 0.05
-        add_popularity = {
-            ideology = valkist
-            popularity = 0.05
-        }
-    }
-}
-
-country_event = {
-    id = PHI.80
-    title = PHI.80.t
-    desc = PHI.80.d
-    picture = GFX_report_event_election_vote
-
-    is_triggered_only = yes
-
-    option = {
-        name = PHI.80.a
-        custom_effect_tooltip = PHI_new_elections_called
-        add_political_power = 500
-        hidden_effect = { country_event = { id = PHI.2 days = 14 } }
-    }
-
-    option = {
-        name = PHI.80.b
-        add_political_power = -500
-    }
-}
-
-# Communist Revolt!
-country_event = {
-    id = PHI.81
-    title = PHI.81.t
-    desc = PHI.81.d
-
-    picture = GFX_report_event_albanian_partisans
-
-    is_triggered_only = yes
-
-    option = {
-        name = PHI.81.a
-
-        custom_effect_tooltip = PHI_communist_revolt
-        hidden_effect = {
-            327 = { add_core_of = UFC }
-            release = UFC
-            UFC = {
-                load_oob = "UFC_1936"
-                transfer_state = 327
-                declare_war_on = {
-                    type = annex_everything
-                    target = PHI
-                }
-            }
-            PHI = {
-                set_capital = 623
-                load_oob = "PHI_1936_civil_war"
-            }
-            every_state = {
-                limit = { is_core_of = PHI }
-                add_core_of = UFC
-            }
-        }
-    }
-}
-
-country_event = {
-    id = PHI.82
-    title = PHI.82.t
-    desc = PHI.82.d
-    picture = GFX_report_event_german_troops_paris
-
-    is_triggered_only = yes
-
-    option = {
-        name = PHI.82.a
-
-        add_political_power = -200
-        add_stability = 0.1
-        add_war_support = 0.1
-    }
-}
-
-country_event = {
-    id = PHI.83
-    title = PHI.83.t
-    desc = PHI.83.d
-    picture = GFX_report_event_hitler_handshake
-
-    is_triggered_only = yes
-
-    option = {
-        name = PHI.83.a
-        hidden_effect = {
-            set_country_flag = PHI_GER_IMPERIAL_FAMILY
-        }
-        add_ideas = PHI_german_imperial_family
-        add_war_support = 0.05
-    }
-
-    option = {
-        name = PHI.83.b
-        add_stability = 0.05
     }
 }

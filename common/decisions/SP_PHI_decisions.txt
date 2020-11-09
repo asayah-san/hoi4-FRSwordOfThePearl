@@ -1,3 +1,159 @@
+PHI_seato = {
+    PHI_invite_vietnam = {
+        visible = { 
+            VIN = { 
+                exists = yes
+                NOT = { is_in_faction_with = ROOT }
+            } 
+        }
+
+        available = {
+            VIN = {
+                is_subject = no
+                is_in_faction = no
+            }
+        }
+
+        cost = 100
+
+        complete_effect = {
+            VIN = { country_event = { id = PHI.19 } }
+        }
+    }
+
+    PHI_invite_burma = {
+        visible = {
+            BRM = {
+                exists = yes
+                NOT = { is_in_faction_with = ROOT }
+            }
+        }
+
+        available = {
+            BRM = {
+                is_subject = no
+                is_in_faction = no
+            }
+        }
+
+        cost = 100
+
+        complete_effect = {
+            BRM = { country_event = { id = PHI.19 } }
+        }
+    }
+
+    PHI_invite_laos = {
+        visible = {
+            LAO = {
+                exists = yes
+                NOT = { is_in_faction_with = ROOT }
+            }
+        }
+
+        available = {
+            LAO = {
+                is_subject = no
+                is_in_faction = no
+            }
+        }
+
+        cost = 100
+
+        complete_effect = {
+            LAO = { country_event = { id = PHI.19 } }
+        }
+    }
+
+    PHI_invite_cambodia = {
+        visible = {
+            CAM = {
+                exists = yes
+                NOT = { is_in_faction_with = ROOT }
+            }
+        }
+
+        available = {
+            CAM = {
+                is_subject = no
+                is_in_faction = no
+            }
+        }
+
+        cost = 100
+
+        complete_effect = {
+            CAM = { country_event = { id = PHI.19 } }
+        }
+    }
+
+    PHI_invite_insulindia = {
+        visible = {
+            INS = {
+                exists = yes
+                NOT = { is_in_faction_with = ROOT }
+            }
+        }
+
+        available = {
+            INS = {
+                is_subject = no
+                is_in_faction = no
+            }
+        }
+
+        cost = 100
+
+        complete_effect = {
+            INS = { country_event = { id = PHI.19 } }
+        }
+    }
+
+    PHI_invite_siam = {
+        visible = {
+            SIA = {
+                exists = yes
+                NOT = { is_in_faction_with = ROOT }
+            }
+        }
+
+        available = {
+            SIA = {
+                is_subject = no
+                is_in_faction = no
+            }
+        }
+
+        cost = 100
+
+        complete_effect = {
+            SIA = { country_event = { id = PHI.19 } }
+        }
+    }
+
+    PHI_invite_malaysia = {
+        visible = {
+            MAL = {
+                exists = yes
+                NOT = { is_in_faction_with = ROOT }
+            }
+        }
+
+        available = {
+            MAL = {
+                is_subject = no
+                is_in_faction = no
+            }
+        }
+
+        cost = 100
+
+        complete_effect = {
+            MAL = { country_event = { id = PHI.19 } }
+        }
+    }
+}
+
 PHI_the_kaiserreich = {
 
     PHI_restore_the_kaiserreich = {

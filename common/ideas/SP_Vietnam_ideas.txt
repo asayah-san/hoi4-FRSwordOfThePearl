@@ -13,7 +13,7 @@ ideas = {
             }
         }
 
-        VIN_ineffective_governance = {
+        VIN_unstable_state = {
             allowed = { original_tag = VIN }
 
             picture = generic_disjointed_gov
@@ -25,37 +25,108 @@ ideas = {
             }
         }
 
-        VIN_private_arms_factories = {
+        VIN_bandits = {
             allowed = { original_tag = VIN }
 
-            picture = generic_production_bonus
+            picture = ROM_king_carol_emptied_accounts
 
             modifier = {
-                production_factory_max_efficiency_factor = 0.1
+                consumer_goods_factor = 0.02
+                stability_factor = -0.05
             }
         }
 
-        VIN_stable_currency = {
+        VIN_free_thought = {
             allowed = { original_tag = VIN }
 
-            picture = new_deal
+            picture = jap_supremacy_of_will
 
             modifier = {
-                consumer_goods_factor = -0.02
+                political_power_gain = -0.05
+                research_speed_factor = 0.05
             }
         }
 
-        VIN_government_partnerships = {
+        VIN_modernist_culture_idea = {
             allowed = { original_tag = VIN }
 
-            picture = generic_goods_red_bonus
+            picture = generic_communism_drift_bonus
 
             modifier = {
-                production_speed_building_factor = 0.1
+                political_power_gain = 0.05
             }
         }
 
-        VIN_state_welfare = {
+        VIN_state_propaganda = {
+            allowed = { original_tag = VIN }
+
+            picture = jap_the_unthinkable_option
+
+            modifier = {
+                political_power_gain = 0.05
+                stability_factor = 0.15
+                war_support_factor = 0.15
+            }
+        }
+
+        VIN_higher_taxes_for_corporations_idea = {
+            allowed = { original_tag = VIN }
+
+            picture = state_economy
+
+            modifier = {
+                consumer_goods_factor = -0.05
+                production_factory_max_efficiency_factor = -0.05
+            }
+        }
+
+        VIN_labour_code_idea = {
+            allowed = { original_tag = VIN }
+
+            picture = country_focus_efficency
+
+            modifier = {
+                production_factory_max_efficiency_factor = -0.05
+                industrial_capacity_factory = 0.05
+                industrial_capacity_dockyard = 0.05
+            }
+        }
+
+        VIN_agriculture_loans = {
+            allowed = { original_tag = VIN }
+
+            picture = generic_agrarian_reform
+
+            modifier = {
+                out_of_supply_factor = -0.05
+                attrition = -0.05
+            }
+        }
+
+        VIN_corporations_supported = {
+            allowed = { original_tag = VIN }
+
+            picture = generic_foreign_capital
+
+            modifier = {
+                production_factory_max_efficiency_factor = 0.05
+                political_power_gain = -0.05
+                industrial_capacity_factory = -0.05
+                industrial_capacity_dockyard = -0.05
+            }
+        }
+
+        VIN_saigon_military_academy = {
+            allowed = { original_tag = VIN }
+
+            picture = HUN_secret_rearmament
+
+            modifier = {
+                training_time_factor = -0.1
+            }
+        }
+
+        VIN_welfare = {
             allowed = { original_tag = VIN }
 
             picture = raj_risk_of_famine
@@ -63,16 +134,6 @@ ideas = {
             modifier = {
                 industrial_capacity_factory = 0.15
                 industrial_capacity_dockyard = 0.15
-            }
-        }
-
-        VIN_saigon_military_academy = {
-            allowed = { original_tag = VIN }
-
-            picture = generic_infantry_bonus
-
-            modifier = {
-                training_time_factor = -0.1
             }
         }
     }

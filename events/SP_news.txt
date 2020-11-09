@@ -129,3 +129,40 @@ news_event = {
         name = news.7.a
     }
 }
+
+news_event = {
+    id = news.8
+    title = news.8.t
+    desc = news.8.d
+    picture = GFX_news_event_PHI_sabah_occupied
+
+    major = yes
+
+    show_major = { NOT = { tag = PHI } }
+
+    is_triggered_only = yes
+
+    option = {
+        name = news.8.a
+
+        trigger = {
+            OR = {
+                tag = BEA
+                tag = INS
+            }
+        }
+    }
+
+    option = {
+        name = news.8.b
+
+        trigger = {
+            NOT = {
+                OR = {
+                    tag = BEA
+                    tag = INS
+                }
+            }
+        }
+    }
+}

@@ -122,10 +122,10 @@ create_country_leader = {
 	traits = { }
 }
 create_country_leader = {
-	name = "Elpidio Quirino"
-	desc = "POLITICS_ELPIDIO_QUIRINO_DESC"
-	picture = "Portrait_Philippines_Elipidio_Quirino.tga"
-	expire = "1970.3.13"
+	name = "Manuel Roxas"
+	desc = "POLITICS_MANUEL_ROXAS"
+	picture = "Portrait_Philippines_Manuel_Roxas.tga"
+	expire = "1955.2.1"
 	ideology = social_liberal_subtype
 	traits = {  }
 }

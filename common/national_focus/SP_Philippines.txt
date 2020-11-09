@@ -19,7 +19,6 @@ focus_tree = {
     # Democracy Returns
     focus = {
         id = PHI_democracy_returns
-        #icon = GFX_goal_liberty
         icon = GFX_goal_philippines_democracy
         x = 4
         y = 0
@@ -33,7 +32,7 @@ focus_tree = {
                 has_government = social_conservative
             }
         }
-        available = { has_country_flag = PHI_RETURN_OF_DEMOCRACY }
+        available = { has_country_flag = PHI_DEMOCRACY_RETURNS_FLAG }
         ai_will_do = {
             factor = 0
         }
@@ -58,7 +57,7 @@ focus_tree = {
             focus = PHI_liberal_victory
             focus = PHI_conservative_victory
         }
-        available = { has_country_flag = PHI_ELECTION_SOC_DEM_VICTORY }
+        available = { has_country_flag = PHI_PP_VICTORY_FLAG }
         completion_reward = {}
     }
 
@@ -252,7 +251,7 @@ focus_tree = {
             focus = PHI_social_democrat_victory
             focus = PHI_conservative_victory
         }
-        available = { has_country_flag = PHI_ELECTION_LIBERAL_VICTORY }
+        available = { has_country_flag = PHI_LP_VICTORY_FLAG }
         completion_reward = {}
     }
 
@@ -465,7 +464,7 @@ focus_tree = {
             focus = PHI_social_democrat_victory
             focus = PHI_liberal_victory
         }
-        available = { has_country_flag = PHI_ELECTION_CONSERVATIVE_VICTORY }
+        available = { has_country_flag = PHI_NP_VICTORY_FLAG }
         completion_reward = {}
     }
 
@@ -536,7 +535,7 @@ focus_tree = {
         completion_reward = {
             every_country = {
                 limit = { is_major = yes }
-                country_event = { id = PHI.26 }
+                country_event = { id = phi.22 }
             }
         }
     }
@@ -601,7 +600,7 @@ focus_tree = {
         x = 12
         y = 0
         cost = 0
-        available = { has_country_flag = PHI_AGUINALDO_COUP_SUCCESS }
+        available = { has_country_flag = PHI_AGUINALDO_COUP_SUCCESS_FLAG }
         bypass = { has_government = national_populist }
         available_if_capitulated = yes
         completion_reward = {}
@@ -786,8 +785,8 @@ focus_tree = {
 				popularity = -0.05
             }
             random_list = {
-                30 = { country_event = { id = PHI.81 } }
-                70 = { country_event = { id = PHI.82 } }
+                30 = { country_event = { id = phi.25 } }
+                70 = { country_event = { id = phi.26 } }
             }
         }
     }
@@ -854,13 +853,6 @@ focus_tree = {
         prerequisite = { focus = PHI_enlist_the_unemployed_focus }
         completion_reward = {
             add_ideas = PHI_nationalism
-
-            hidden_effect = {
-                if = { 
-                    limit = { has_government = paternal_autocrat }
-                    country_event = { id = PHI.80 days = 14 }
-                }
-            }
         }
     }
 
@@ -876,7 +868,7 @@ focus_tree = {
         x = 16
         y = 0
         cost = 0
-        available = { has_country_flag = PHI_MILITARY_JUNTA_CONTINUES}
+        available = { has_country_flag = PHI_MILITARY_JUNTA_FLAG }
         bypass = { has_government = paternal_autocrat }
         available_if_capitulated = yes
         completion_reward = {}
@@ -2466,7 +2458,7 @@ focus_tree = {
         available_if_capitulated = yes
         prerequisite = { focus = PHI_the_emperor }
         completion_reward = {
-            JAP = { country_event = { id = PHI.44 } }
+            JAP = { country_event = { id = phi.36 } }
         }
     }
 
@@ -2481,21 +2473,30 @@ focus_tree = {
         available = { has_country_flag = PHI_JAP_TRADE }
         prerequisite = { focus = PHI_japanese_trade_deal }
         completion_reward = {
-            JAP = { country_event = { id = PHI.29 } }
+            JAP = { country_event = { id = phi.30 } }
         }
     }
 
-    # Request Japanese Naval Vessels
+    # Purchase Naval Equipment
     focus = {
-        id = PHI_request_japanese_naval_vessels
+        id = PHI_purchase_naval_equipment
         icon = GFX_goal_generic_navy_battleship
         x = 8
         y = 12
         cost = 10
         available_if_capitulated = yes
+        mutually_exclusive = { focus = PHI_purcahse_air_equipment }
         prerequisite = { focus = PHI_our_place_in_the_sphere }
+        prerequisite = { focus = PHI_purchase_british_air_equipment }
         completion_reward = {
-            JAP = { country_event = { id = PHI.50 } }
+            if = {
+                limit = { is_in_faction_with = JAP }
+                JAP = { country_event = { id = phi.42 } }
+            }
+            if = {
+                limit = { is_in_faction_with = ENG }
+                ENG = { country_event = { id = phi.42 } }
+            }
         }
     }
 
@@ -2508,7 +2509,7 @@ focus_tree = {
         cost = 10
         available_if_capitulated = yes
         prerequisite = { focus = PHI_joint_naval_exercises }
-        prerequisite = { focus = PHI_request_japanese_naval_vessels }
+        prerequisite = { focus = PHI_purchase_naval_equipment }
         completion_reward = {
             add_ideas = PHI_japanese_support
         }
@@ -2551,7 +2552,7 @@ focus_tree = {
         available_if_capitulated = yes
         prerequisite = { focus = PHI_the_king }
         completion_reward = {
-            ENG = { country_event = { id = PHI.44 } }
+            ENG = { country_event = { id = phi.36 } }
         }
     }
 
@@ -2566,39 +2567,32 @@ focus_tree = {
         available = { has_country_flag = PHI_ENG_TRADE }
         prerequisite = { focus = PHI_british_trade_deal }
         completion_reward = {
-            ENG = { country_event = { id = PHI.32 } }
-        }
-    }
-
-    # Guardian of the Pacific
-    focus = {
-        id = PHI_guardian_of_the_pacific
-        icon = GFX_focus_generic_self_management
-        x = 13
-        y = 12
-        cost = 5
-        available_if_capitulated = yes
-        prerequisite = { focus = PHI_protection_from_the_empire }
-        mutually_exclusive = { focus = PHI_demand_british_colonial_holdings }
-        available = {
-            PHI = { is_subject_of = ENG }
-        }
-        completion_reward = {
-            ENG = { country_event = { id = PHI.64 } }
+            ENG = { country_event = { id = phi.30 } }
         }
     }
 
     # Purchase British Air Equipment
     focus = {
-        id = PHI_purchase_british_air_equipment
+        id = PHI_purchase_air_equipment
         icon = GFX_goal_generic_air_fighter
         x = 10
         y = 12
         cost = 10
         available_if_capitulated = yes
-        prerequisite = { focus = PHI_protection_from_the_empire }
+        mutually_exclusive = { focus = PHI_purchase_naval_equipment }
+        prerequisite = { 
+            focus = PHI_protection_from_the_empire
+            focus = PHI_our_place_in_the_sphere
+        }
         completion_reward = {
-            ENG = { country_event = { id = PHI.51 } }
+            if = {
+                limit = { is_in_faction_with = JAP }
+                JAP = { country_event = { id = phi.43 } }
+            }
+            if = {
+                limit = { is_in_faction_with = ENG }
+                ENG = { country_event = { id = phi.42 } }
+            }
         }
     }
 
@@ -2610,7 +2604,7 @@ focus_tree = {
         y = 14
         cost = 10
         available_if_capitulated = yes
-        prerequisite = { focus = PHI_purchase_british_air_equipment }
+        prerequisite = { focus = PHI_purchase_air_equipment }
         prerequisite = { focus = PHI_joint_naval_exercises }
         completion_reward = {
             add_ideas = PHI_british_support
@@ -2640,79 +2634,6 @@ focus_tree = {
                 bonus = 1.0
                 uses = 1
                 category = naval_doctrine
-            }
-        }
-    }
-
-    # Support the Chinese
-    focus = {
-        id = PHI_support_the_chinese
-        icon = GFX_focus_chi_cooperation_with_the_nationalists
-        x = 12
-        y = 9
-        cost = 5
-        available = { CHI = { has_war_with = JAP } }
-        mutually_exclusive = { focus = PHI_attack_the_chinese }
-        prerequisite = { focus = PHI_department_of_foreign_affairs }
-        completion_reward = {
-            CHI = { country_event = { id = PHI.74 } }
-        }
-    }
-
-    # Attack the Chinese
-    focus = {
-        id = PHI_attack_the_chinese
-        icon = GFX_focus_attack_china
-        x = 14
-        y = 9
-        cost = 5
-        available = { CHI { has_war_with = JAP } }
-        bypass = { CHI = { exist = no } }
-        mutually_exclusive = { focus = PHI_support_the_chinese }
-        prerequisite = { focus = PHI_department_of_foreign_affairs }
-        completion_reward = {
-            declare_war_on = {
-                target = CHI
-                type = annex_everything
-            }
-        }
-    }
-
-    # Puppet China
-    focus = {
-        id = PHI_puppet_china
-        icon = GFX_goal_generic_major_war
-        x = 13
-        y = 10
-        cost = 3
-        prerequisite = {
-            focus = PHI_attack_the_chinese
-            focus = PHI_support_the_chinese
-        }
-        completion_reward = {
-            if = {
-                limit = { has_completed_focus = PHI_support_the_chinese }
-                CHI = { country_event = { id = PHI.77 } }
-            }
-            if = {
-                limit = { has_completed_focus = PHI_attack_the_chinese }
-                
-                release = CHI
-                if = { 
-                    limit = { has_dlc = "Together for Victory" } 
-                    set_autonomy = {
-                        target = CHI
-                        autonomy_state = autonomy_colony
-                    }
-                }
-                if = {
-                    limit = { NOT = { has_dlc = "Together for Victory" } }
-                    puppet = CHI
-                }
-                hidden_effect = {
-                    CHI = { set_cosmetic_tag = CHI_republic }
-                }
-
             }
         }
     }
@@ -2762,7 +2683,7 @@ focus_tree = {
                     target = PHI
                     modifier = diplomatic_mission
                 }
-                country_event = { id = PHI.41 }
+                country_event = { id = phi.36 }
             }
         }
     }
@@ -2818,7 +2739,6 @@ focus_tree = {
         y = 12
         cost = 5
         available_if_capitulated = no
-        mutually_exclusive = { focus = PHI_guardian_of_the_pacific }
         prerequisite = { 
             focus = PHI_soviet_tactics
         }
@@ -2833,7 +2753,7 @@ focus_tree = {
                 producer = PHI 
             }
             ENG = {
-                country_event = { id = PHI.45 }
+                country_event = { id = phi.39 }
             }
         }
     }
@@ -3044,7 +2964,6 @@ focus_tree = {
         prerequisite = {
             focus = PHI_soviet_equipment
         }
-        mutually_exclusive = { focus = PHI_steal_indochina }
         completion_reward = {
             add_manpower = 10000
             add_equipment_to_stockpile = {
@@ -3052,7 +2971,7 @@ focus_tree = {
                 amount = 5000
                 producer = PHI 
             }
-            FRA = { country_event = { id = PHI.45 } }
+            FRA = { country_event = { id = phi.39 } }
         }
     }
 
@@ -3251,39 +3170,6 @@ focus_tree = {
         }
     }
 
-    # Purchase Sabah
-    focus = {
-        id = PHI_purchase_sabah
-        icon = GFX_goal_generic_territory_or_war
-        x = 20
-        y = 9
-        cost = 5
-        available = { BEA = { has_full_control_of_state = 785 } }
-        prerequisite = { focus = PHI_department_of_foreign_affairs }
-        completion_reward = {
-            BEA = { country_event = { id = PHI.68 } }
-        }
-    }
-
-    # Purchase Pacific Islands
-    focus = {
-        id = PHI_purchase_pacific_islands
-        icon = GFX_goal_generic_amphibious_assault
-        x = 22
-        y = 9
-        cost = 5
-        available = { 
-            JAP = {
-                has_full_control_of_state = 684
-                has_full_control_of_state = 647
-            }
-        }
-        prerequisite = { focus = PHI_department_of_foreign_affairs }
-        completion_reward = {
-            JAP = { country_event = { id = PHI.71 } }
-        }
-    }
-
     # The Fuhrer
     focus = {
         id = PHI_the_fuhrer
@@ -3321,7 +3207,7 @@ focus_tree = {
         available_if_capitulated = yes
         prerequisite = { focus = PHI_the_fuhrer }
         completion_reward = {
-            GER = { country_event = { id = PHI.44 } }
+            GER = { country_event = { id = phi.36 } }
         }
     }
 
@@ -3340,39 +3226,28 @@ focus_tree = {
         }
     }
 
-    # Steal Indochina
+    # Purchase Tank Equipment
     focus = {
-        id = PHI_steal_indochina
-        icon = GFX_goal_generic_position_armies
-        x = 21
-        y = 12
-        cost = 5
-        available_if_capitulated = yes
-        available = {
-            FRA = { has_war_with = GER }
-        }
-        mutually_exclusive = { focus = PHI_demand_french_colonial_holdings }
-        prerequisite = { focus = PHI_military_pact_with_the_germans }
-        completion_reward = {
-            annex_country = {
-                target = FIC
-                transfer_troops = no
-            }
-            FRA = { country_event = { id = PHI.67 } }
-        }
-    }
-
-    # Filipino Panzers
-    focus = {
-        id = PHI_filipino_panzers
+        id = PHI_purchase_tank_equipment
         icon = GFX_focus_generic_army_tanks2
         x = 24
         y = 12
         cost = 10
         available_if_capitulated = yes
-        prerequisite = { focus = PHI_military_pact_with_the_germans }
+        mutually_exclusive = { focus = PHI_acquire_firepower }
+        prerequisite = { 
+            focus = PHI_military_pact_with_the_germans
+            focus = PHI_defense_treaty_with_america
+        }
         completion_reward = {
-            GER = { country_event = { id = PHI.35 } }
+            if = {
+                limit = { is_in_faction_with = GER }
+                GER = { country_event = { id = phi.44 } } 
+            }
+            if = {
+                limit = { is_in_faction_with = USA }
+                USA = { country_event = { id = phi.44 } }
+            }
         }
     }
 
@@ -3384,7 +3259,7 @@ focus_tree = {
         y = 14
         cost = 10
         available_if_capitulated = yes
-        prerequisite = { focus = PHI_filipino_panzers }
+        prerequisite = { focus = PHI_purchase_tank_equipment }
         prerequisite = { focus = PHI_joint_army_exercises }
         completion_reward = {
             add_ideas = PHI_german_support
@@ -3428,7 +3303,7 @@ focus_tree = {
         available_if_capitulated = yes
         prerequisite = { focus = PHI_the_president }
         completion_reward = {
-            USA = { country_event = { id = PHI.44 } }
+            USA = { country_event = { id = phi.36 } }
         }
     }
 
@@ -3447,17 +3322,28 @@ focus_tree = {
         }
     }
 
-    # Acquire American Firepower
+    # Purchase Firepower
     focus = {
-        id = PHI_acquire_american_firepower
+        id = PHI_acquire_firepower
         icon = GFX_goal_generic_army_artillery
         x = 26
         y = 12
         cost = 10
         available_if_capitulated = yes
-        prerequisite = { focus = PHI_defense_treaty_with_america }
+        mutually_exclusive = { focus = PHI_purchase_tank_equipment }
+        prerequisite = {
+            focus = PHI_defense_treaty_with_america
+            focus = PHI_military_pact_with_the_germans
+        }
         completion_reward = {
-            USA = { country_event = { id = PHI.53 } }
+            if = {
+                limit = { is_in_faction_with = USA }
+                USA = { country_event = { id = phi.45 } }
+            }
+            if = {
+                limit = { is_in_faction_with = GER }
+                GER = { country_event = { id = phi.45 } }
+            }
         }
     }
 
@@ -3469,7 +3355,7 @@ focus_tree = {
         y = 14
         cost = 10
         available_if_capitulated = yes
-        prerequisite = { focus = PHI_acquire_american_firepower  }
+        prerequisite = { focus = PHI_acquire_firepower  }
         prerequisite = { focus = PHI_joint_army_exercises }
         completion_reward = {
             add_ideas = PHI_american_support
@@ -3485,8 +3371,8 @@ focus_tree = {
         cost = 10
         available_if_capitulated = yes
         prerequisite = { 
-            focus = PHI_acquire_american_firepower 
-            focus = PHI_filipino_panzers
+            focus = PHI_acquire_firepower 
+            focus = PHI_purchase_air_equipment
         }
         completion_reward = {
             add_tech_bonus = {
@@ -3511,7 +3397,7 @@ focus_tree = {
         x = 34
         y = 8
         cost = 0
-        available = { has_country_flag = PHI_VALKIST_TAKEOVER }
+        available = { has_country_flag = PHI_KALIBAPI_VICTORY_FLAG }
         bypass = { has_government = valkist }
         completion_reward = { }
     }
@@ -4001,7 +3887,7 @@ focus_tree = {
         x = 46
         y = 8
         cost = 0
-        available = { has_country_flag = PHI_WORKERS_VICTORY }
+        available = { has_country_flag = PHI_SOCIALIST_REPUBLIC_FLAG }
         bypass = {
             OR = {
                 has_government = libertarian_socialist
@@ -4439,7 +4325,7 @@ focus_tree = {
             focus = PHI_forced_conscription
         }
         completion_reward = {
-            SOV = { country_event = { id = PHI.63 } }
+            SOV = { country_event = { id = phi.49 } }
         }
     }
 
