@@ -2,15 +2,15 @@ PHI_ai_behavior = {
 	name = "PHI_AI_BEHAVIOR"
 	group = "RULE_GROUP_AI_BEHAVIOR"
 	default = {
-		name = DEMOCRATIC_BASTION
-		text = PHI_RULE_DEMOCRATIC_BASTION
-		desc = PHI_RULE_DEMOCRATIC_BASTION_DESC
+		name = BROTHERS_UNITED
+		text = PHI_RULE_BROTHERS_UNITED
+		desc = PHI_RULE_BROTHERS_UNITED_DESC
 		allow_achievements = yes
 	}
 	option = {
-		name = CHALLENGE_JAPAN
-		text = PHI_RULE_CHALLENGE_JAPAN
-		desc = PHI_RULE_CHALLENGE_JAPAN_DESC
+		name = PRUSSIA_OF_THE_EAST
+		text = PHI_PRUSSIA_OF_THE_EAST
+		desc = PHI_PRUSSIA_OF_THE_EAST_DESC
 		allow_achievements = yes
 	}
 	option = {

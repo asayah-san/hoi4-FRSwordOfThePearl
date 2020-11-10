@@ -195,7 +195,7 @@ focus_tree = {
         cost = 5
         prerequisite = { focus = DEU_economic_rehabilitation }
         completion_reward = {
-            country_event = { id = DEU.1 }
+            country_event = { id = deu.1 }
         }
     }
 
@@ -208,7 +208,7 @@ focus_tree = {
         cost = 20
         prerequisite = { focus = DEU_start_the_trials }
         completion_reward = {
-            country_event = { id = DEU.2 }
+            country_event = { id = deu.2 }
         }
     }
 
@@ -221,7 +221,7 @@ focus_tree = {
         cost = 20
         prerequisite = { focus = DEU_start_the_trials }
         completion_reward = {
-            country_event = { id = DEU.3 }
+            country_event = { id = deu.3 }
         }
     }
 
@@ -234,7 +234,7 @@ focus_tree = {
         cost = 20
         prerequisite = { focus = DEU_start_the_trials }
         completion_reward = {
-            country_event = { id = DEU.4 }
+            country_event = { id = deu.4 }
         }
     }
 
@@ -247,7 +247,7 @@ focus_tree = {
         cost = 20
         prerequisite = { focus = DEU_start_the_trials }
         completion_reward = {
-            country_event = { id = DEU.5 }
+            country_event = { id = deu.5 }
         }
     }
 
@@ -382,7 +382,7 @@ focus_tree = {
                     }
                 }
             }
-            country_event = { id = DEU.6 }
+            country_event = { id = deu.6 }
         }
     }
 
@@ -678,7 +678,7 @@ focus_tree = {
                         exists = yes
                         NOT = { has_war_with = ROOT }
                     }
-                    country_event = { id = DEU.7 }
+                    country_event = { id = deu.7 }
                 }
             }
             FRA = {
@@ -687,7 +687,7 @@ focus_tree = {
                         exists = yes
                         NOT = { has_war_with = ROOT }
                     }
-                    country_event = { id = DEU.7 }
+                    country_event = { id = deu.7 }
                 }
             }
             POR = {
@@ -697,7 +697,7 @@ focus_tree = {
                         NOT = { has_war_with = ROOT }
                         PRR = { exists = no }
                     }
-                    country_event = { id = DEU.7 }
+                    country_event = { id = deu.7 }
                 }
             }
             PRR = {
@@ -718,7 +718,7 @@ focus_tree = {
                         SPF = { exists = no }
                         SPA = { exists = no }
                     }
-                    country_event = { id = DEU.7 }
+                    country_event = { id = deu.7 }
                 }
             }
             SPM = {
@@ -730,7 +730,7 @@ focus_tree = {
                         SPM = { exists = no }
                         SPA = { exists = no }
                     }
-                    country_event = { id = DEU.7 }
+                    country_event = { id = deu.7 }
                 }
             }
             BEL = {
@@ -742,7 +742,7 @@ focus_tree = {
                         NOT = { has_government = collectivist }
                         NOT = { has_government = vanguardist }
                     }
-                    country_event = { id = DEU.7 }
+                    country_event = { id = deu.7 }
                 }
             }
             HOL = {
@@ -754,7 +754,7 @@ focus_tree = {
                         NOT = { has_government = collectivist }
                         NOT = { has_government = vanguardist }
                     }
-                    country_event = { id = DEU.7 }
+                    country_event = { id = deu.7 }
                 }
             }
         }
@@ -778,7 +778,7 @@ focus_tree = {
                         NOT = { has_government = collectivist }
                         NOT = { has_government = vanguardist }
                     }
-                    country_event = { id = DEU.7 }
+                    country_event = { id = deu.7 }
                 }
             }
             SWE = {
@@ -790,7 +790,7 @@ focus_tree = {
                         NOT = { has_government = collectivist }
                         NOT = { has_government = vanguardist }
                     }
-                    country_event = { id = DEU.7 }
+                    country_event = { id = deu.7 }
                 }
             }
             DEN = {
@@ -802,7 +802,7 @@ focus_tree = {
                         NOT = { has_government = collectivist }
                         NOT = { has_government = vanguardist }
                     }
-                    country_event = { id = DEU.7 }
+                    country_event = { id = deu.7 }
                 }
             }
             FIN = {
@@ -814,7 +814,7 @@ focus_tree = {
                         NOT = { has_government = collectivist }
                         NOT = { has_government = vanguardist }
                     }
-                    country_event = { id = DEU.7 }
+                    country_event = { id = deu.7 }
                 }
             }
         }
@@ -839,7 +839,7 @@ focus_tree = {
                         NOT = { has_government = vanguardist }
                         UPC = { exists = no }
                     }
-                    country_event = { id = DEU.7 }
+                    country_event = { id = deu.7 }
                 }
             }
             SRV = {
@@ -851,7 +851,7 @@ focus_tree = {
                         NOT = { has_government = collectivist }
                         NOT = { has_government = vanguardist }
                     }
-                    country_event = { id = DEU.7 }
+                    country_event = { id = deu.7 }
                 }
             }
             SIC = {
@@ -863,7 +863,7 @@ focus_tree = {
                         NOT = { has_government = collectivist }
                         NOT = { has_government = vanguardist }
                     }
-                    country_event = { id = DEU.7 }
+                    country_event = { id = deu.7 }
                 }
             }
             AUS = {
@@ -875,7 +875,7 @@ focus_tree = {
                         NOT = { has_government = collectivist }
                         NOT = { has_government = vanguardist }
                     }
-                    country_event = { id = DEU.7 }
+                    country_event = { id = deu.7 }
                 }
             }
             PIE = {
@@ -887,7 +887,7 @@ focus_tree = {
                         NOT = { has_government = collectivist }
                         NOT = { has_government = vanguardist }
                     }
-                    country_event = { id = DEU.7 }
+                    country_event = { id = deu.7 }
                 }
             }
             SWI = {
@@ -899,7 +899,7 @@ focus_tree = {
                         NOT = { has_government = collectivist }
                         NOT = { has_government = vanguardist }
                     }
-                    country_event = { id = DEU.7 }
+                    country_event = { id = deu.7 }
                 }
             }
         }
@@ -923,7 +923,7 @@ focus_tree = {
                         NOT = { has_government = collectivist }
                         NOT = { has_government = vanguardist }
                     }
-                    country_event = { id = DEU.7 }
+                    country_event = { id = deu.7 }
                 }
             }
             HUN = {
@@ -935,7 +935,7 @@ focus_tree = {
                         NOT = { has_government = collectivist }
                         NOT = { has_government = vanguardist }
                     }
-                    country_event = { id = DEU.7 }
+                    country_event = { id = deu.7 }
                 }
             }
             ROM = {
@@ -947,7 +947,7 @@ focus_tree = {
                         NOT = { has_government = collectivist }
                         NOT = { has_government = vanguardist }
                     }
-                    country_event = { id = DEU.7 }
+                    country_event = { id = deu.7 }
                 }
             }
             BUL = {
@@ -959,7 +959,7 @@ focus_tree = {
                         NOT = { has_government = collectivist }
                         NOT = { has_government = vanguardist }
                     }
-                    country_event = { id = DEU.7 }
+                    country_event = { id = deu.7 }
                 }
             }
             GRE = {
@@ -971,7 +971,7 @@ focus_tree = {
                         NOT = { has_government = collectivist }
                         NOT = { has_government = vanguardist }
                     }
-                    country_event = { id = DEU.7 }
+                    country_event = { id = deu.7 }
                 }
             }
             ALB = {
@@ -983,7 +983,7 @@ focus_tree = {
                         NOT = { has_government = collectivist }
                         NOT = { has_government = vanguardist }
                     }
-                    country_event = { id = DEU.7 }
+                    country_event = { id = deu.7 }
                 }
             }
         }
@@ -1007,7 +1007,7 @@ focus_tree = {
                         NOT = { has_government = collectivist }
                         NOT = { has_government = vanguardist }
                     }
-                    country_event = { id = DEU.7 }
+                    country_event = { id = deu.7 }
                 }
             }
             LIT = {
@@ -1019,7 +1019,7 @@ focus_tree = {
                         NOT = { has_government = collectivist }
                         NOT = { has_government = vanguardist }
                     }
-                    country_event = { id = DEU.7 }
+                    country_event = { id = deu.7 }
                 }
             }
             BEL = {
@@ -1031,7 +1031,7 @@ focus_tree = {
                         NOT = { has_government = collectivist }
                         NOT = { has_government = vanguardist }
                     }
-                    country_event = { id = DEU.7 }
+                    country_event = { id = deu.7 }
                 }
             }
             URK = {
@@ -1043,7 +1043,7 @@ focus_tree = {
                         NOT = { has_government = collectivist }
                         NOT = { has_government = vanguardist }
                     }
-                    country_event = { id = DEU.7 }
+                    country_event = { id = deu.7 }
                 }
             }
             LAT = {
@@ -1055,7 +1055,7 @@ focus_tree = {
                         NOT = { has_government = collectivist }
                         NOT = { has_government = vanguardist }
                     }
-                    country_event = { id = DEU.7 }
+                    country_event = { id = deu.7 }
                 }
             }
             EST = {
@@ -1067,7 +1067,7 @@ focus_tree = {
                         NOT = { has_government = collectivist }
                         NOT = { has_government = vanguardist }
                     }
-                    country_event = { id = DEU.7 }
+                    country_event = { id = deu.7 }
                 }
             }
         }

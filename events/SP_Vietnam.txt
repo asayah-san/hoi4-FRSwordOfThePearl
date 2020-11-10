@@ -1,0 +1,20 @@
+﻿add_namespace = viet
+
+country_event = {
+    id = viet.1
+    title = viet.1.t
+    desc = viet.1.d
+    picture = report_event_iww_demonstration
+
+    is_triggered_only = yes
+
+    option = {
+        name = viet.1.a
+        add_ideas = VIN_banned_unions
+    }
+
+    option = {
+        name = viet.1.b
+        add_political_power = 50
+    }
+}

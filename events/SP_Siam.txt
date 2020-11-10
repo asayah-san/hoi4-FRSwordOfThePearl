@@ -2,9 +2,9 @@
 
 # Corruption Allegations
 country_event = {
-    id = SIA.1
-    title = SIA.1.t
-    desc = SIA.1.d
+    id = siam.1
+    title = siam.1.t
+    desc = siam.1.d
     picture = report_event_iww_demonstration
 
     fire_only_once = yes
@@ -20,11 +20,11 @@ country_event = {
     }
 
     option = {
-        name = SIA.1.a
+        name = siam.1.a
 
         add_political_power = -500
         hidden_effect = {
-            country_event = { id = SIA.2 days = 72 }
+            country_event = { id = siam.2 days = 72 }
             complete_national_focus = SIA_government_in_crisis
         }
     }
@@ -32,71 +32,72 @@ country_event = {
 
 # Documents released for Corruption allegations
 country_event = {
-    id = SIA.2
-    title = SIA.2.t
-    desc = SIA.2.d
+    id = siam.2
+    title = siam.2.t
+    desc = siam.2.d
 
     is_triggered_only = yes
 
     option = {
-        name = SIA.2.a
+        name = siam.2.a
 
         add_stability = -0.15
         hidden_effect = {
-            country_event = { id = SIA.3 days = 30 }
+            country_event = { id = siam.3 days = 30 }
         }
     }
 
     option = {
-        name = SIA.2.b
+        name = siam.2.b
 
         add_stability = 0.15
         retire_ideology_leader = national_populist
         hidden_effect = {
             set_country_flag = SIA_SNAP_ELECTIONS_FLAG
-            country_event = { id = SIA.4 days = 30 }
+            country_event = { id = siam.4 days = 30 }
         }
     }
 }
 
 # Government Strikes
 country_event = {
-    id = SIA.3
-    title = SIA.3.t
-    desc = SIA.3.d
+    id = siam.3
+    title = siam.3.t
+    desc = siam.3.d
 
     is_triggered_only = yes
 
     option = {
-        name = SIA.3.a
+        name = siam.3.a
 
         add_ideas = SIA_government_strikes
         hidden_effect = {
-            country_event = { id = SIA.5 days = 15 }
+            country_event = { id = siam.5 days = 15 }
         }
     }
 
     option = {
-        name = SIA.3.b
+        name = siam.3.b
 
         retire_ideology_leader = national_populist
         hidden_effect = {
             set_country_flag = SIA_SNAP_ELECTIONS_FLAG
-            country_event = { id = SIA.4 days = 30 }
+            country_event = { id = siam.4 days = 30 }
+            news_event = { id = news.9 }
         }
     }
 }
 
 # Snap Elections
 country_event = {
-    id = SIA.4
-    title = SIA.4.t
-    desc = SIA.4.d
+    id = siam.4
+    title = siam.4.t
+    desc = siam.4.d
 
     is_triggered_only = yes
 
     option = {
-        name = SIA.4.a
+        name = siam.4.a
 
         remove_ideas = SIA_figurehead_monarch
         remove_ideas = SIA_government_strikes
@@ -131,7 +132,7 @@ country_event = {
     }
 
     option = {
-        name = SIA.4.b
+        name = siam.4.b
 
         remove_ideas = SIA_figurehead_monarch
         remove_ideas = SIA_government_strikes
@@ -166,7 +167,7 @@ country_event = {
     }
 
     option = {
-        name = SIA.4.c
+        name = siam.4.c
 
         remove_ideas = SIA_figurehead_monarch
         remove_ideas = SIA_government_strikes
@@ -201,7 +202,7 @@ country_event = {
     }
 
     option = {
-        name = SIA.4.e
+        name = siam.4.e
 
         trigger = {
             has_idea = SIA_government_strikes
@@ -241,35 +242,35 @@ country_event = {
 
 # King's Coup Preparation
 country_event = {
-    id = SIA.5
-    title = SIA.5.t
-    desc = SIA.5.d
+    id = siam.5
+    title = siam.5.t
+    desc = siam.5.d
 
     is_triggered_only = yes
 
     option = {
-        name = SIA.5.a
+        name = siam.5.a
 
         add_popularity = {
             ideology = paternal_autocrat
             popularity = 0.05
         }
         hidden_effect = {
-            country_event = { id = SIA.6 days = 30 }
+            country_event = { id = siam.6 days = 30 }
         }
     }
 }
 
 # King's Coup
 country_event = {
-    id = SIA.6
-    title = SIA.6.t
-    desc = SIA.6.d
+    id = siam.6
+    title = siam.6.t
+    desc = siam.6.d
 
     is_triggered_only = yes
 
     option = {
-        name = SIA.6.a
+        name = siam.6.a
 
         remove_ideas = SIA_figurehead_monarch
         remove_ideas = SIA_government_strikes

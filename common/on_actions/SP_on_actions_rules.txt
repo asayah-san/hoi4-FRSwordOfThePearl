@@ -7,21 +7,21 @@ on_actions = {
                     limit = {
                         has_game_rule = {
                             rule = PHI_AI_BEHAVIOR
-                            option = DEMOCRATIC_BASTION
+                            option = BROTHERS_UNITED
                         }
                     }
                     set_country_flag = PHI_AI_CHOSEN
-                    set_country_flag = PHI_DEMOCRATIC_BASTION_BEHAVIOR
+                    set_country_flag = PHI_BROTHERS_UNITED_BEHAVIOR
                 }
                 if = {
                     limit = {
                         has_game_rule = {
                             rule = PHI_AI_BEHAVIOR
-                            option = CHALLENGE_JAPAN
+                            option = PRUSSIA_OF_THE_EAST
                         }
                     }
                     set_country_flag = PHI_AI_CHOSEN
-                    set_country_flag = PHI_CHALLENGE_JAPAN_BEHAVIOR
+                    set_country_flag = PHI_PRUSSIA_OF_THE_EAST_BEHAVIOR
                 }
                 if = {
                     limit = {

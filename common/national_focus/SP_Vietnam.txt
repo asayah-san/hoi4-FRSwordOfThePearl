@@ -1527,4 +1527,149 @@ focus_tree = {
             remove_ideas = VIN_unstable_state
         }
     }
+
+    # Conservative Victory
+    focus = {
+        id = VIN_conservative_victory
+        icon = GFX_goal_ideology_social_conservative
+        x = 58
+        y = 2
+        available = { has_country_flag = VIN_CONSERVATIVE_VICTORY_FLAG }
+        prerequisite = { focus = VIN_first_vietnamese_elections }
+    }
+
+    # Pass the Education Act
+    focus = {
+        id = VIN_pass_the_education_act
+        icon = GFX_focus_research
+        x = 57
+        y = 3
+        prerequisite = { focus = VIN_conservative_victory }
+        completion_reward = {
+            add_research_slot = 1
+        }
+    }
+
+    # Promise Reforms
+    focus = {
+        id = VIN_promise_reforms
+        icon = GFX_goal_support_democracy
+        x = 56
+        y = 4
+        mutually_exclusive = { focus = VIN_arrest_radical_elements }
+        prerequisite = { focus = VIN_pass_the_education_act }
+        completion_reward = {
+            add_stability = 0.10
+            add_war_support = 0.10
+        }
+    }
+
+    # Government-Private Partnerships
+    focus = {
+        id = VIN_public_private_partnerships
+        icon = GFX_goal_generic_improve_relations
+        x = 56
+        y = 5
+        prerequisite = { 
+            focus = VIN_arrest_radical_elements
+            focus = VIN_promise_reforms
+        }
+        completion_reward = {
+            add_ideas = VIN_corporations_supported
+        }
+    }
+
+    # Arrest Radical Elements
+    focus = {
+        id = VIN_arrest_radical_elements
+        icon = GFX_goal_generic_political_pressure  
+        x = 58
+        y = 4
+        mutually_exclusive = { focus = VIN_promise_reforms }
+        prerequisite = { focus = VIN_pass_the_education_act }
+        completion_reward = {
+            add_popularity = {
+                ideology = vanguardist
+                popularity = -0.15
+            }
+            add_popularity = {
+                ideology = collectivist
+                popularity = -0.15
+            }
+            add_popularity = {
+                ideology = libertarian_socialist
+                popularity = -0.15
+            }
+            remove_ideas = VIN_socialist_symphaties
+            add_timed_idea = {
+                idea = VIN_purged_socialists
+                days = 360
+            }
+        }
+    }
+
+    # Question of Union Activities
+    focus = {
+        id = VIN_question_of_union_activities
+        icon = GFX_goal_production
+        x = 58
+        y = 5
+        prerequisite = { focus = VIN_arrest_radical_elements }
+        completion_reward = {
+            country_event = { id = viet.1 }
+        }
+    }
+
+    # Tax the Foreigners
+    focus = {
+        id = VIN_tax_the_foreigners
+        icon = GFX_focus_rom_parties_end
+        x = 60
+        y = 3
+        prerequisite = { focus = VIN_conservative_victory }
+        completion_reward = {
+            add_ideas = VIN_native_businesses
+        }
+    }
+
+    # Consumer Protection Regulations
+    focus = {
+        id = VIN_consumer_protection_regulations
+        icon = GFX_focus_generic_concessions
+        x = 60
+        y = 4
+        prerequisite = { focus = VIN_tax_the_foreigners }
+        completion_reward = {
+            add_ideas = VIN_consumer_protection
+        }
+    }
+
+    # Reform the Justice System
+    focus = {
+        id = VIN_reform_the_justice_system
+        icon = GFX_goal_DOM_The_Trial
+        x = 60
+        y = 5
+        prerequisite = { focus = VIN_consumer_protection_regulations }
+        completion_reward = {
+            remove_ideas = VIN_bandits
+        }
+    }
+    
+    # A Functioning Government
+    focus = {
+        id = VIN_a_functioning_government
+        icon = GFX_focus_generic_self_management
+        x = 58
+        y = 6
+        prerequisite = { focus = VIN_reform_the_justice_system }
+        prerequisite = {
+            focus = VIN_public_private_partnerships
+            focus = VIN_question_of_union_activities
+        }
+        completion_reward = {
+            remove_ideas = VIN_unstable_state
+        }
+    }
+
 }

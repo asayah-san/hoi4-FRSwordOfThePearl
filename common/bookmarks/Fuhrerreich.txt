@@ -133,6 +133,22 @@ bookmarks = {
 			}
 		}
 
+		"SIA"={
+			minor = yes
+			history = "SIA_FUHRERREICH_DESC"
+			ideology = national_populist
+			ideas = {
+				SIA_figurehead_monarch
+				SIA_ineffective_governance
+				SIA_high_unemployment_rate
+			}
+			focuses = {
+				SIA_government_in_crisis
+				SIA_a_firm_hand
+				SIA_snap_elections
+			}
+		}
+
 		"ROM"={
 			minor = yes
 			history = "ROM_FUHRERREICH_DESC"

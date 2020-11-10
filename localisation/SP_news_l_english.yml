@@ -9,15 +9,15 @@
   news.2.d:0 "[This.GetNewspaperHeader]Having just achieved independence from the United States, the Philippines faced today perhaps one of the most serious challenges any new country could face. With public dissatisfaction against the current administration rising, disgruntled army officers marched on Manila to support rebelling peasants and workers.\n\nTheir attempt was quickly thwarted as army units intervened in and drove the rebellious army out of the capital and many key points. However, the army decided to seize the power for themselves, with a cabinet of military commanders put in place to ensure the safety of the Philippines 'for the foreseeable future'."
   news.2.a:0 "Concerning."
 
-  news.3.t:0 "Socialism Spreads to the Philippines"
+  news.3.t:0 "Trade Unions established a New Philippine Republic"
   news.3.d:0 "[This.GetNewspaperHeader]Having just achieved independence from the United States, the Philippines faced today perhaps one of the most serious challenges any new country could face. With public dissatisfaction against the current administration rising, disgruntled army officers marched on Manila to support rebelling peasants and workers.\n\nIt seems the army's support for Syndicalism was more widespread then expected, and the army rapidly declared support for the Syndicalist movement. Now left with no army outside of a few loyalist divisions and not wanting to see the archipelago descend into another bloody civil war, the government signed power over to the Syndicalist movement's leader."
   news.3.a:0 "Even in Asia, liberalism isn't safe!"
 
   news.4.t:0 "Aguinaldo takes over the Philippines"
-  news.4.d:0 "[This.GetNewspaperHeader]Having just achieved independence from the United States, the Philippines faced today perhaps one of the most serious challenges any new country could face. With public dissatisfaction against the current administration rising, disgruntled army officers marched on Manila to support rebelling peasants and workers.\n\nIt seems the army's support for the former revolutionary Emilio Aguinaldo was more widespread then expected, and the army rapidly declared support for the Nationalist movement. Now left with no army outside of a few loyalist divisions and not wanting to see the archipelago descend into another bloody civil war, the government signed power over to former General Emilio Aguinaldo."
+  news.4.d:0 "[This.GetNewspaperHeader]Having just achieved independence from the United States, the Philippines faced today perhaps one of the most serious challenges any new country could face. With public dissatisfaction against the current administration rising, disgruntled army officers marched on Manila to support rebelling peasants and workers.\n\nIt seems the army's support for the former revolutionary Emilio Aguinaldo was more widespread then expected, and the army rapidly declared support for the Nationalist movement. Now left with no army outside of a few loyalist divisions and not wanting to see the archipelago descend into another bloody civil war, the government signed power over to General Emilio Aguinaldo."
   news.4.a:0 "The king has returned it seems"
 
-  news.5.t:0 "Valkists takes over the Philippines"
+  news.5.t:0 "KALIBAPI takes over the Philippines"
   news.5.d:0 "[This.GetNewspaperHeader]Having just achieved independence from the United States, the Philippines faced today perhaps one of the most serious challenges any new country could face. With public dissatisfaction against the current administration rising, disgruntled army officers marched on Manila to support rebelling peasants and workers.\n\nIt seems the army's support for the Valkist movement was more widespread then expected, and the army rapidly declared support for the so-called, Pro-Filipino movement. Now left with no army outside of a few loyalist divisions and not wanting to see the archipelago descend into another bloody civil war, the government signed power over to leaders of the Valkist Party."
   news.5.a:0 "Concerning."
 
@@ -29,7 +29,11 @@
   news.7.d:0 "[This.GetNewspaperHeader]The [From.GetAdjective] Government has announced that they are leaving the economic organization for South East Asian nations founded by the Philippines. It is unclear why they are leaving, but sources say that the Philippines has much more influence in internal politics of member countries."
   news.7.a:0 "Intriguing."
 
-  news.8.t:0 "[PHI.GetNameCap] occupies Sabah"
+  news.8.t:0 "[PHI.GetNameDefCap] occupies Sabah"
   news.8.d:0 "[This.GetNewspaperHeader]While the independence war of the Insulindians are still raging, the Philippine Government have just seized the moment and have landed troops in the Sabah region, completely occuping the area. There are reports from resistance with local British and Insulindian battalions but was completely pacified hours later."
   news.8.a:0 "Give that back!"
   news.8.b:0 "Interesting."
+
+  news.9.t:0 "Snap Elections in Siam"
+  news.9.d:0 "[This.GetNewspaperHeader]The opposition party in Siam, Pak Sangkhomniyom, have proved their allegations of corruptions on the current administration. With the issue exploding overnight, the government has left no choice but to call on snap elections to prevent a violent action from both parties. It seems that the current Prime Minister, Plaek Phibunsongkhram have resigned and fled the country, in fear of arrests or assassinations."
+  news.9.a:0 "Democracy? in Siam?"

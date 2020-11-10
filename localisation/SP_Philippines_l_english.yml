@@ -663,10 +663,10 @@ PHI_pacific_defense:0 "San Francisco Accord"
 ### Game Rules ###
 PHI_AI_BEHAVIOR:0 "@PHI Philippines"
 
-PHI_RULE_DEMOCRATIC_BASTION:0 "Democratic Bastion"
-PHI_RULE_DEMOCRATIC_BASTION_DESC:0 "New elections will be called and democracy will be again in the foundations of the new Philippines.\n\n§GGovernment:§! Social Conservative\n§GForeign Policy:§! Try to Found ASEAN"
-PHI_RULE_CHALLENGE_JAPAN:0 "Challenge Japanese Hegemony"
-PHI_RULE_CHALLENGE_JAPAN_DESC:0 "The Philippine Army will take control of the Governemnt and establish a militarized state challenging Japanese Hegemony.\n\n§GGovernment:§! Paternal Autocrat\n§GForeign Policy:§! Side with the USA"
+PHI_RULE_BROTHERS_UNITED:0 "Brothers United"
+PHI_RULE_BROTHERS_UNITED_DESC:0 "New elections will be called and the Nacionalista Party will won the elections.\n\n§GGovernment:§! Social Conservative\n§GForeign Policy:§! Try to Found ASEAN"
+PHI_RULE_PRUSSIA_OF_THE_EAST:0 "Prussia of the East"
+PHI_RULE_PRUSSIA_OF_THE_EAST_DESC:0 "The Armed Forces of the Philippines will take control of the Governemnt and establish a militarized state challenging Japanese Hegemony.\n\n§GGovernment:§! Paternal Autocrat\n§GForeign Policy:§! Side with the USA"
 PHI_RULE_TESTING_IMPERIALISM:0 "Testing Imperialism"
 PHI_RULE_TESTING_IMPERIALISM_DESC:0 "Emilio Aguinaldo will establish a New Government trying to establish imperialist ambisions with Japan.\n\n§GGovernemnt:§! National Populist\n§GForeign Policy:§! Side with Japan"
 
@@ -787,7 +787,7 @@ phi.4.d:0 "Since the Americans left us with our independence, no public election
 phi.4.a:0 "Let the elections proceed"
 phi.4.b:0 "Just ignore them as usual"
 
-phi.5.t:0 "The [Root.GetYear] Elections"
+phi.5.t:0 "The [GetYear] Elections"
 phi.5.d:0 "People gather around the voting areas to decide who will run the country for the coming years. Who shall win?"
 phi.5.a:0 "Roxas and the Liberals Wins"
 phi.5.b:0 "Sumulong and the Democrats Wins"
@@ -1015,5 +1015,10 @@ phi.49.d:0 "The Philippine have sent their ambassador here in Moscow, requests f
 phi.49.a:0 "Give them aid for their military"
 phi.49.b:0 "Give them aid for their industries"
 phi.49.c:0 "We have other matters to deal with"
+
+phi.50.t:0 "The Trade Union Congress"
+phi.50.d:0 "The factions of the Party are calling for a Trade Union Congress, which can determine the future of our newfound Republic.\n\nSome wants our founding President, Crisanto Evangelista to remain as President, while some radical elements however wants the more authoritarian General, Luis Taruc to be installed as President. However, the congress shall decide their fate."
+phi.50.a:0 "President Evangelista remains as President"
+phi.50.b:0 "Taruc wins the Presidential elections"
 
 

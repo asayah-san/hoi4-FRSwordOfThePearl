@@ -1921,5 +1921,4 @@ focus_tree = {
             add_ideas = SIA_nationalist_thoughts
         }
     }
-
 }

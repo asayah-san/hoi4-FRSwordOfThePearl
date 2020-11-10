@@ -31,7 +31,7 @@ SP_ASEAN_decisions = {
         }
 
         complete_effect = {
-            PHI = { country_event = { id = ASEAN.1 } }
+            PHI = { country_event = { id = asean.1 } }
         }
     }
 
@@ -81,7 +81,7 @@ SP_ASEAN_decisions = {
         cost = 50
 
         complete_effect = { 
-            VIN = { country_event = { id = ASEAN.1 } }
+            VIN = { country_event = { id = asean.1 } }
         } 
     }
 
@@ -110,7 +110,7 @@ SP_ASEAN_decisions = {
 
         complete_effect = {
             SIA = { 
-                country_event = { id = ASEAN.1 } 
+                country_event = { id = asean.1 } 
             }
         }
     }
@@ -140,7 +140,7 @@ SP_ASEAN_decisions = {
 
         complete_effect = {
             CAM = { 
-                country_event = { id = ASEAN.1 }
+                country_event = { id = asean.1 }
             }
         }
     }
@@ -170,7 +170,7 @@ SP_ASEAN_decisions = {
 
         complete_effect = {
             LAO = { 
-                country_event = { id = ASEAN.1 } 
+                country_event = { id = asean.1 } 
             }
         }
     }
@@ -200,7 +200,7 @@ SP_ASEAN_decisions = {
 
         complete_effect = {
             MAL = { 
-                country_event = { id = ASEAN.1 }
+                country_event = { id = asean.1 }
             }
         }
     }
@@ -230,7 +230,7 @@ SP_ASEAN_decisions = {
 
         complete_effect = {
             INS = { 
-                country_event = { id = ASEAN.1 }
+                country_event = { id = asean.1 }
             }
         }
     }
@@ -259,7 +259,7 @@ SP_ASEAN_decisions = {
         cost = 50
         
         complete_effect = {
-            BRM = { country_event = { id = ASEAN.1 } }
+            BRM = { country_event = { id = asean.1 } }
         }
     }
 }

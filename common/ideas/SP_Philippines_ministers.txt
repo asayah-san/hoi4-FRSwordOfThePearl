@@ -5,6 +5,20 @@ ideas = {
     
     head_of_government = {
 
+        PHI_Luis_Taruc_HoG_VAN = {
+            allowed = { original_tag = PHI }
+            picture = PHL_Luis_Taruc
+            available = {
+                has_government = vanguardist
+                has_country_flag = can_replace_hog
+            }
+            traits = {
+                head_of_government
+                vanguardist
+                hog_flamboyant_tough_guy
+            }
+        }
+
         PHI_Crisanto_Evangelista_HoG_LIB = {
             allowed = { original_tag = PHI }
             picture = PHL_Crisanto_Evangelista
@@ -15,7 +29,7 @@ ideas = {
             traits = {
                 head_of_government
                 libertarian_socialist
-                hog_pragmatic_statesman
+                hog_happy_amateur
             }
         }
 
@@ -613,7 +627,7 @@ ideas = {
             traits = {
                 security_minister
                 paternal_autocrat
-                sec_crime_fighter
+                sec_man_of_the_people
             }
         }
 

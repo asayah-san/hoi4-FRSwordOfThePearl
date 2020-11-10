@@ -136,5 +136,52 @@ ideas = {
                 industrial_capacity_dockyard = 0.15
             }
         }
+
+        VIN_banned_unions = {
+            allowed = { original_tag = VIN }
+
+            picture = HUN_secret_rearmament
+
+            modifier = {
+                production_factory_max_efficiency_factor = -0.05
+                political_power_gain = 0.15
+                stability_factor = 0.15
+            }
+        }
+
+        VIN_purged_socialists = {
+            allowed = { original_tag = VIN }
+
+            picture = trotskyite_plot_purged
+
+            modifier = {
+                stability_weekly = 0.05
+                war_support_weekly = 0.02
+                conscription_factor = -0.05
+            }
+        }
+
+        VIN_native_businesses = {
+            allowed = { original_tag = VIN }
+
+            picture = generic_political_support
+
+            modifier = {
+                production_factory_max_efficiency_factor = 0.15
+                line_change_production_efficiency_factor = 0.15
+                production_speed_buildings_factor = 0.05
+            }
+        }
+
+        VIN_consumer_protection = {
+            allowed = { original_tag = VIN }
+
+            picture = HUN_treaty_of_triannon
+
+            modifier = {
+                industrial_capacity_factory = 0.05
+                industrial_capacity_dockyard = 0.05
+            }
+        }
     }
 }

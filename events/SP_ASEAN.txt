@@ -1,45 +1,45 @@
-﻿add_namespace = ASEAN
+﻿add_namespace = asean
 
 # ASEAN
 country_event = {
-    id = ASEAN.1
-    title = ASEAN.1.t
-    desc = ASEAN.1.d
+    id = asean.1
+    title = asean.1.t
+    desc = asean.1.d
     picture = GFX_report_event_vienna_award_negotiations
 
     is_triggered_only = yes
 
     option = {
-        name = ASEAN.1.a
+        name = asean.1.a
 
         add_ideas = SP_asean_member
         
-        PHI = { country_event = { id = ASEAN.2 } }
+        PHI = { country_event = { id = asean.2 } }
     }
 
     option = {
-        name = ASEAN.1.b
+        name = asean.1.b
         add_political_power = -50
 
         ai_chance = {
             factor = 0
         }
 
-        PHI = { country_event = { id = ASEAN.3 } }
+        PHI = { country_event = { id = asean.3 } }
     }
 }
 
 # Country Accepts ASEAN invitation
 country_event = {
-    id = ASEAN.2
-    title = ASEAN.2.t
-    desc = ASEAN.2.d
+    id = asean.2
+    title = asean.2.t
+    desc = asean.2.d
     picture = GFX_report_event_vienna_award_hungary
  
     is_triggered_only = yes
 
     option = {
-        name = ASEAN.2.a
+        name = asean.2.a
         add_political_power = 25
         add_opinion_modifier = {
             target = ROOT
@@ -50,15 +50,15 @@ country_event = {
 
 # Country Rejects ASEAN invitation
 country_event = {
-    id = ASEAN.3
-    title = ASEAN.3.t
-    desc = ASEAN.3.d
+    id = asean.3
+    title = asean.3.t
+    desc = asean.3.d
     picture = GFX_report_event_vienna_award_hungary
 
     is_triggered_only = yes
 
     option = {
-        name = ASEAN.3.a
+        name = asean.3.a
         add_opinion_modifier = {
             target = ROOT
             modifier = asean_refused
@@ -67,40 +67,40 @@ country_event = {
 }
 
 country_event = {
-    id = ASEAN.4
-    title = ASEAN.4.t
-    desc = ASEAN.4.d
+    id = asean.4
+    title = asean.4.t
+    desc = asean.4.d
     picture = GFX_report_event_vienna_award_hungary
 
     is_triggered_only = yes
 
     option = {
-        name = ASEAN.4.a
+        name = asean.4.a
         ROOT = { 
             add_ideas = SP_asean_member
-            country_event = { id = ASEAN.5 } 
+            country_event = { id = asean.5 } 
         }
     }
 
     option = {
-        name = ASEAN.4.b
+        name = asean.4.b
         ROOT = { 
             add_ideas = SP_asean_member
-            country_event = { id = ASEAN.6 }
+            country_event = { id = asean.6 }
         }
     }
 }
 
 country_event = {
-    id = ASEAN.5
-    title = ASEAN.5.t
-    desc = ASEAN.5.d
+    id = asean.5
+    title = asean.5.t
+    desc = asean.5.d
     picture = GFX_report_event_vienna_award_hungary
 
     is_triggered_only = yes
 
     option = {
-        name = ASEAN.5.a
+        name = asean.5.a
         add_political_power = 100
         add_opinion_modifier = {
             target = PHI
@@ -110,15 +110,15 @@ country_event = {
 }
 
 country_event = {
-    id = ASEAN.6
-    title = ASEAN.6.t
-    desc = ASEAN.6.d
+    id = asean.6
+    title = asean.6.t
+    desc = asean.6.d
     picture = GFX_report_event_vienna_award_negotiations
 
     is_triggered_only = yes
 
     option = {
-        name = ASEAN.6.a
+        name = asean.6.a
         add_opinion_modifier = {
             target = PHI
             modifier = asean_refused_entry
