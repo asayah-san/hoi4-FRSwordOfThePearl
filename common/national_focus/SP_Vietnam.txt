@@ -8,12 +8,6 @@ focus_tree = {
         }
     }
 
-    #############################################
-    #                                           #
-    #                  INDUSTRY                 #
-    #                                           #
-    #############################################
-
     # Independence
     focus = {
         id = VIN_independence
@@ -25,6 +19,12 @@ focus_tree = {
             add_political_power = 100
         }
     }
+
+    #############################################
+    #                                           #
+    #                  INDUSTRY                 #
+    #                                           #
+    #############################################
 
     # Economic Rehabilitation
     focus = {

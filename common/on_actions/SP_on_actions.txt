@@ -6,24 +6,24 @@ on_actions = {
         effect = {
             if = { 
                 limit = { 
-                    ROOT = { tag = UFC }
-                    FROM = { tag = ROOT }
+                    ROOT = { tag = SRP }
+                    FROM = { tag = PHI }
                 } 
                 every_state = {
                     limit = { is_core_of = PHI }
-                    add_core_of = UFC
+                    add_core_of = SRP
                 }
             }
 
             if = {
                 limit = {
                     ROOT = { tag = PHI }
-                    FROM = { tag = UFC }
+                    FROM = { tag = SRP }
                 }
                 every_state = {
-                    limit = { is_core_of = UFC }
+                    limit = { is_core_of = SRP }
                     add_core_of = PHI
-                    remove_core_of = UFC
+                    remove_core_of = SRP
                 }
             }
         }

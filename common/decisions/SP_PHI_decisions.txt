@@ -435,7 +435,7 @@ PHI_war_decisions = {
         }
     }
 
-    PHI_whitepeace_france = {
+    PHI_whitepeace_fr = {
         allowed = { original_tag = PHI }
 
         visible = { has_war_with = FRA }

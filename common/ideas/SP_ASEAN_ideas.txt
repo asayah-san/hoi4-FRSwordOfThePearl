@@ -1,8 +1,7 @@
 ideas = {
-
     country = {
 
-        SP_asean_member = {
+        ASEAN_member = {
             picture = can_wartime_prices_and_trade_board
 
             modifier = {
@@ -16,5 +15,4 @@ ideas = {
         }
 
     }
-    
 }

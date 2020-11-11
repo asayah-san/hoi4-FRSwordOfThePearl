@@ -1747,9 +1747,9 @@ focus_tree = {
         prerequisite = { focus = PHI_new_firepower }
         completion_reward = {
 			add_tech_bonus = {
-				bonus = 1.0
-				uses = 2
 				category = infantry_weapons
+                bonus = 1.0
+				uses = 2
 			}
         }
     }

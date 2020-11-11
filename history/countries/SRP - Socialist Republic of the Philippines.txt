@@ -1,6 +1,6 @@
 ﻿capital = 327
 
-oob = "UFC_1936"
+oob = "SRP_1936"
 
 # Starting tech
 set_technology = {
@@ -17,9 +17,9 @@ set_technology = {
 }
 
 add_ideas = {
-	UFC_decentralized_command
-	UFC_no_proper_army
-	UFC_the_second_revolution
+	SRP_decentralized_command
+	SRP_no_proper_army
+	SRP_the_second_revolution
 	revolutionary_movement
 
 	GEN_HOG_Lis

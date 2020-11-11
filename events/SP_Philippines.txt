@@ -1028,9 +1028,9 @@ country_event = {
         custom_effect_tooltip = PHI_communist_revolt_effect
         hidden_effect = {
 
-            release = UFC
-            UFC = {
-                #load_oob = "UFC_1936"
+            release = SRP
+            SRP = {
+                load_oob = "SRP_1936"
 
                 add_state_core = 327
                 transfer_state = 327

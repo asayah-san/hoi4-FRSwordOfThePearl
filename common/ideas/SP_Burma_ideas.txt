@@ -1,0 +1,50 @@
+ideas = {
+    country = {
+
+        BRM_economic_boom_idea = {
+            allowed = { original_tag = BRM }
+
+            picture = generic_goods_red_bonus
+
+            modifier = {
+                industrial_capacity_factory = 0.05
+                industrial_capacity_dockyard = 0.05
+            }
+        }
+
+        BRM_army_enhanced_training = {
+            allowed = { original_tag = BRM }
+
+            picture = HUN_secret_rearmament
+
+            modifier = {
+                army_attack_factor = 0.05
+                army_defence_factor = 0.05
+            }
+        }
+
+        BRM_naval_air_coordination_idea = {
+            allowed = { original_tag = BRM }
+
+            picture = combined_bomber_offensive
+
+            modifier = {
+                naval_strike_attack_factor = 0.1
+                naval_strike_targeting_factor = 0.1
+                naval_strike_agility_factor = 0.1
+            }
+        }
+
+        BRM_air_academy_idea = {
+            allowed = { original_tag = BRM }
+
+            picture = generic_army_war_college
+
+            modifier = {
+                air_range_factor = 0.10
+                air_accidents_factor = -0.10
+                army_bonus_air_superiority_factor = 0.05
+            }
+        }
+    }
+}

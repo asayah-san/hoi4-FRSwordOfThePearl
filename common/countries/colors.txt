@@ -1,17 +1,23 @@
-#reload countrycolors
-
-GER = {
-	color = rgb { 90 100 80 } #We could always use a KR-esque color. Perhaps 77 93 83?
-	color_ui = rgb { 80 90 100 } #Formerly 77 88 99. Rounded it up.
-}
+# additions and modifications
 DEU = {
-	color = rgb { 76  97  121 }
-	color_ui = rgb { 76 97 121 }
+	color = rgb { 77 93 83 }
+	color_ui = rgb { 77 93 83 }
 }
-UFC = {
+SRP = {
 	color = rgb { 155 0 0 }
 	color_ui = rgb { 155 0 0 }
 }
+PHI = {
+	color = rgb { 200 200 100 }
+	color_ui = rgb { 200 200 100 }
+}
+
+# base
+GER = {
+	color = rgb { 90 100 80 }
+	color_ui = rgb { 80 90 100 }
+}
+
 GRE = {
 	color = rgb { 77 93 83 }
 	color_ui = rgb { 80 90 100}
@@ -327,10 +333,6 @@ PAN = {
 PER = {
 	color = rgb { 71 103 77 }
 	color_ui = rgb { 92 147 126 }
-}
-PHI = {
-	color = rgb { 200 200 100 }
-	color_ui = rgb { 200 200 100 }
 }
 PRU = {
 	color = rgb { 151  39  39 }

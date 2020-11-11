@@ -1,6 +1,5 @@
 
 ideas = {
-
     country = {
         
         PHI_thirst_for_democracy = {
@@ -967,6 +966,6 @@ ideas = {
                 political_power_gain = 0.15
             }
         }
+        
     }
-
 }

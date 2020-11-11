@@ -1,8 +1,8 @@
 ﻿l_english:
  
 ### Ideas ###
-SP_asean_member:0 "ASEAN Member"
-SP_asean_member_desc:0 "Being a member of ASEAN means we can freely trade with neighboring members which can greatly help develop our economy and industrial capabilities."
+ASEAN_member:0 "ASEAN Member"
+ASEAN_member_desc:0 "Being a member of ASEAN means we can freely trade with neighboring members which can greatly help develop our economy and industrial capabilities."
 
 ### Opinion Modifiers ###
 asean_accepted:0 "Member of ASEAN"
@@ -11,17 +11,17 @@ asean_accepted_entry:0 "Accepted our entry to ASEAN"
 asean_refused_entry:0 "Refused our entry to ASEAN"
 
 ### Decisions ###
-SP_ASEAN_decisions:0 "ASEAN"
-SP_ASEAN_decisions_desc:0 "The §GAssociation of South-East Asian Nations§! is an economic organization which aims to promote free trade between its member states. Members can import/export goods to other members with much less taxes and tariffs; it also prioritized trade between its members so that they can prosper together."
-SP_ASEAN_join:0 "Apply for Membership"
-SP_ASEAN_leave:0 "Leave ASEAN"
-SP_ASEAN_invite_siam:0 "Invite Siam"
-SP_ASEAN_invite_vietnam:0 "Invite Vietnam"
-SP_ASEAN_invite_cambodia:0 "Invite Cambodia"
-SP_ASEAN_invite_burma:0 "Invite Burma"
-SP_ASEAN_invite_laos:0 "Invite Laos"
-SP_ASEAN_invite_malaysia:0 "Invite Malaysia"
-SP_ASEAN_invite_insulindia:0 "Invite Insulindia"
+ASEAN_decisions:0 "ASEAN"
+ASEAN_decisions_desc:0 "The §GAssociation of South-East Asian Nations§! is an economic organization which aims to promote free trade between its member states. Members can import/export goods to other members with much less taxes and tariffs; it also prioritized trade between its members so that they can prosper together."
+ASEAN_join:0 "Apply for Membership"
+ASEAN_leave:0 "Leave ASEAN"
+ASEAN_invite_siam:0 "Invite Siam"
+ASEAN_invite_vietnam:0 "Invite Vietnam"
+ASEAN_invite_cambodia:0 "Invite Cambodia"
+ASEAN_invite_burma:0 "Invite Burma"
+ASEAN_invite_laos:0 "Invite Laos"
+ASEAN_invite_malaysia:0 "Invite Malaysia"
+ASEAN_invite_insulindia:0 "Invite Insulindia"
 
 ### Events ###
 asean.1.t:0 "Invitation to ASEAN"

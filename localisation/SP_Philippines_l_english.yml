@@ -16,9 +16,9 @@ PHI_invite_malaysia:0 "Invite Malaysia to SEATO"
 
 PHI_war_decisions:0 "War Decisions"
 PHI_whitepeace_uk:0 "Peace Offering with the British"
-PHI_whitepeace_france:0 "Peace Offering with the French"
-PHI_whitepeace_usa:0 "Peace Offering with the Americans"
-PHI_whitepeace_japan:0 "Peace Offering with the Japanese"
+PHI_whitepeace_fr:0 "Peace Offering with the French"
+PHI_whitepeace_us:0 "Peace Offering with the Americans"
+PHI_whitepeace_jp:0 "Peace Offering with the Japanese"
 
 PHI_the_kaiserreich:0 "The Kaiserreich"
 PHI_the_kaiserreich_desc:0 "As the war with the Valkists come to an end, immigrants with German ethnicity, are calling to the restoration of the Das Deutsches Kaiserreich. §GGott mit uns!§!"
@@ -39,12 +39,6 @@ PHI_fund_research_and_development:0 "Fund Research and Development"
 PHI_prioritize_construction:0 "Prioritize Constructions"
 PHI_aid_workers:0 "Aid Workers"
 PHI_start_social_services:0 "Start New Social Services"
-
-PHI_cat_war_with_the_west:0 "War against the Imperialists"
-PHI_peace_with_britain:0 "Propose Peace with Britain"
-PHI_peace_with_france:0 "Propose Peace with France"
-PHI_peace_with_japan:0 "Propose Peace with Japan"
-PHI_peace_with_usa:0 "Propose Peace with the United States"
 
 ### Custom Effect Tooltips ###
 PHI_new_elections_called_effect:0 "The Government prepares new elections"
@@ -493,9 +487,11 @@ PHI_modern_sandigs_desc:0 ""
 PHI_modern_sandigs_tt:0 "New Elite Sandigs Divisions will be trained and deployed."
 
 ## Socialist Path ##
+PHI_the_new_republic_proclaimed:0 "The New Republic Proclaimed"
+PHI_the_new_republic_proclaimed_desc:0 ""
 PHI_trade_union_congress:0 "Trade Union Congress"
 PHI_trade_union_congress_desc:0 ""
-PHI_socialism_with_filipino_characteristics:0 "Socialism with Filipino Characterisctics"
+PHI_socialism_with_filipino_characteristics:0 "Socialism with Filipino Characteristics"
 PHI_socialism_with_filipino_characteristics_desc:0 ""
 PHI_employment_subsidies:0 "Employment Subsidies"
 PHI_employment_subsidies_desc:0 ""

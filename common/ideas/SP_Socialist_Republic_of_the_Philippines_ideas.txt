@@ -1,9 +1,8 @@
 ideas = {
-
     country = {
 
-        UFC_the_second_revolution = {
-            allowed = { original_tag = UFC }
+        SRP_the_second_revolution = {
+            allowed = { original_tag = SRP }
 
             picture = generic_victors_of_ww1
 
@@ -14,8 +13,8 @@ ideas = {
             }
         }
 
-        UFC_decentralized_command = {
-            allowed = { original_tag = UFC }
+        SRP_decentralized_command = {
+            allowed = { original_tag = SRP }
 
             picture = UK_politics_syn_idea
 
@@ -26,8 +25,8 @@ ideas = {
             }
         }
 
-        UFC_no_proper_army = {
-            allowed = { original_tag = UFC }
+        SRP_no_proper_army = {
+            allowed = { original_tag = SRP }
 
             picture = MEX_revolutionary_army
 

@@ -1,6 +1,6 @@
-SP_ASEAN_decisions = {
+ASEAN_decisions = {
 
-    SP_ASEAN_join = {
+    ASEAN_join = {
         allowed = {
             OR = {
                 original_tag = BRM
@@ -22,10 +22,14 @@ SP_ASEAN_decisions = {
                     has_government = collectivist
                     has_government = liberatarian_socialist
                 }
+                OR = {
+                    has_idea = export_focus
+                    has_idea = free_trade
+                }
             }
 
             every_country = {
-                limit = { has_idea = SP_asean_member }
+                limit = { has_idea = ASEAN_member }
                 NOT = { has_war_with = ROOT }
             }
         }
@@ -35,7 +39,7 @@ SP_ASEAN_decisions = {
         }
     }
 
-    SP_ASEAN_leave = {
+    ASEAN_leave = {
         allowed = {
             OR = {
                 original_tag = BRM
@@ -48,29 +52,29 @@ SP_ASEAN_decisions = {
             }
         }
 
-        visible = { has_idea = SP_asean_member }
+        visible = { has_idea = ASEAN_member }
 
         complete_effect = {
-            remove_ideas = SP_asean_member
+            remove_ideas = ASEAN_member
             hidden_effect = {
                 news_event = { id = news.7 days = 1 }
             }
         }
     }
 
-    SP_ASEAN_invite_vietnam = {
+    ASEAN_invite_vietnam = {
         allowed = { original_tag = PHI }
 
         visible = { 
             has_completed_focus = PHI_asean_focus
             VIN = {
-                NOT = { has_idea = SP_asean_member }
+                NOT = { has_idea = ASEAN_member }
             }
         }
 
         available = { 
             VIN = {
-                NOT = { has_idea = SP_asean_member }
+                NOT = { has_idea = ASEAN_member }
                 OR = {
                     has_idea = free_trade
                     has_idea = export_focus
@@ -85,13 +89,13 @@ SP_ASEAN_decisions = {
         } 
     }
 
-    SP_ASEAN_invite_siam = {
+    ASEAN_invite_siam = {
         allowed = { original_tag = PHI }
 
         visible = { 
             has_completed_focus = PHI_asean_focus
             SIA = {
-                NOT = { has_idea = SP_asean_member }
+                NOT = { has_idea = ASEAN_member }
             } 
         }
 
@@ -115,13 +119,13 @@ SP_ASEAN_decisions = {
         }
     }
 
-    SP_ASEAN_invite_cambodia = {
+    ASEAN_invite_cambodia = {
         allowed = { original_tag = PHI }
 
         visible = { 
             has_completed_focus = PHI_asean_focus
             CAM = {
-                has_idea = SP_asean_member
+                NOT = { has_idea = ASEAN_member }
             }
         }
 
@@ -145,13 +149,13 @@ SP_ASEAN_decisions = {
         }
     }
 
-    SP_ASEAN_invite_laos = {
+    ASEAN_invite_laos = {
         allowed = { original_tag = PHI }
 
         visible = { 
             has_completed_focus = PHI_asean_focus 
             LAO = {
-                NOT = { has_idea = SP_asean_member }
+                NOT = { has_idea = ASEAN_member }
             }
         }
 
@@ -175,13 +179,13 @@ SP_ASEAN_decisions = {
         }
     }
 
-    SP_ASEAN_invite_malaysia = {
+    ASEAN_invite_malaysia = {
         allowed = { original_tag = PHI }
 
         visible = { 
             has_completed_focus = PHI_asean_focus
             MAL = {
-                NOT = { has_idea = SP_asean_member }
+                NOT = { has_idea = ASEAN_member }
             } 
         }
 
@@ -205,13 +209,13 @@ SP_ASEAN_decisions = {
         }
     }
 
-    SP_ASEAN_invite_insulindia = {
+    ASEAN_invite_insulindia = {
         allowed = { original_tag = PHI }
 
         visible = { 
             has_completed_focus = PHI_asean_focus
             VIN = {
-                NOT = { has_idea = SP_asean_member }
+                NOT = { has_idea = ASEAN_member }
             }
         }
 
@@ -235,13 +239,13 @@ SP_ASEAN_decisions = {
         }
     }
 
-    SP_ASEAN_invite_burma = {
+    ASEAN_invite_burma = {
         allowed = { original_tag = PHI }
 
         visible = { 
             has_completed_focus = PHI_asean_focus
             BRM = {
-                has_idea = SP_asean_member
+                NOT = { has_idea = ASEAN_member }
             }
         }
 
