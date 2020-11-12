@@ -25,7 +25,6 @@ country_event = {
         add_political_power = -500
         hidden_effect = {
             country_event = { id = siam.2 days = 72 }
-            complete_national_focus = SIA_government_in_crisis
         }
     }
 }

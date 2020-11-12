@@ -332,9 +332,9 @@ ideas = {
 
             picture = generic_army_war_college
             modifier = {
-                army_attack_factor = 0.2
-                army_defence_factor = 0.2
-                training_time_factor = -0.2
+                army_attack_factor = 0.15
+                army_defence_factor = 0.15
+                training_time_factor = -0.15
             }
         }
 
@@ -344,9 +344,9 @@ ideas = {
             picture = general_staff
 
             modifier = {
-                army_org_factor = 0.2
-                planning_speed = 0.2
-                no_supply_grace = 72
+                army_org_factor = 0.1
+                planning_speed = 0.05
+                no_supply_grace = 48
             }
         }
 
@@ -395,6 +395,16 @@ ideas = {
             }
         }
 
+        PHI_tax_reform = {
+            allowed = { original_tag = PHI }
+
+            picture = capital_outflow
+
+            modifier = {
+                consumer_goods_factor = -0.05
+            }
+        }
+
         PHI_weakened_oligarchy = {
             allowed = {
                 original_tag = PHI
@@ -431,10 +441,10 @@ ideas = {
             picture = ast_abandon_the_westminster_system_fascism
 
             modifier = {
-                surrender_limit = 0.25
+                surrender_limit = 0.15
                 conscription = 0.1
-                army_core_attack_factor = 0.1
-	            army_core_defence_factor = 0.1
+                army_core_attack_factor = 0.05
+	            army_core_defence_factor = 0.05
             }
         }
 
@@ -910,44 +920,10 @@ ideas = {
             }
         }
 
-        PHI_sabah_purchase_b = {
-            picture = HUN_treaty_of_triannon
-
-            modifier = {
-                consumer_goods_factor = 0.1
-            }
-        }
-        
-        PHI_sabah_purchase_s = {
-            picture = HUN_treaty_of_triannon
-
-            modifier = {
-                consumer_goods_factor = -0.1
-            }
-        }
-
-        PHI_island_territories_purchase_b = {
-            
-            picture = HUN_treaty_of_triannon
-
-            modifier = {
-                consumer_goods_factor = 0.1
-            }            
-        }
-
-        PHI_island_territories_purchase_s = {
-            
-            picture = HUN_treaty_of_triannon
-
-            modifier = {
-                consumer_goods_factor = -0.1
-            }            
-        }
-
         PHI_german_refugees = {
             allowed = { original_tag = PHI }
 
-            picture = generic_victors_of_ww1
+            picture = prc_low_popular_support3
 
             modifier = {
                 consumer_goods_factor = 0.02
