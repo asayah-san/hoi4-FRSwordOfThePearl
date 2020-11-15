@@ -627,8 +627,7 @@ focus_tree = {
     # Expand the Army
     focus = {
         id = PHI_expand_the_army
-        #icon = GFX_goal_generic_allies_build_infantry
-        icon = GFX_goal_philippines_constabulary
+        icon = GFX_goal_generic_allies_build_infantry
         x = 18
         y = 0
         cost = 3
@@ -1389,7 +1388,7 @@ focus_tree = {
         id = PHI_democracy_returns
         icon = GFX_goal_philippines_democracy
         x = 4
-        y = 8
+        y = 7
         cost = 0
         available_if_capitulated = yes
         bypass = { 
@@ -1416,7 +1415,7 @@ focus_tree = {
         id = PHI_social_democrat_victory
         icon = GFX_goal_ideology_social_democrat
         x = 1
-        y = 9
+        y = 8
         cost = 0
         available_if_capitulated = yes
         prerequisite = { focus = PHI_democracy_returns }
@@ -1434,7 +1433,7 @@ focus_tree = {
         id = PHI_helping_the_poor
         icon = GFX_goal_DEI_focus_ban_rice_import
         x = 0
-        y = 10
+        y = 9
         cost = 10
         available_if_capitulated = yes
         available = { has_government = social_democrat }
@@ -1449,7 +1448,7 @@ focus_tree = {
         id = PHI_cooperate_with_trade_unions
         icon = GFX_goal_RAJ_India_Worker_Rights
         x = 0
-        y = 11
+        y = 10
         cost = 10
         available_if_capitulated = yes
         available = { has_government = social_democrat }
@@ -1471,7 +1470,7 @@ focus_tree = {
         id = PHI_social_welfare_programs
         icon = GFX_focus_generic_concessions
         x = 0
-        y = 12
+        y = 11
         cost = 10
         available_if_capitulated = yes
         available = { has_government = social_democrat }
@@ -1489,7 +1488,7 @@ focus_tree = {
         id = PHI_a_contented_worker_focus
         icon = GFX_goal_generic_consumer_goods
         x = 1
-        y = 13
+        y = 12
         cost = 5
         available = { has_government = social_democrat }
         prerequisite = { focus = PHI_social_welfare_programs }
@@ -1508,7 +1507,7 @@ focus_tree = {
         id = PHI_negotiate_with_the_radicals
         icon = GFX_goal_flames_of_rebellion
         x = 2
-        y = 10
+        y = 9
         cost = 10
         available_if_capitulated = yes
         available = {
@@ -1545,7 +1544,7 @@ focus_tree = {
         id = PHI_new_universities
         icon = GFX_focus_research2
         x = 2
-        y = 11
+        y = 10
         cost = 10
         available_if_capitulated = yes        
         available = {
@@ -1571,7 +1570,7 @@ focus_tree = {
         id = PHI_cwts_focus
         icon = GFX_goal_enlist_the_police
         x = 2
-        y = 12
+        y = 11
         cost = 10
         available_if_capitulated = yes
         available = {
@@ -1595,7 +1594,7 @@ focus_tree = {
         id = PHI_liberal_victory
         icon = GFX_goal_ideology_market_liberal
         x = 4
-        y = 9
+        y = 8
         cost = 0
         available_if_capitulated = yes
         prerequisite = { focus = PHI_democracy_returns }
@@ -1613,7 +1612,7 @@ focus_tree = {
         id = PHI_human_rights
         icon = GFX_goal_DOM_End_Judicial_Corruption
         x = 4
-        y = 10
+        y = 9
         cost = 10
         available = { has_government = market_liberal }
         prerequisite = { focus = PHI_liberal_victory }
@@ -1627,7 +1626,7 @@ focus_tree = {
         id = PHI_agreement_with_trade_unions
         icon = GFX_goal_production
         x = 4
-        y = 11
+        y = 10
         cost = 10
         available = { has_government = market_liberal }
         prerequisite = { focus = PHI_human_rights }
@@ -1648,7 +1647,7 @@ focus_tree = {
         id = PHI_government_investments
         icon = GFX_goal_bag_of_money
         x = 4
-        y = 12
+        y = 11
         cost = 10
         available = { has_government = market_liberal }
         prerequisite = { focus = PHI_agreement_with_trade_unions }
@@ -1687,7 +1686,7 @@ focus_tree = {
         id = PHI_living_the_dream_focus
         icon = GFX_focus_mex_privatisation
         x = 4
-        y = 13
+        y = 12
         cost = 5
         available = { has_government = market_liberal }
         prerequisite = { focus = PHI_rotc_focus }
@@ -1708,7 +1707,7 @@ focus_tree = {
         id = PHI_establish_intelligence_service
         icon = GFX_goal_secret_agents
         x = 6
-        y = 10
+        y = 9
         cost = 10
         available_if_capitulated = yes
         available = {
@@ -1731,7 +1730,7 @@ focus_tree = {
         id = PHI_education_reform
         icon = GFX_focus_research4
         x = 6
-        y = 11
+        y = 10
         cost = 10
         available_if_capitulated = yes
         available = {
@@ -1766,7 +1765,7 @@ focus_tree = {
         id = PHI_rotc_focus
         icon = GFX_goal_army_guy_2
         x = 6
-        y = 12
+        y = 11
         cost = 10
         available = {
             OR = {
@@ -1790,7 +1789,7 @@ focus_tree = {
         id = PHI_conservative_victory
         icon = GFX_goal_ideology_social_conservative
         x = 7
-        y = 9
+        y = 8
         cost = 0
         available_if_capitulated = yes
         available = {
@@ -1811,7 +1810,7 @@ focus_tree = {
         id = PHI_root_out_communists
         icon = GFX_goal_anti_comintern_pact
         x = 8
-        y = 10
+        y = 9
         cost = 10
         available_if_capitulated = yes
         available = { has_government = social_conservative }
@@ -1843,7 +1842,7 @@ focus_tree = {
         id = PHI_control_trade_unions
         icon = GFX_goal_generic_forceful_treaty
         x = 8
-        y = 11
+        y = 10
         cost = 10
         available_if_capitulated = yes
         available = { has_government = social_conservative }
@@ -1865,7 +1864,7 @@ focus_tree = {
         id = PHI_seek_foreign_investors
         icon = GFX_goal_generic_intelligence_exchange
         x = 8
-        y = 12
+        y = 11
         cost = 10
         available_if_capitulated = yes
         available = { has_government = social_conservative }
@@ -1883,7 +1882,7 @@ focus_tree = {
         id = PHI_tradition_and_culture_focus 
         icon = GFX_goal_faith_and_state
         x = 7
-        y = 13
+        y = 12
         cost = 5
         available_if_capitulated = yes
         available = { has_government = social_conservative }
@@ -1899,7 +1898,7 @@ focus_tree = {
         id = PHI_a_true_republic
         icon = GFX_goal_COS_Ferrer_Coup
         x = 4
-        y = 14
+        y = 13
         cost = 10
         available_if_capitulated = yes
         prerequisite = { 
@@ -1923,7 +1922,7 @@ focus_tree = {
         id = PHI_the_new_republic_proclaimed
         icon = GFX_goal_red_star_green_wreath
         x = 22
-        y = 8
+        y = 7
         cost = 10
         available = { has_country_flag = PHI_SOCIALIST_REPUBLIC_FLAG }
         bypass = {
@@ -1941,15 +1940,8 @@ focus_tree = {
         id = PHI_trade_union_congress
         icon = GFX_goal_red_star_gold_wreath
         x = 22
-        y = 9
+        y = 8
         cost = 10
-        bypass = {
-            OR = {
-                has_government = libertarian_socialist
-                has_government = collectivist
-                has_government = vanguardist
-            }
-        }
         prerequisite = { focus = PHI_the_new_republic_proclaimed }
         completion_reward = { country_event = { id = phi.50 } }
     }   
@@ -1959,7 +1951,7 @@ focus_tree = {
         id = PHI_socialism_with_filipino_characteristics
         icon = GFX_goal_ideology_libsoc
         x = 20
-        y = 10
+        y = 9
         cost = 3
         prerequisite = { focus = PHI_trade_union_congress }
         mutually_exclusive = { focus = PHI_seize_the_means_of_production }
@@ -1978,7 +1970,7 @@ focus_tree = {
         id = PHI_employment_subsidies
         icon = GFX_IRE_heavy_industry
         x = 18
-        y = 11
+        y = 10
         cost = 10
         available = { has_government = valkist }
         prerequisite = { focus = PHI_socialism_with_filipino_characteristics }
@@ -2029,7 +2021,7 @@ focus_tree = {
         id = PHI_housing_programs
         icon = GFX_goal_factory_complex
         x = 18
-        y = 12
+        y = 11
         cost = 10
         available = { has_government = libertarian_socialist }
         prerequisite = { focus = PHI_employment_subsidies }
@@ -2043,7 +2035,7 @@ focus_tree = {
         id = PHI_punish_the_corrupt
         icon = GFX_goal_purge_opposition
         x = 18
-        y = 13
+        y = 12
         cost = 10
         available = { has_government = libertarian_socialist }
         prerequisite = { focus = PHI_housing_programs }
@@ -2057,7 +2049,7 @@ focus_tree = {
         id = PHI_religious_tolerance
         icon = GFX_goal_faith_and_state
         x = 20
-        y = 11
+        y = 10
         cost = 5
         available = { has_government = libertarian_socialist }
         prerequisite = { focus = PHI_socialism_with_filipino_characteristics }
@@ -2071,7 +2063,7 @@ focus_tree = {
         id = PHI_socialist_education
         icon = GFX_focus_research2
         x = 20
-        y = 12
+        y = 11
         cost = 10
         available = { has_government = libertarian_socialist }
         prerequisite = { focus = PHI_religious_tolerance }
@@ -2089,7 +2081,7 @@ focus_tree = {
         id = PHI_for_the_motherland
         icon = GFX_goal_LEC_police3
         x = 20
-        y = 13
+        y = 12
         cost = 10
         prerequisite = { focus = PHI_socialist_education }
         completion_reward = {
@@ -2102,7 +2094,7 @@ focus_tree = {
         id = PHI_government_owned_and_controlled_corporations
         icon = GFX_goal_generic_soviet_construction
         x = 22
-        y = 11
+        y = 10
         cost = 10
         available = { 
             OR = {
@@ -2125,7 +2117,7 @@ focus_tree = {
         id = PHI_redistribute_the_haciendas
         icon = GFX_focus_prc_agrarian_socialism
         x = 22
-        y = 12
+        y = 11
         cost = 10
         available = { 
             OR = {
@@ -2235,7 +2227,7 @@ focus_tree = {
         id = PHI_seize_the_wealth
         icon = GFX_focus_empty_coffers
         x = 22
-        y = 13
+        y = 12
         cost = 10
         available = { 
             OR = {
@@ -2255,7 +2247,7 @@ focus_tree = {
         id = PHI_seize_the_means_of_production
         icon = GFX_goal_ideology_vanguardist
         x = 24
-        y = 10
+        y = 9
         cost = 3
         prerequisite = { focus = PHI_trade_union_congress }
         available = { has_country_flag = PHI_TARUC_ASSUMES_POWER_FLAG }
@@ -2280,7 +2272,7 @@ focus_tree = {
         id = PHI_spy_on_our_own_citizens
         icon = GFX_goal_NOR_secret_police
         x = 24
-        y = 11
+        y = 10
         cost = 10
         available = { has_government = vanguardist }
         prerequisite = { focus = PHI_seize_the_means_of_production }
@@ -2294,7 +2286,7 @@ focus_tree = {
         id = PHI_public_reeducation
         icon = GFX_focus_generic_socialist_science
         x = 24
-        y = 12
+        y = 11
         cost = 10
         available = { has_government = vanguardist }
         prerequisite = { focus = PHI_spy_on_our_own_citizens }
@@ -2312,7 +2304,7 @@ focus_tree = {
         id = PHI_forced_conscription
         icon = GFX_PRF_integrate_BHC
         x = 24
-        y = 13
+        y = 12
         cost = 10
         available = { has_government = vanguardist }
         prerequisite = { focus = PHI_public_reeducation }
@@ -2326,7 +2318,7 @@ focus_tree = {
         id = PHI_state_atheism
         icon = GFX_goal_MAF_Kulturkampf
         x = 26
-        y = 11
+        y = 10
         cost = 10
         available = { has_government = vanguardist }
         prerequisite = { focus = PHI_seize_the_means_of_production }
@@ -2343,7 +2335,7 @@ focus_tree = {
         id = PHI_propaganda_campaigns
         icon = GFX_goal_generic_propaganda
         x = 26
-        y = 12
+        y = 11
         cost = 5
         available = { has_government = vanguardist }
         prerequisite = { focus = PHI_state_atheism }
@@ -2362,7 +2354,7 @@ focus_tree = {
         id = PHI_establish_quotas
         icon = GFX_goal_revolution_tools
         x = 26
-        y = 13
+        y = 12
         cost = 10
         available = { has_government = vanguardist }
         prerequisite = { focus = PHI_propaganda_campaigns }
@@ -2371,19 +2363,19 @@ focus_tree = {
         }
     }
 
-    # Aid from the Soviet Union
+    # Lone Red Star
     focus = {
-        id = PHI_aid_from_the_soviet_union
-        icon = GFX_focus_chi_mission_to_the_soviet_union
+        id = PHI_the_lone_red_star
+        icon = GFX_focus_ger_great_red_menace
         x = 22
-        y = 14
+        y = 13
         cost = 10
         prerequisite = {
             focus = PHI_for_the_motherland
             focus = PHI_forced_conscription
         }
         completion_reward = {
-            SOV = { country_event = { id = phi.49 } }
+            add_ideas = PHI_the_lone_red_star_idea
         }
     }
 
@@ -2392,9 +2384,9 @@ focus_tree = {
         id = PHI_unity_and_equality_focus
         icon = GFX_goal_commune_politics
         x = 22
-        y = 15
+        y = 14
         cost = 10
-        prerequisite = { focus = PHI_aid_from_the_soviet_union }
+        prerequisite = { focus = PHI_the_lone_red_star }
         completion_reward = {
             add_ideas = PHI_unity_and_equality
         }
@@ -2414,7 +2406,7 @@ focus_tree = {
         id = PHI_aguinaldo_coup
         icon = GFX_goal_ideology_national_populist
         x = 31
-        y = 8
+        y = 7
         cost = 0
         available = { has_country_flag = PHI_AGUINALDO_COUP_SUCCESS_FLAG }
         bypass = { has_government = national_populist }
@@ -2427,7 +2419,7 @@ focus_tree = {
         id = PHI_presidential_death_squads
         icon = GFX_focus_generic_strike_at_democracy1
         x = 30
-        y = 9
+        y = 8
         cost = 10
         available = { has_government = national_populist }
         prerequisite = { focus = PHI_aguinaldo_coup }
@@ -2441,7 +2433,7 @@ focus_tree = {
         id = PHI_execute_corrupt_officials
         icon = GFX_goal_LEC_monkey
         x = 30
-        y = 10
+        y = 9
         cost = 10
         available_if_capitulated = yes
         available = { has_government = national_populist }
@@ -2462,7 +2454,7 @@ focus_tree = {
         id = PHI_establish_state_religion
         icon = GFX_BEL_Improve_Catholic_Relations
         x = 30
-        y = 11
+        y = 10
         cost = 10
         available_if_capitulated = yes
         available = { has_government = national_populist }
@@ -2477,7 +2469,7 @@ focus_tree = {
         id = PHI_ban_trade_unions
         icon = GFX_goal_generic_attack_allies
         x = 30
-        y = 12
+        y = 11
         cost = 5
         available_if_capitulated = yes
         available = { has_government = national_populist }
@@ -2503,7 +2495,7 @@ focus_tree = {
         id = PHI_democratic_in_paper
         icon = GFX_goal_authoritarian
         x = 32
-        y = 9
+        y = 8
         cost = 10
         prerequisite = { focus = PHI_aguinaldo_coup }
         completion_reward = {
@@ -2518,7 +2510,7 @@ focus_tree = {
         id = PHI_death_of_the_republic
         icon = GFX_goal_MAF_Graveyard
         x = 36
-        y = 9
+        y = 8
         cost = 5
         available_if_capitulated = yes
         available = {
@@ -2544,7 +2536,7 @@ focus_tree = {
         id = PHI_control_the_assembly
         icon = GFX_goal_Centralised_Government
         x = 32
-        y = 10
+        y = 9
         cost = 5
         mutually_exclusive = {
             focus = PHI_threaten_the_assembly
@@ -2564,7 +2556,7 @@ focus_tree = {
         id = PHI_threaten_the_assembly
         icon = GFX_goal_DEI_focus_disband_volksraad
         x = 34
-        y = 10
+        y = 9
         cost = 5
         mutually_exclusive = {
             focus = PHI_control_the_assembly
@@ -2585,7 +2577,7 @@ focus_tree = {
         id = PHI_abolish_the_assembly
         icon = GFX_focus_renounce_the_treaty_of_triannon
         x = 36
-        y = 10
+        y = 9
         cost = 5
         mutually_exclusive = {
             focus = PHI_control_the_assembly
@@ -2605,7 +2597,7 @@ focus_tree = {
         id = PHI_tax_mandate
         icon = GFX_goal_bag_of_money
         x = 32
-        y = 11
+        y = 10
         cost = 5
         available = { has_government = national_populist }
         prerequisite = {
@@ -2622,7 +2614,7 @@ focus_tree = {
         id = PHI_a_secret_police
         icon = GFX_goal_generic_propaganda
         x = 36
-        y = 11
+        y = 10
         cost = 5
         available_if_capitulated = yes
         available = { has_government = paternal_autocrat }
@@ -2640,7 +2632,7 @@ focus_tree = {
         id = PHI_purge_the_communist_professors
         icon = GFX_goal_backstab
         x = 34
-        y = 11
+        y = 10
         cost = 5
         available = {
             OR = {
@@ -2684,7 +2676,7 @@ focus_tree = {
         id = PHI_state_education_reform
         icon = GFX_goal_great_science
         x = 34
-        y = 12
+        y = 11
         cost = 5
         available = {
             OR = {
@@ -2707,7 +2699,7 @@ focus_tree = {
         id = PHI_enlist_the_unemployed_focus
         icon = GFX_goal_army_guy_2
         x = 34
-        y = 13
+        y = 12
         cost = 10
         available = {
             OR = {
@@ -2730,7 +2722,7 @@ focus_tree = {
         id = PHI_filipino_nationalism
         icon = GFX_goal_flag_phillipines
         x = 34
-        y = 14
+        y = 13
         cost = 10
         available = {
             OR = {
@@ -2754,7 +2746,7 @@ focus_tree = {
         id = PHI_valdez_government
         icon = GFX_goal_ideology_paternal_autocrat
         x = 37
-        y = 8
+        y = 7
         cost = 0
         available = { has_country_flag = PHI_MILITARY_JUNTA_FLAG }
         bypass = { has_government = paternal_autocrat }
@@ -2767,7 +2759,7 @@ focus_tree = {
         id = PHI_assassinate_union_leaders
         icon = GFX_goal_generic_war_with_comintern
         x = 38
-        y = 9
+        y = 8
         cost = 3
         available_if_capitulated = yes
         available = { has_government = paternal_autocrat }
@@ -2788,7 +2780,7 @@ focus_tree = {
         id = PHI_reforming_the_government
         icon = GFX_goal_HOL_sustain_neutrality
         x = 38
-        y = 10
+        y = 9
         cost = 10
         available_if_capitulated = yes
         available = { has_government = paternal_autocrat }
@@ -2810,7 +2802,7 @@ focus_tree = {
         id = PHI_corporatist_economic_policy_focus
         icon = GFX_goal_gold_reserve
         x = 38
-        y = 11
+        y = 10
         cost = 5
         available_if_capitulated = yes
         available = { has_government = paternal_autocrat }
@@ -2825,7 +2817,7 @@ focus_tree = {
         id = PHI_privatize_non_essential_services
         icon = GFX_goal_generic_consumer_goods
         x = 38
-        y = 12
+        y = 11
         cost = 10
         available_if_capitulated = yes
         available = { has_government = paternal_autocrat }
@@ -2871,12 +2863,13 @@ focus_tree = {
         id = PHI_department_of_foreign_affairs
         icon = GFX_goal_foreign_diplomacy
         x = 13
-        y = 16
+        y = 15
         cost = 3
         available_if_capitulated = yes
         available = { NOT = { has_idea = PHI_agriculture_economy } }
         completion_reward = {
             add_ideas = PHI_dfa
+            unlock_decision_category_tooltip = PHI_department_of_foreign_affairs_decisions
         }
     }
 
@@ -2885,7 +2878,7 @@ focus_tree = {
         id = PHI_the_emperor
         icon = GFX_goal_japan
         x = 4
-        y = 17
+        y = 16
         cost = 1
         available_if_capitulated = yes
         available = {
@@ -2912,7 +2905,7 @@ focus_tree = {
         id = PHI_japanese_trade_deal
         icon = GFX_focus_chi_collaboration_with_the_japanese
         x = 4
-        y = 18
+        y = 17
         cost = 5
         available_if_capitulated = yes
         prerequisite = { focus = PHI_the_emperor }
@@ -2926,7 +2919,7 @@ focus_tree = {
         id = PHI_our_place_in_the_sphere
         icon = Co_Prosperity_Sphere
         x = 4
-        y = 19
+        y = 18
         cost = 5
         available_if_capitulated = yes
         available = { has_country_flag = PHI_JAP_TRADE }
@@ -2941,7 +2934,7 @@ focus_tree = {
         id = PHI_learn_from_the_japanese
         icon = GFX_goal_generic_sea_focused_navy
         x = 4
-        y = 20
+        y = 19
         cost = 10
         available_if_capitulated = yes
         prerequisite = { focus = PHI_our_place_in_the_sphere }
@@ -2955,7 +2948,7 @@ focus_tree = {
         id = PHI_purchase_naval_equipment
         icon = GFX_goal_generic_navy_battleship
         x = 4
-        y = 21
+        y = 20
         cost = 10
         available_if_capitulated = yes
         prerequisite = { focus = PHI_learn_from_the_japanese }
@@ -2976,7 +2969,7 @@ focus_tree = {
         id = PHI_the_king
         icon = GFX_goal_united_kingdom
         x = 6
-        y = 17
+        y = 16
         cost = 1
         available_if_capitulated = yes
         available = {
@@ -3003,7 +2996,7 @@ focus_tree = {
         id = PHI_british_trade_deal
         icon = GFX_focus_chi_british_cooperation
         x = 6
-        y = 18
+        y = 17
         cost = 5
         available_if_capitulated = yes
         prerequisite = { focus = PHI_the_king }
@@ -3017,7 +3010,7 @@ focus_tree = {
         id = PHI_protection_from_the_empire
         icon = GFX_goal_tfv_strengthen_commonwealth_ties
         x = 6
-        y = 19
+        y = 18
         cost = 5
         available_if_capitulated = yes
         available = { has_country_flag = PHI_ENG_TRADE }
@@ -3032,7 +3025,7 @@ focus_tree = {
         id = PHI_learn_from_the_british
         icon = GFX_goal_generic_air_doctrine
         x = 6
-        y = 20
+        y = 19
         cost = 10
         available_if_capitulated = yes
         prerequisite = { focus = PHI_protection_from_the_empire }
@@ -3046,7 +3039,7 @@ focus_tree = {
         id = PHI_purchase_air_equipment
         icon = GFX_goal_generic_air_fighter
         x = 6
-        y = 21
+        y = 20
         cost = 10
         available_if_capitulated = yes
         prerequisite = { focus = PHI_learn_from_the_british }
@@ -3067,7 +3060,7 @@ focus_tree = {
         id = PHI_joint_naval_exercises
         icon = GFX_goal_generic_navy_doctrines_tactics
         x = 5
-        y = 22
+        y = 21
         cost = 10
         prerequisite = { 
             focus = PHI_purchase_naval_equipment
@@ -3093,7 +3086,7 @@ focus_tree = {
         id = PHI_no_more_colonialism
         icon = GFX_goal_philippines_post_independence_stabilization
         x = 13
-        y = 17
+        y = 16
         cost = 5
         available_if_capitulated = yes
         prerequisite = { focus = PHI_department_of_foreign_affairs }
@@ -3118,7 +3111,7 @@ focus_tree = {
         id = PHI_soviet_trade_deal
         icon = GFX_focus_chi_mission_to_the_soviet_union
         x = 13
-        y = 18
+        y = 17
         cost = 2
         available_if_capitulated = yes
         available = {
@@ -3143,7 +3136,7 @@ focus_tree = {
         id = PHI_soviet_equipment
         icon = GFX_goal_RUS_armored_school
         x = 12
-        y = 19
+        y = 18
         cost = 5
         available_if_capitulated = yes
         available = { has_country_flag = PHI_SOV_TRADE }
@@ -3167,7 +3160,7 @@ focus_tree = {
         id = PHI_soviet_tactics
         icon = GFX_goal_generic_small_arms
         x = 14
-        y = 19
+        y = 18
         cost = 5
         available_if_capitulated = yes
         available = { has_country_flag = PHI_SOV_TRADE }
@@ -3186,7 +3179,7 @@ focus_tree = {
         id = PHI_demand_british_colonial_holdings
         icon = GFX_goal_generic_more_territorial_claims
         x = 10
-        y = 20
+        y = 19
         cost = 5
         available_if_capitulated = no
         prerequisite = { 
@@ -3213,7 +3206,7 @@ focus_tree = {
         id = PHI_malayan_independence
         icon = GFX_goal_generic_improve_relations
         x = 8
-        y = 21
+        y = 20
         cost = 3
         available_if_capitulated = no
         available = {
@@ -3227,45 +3220,7 @@ focus_tree = {
         bypass = { MAL = { exists = yes } }
         prerequisite = { focus = PHI_demand_british_colonial_holdings }
         completion_reward = {
-            hidden_effect = {
-                every_state = {
-                    limit = { is_core_of = MAL }
-                    remove_core_of = MAL
-                }
-
-                MAL = {
-                    add_state_core = 819
-                    add_state_core = 820
-                    add_state_core = 821
-                    add_state_core = 336
-                    add_state_core = 333
-                    add_state_core = 944
-                }
-
-                PHI = {
-                    add_state_core = 785
-                }
-            }
-            release = MAL
-            if = { 
-                limit = { has_dlc = "Together for Victory" } 
-                set_autonomy = {
-                    target = MAL
-                    autonomy_state = autonomy_dominion
-                }
-            }
-            if = {
-                limit = { NOT = { has_dlc = "Together for Victory" } }
-                puppet = MAL
-            }
-            hidden_effect = {
-                MAL = {
-                    add_opinion_modifier = {
-                        target = PHI
-                        modifier = seato_our_liberators
-                    }
-                }
-            }
+           country_event = { id = annex.mal }
         }
     }
 
@@ -3274,7 +3229,7 @@ focus_tree = {
         id = PHI_indonesian_independence
         icon = GFX_goal_generic_improve_relations
         x = 10
-        y = 21
+        y = 20
         cost = 3
         available_if_capitulated = no
         available = {
@@ -3293,52 +3248,7 @@ focus_tree = {
         bypass = { INS = { exists = yes } }
         prerequisite = { focus = PHI_demand_british_colonial_holdings }
         completion_reward = {
-            hidden_effect = {
-                every_state = {
-                    limit = { is_core_of = INS }
-                    remove_core_of = INS
-                }
-
-                every_state = {
-                    limit = { is_core_of = BEA }
-                    remove_core_of = BEA
-                }
-
-                INS = {
-                    add_state_core = 334
-                    add_state_core = 943
-                    add_state_core = 951
-                    add_state_core = 790
-                    add_state_core = 672
-                    add_state_core = 797
-                    add_state_core = 335
-                    add_state_core = 711
-                    add_state_core = 822
-                    add_state_core = 823
-                    add_state_core = 667
-                }
-            }
-            release = INS
-            if = { 
-                limit = { has_dlc = "Together for Victory" } 
-                set_autonomy = {
-                    target = INS
-                    autonomy_state = autonomy_dominion
-                }
-            }
-            if = {
-                limit = { NOT = { has_dlc = "Together for Victory" } }
-                puppet = INS
-            }
-            hidden_effect = {
-                INS = {
-                    add_opinion_modifier = {
-                        target = PHI
-                        modifier = seato_our_liberators
-                    }
-                    load_focus_tree = generic_focus
-                }
-            } 
+            country_event = { id = annex.ins }
         }
     }
 
@@ -3347,7 +3257,7 @@ focus_tree = {
         id = PHI_burmese_independence
         icon = GFX_goal_generic_improve_relations
         x = 12
-        y = 21
+        y = 20
         cost = 3
         available_if_capitulated = no
         available = {
@@ -3360,35 +3270,7 @@ focus_tree = {
         bypass = { BRM = { exists = yes } }
         prerequisite = { focus = PHI_demand_british_colonial_holdings }
         completion_reward = {
-            hidden_effect = {
-                BRM = {
-                    add_state_core = 288
-                    add_state_core = 640
-                    add_state_core = 812
-                    add_state_core = 805
-                    add_state_core = 1007
-                }
-            }
-            release = BRM
-            if = { 
-                limit = { has_dlc = "Together for Victory" } 
-                set_autonomy = {
-                    target = BRM
-                    autonomy_state = autonomy_dominion
-                }
-            }
-            if = {
-                limit = { NOT = { has_dlc = "Together for Victory" } }
-                puppet = BRM
-            }
-            hidden_effect = {
-                BRM = {
-                    add_opinion_modifier = {
-                        target = PHI
-                        modifier = seato_our_liberators
-                    }
-                }
-            }
+            country_event = { id = annex.brm }
         }
     }
 
@@ -3397,7 +3279,7 @@ focus_tree = {
         id = PHI_demand_french_colonial_holdings
         icon = GFX_goal_generic_more_territorial_claims
         x = 16
-        y = 20
+        y = 19
         cost = 5
         available_if_capitulated = no
         prerequisite = {
@@ -3422,7 +3304,7 @@ focus_tree = {
         id = PHI_cambodian_independence
         icon = GFX_goal_generic_improve_relations
         x = 14
-        y = 21
+        y = 20
         cost = 3
         available_if_capitulated = no
         bypass = { CAM = { exists = yes } }
@@ -3433,38 +3315,7 @@ focus_tree = {
         }
         prerequisite = { focus = PHI_demand_french_colonial_holdings }
         completion_reward = {
-            hidden_effect = {
-                every_state = {
-                    limit = { is_core_of = FIC }
-                    remove_core_of = FIC
-                }
-
-                CAM = {
-                    add_state_core = 962
-                    add_state_core = 741
-                    add_state_core = 963
-                }
-            }
-            release = CAM
-            if = { 
-                limit = { has_dlc = "Together for Victory" } 
-                set_autonomy = {
-                    target = CAM
-                    autonomy_state = autonomy_dominion
-                }
-            }
-            if = {
-                limit = { NOT = { has_dlc = "Together for Victory" } }
-                puppet = CAM
-            }
-            hidden_effect = {
-                CAM = {
-                    add_opinion_modifier = {
-                        target = PHI
-                        modifier = seato_our_liberators
-                    }
-                }
-            }
+            country_event = { id = annex.cam }
         }
     }
 
@@ -3473,7 +3324,7 @@ focus_tree = {
         id = PHI_vietnamese_independence
         icon = GFX_goal_generic_improve_relations
         x = 16
-        y = 21
+        y = 20
         cost = 3
         available_if_capitulated = no
         available = {
@@ -3486,42 +3337,7 @@ focus_tree = {
         bypass = { VIN = { exists = yes } }
         prerequisite = { focus = PHI_demand_french_colonial_holdings }
         completion_reward = {
-            hidden_effect = {
-                every_state = {
-                    limit = { is_core_of = FIC }
-                    remove_core_of = FIC
-                }
-
-                VIN = {
-                    add_state_core = 286
-                    add_state_core = 961
-                    add_state_core = 671
-                    add_state_core = 958
-                    add_state_core = 1009
-
-                    add_ideas = VIN_socialist_symphaties
-                }
-            }
-            release = VIN
-            if = { 
-                limit = { has_dlc = "Together for Victory" } 
-                set_autonomy = {
-                    target = VIN
-                    autonomy_state = autonomy_dominion
-                }
-            }
-            if = {
-                limit = { NOT = { has_dlc = "Together for Victory" } }
-                puppet = VIN
-            }
-            hidden_effect = {
-                VIN = {
-                    add_opinion_modifier = {
-                        target = PHI
-                        modifier = seato_our_liberators
-                    }
-                }
-            }
+            country_event = { id = annex.vin }
         }
     }
 
@@ -3530,7 +3346,7 @@ focus_tree = {
         id = PHI_lao_independence
         icon = GFX_goal_generic_improve_relations
         x = 18
-        y = 21
+        y = 20
         cost = 3
         available_if_capitulated = no
         available = {
@@ -3541,38 +3357,7 @@ focus_tree = {
         bypass = { LAO = { exists = yes } }
         prerequisite = { focus = PHI_demand_french_colonial_holdings }
         completion_reward = {
-            hidden_effect = {
-                every_state = {
-                    limit = { is_core_of = FIC }
-                    remove_core_of = FIC
-                }
-
-                LAO = {
-                    add_state_core = 959
-                    add_state_core = 960
-                    add_state_core = 670
-                }
-            }
-            release = LAO
-            if = { 
-                limit = { has_dlc = "Together for Victory" } 
-                set_autonomy = {
-                    target = LAO
-                    autonomy_state = autonomy_dominion
-                }
-            }
-            if = {
-                limit = { NOT = { has_dlc = "Together for Victory" } }
-                puppet = LAO
-            }
-            hidden_effect = {
-                LAO = {
-                    add_opinion_modifier = {
-                        target = PHI
-                        modifier = seato_our_liberators
-                    }
-                }
-            }
+            country_event = { id = annex.lao }
         }
     }
 
@@ -3581,7 +3366,7 @@ focus_tree = {
         id = PHI_asean_focus
         icon = GFX_goal_liberty
         x = 13
-        y = 22
+        y = 21
         cost = 10
         prerequisite = { focus = PHI_cambodian_independence }
         prerequisite = { focus = PHI_vietnamese_independence }
@@ -3592,7 +3377,6 @@ focus_tree = {
         completion_reward = {
             add_ideas = SP_asean_member
             
-            #unlock_decision_category_tooltip
             unlock_decision_tooltip = SP_ASEAN_invite_vietnam
             unlock_decision_tooltip = SP_ASEAN_invite_cambodia
             unlock_decision_tooltip = SP_ASEAN_invite_siam
@@ -3600,6 +3384,9 @@ focus_tree = {
             unlock_decision_tooltip = SP_ASEAN_invite_burma
             unlock_decision_tooltip = SP_ASEAN_invite_insulindia
             unlock_decision_tooltip = SP_ASEAN_invite_malaysia
+            hidden_effect = {
+                news_event = { id = news.8 }
+            }
         }
     }
 
@@ -3608,7 +3395,7 @@ focus_tree = {
         id = PHI_the_fuhrer
         icon = GFX_goal_germany
         x = 20
-        y = 17
+        y = 16
         cost = 1
         available_if_capitulated = yes
         available = {
@@ -3635,7 +3422,7 @@ focus_tree = {
         id = PHI_german_trade_deal
         icon = GFX_goal_COS_German_Bailout
         x = 20
-        y = 18
+        y = 17
         cost = 5
         available_if_capitulated = yes
         prerequisite = { focus = PHI_the_fuhrer }
@@ -3649,7 +3436,7 @@ focus_tree = {
         id = PHI_military_pact_with_the_germans
         icon = GFX_goal_generic_axis_build_infantry
         x = 20
-        y = 19
+        y = 18
         cost = 5
         available_if_capitulated = yes
         available = { has_country_flag = PHI_GER_TRADE }
@@ -3664,7 +3451,7 @@ focus_tree = {
         id = PHI_learn_from_the_germans
         icon = GFX_goal_national_arsenal
         x = 20
-        y = 20
+        y = 19
         cost = 10
         available_if_capitulated = yes
         prerequisite = { focus = PHI_military_pact_with_the_germans }
@@ -3678,7 +3465,7 @@ focus_tree = {
         id = PHI_purchase_tank_equipment
         icon = GFX_focus_generic_army_tanks2
         x = 20
-        y = 21
+        y = 20
         cost = 10
         available_if_capitulated = yes
         prerequisite = { 
@@ -3701,7 +3488,7 @@ focus_tree = {
         id = PHI_the_president
         icon = GFX_goal_usa
         x = 22
-        y = 17
+        y = 16
         cost = 1
         available_if_capitulated = yes
         available = {
@@ -3728,7 +3515,7 @@ focus_tree = {
         id = PHI_american_trade_deal
         icon = GFX_focus_chi_mission_to_the_us
         x = 22
-        y = 18
+        y = 17
         cost = 5
         available_if_capitulated = yes
         prerequisite = { focus = PHI_the_president }
@@ -3742,7 +3529,7 @@ focus_tree = {
         id = PHI_defense_treaty_with_america
         icon = GFX_goal_LEC_armsUSA
         x = 22
-        y = 19
+        y = 18
         cost = 5
         available_if_capitulated = yes
         available = { has_country_flag = PHI_USA_TRADE }
@@ -3757,7 +3544,7 @@ focus_tree = {
         id = PHI_learn_from_the_americans
         icon = GFX_goal_national_mobilization
         x = 22
-        y = 20
+        y = 19
         cost = 10
         available_if_capitulated = yes
         prerequisite = { focus = PHI_learn_from_the_americans }
@@ -3771,7 +3558,7 @@ focus_tree = {
         id = PHI_acquire_foreign_firepower
         icon = GFX_goal_generic_army_artillery
         x = 22
-        y = 21
+        y = 20
         cost = 10
         available_if_capitulated = yes
         prerequisite = {
@@ -3794,7 +3581,7 @@ focus_tree = {
         id = PHI_joint_army_exercises
         icon = GFX_goal_generic_army_doctrines
         x = 21
-        y = 22
+        y = 21
         cost = 10
         available_if_capitulated = yes
         prerequisite = { 
@@ -3821,7 +3608,7 @@ focus_tree = {
         id = PHI_valkists_in_the_government
         icon = GFX_goal_ideology_valkist
         x = 30
-        y = 16
+        y = 14
         cost = 0
         available = { has_country_flag = PHI_KALIBAPI_VICTORY_FLAG }
         bypass = { has_government = valkist }
@@ -3833,7 +3620,7 @@ focus_tree = {
         id = PHI_begin_cultural_rehabilitation
         icon = GFX_goal_economic_stuff
         x = 30
-        y = 17
+        y = 15
         cost = 2
         available_if_capitulated = yes
         available = { has_government = valkist }
@@ -3850,7 +3637,7 @@ focus_tree = {
         id = PHI_political_indoctrination
         icon = GFX_goal_purges
         x = 28
-        y = 18
+        y = 16
         cost = 3
         available_if_capitulated = yes
         available = { has_government = valkist }
@@ -3869,7 +3656,7 @@ focus_tree = {
         id = PHI_federalizing_the_state
         icon = GFX_goal_generic_neutrality_focus
         x = 27
-        y = 19
+        y = 17
         cost = 10
         available_if_capitulated = yes
         available = { has_government = valkist }
@@ -3890,7 +3677,7 @@ focus_tree = {
         id = PHI_western_culture_coexistence
         icon = GFX_goal_support_democracy
         x = 26
-        y = 20
+        y = 18
         cost = 5
         available_if_capitulated = yes
         available = { has_government = valkist }
@@ -3911,7 +3698,7 @@ focus_tree = {
         id = PHI_new_museums
         icon = GFX_goal_generic_construction
         x = 26
-        y = 21
+        y = 19
         cost = 10
         available_if_capitulated = yes
         available = { has_government = valkist }
@@ -3926,7 +3713,7 @@ focus_tree = {
         id = PHI_new_valkist_education
         icon = GFX_focus_research4
         x = 26
-        y = 22
+        y = 20
         cost = 10
         available = { has_government = valkist }
         available_if_capitulated = yes
@@ -3941,7 +3728,7 @@ focus_tree = {
         id = PHI_eliminate_western_ideals
         icon = GFX_goal_generic_political_pressure
         x = 28
-        y = 20
+        y = 18
         cost = 5
         available = { has_government = valkist }
         available_if_capitulated = yes
@@ -3962,7 +3749,7 @@ focus_tree = {
         id = PHI_promote_pre_colonial_culture
         icon = GFX_goal_valkist_star
         x = 28
-        y = 21
+        y = 19
         cost = 10
         available = { has_government = valkist }
         available_if_capitulated = yes
@@ -3977,7 +3764,7 @@ focus_tree = {
         id = PHI_integrate_baybayin_writing
         icon = GFX_goal_generic_improve_relations
         x = 28
-        y = 22
+        y = 20
         cost = 10
         available_if_capitulated = yes
         available = { has_government = valkist }
@@ -3992,7 +3779,7 @@ focus_tree = {
         id = PHI_establish_a_secret_police
         icon = GFX_goal_secret_police
         x = 30
-        y = 19
+        y = 17
         cost = 10
         available_if_capitulated = yes
         available = { has_government = valkist }
@@ -4007,7 +3794,7 @@ focus_tree = {
         id = PHI_deal_with_the_left
         icon = GFX_goal_Communist_Discourse
         x = 30
-        y = 20
+        y = 18
         cost = 10
         available_if_capitulated = yes
         available = { has_government = valkist }
@@ -4025,7 +3812,7 @@ focus_tree = {
         id = PHI_youth_indoctrination
         icon = GFX_goal_refugee_management
         x = 30
-        y = 21
+        y = 19
         cost = 10
         available_if_capitulated = yes
         available = { has_government = valkist }
@@ -4040,7 +3827,7 @@ focus_tree = {
         id = PHI_pass_new_conscription_laws
         icon = GFX_focus_generic_military_mission
         x = 30
-        y = 22
+        y = 20
         cost = 10
         available_if_capitulated = yes
         available = { has_government = valkist }
@@ -4056,7 +3843,7 @@ focus_tree = {
         id = PHI_economic_reforms
         icon = GFX_goal_industry_air
         x = 33
-        y = 18
+        y = 16
         cost = 3
         available_if_capitulated = yes
         available = { has_government = valkist }
@@ -4075,7 +3862,7 @@ focus_tree = {
         id = PHI_modernize_agriculture_methods
         icon = GFX_IRE_farms
         x = 33
-        y = 19
+        y = 17
         cost = 10
         available_if_capitulated = yes
         available = { has_government = valkist }
@@ -4094,7 +3881,7 @@ focus_tree = {
         id = PHI_the_governments_trade_unions
         icon = GFX_goal_support_fascism
         x = 32
-        y = 20
+        y = 18
         cost = 10
         available_if_capitulated = yes
         available = { has_government = valkist }
@@ -4109,7 +3896,7 @@ focus_tree = {
         id = PHI_industrial_reforms
         icon = GFX_focus_generic_industry_3
         x = 32
-        y = 21
+        y = 19
         cost = 10
         available_if_capitulated = yes
         available = { has_government = valkist }
@@ -4214,7 +4001,7 @@ focus_tree = {
         id = PHI_funding_for_state_investments
         icon = GFX_Hand_reaching_for_money
         x = 34
-        y = 20
+        y = 18
         cost = 10
         available_if_capitulated = yes
         available = { has_government = valkist }
@@ -4229,7 +4016,7 @@ focus_tree = {
         id = PHI_new_labour_policies
         icon = GFX_goal_red_star_dove
         x = 34
-        y = 21
+        y = 19
         cost = 10
         available_if_capitulated = yes
         available = { has_government = valkist }
@@ -4244,7 +4031,7 @@ focus_tree = {
         id = PHI_modern_sandigs
         icon = GFX_Valkist_Germany_Wolf
         x = 30
-        y = 15
+        y = 21
         cost = 10
         available_if_capitulated = yes
         available = { has_government = valkist }

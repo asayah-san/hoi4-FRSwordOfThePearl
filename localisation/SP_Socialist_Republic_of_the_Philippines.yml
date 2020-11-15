@@ -1,19 +1,19 @@
 ﻿l_english:
 
-### Political Parties ###
+##### Parties #####
 SRP_vanguardist_party:0 "PKP"
 SRP_vanguardist_party_long:0 "Partido Komunista ng Pilipinas"
 SRP_collectivist_party:0 "PKP"
 SRP_collectivist_party_long:0 "Partido Komunista ng Pilipinas"
 SRP_libertarian_socialist_party:0 "PKP"
 SRP_libertarian_socialist_party_long:0 "Partido Komunista ng Pilipinas"
-SRP_social_democrat_party:0 "Partido Progresista"
+SRP_social_democrat_party:0 "PP"
 SRP_social_democrat_party_long:0 "Partido Progresista"
-SRP_social_liberal_party:0 "Partido Liberal"
-SRP_social_liberal_party_long:0 "Partido Progresista"
-SRP_market_liberal_party:0 "Partido Liberal"
+SRP_social_liberal_party:0 "LP"
+SRP_social_liberal_party_long:0 "Partido Liberal"
+SRP_market_liberal_party:0 "LP"
 SRP_market_liberal_party_long:0 "Partido Liberal"
-SRP_social_conservative_party:0 "Partido Nacionalista"
+SRP_social_conservative_party:0 "NP"
 SRP_social_conservative_party_long:0 "Partido Nacionalista"
 SRP_authoritarian_democrat_party:0 "KTP"
 SRP_authoritarian_democrat_party_long:0 "Komisyong Tagapagpaganap ng Pilipinas"

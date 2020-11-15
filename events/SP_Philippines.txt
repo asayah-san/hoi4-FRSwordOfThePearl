@@ -238,7 +238,7 @@ country_event = {
             }
 
             set_country_flag = PHI_LP_VICTORY_FLAG
-            news_event = { id = news.1 days = 1 }
+            news_event = { id = news.2 days = 1 }
             remove_ideas = PHI_thirst_for_democracy
         }
     }
@@ -279,7 +279,7 @@ country_event = {
             }
 
             set_country_flag = PHI_PP_VICTORY_FLAG
-            news_event = { id = news.1 days = 1 }
+            news_event = { id = news.3 days = 1 }
             remove_ideas = PHI_thirst_for_democracy
         }
     }
@@ -684,7 +684,7 @@ country_event = {
                 add_idea = PHI_Guillermo_Capadocia_SEC_SYN
             }
 
-            news_event = { id = news.3 days = 1 }
+            news_event = { id = news.6 days = 1 }
             set_country_flag = PHI_SOCIALIST_REPUBLIC_FLAG
             remove_ideas = PHI_thirst_for_democracy
         }
@@ -805,7 +805,7 @@ country_event = {
             add_ideas = PHI_Ferdinand_Marcos_FOR_SCO
             add_ideas = PHI_Serafin_Fausto_ECO_SCO
 
-            news_event = { id = news.4 days = 1 }
+            news_event = { id = news.7 days = 1 }
             set_country_flag = PHI_AGUINALDO_COUP_FLAG
         }
     }
@@ -859,7 +859,6 @@ country_event = {
 
     immediate = {
         trasfer_state = 785
-        add_state_core = 785
 
         INS = {
             remove_state_core = 785
@@ -874,7 +873,7 @@ country_event = {
             country_event = { id = phi.21 }
         }
 
-        news_event = { id = news.8 }
+        news_event = { id = news.10 }
     }
 
     option = {
@@ -2210,7 +2209,7 @@ country_event = {
     }
 
     option = {
-        name = phi.51.b
+        name = phi.50.b
         set_politics = {
             ruling_party = vanguardist
             elections_allowed = no
@@ -2222,6 +2221,90 @@ country_event = {
             }
             set_country_flag = PHI_TARUC_ASSUMES_POWER_FLAG    
         }
+    }   
+}
+
+# 45th Independence
+country_event = {
+    id = phi.51
+    title = phi.51.t
+    desc = phi.51.d
+    picture = GFX_report_event_journalists_speech
+
+    is_triggered_only = yes
+
+    option = {
+        name = phi.51.a
+
+        add_political_power = 100
     }
-    
+}
+
+# Support
+country_event = {
+    id = phi.52
+    title = phi.52.t
+    desc = phi.52.d
+    picture = GFX_report_event_generic_sign_treaty3
+
+    is_triggered_only = yes
+
+    option = {
+        name = phi.52.a
+
+        PHI = {
+            send_equipment = {
+                target = PREV
+                amount = 15000
+                equipment = infantry_equipment_1
+            }
+            send_equipment = {
+                target = PREV
+                amount = 5000
+                equipment = support_equipment_1
+            }
+            send_equipment = {
+                target = PREV
+                amount = 5000
+                equipment = artillery_equipment_1
+            }
+            send_equipment = {
+                target = PREV
+                amount = 500
+                equipment = convoy_1
+            }
+        }
+    }
+
+    option = {
+        name = phi.52.b
+
+        add_ideas = PHI_financial_support
+    }
+
+    option = {
+        name = phi.52.c
+    }
+}
+
+# Sighting of Aswang
+country_event = {
+    id = phi.53
+    title = phi.53.t
+    desc = phi.53.d
+
+    fire_only_once = yes
+
+    mean_time_to_happen = {
+        days = 1
+    }
+
+    trigger = {
+        original_tag = PHI
+        date > 1940.3.18
+    }
+
+    option = {
+        name = phi.53.a
+    }
 }

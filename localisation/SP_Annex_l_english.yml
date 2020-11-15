@@ -1,0 +1,42 @@
+﻿l_english:
+ annex.1.t:0 "Fate of Burma"
+ annex.1.d:0 "The recent events has left us in control of [BRM.GetAdjective] territories; and now the fate of these territories and its citizens now rests in our hands."
+ annex.1.a:0 "Supervise a [BRM.GetAdjective] State"
+ annex.1.b:0 "Liberate an independent [BRM.GetAdjective] State"
+
+ annex.2.t:0 "Fate of Cambodia"
+ annex.2.d:0 "The recent events has left us in control of [CAM.GetAdjective] territories; and now the fate of these territories and its citizens now rests in our hands."
+ annex.2.a:0 "Supervise a [CAM.GetAdjective] State"
+ annex.2.b:0 "Liberate an independent [CAM.GetAdjective] State"
+
+ annex.3.t:0 "Fate of Insulindia"
+ annex.3.d:0 "The recent events has left us in control of [INS.GetAdjective] territories; and now the fate of these territories and its citizens now rests in our hands."
+ annex.3.a:0 "Supervise a [INS.GetAdjective] State"
+ annex.3.b:0 "Liberate an independent [INS.GetAdjective] State"
+
+ annex.4.t:0 "Fate of Laos"
+ annex.4.d:0 "The recent events has left us in control of [LAO.GetAdjective] territories; and now the fate of these territories and its citizens now rests in our hands."
+ annex.4.a:0 "Supervise a [LAO.GetAdjective] State"
+ annex.4.b:0 "Liberate an independent [LAO.GetAdjective] State"
+
+ annex.5.t:0 "Fate of Malaya"
+ annex.5.d:0 "The recent events has left us in control of [MAL.GetAdjective] territories; and now the fate of these territories and its citizens now rests in our hands."
+ annex.5.a:0 "Supervise a [MAL.GetAdjective] State"
+ annex.5.b:0 "Liberate an independent [MAL.GetAdjective] State"
+
+ annex.6.t:0 "Fate of Vietnam"
+ annex.6.d:0 "The recent events has left us in control of [VIN.GetAdjective] territories; and now the fate of these territories and its citizens now rests in our hands."
+ annex.6.a:0 "Supervise a [VIN.GetAdjective] State"
+ annex.6.b:0 "Liberate an independent [VIN.GetAdjective] State"
+
+ annex.7.t:0 "Fate of Siam"
+ annex.7.d:0 "The recent events has left us in control of [SIA.GetAdjective] territories; and now the fate of these territories and its citizens now rests in our hands."
+ annex.7.a:0 "Supervise a [SIA.GetAdjective] State"
+
+ annex.8.t:0 "Fate of Japan"
+ annex.8.d:0 "The recent events has left us in control of [JAP.GetAdjective] territories; and now the fate of theese territories and its citizens now rests in our hands."
+ annex.8.a:0 "Supervise a [JAP.GetAdjective] State"
+
+ annex.9.t:0 "Fate of Korea"
+ annex.9.d:0 "The recent events has left us in control of [KOR.GetAdjective] territories; and now the fate of theese territories and its citizens now rests in our hands."
+ annex.9.a:0 "Supervise a [KOR.GetAdjective] State"

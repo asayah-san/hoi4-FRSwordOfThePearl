@@ -10,6 +10,22 @@ spriteTypes = {
 		texturefile = "gfx/event_pictures/ASEAN/news_event_ASEAN_country_left.tga"
 	}
 
+	spriteType = {
+		name = "GFX_news_event_PHI_quezon_inaugurated"
+		texturefile = "gfx/event_pictures/PHI/news_event_PHI_quezon_inaugurated.tga"
+	}
+	spriteType = {
+		name = "GFX_news_event_PHI_roxas_inaugurated"
+		texturefile = "gfx/event_pictures/PHI/news_event_PHI_roxas_inaugurated.tga"
+	}
+	spriteType = {
+		name = "GFX_news_event_PHI_magsaysay_inaugurated"
+		texturefile = "gfx/event_pictures/PHI/news_event_PHI_magsaysay_inaugurated.tga"
+	}
+	spriteType = {
+		name = GFX_news_event_PHI_aguinaldo_coup"
+		texturefile = "gfx/event_pictures/PHI/news_event_PHI_aguinald_coup.tga"
+	}
     spriteType = {
 		name = "GFX_news_event_PHI_independence"
 		texturefile = "gfx/event_pictures/PHI/news_event_PHI_independence.dds"

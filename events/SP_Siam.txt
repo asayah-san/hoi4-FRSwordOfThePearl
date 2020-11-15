@@ -82,7 +82,7 @@ country_event = {
         hidden_effect = {
             set_country_flag = SIA_SNAP_ELECTIONS_FLAG
             country_event = { id = siam.4 days = 30 }
-            news_event = { id = news.9 }
+            news_event = { id = news.11 }
         }
     }
 }

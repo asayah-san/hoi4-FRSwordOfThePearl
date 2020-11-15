@@ -1,13 +1,11 @@
-﻿
+﻿add_namespace = news
 
-add_namespace = news
-
-# Democratic Election Held
+# Quezon Inaugurated
 news_event = {
     id = news.1
     title = news.1.t
     desc = news.1.d
-    picture = GFX_news_event_PHI_independence
+    picture = GFX_news_event_PHI_quezon_inaugurated
 
     is_triggered_only = yes
 
@@ -15,16 +13,62 @@ news_event = {
 
     show_major = { NOT = { tag = PHI } }
 
-    option = {
-        name = news.1.a
-    }
+    option = { name = news.1.a }
 }
 
-# Army Takeover of the Philippines
+# Roxas Inaugurated
 news_event = {
     id = news.2
     title = news.2.t
     desc = news.2.d
+    picture = GFX_news_event_PHI_roxas_inaugurated
+
+    is_triggered_only = yes
+
+    major = yes
+
+    show_major = { NOT = { tag = PHI } }
+
+    option = { name = news.2.a }
+}
+
+# Sumulong Inaugurated
+news_event = {
+    id = news.3
+    title = news.3.t
+    desc = news.3.d
+    picture = GFX_news_event_PHI_magsaysay_inaugurated
+
+    is_triggered_only = yes
+
+    major = yes
+
+    show_major = { NOT = { tag = PHI } }
+
+    option = { name = news.3.a }
+}
+
+# KALIBAPI wins elections
+news_event = {
+    id = news.4
+    title = news.4.t
+    desc = news.4.d
+    picture = GFX_news_event_PHI_manila_uprising2
+
+    is_triggered_only = yes
+
+    major = yes
+
+    show_major = { NOT = { tag = PHI } }
+
+    option = { name = news.4.a }
+}
+
+# Army Takeover of the Philippines
+news_event = {
+    id = news.5
+    title = news.5.t
+    desc = news.5.d
     picture = GFX_news_event_PHI_army_coup
 
     is_triggered_only = yes
@@ -33,16 +77,14 @@ news_event = {
 
     show_major = { NOT = { tag = PHI } }
 
-    option = {
-        name = news.2.a
-    }
+    option = { name = news.5.a }
 }
 
 # Socialist Takeover of the Philippines
 news_event = {
-    id = news.3
-    title = news.3.t
-    desc = news.3.d
+    id = news.6
+    title = news.6.t
+    desc = news.6.d
     picture = GFX_news_event_PHI_manila_uprising2
 
     is_triggered_only = yes
@@ -51,54 +93,30 @@ news_event = {
 
     show_major = { NOT = { tag = PHI } }
     
-    
-    option = {
-        name = news.3.a
-    }
+    option = { name = news.6.a }
 }
 
 # NatPop Takeover of the Philippines
 news_event = {
-    id = news.4
-    title = news.4.t
-    desc = news.4.d
-    picture = GFX_news_event_PHI_manila_uprising2
+    id = news.7
+    title = news.7.t
+    desc = news.7.d
+    picture = GFX_news_event_PHI_aguinaldo_coup
     
     major = yes
 
     show_major = { NOT = { tag = PHI } }
     
-    
     is_triggered_only = yes
 
-    option = {
-        name = news.4.a
-    }
-}
-
-# Valkist Takeover of the Philippines
-news_event = {
-    id = news.5
-    title = news.5.t
-    desc = news.5.d
-    picture = GFX_news_event_PHI_manila_uprising2
-
-    is_triggered_only = yes
-    
-    major = yes
-
-    show_major = { NOT = { tag = PHI } }
-    
-    option = {
-        name = news.5.a
-    }
+    option = { name = news.7.a }
 }
 
 # ASEAN founded
 news_event = {
-    id = news.6
-    title = news.6.t
-    desc = news.6.d
+    id = news.8
+    title = news.8.t
+    desc = news.8.d
     picture = GFX_news_event_ASEAN_founded
 
     major = yes
@@ -107,16 +125,14 @@ news_event = {
 
     is_triggered_only = yes
 
-    option = {
-        name = news.6.a
-    }
+    option = { name = news.8.a }
 }
 
 # FROM leaves ASEAN
 news_event = {
-    id = news.7
-    title = news.7.t
-    desc = news.7.d
+    id = news.9
+    title = news.9.t
+    desc = news.9.d
     picture = GFX_news_event_ASEAN_country_left
 
     major = yes
@@ -125,16 +141,14 @@ news_event = {
 
     is_triggered_only = yes
 
-    option = {
-        name = news.7.a
-    }
+    option = { name = news.9.a }
 }
 
 # Sabah Occupation
 news_event = {
-    id = news.8
-    title = news.8.t
-    desc = news.8.d
+    id = news.10
+    title = news.10.t
+    desc = news.10.d
     picture = GFX_news_event_PHI_sabah_occupied
 
     major = yes
@@ -144,7 +158,7 @@ news_event = {
     is_triggered_only = yes
 
     option = {
-        name = news.8.a
+        name = news.10.a
 
         trigger = {
             OR = {
@@ -155,7 +169,7 @@ news_event = {
     }
 
     option = {
-        name = news.8.b
+        name = news.10.b
 
         trigger = {
             NOT = {
@@ -170,9 +184,9 @@ news_event = {
 
 # Snap Elections in Siam
 news_event = {
-    id = news.9
-    title = news.9.t
-    desc = news.9.d
+    id = news.11
+    title = news.11.t
+    desc = news.11.d
     picture = GFX_news_event_PHI_manila_uprising2
 
     major = yes
@@ -182,6 +196,6 @@ news_event = {
     is_triggered_only = yes
 
     option = {
-        name = news.9.a
+        name = news.11.a
     }
 }

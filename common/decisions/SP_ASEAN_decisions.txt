@@ -57,7 +57,7 @@ ASEAN_decisions = {
         complete_effect = {
             remove_ideas = ASEAN_member
             hidden_effect = {
-                news_event = { id = news.7 days = 1 }
+                news_event = { id = news.9 days = 1 }
             }
         }
     }
