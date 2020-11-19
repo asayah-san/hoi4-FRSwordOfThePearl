@@ -1,4 +1,4 @@
-SP_ASEAN_decisions = {
+ASEAN_decisions = {
     icon = generic_democracy
 
     allowed = { 

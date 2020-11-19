@@ -1,6 +1,6 @@
 ﻿capital = 327
 
-oob = "SRP_1936"
+oob = "SRP"
 
 # Starting tech
 set_technology = {
@@ -40,11 +40,11 @@ set_politics = {
 }
 
 set_popularities = {
-    vanguardist = 10
-    collectivist = 22
-    libertarian_socialist = 44
-    social_democrat = 18
-    social_liberal = 6
+    vanguardist = 22
+    collectivist = 28
+    libertarian_socialist = 36
+    social_democrat = 12
+    social_liberal = 2
 }
 
 create_country_leader = {

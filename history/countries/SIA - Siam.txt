@@ -40,15 +40,13 @@ if = {
 }
 
 add_ideas = {
-	SIA_figurehead_monarch
-	SIA_ineffective_governance
-	SIA_high_unemployment_rate
-	SIA_low_literacy_among_the_population
+	SIA_ineffective_bureaucracy
+	SIA_economic_mismanagement
 
-	GEN_HOG_Npo
-	GEN_ECO_Npo
-	GEN_SEC_Npo
-	GEN_FOR_Npo
+	GEN_HOG_Ade
+	GEN_ECO_Ade
+	GEN_SEC_Ade
+	GEN_FOR_Ade
 	constitutional_monarchy
 }
 
@@ -57,7 +55,7 @@ set_stability = 0.44
 set_war_support = 0.55
 
 set_politics = {	
-	ruling_party = national_populist
+	ruling_party = authoritarian_democrat
 	last_election = "1936.1.1"
 	election_frequency = 48
 	elections_allowed = no
@@ -70,9 +68,9 @@ set_popularities = {
 	social_liberal = 10
 	market_liberal = 4
 	social_conservative = 10
-	authoritarian_democrat = 12
+	authoritarian_democrat = 27
 	paternal_autocrat = 3
-	national_populist = 27
+	national_populist = 12
 }
 
 create_country_leader = {
@@ -98,84 +96,6 @@ create_country_leader = {
 	expire = "2012.11.27"
 	ideology = libertarian_socialist_subtype
 	traits = { permanent_revolutionary }
-}
-
-create_country_leader = {
-	name = "Rama VII"
-	desc = "POLITICS_RAMA_VII_DESC"
-	picture = "Portrait_Siam_Rama_VII.tga"
-	expire = "1941.5.30"
-	ideology = vanguardist_subtype
-}
-create_country_leader = {
-	name = "Rama VII"
-	desc = "POLITICS_RAMA_VII_DESC"
-	picture = "Portrait_Siam_Rama_VII.tga"
-	expire = "1941.5.30"
-	ideology = collectivist_subtype
-}
-create_country_leader = { 
-	name = "Rama VII"
-	desc = "POLITICS_RAMA_VII_DESC"
-	picture = "Portrait_Siam_Rama_VII.tga"
-	expire = "1941.5.30"
-	ideology = libertarian_socialist_subtype
-}
-create_country_leader = {
-	name = "Rama VII"
-	desc = "POLITICS_RAMA_VII_DESC"
-	picture = "Portrait_Siam_Rama_VII.tga"
-	expire = "1941.5.30"
-	ideology = social_democrat_subtype
-}
-create_country_leader = {
-	name = "Rama VII"
-	desc = "POLITICS_RAMA_VII_DESC"
-	picture = "Portrait_Siam_Rama_VII.tga"
-	expire = "1941.5.30"
-	ideology = social_liberal_subtype
-}
-create_country_leader = {
-	name = "Rama VII"
-	desc = "POLITICS_RAMA_VII_DESC"
-	picture = "Portrait_Siam_Rama_VII.tga"
-	expire = "1941.5.30"
-	ideology = market_liberal_subtype
-}
-create_country_leader = {
-	name = "Rama VII"
-	desc = "POLITICS_RAMA_VII_DESC"
-	picture = "Portrait_Siam_Rama_VII.tga"
-	expire = "1941.5.30"
-	ideology = social_conservative_subtype
-}
-create_country_leader = {
-	name = "Rama VII"
-	desc = "POLITICS_RAMA_VII_DESC"
-	picture = "Portrait_Siam_Rama_VII.tga"
-	expire = "1941.5.30"
-	ideology = authoritarian_democrat_subtype
-}
-create_country_leader = {
-	name = "Rama VII"
-	desc = "POLITICS_RAMA_VII_DESC"
-	picture = "Portrait_Siam_Rama_VII.tga"
-	expire = "1941.5.30"
-	ideology = paternal_autocrat_subtype
-}
-create_country_leader = {
-	name = "Rama VII"
-	desc = "POLITICS_RAMA_VII_DESC"
-	picture = "Portrait_Siam_Rama_VII.tga"
-	expire = "1941.5.30"
-	ideology = national_populist_subtype
-}
-create_country_leader = {
-	name = "Rama VII"
-	desc = "POLITICS_RAMA_VII_DESC"
-	picture = "Portrait_Siam_Rama_VII.tga"
-	expire = "1941.5.30"
-	ideology = valkist_subtype
 }
 create_country_leader = {
 	name = "Plaek Phibunsongkhram"
@@ -183,7 +103,141 @@ create_country_leader = {
 	picture = "Portrait_Siam_Plaek_Phibunsongkhram.tga"
 	expire = "1952.5.2"
 	ideology = national_populist_subtype
+	traits = { dictator }
 }
+
+create_country_leader = {
+	name = "Rama VII"
+	desc = "POLITICS_RAMA_VII_DESC"
+	picture = "Portrait_Siam_Rama_VII.tga"
+	expire = "1941.5.30"
+	ideology = vanguardist_subtype
+	traits = { legitimate_heir }
+}
+create_country_leader = {
+	name = "Rama VII"
+	desc = "POLITICS_RAMA_VII_DESC"
+	picture = "Portrait_Siam_Rama_VII.tga"
+	expire = "1941.5.30"
+	ideology = collectivist_subtype
+	traits = { legitimate_heir }
+}
+create_country_leader = { 
+	name = "Rama VII"
+	desc = "POLITICS_RAMA_VII_DESC"
+	picture = "Portrait_Siam_Rama_VII.tga"
+	expire = "1941.5.30"
+	ideology = libertarian_socialist_subtype
+	traits = { legitimate_heir }
+}
+create_country_leader = {
+	name = "Rama VII"
+	desc = "POLITICS_RAMA_VII_DESC"
+	picture = "Portrait_Siam_Rama_VII.tga"
+	expire = "1941.5.30"
+	ideology = social_democrat_subtype
+	traits = { legitimate_heir }
+}
+create_country_leader = {
+	name = "Rama VII"
+	desc = "POLITICS_RAMA_VII_DESC"
+	picture = "Portrait_Siam_Rama_VII.tga"
+	expire = "1941.5.30"
+	ideology = social_liberal_subtype
+	traits = { legitimate_heir }
+}
+create_country_leader = {
+	name = "Rama VII"
+	desc = "POLITICS_RAMA_VII_DESC"
+	picture = "Portrait_Siam_Rama_VII.tga"
+	expire = "1941.5.30"
+	ideology = market_liberal_subtype
+	traits = { legitimate_heir }
+}
+create_country_leader = {
+	name = "Rama VII"
+	desc = "POLITICS_RAMA_VII_DESC"
+	picture = "Portrait_Siam_Rama_VII.tga"
+	expire = "1941.5.30"
+	ideology = social_conservative_subtype
+	traits = { legitimate_heir }
+}
+create_country_leader = {
+	name = "Rama VII"
+	desc = "POLITICS_RAMA_VII_DESC"
+	picture = "Portrait_Siam_Rama_VII.tga"
+	expire = "1941.5.30"
+	ideology = authoritarian_democrat_subtype
+	traits = { legitimate_heir }
+}
+create_country_leader = {
+	name = "Rama VII"
+	desc = "POLITICS_RAMA_VII_DESC"
+	picture = "Portrait_Siam_Rama_VII.tga"
+	expire = "1941.5.30"
+	ideology = paternal_autocrat_subtype
+	traits = { legitimate_heir }
+}
+create_country_leader = {
+	name = "Rama VII"
+	desc = "POLITICS_RAMA_VII_DESC"
+	picture = "Portrait_Siam_Rama_VII.tga"
+	expire = "1941.5.30"
+	ideology = national_populist_subtype
+	traits = { legitimate_heir }
+}
+create_country_leader = {
+	name = "Rama VII"
+	desc = "POLITICS_RAMA_VII_DESC"
+	picture = "Portrait_Siam_Rama_VII.tga"
+	expire = "1941.5.30"
+	ideology = valkist_subtype
+	traits = { legitimate_heir }
+}
+
+create_corps_commander = {
+	name = "Plaek Phibunsongkhram"
+	picture = "Portrait_Siam_Plaek_Phibunsongkhram.tga"
+	traits = { old_guard }
+	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+}
+create_corps_commander = {
+	name = "Phraya Songsuradet"
+	portrait = "Portrait_Siam_Phraya_Songsuradet.tga"
+	traits = { SIA_four_musketeers career_officer trait_engineer }
+	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 1
+}
+create_corps_commander = {
+	name = "Luang Kriengsakpichit"
+	portrait = "Portrait_Siam_Luang_Kriengsakpichit.tga"
+	traits = { infantry_officer }
+	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 2
+}
+create_corps_commander = {
+	name = "Phraya Phahonphonpayuhasena"
+	portrait = "Portrait_Siam_Phraya_Phaholponpayuhasena.tga"
+	traits = { SIA_four_musketeers artillery_officer }
+	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+	id = 51409
+}
+
+country_event = { id = siam.16 days = 1948 } # Death of Rama VII
 
 if = {
 	limit = { not = { has_dlc = "Man the Guns" } }

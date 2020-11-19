@@ -687,6 +687,22 @@ country_event = {
             news_event = { id = news.6 days = 1 }
             set_country_flag = PHI_SOCIALIST_REPUBLIC_FLAG
             remove_ideas = PHI_thirst_for_democracy
+
+            set_party_name = {
+                ideology = vanguardist
+                long_name = PHI_vanguardist_factions_long
+                name = PHI_vanguardist_factions
+            }
+            set_party_name = {
+                ideology = collectivist
+                long_name = PHI_collectivist_factions_long
+                name = PHI_collectivist_factions
+            }
+            set_party_name = {
+                ideology = libertarian_socialist
+                long_name = PHI_libertarian_socialist_factions_long
+                name = PHI_libertarian_socialist_factions
+            }
         }
     }
 }
@@ -1029,7 +1045,8 @@ country_event = {
 
             release = SRP
             SRP = {
-                load_oob = "SRP_1936"
+                set_cosmetic_tag = SRP_uprising
+                load_oob = "SRP_civil_war" 
 
                 add_state_core = 327
                 transfer_state = 327
@@ -1038,11 +1055,13 @@ country_event = {
                     target = PHI
                 }
             }
+
+            news_event = { id = news.13 days = 1 }
             
             remove_state_core = 327
             add_state_claim = 327
             set_capital = 623
-            load_oob = "PHI_1936_civil_war"
+            load_oob = "PHI_civil_war"
         }
     }
 }
@@ -1119,46 +1138,46 @@ country_event = {
 
 # Faction Joining
 country_event = {
-    id = phi.31
+    id = phi.30
     picture = GFX_report_event_romanian_soldiers
 
     title = {
-        text = phi.31.t.jp
+        text = phi.30.t.jp
         trigger = { tag = JAP }
     }
     title = {
-        text = phi.31.t.de
+        text = phi.30.t.de
         trigger = { tag = GER }
     }
     title = {
-        text = phi.31.t.uk
+        text = phi.30.t.uk
         trigger = { tag = ENG }
     }
     title = {
-        text = phi.31.t.us
+        text = phi.30.t.us
         trigger = { tag = USA }
     }
 
     desc = {
-        text = phi.31.d.jp
+        text = phi.30.d.jp
         trigger = { tag = JAP }
     }
     desc = {
-        text = phi.31.d.de
+        text = phi.30.d.de
         trigger = { tag = GER }
     }
     desc = {
-        text = phi.31.uk
+        text = phi.30.d.uk
         trigger = { tag = ENG }
     }
     desc = {
-        text = phi.31.us
+        text = phi.30.d.us
         trigger = { tag = USA }
     }
     is_triggered_only = yes
 
     option = {
-        name = phi.31.a
+        name = phi.30.a
         trigger = {
             NOT = {
                 tag = JAP
@@ -1171,7 +1190,7 @@ country_event = {
 
     # Options for JAP
     option = {
-        name = phi.31.a.jp
+        name = phi.30.a.jp
         trigger = { tag = JAP }
 
         ai_chance = {
@@ -1234,19 +1253,19 @@ country_event = {
 
         PHI = { 
             set_country_flag = PHI_SIDED_WITH_A_MAJOR
-            country_event = { id = phi.32 }
+            country_event = { id = phi.31 }
         }
     }
     option = {
-        name = phi.31.b.jp
+        name = phi.30.b.jp
         trigger = { tag = JAP }
 
-        PHI = { country_event = { id = phi.33 } }
+        PHI = { country_event = { id = phi.32 } }
     }
 
     # Option for GER
     option = {
-        name = phi.31.a.de
+        name = phi.30.a.de
         trigger = { tag = GER }
 
         ai_chance = {
@@ -1289,7 +1308,7 @@ country_event = {
         }
     }
     option = {
-        name = phi.31.b.de
+        name = phi.30.b.de
         trigger = { tag = GER }
 
         PHI = { country_event = { id = phi.33 } }
@@ -1297,7 +1316,7 @@ country_event = {
 
     # Option for ENG
     option = {
-        name = phi.31.a.uk
+        name = phi.30.a.uk
         trigger = { tag = ENG }
 
         ai_chance = {
@@ -1355,7 +1374,7 @@ country_event = {
         }
     }
     option = {
-        name = phi.31.b.uk
+        name = phi.30.b.uk
         trigger = { tag = ENG }
 
         PHI = {
@@ -1365,7 +1384,7 @@ country_event = {
 
     # Option for USA
     option = {
-        name = phi.31.a.us
+        name = phi.30.a.us
         trigger = { tag = USA }
 
         ai_chance = {
@@ -1409,8 +1428,9 @@ country_event = {
             country_event = { id = phi.32 }
         }
     }
+
     option = {
-        name = phi.32.b.us
+        name = phi.30.b.us
         trigger = { tag = USA }
 
         PHI = {
@@ -1421,29 +1441,29 @@ country_event = {
 
 # FROM Accepts to Join Faction
 country_event = {
-    id = phi.32
-    title = phi.32.t
-    desc = phi.32.d
+    id = phi.31
+    title = phi.31.t
+    desc = phi.31.d
     picture = GFX_report_event_generic_sign_treaty3
 
     is_triggered_only = yes
 
     option = {
-        name = phi.32.a
+        name = phi.31.a
     }
 }
 
 # FROM Rejects Faction Join
 country_event = {
-    id = phi.33
-    title = phi.33.t
-    desc = phi.33.d
+    id = phi.32
+    title = phi.32.t
+    desc = phi.32.d
     picture = GFX_report_event_generic_strikes
 
     is_triggered_only = yes
 
     option = {
-        name = phi.33.a
+        name = phi.32.a
     }
 }
 
@@ -1777,6 +1797,15 @@ country_event = {
 
     option = {
         name = phi.40.b
+
+        if = {
+            limit = { FROM = { tag = ENG } }
+            set_country_flag = PHI_ENG_REJECTED_TERRITORY_DEMANDS
+        }
+        if = {
+            limit = { FROM = { tag = FRA } }
+            set_country_flag = PHI_FRA_REJECTED_TERRITORY_DEMANDS
+        }
     }
 }
 
@@ -2164,28 +2193,43 @@ country_event = {
     }
 }
 
-# Soviet Aid
+# Communist Rebels Crushed
 country_event = {
     id = phi.49
     title = phi.49.t
     desc = phi.49.d
-    picture = GFX_report_stalin_02
+    picture = GFX_report_event_german_troops_paris
 
     is_triggered_only = yes
 
+    immediate = {
+        hidden_effect = {
+            every_state = {
+                limit = { is_core_of = SRP }
+
+                add_core_of = PHI
+                remove_core_of = SRP
+            }
+        }
+    }
+
     option = {
         name = phi.49.a
-        PHI = { add_ideas = PHI_soviet_aid_military }
-    }
 
-    option =  {
-        name = phi.49.b
-        PHI = { add_ideas = PHI_soviet_aid_industry }
-    }
-
-    option = {
-        name = phi.49.c
-        add_political_power = -10
+        327 = {
+            damage_building = {
+                type = infrastructure
+                damage = 2
+            }
+            damage_building = {
+                type = industrial_complex
+                damage = 2
+            }
+            damage_building = {
+                type = arms_factory
+                damage = 2
+            }
+        }
     }
 }
 

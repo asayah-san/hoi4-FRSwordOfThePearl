@@ -8,312 +8,1337 @@ focus_tree = {
         }
     }
 
-    continuous_focus_position = { x = 1200 y = 800 }
+    continuous_focus_position = { x = 100 y = 1500 }
 
     #############################################
     #                                           #
-    #                  INDUSTRY                 #
+    #              PATERNAL AUTOCRAT            #
     #                                           #
     #############################################
 
-    # Plan the Economy
+    # Abolish the Legislation
     focus = {
-        id = SIA_plan_the_economy
-        icon = GFX_IRE_medium_industry
-        x = 3
+        id = SIA_abolish_the_legislation
+        icon = GFX_goal_ideology_paternal_autocrat
+        x = 4
         y = 0
-        cost = 10
-        completion_reward = {
-            add_tech_bonus = {
-				bonus = 1.0
-				uses = 2
-				category = industry
-			}
-        }
+        cost = 0
+        available = { has_country_flag = SIA_ROYAL_INTERVENTION_FLAG }
+        completion_reward = {}
     }
 
-    # Industrial Investments
+    # Divine Right
     focus = {
-        id = SIA_industrial_investments
-        icon = GFX_goal_construction_engineering
-        x = 1
+        id = SIA_divine_right
+        icon = GFX_focus_rom_royal_dictatorship
+        x = 2
         y = 1
         cost = 10
-        prerequisite = { focus = SIA_plan_the_economy }
+        prerequisite = { focus = SIA_abolish_the_legislation }
         completion_reward = {
-            random_owned_controlled_state = {
-                limit = {
-                    free_building_slots = {
-                        building = industrial_complex
-                        size > 0
-                        include_locked = yes
-                    }
-                }
-
-                add_extra_state_shared_building_slots = 3
-                add_building_construction = {
-                    type = industrial_complex
-                    level = 3
-                    instant_build = yes
-                }
-            }
-            random_owned_controlled_state = {
-                limit = {
-                    free_building_slots = {
-                        building = industrial_complex
-                        size > 0
-                        include_locked = yes
-                    }
-                }
-
-                add_extra_state_shared_building_slots = 3
-                add_building_construction = {
-                    type = industrial_complex
-                    level = 3
-                    instant_build = yes
-                }
-            }
+            remove_ideas = SIA_ineffective_bureaucracy
         }
     }
 
-    # Infrastructure Projects
+    # The Secret Police
     focus = {
-        id = SIA_infrastructure_projects
-        icon = GFX_goal_generic_construct_infrastructure
-        x = 1
+        id = SIA_the_secret_police
+        icon = GFX_goal_secret_agents
+        x = 2
         y = 2
         cost = 10
-        prerequisite = { focus = SIA_industrial_investments }
-        completion_reward = {
-            random_owned_controlled_state = {
-                add_building_construction = {
-					type = infrastructure
-					level = 2
-					instant_build = yes
-				}
-            }
-            random_owned_controlled_state = {
-                add_building_construction = {
-					type = infrastructure
-					level = 2
-					instant_build = yes
-				}
-            }
-            random_owned_controlled_state = {
-                add_building_construction = {
-					type = infrastructure
-					level = 2
-					instant_build = yes
-				}
-            }
-        }
+        prerequisite = { focus = SIA_divine_right }
+        completion_reward = {}
     }
 
-    # Expand Current Civilian Industries
+    # New Education Curriculum
     focus = {
-        id = SIA_expand_current_civilian_industries
-        icon = GFX_goal_generic_construction
-        x = 1
+        id = SIA_new_education_curriculum
+        icon = GFX_focus_research
+        x = 2
         y = 3
         cost = 10
-        prerequisite = { focus = SIA_infrastructure_projects }
-        completion_reward = {
-            random_owned_controlled_state = {
-                limit = {
-                    free_building_slots = {
-                        building = industrial_complex
-                        size > 0
-                        include_locked = yes
-                    }
-                }
-
-                add_extra_state_shared_building_slots = 3
-                add_building_construction = {
-                    type = industrial_complex
-                    level = 3
-                    instant_build = yes
-                }
-            }
-            random_owned_controlled_state = {
-                limit = {
-                    free_building_slots = {
-                        building = industrial_complex
-                        size > 0
-                        include_locked = yes
-                    }
-                }
-
-                add_extra_state_shared_building_slots = 3
-                add_building_construction = {
-                    type = industrial_complex
-                    level = 3
-                    instant_build = yes
-                }
-            }
-        }
-    }
-
-    # New Universities
-    focus = {
-        id = SIA_new_universities
-        icon = GFX_goal_great_science
-        x = 0
-        y = 4
-        cost = 10
-        prerequisite = { focus = SIA_expand_current_civilian_industries }
+        prerequisite = { focus = SIA_the_secret_police }
         completion_reward = {
             add_research_slot = 1
         }
     }
 
-    # Excavation Projects
+    # Privatize Public Industries
     focus = {
-        id = SIA_excavation_projects
-        icon = GFX_goal_generic_construction2
-        x = 2
+        id = SIA_privatize_public_industries
+        icon = GFX_focus_generic_self_management
+        x = 1
         y = 4
         cost = 10
-        prerequisite = { focus = SIA_expand_current_civilian_industries }
+        mutually_exclusive = { focus = SIA_subsidize_corporations }
+        prerequisite = { focus = SIA_new_education_curriculum }
         completion_reward = {
-            add_tech_bonus = {
-				bonus = 1.0
-				uses = 2
-				category = excavation_tech
-			}
+            remove_ideas = SIA_economic_mismanagement
         }
     }
 
-    # Synthetic Processing
+    # Subsidize Corporations
     focus = {
-        id = SIA_synthetic_processing
-        icon = GFX_goal_generic_oil_refinery
-        x = 1
-        y = 5
+        id = SIA_subsidize_corporations
+        icon = GFX_goal_bag_of_money
+        x = 3
+        y = 4
         cost = 10
-        prerequisite = { focus = SIA_new_universities }
-        prerequisite = { focus = SIA_excavation_projects }
+        mutually_exclusive = { focus = SIA_privatize_public_sectors }
+        prerequisite = { focus = SIA_new_education_curriculum }
         completion_reward = {
-            add_tech_bonus = {
-				bonus = 1.0
-				uses = 2
-				category = synth_resources
-			}
+            remove_ideas = SIA_economic_mismanagement
         }
     }
 
-    # Focus on Arms Production
+    # Arrest Opposition
     focus = {
-        id = SIA_focus_on_arms_production
-        icon = GFX_goal_generic_production
-        x = 5
+        id = SIA_arrest_opposition
+        icon = GFX_goal_DOM_The_Trial
+        x = 4
         y = 1
         cost = 10
-        prerequisite = { focus = SIA_plan_the_economy }
-        completion_reward = {
-            random_owned_controlled_state = {
-                limit = {
-                    free_building_slots = {
-                        building = arms_factory
-                        size > 0
-                        include_locked = yes
-                    }
-                }
-
-                add_extra_state_shared_building_slots = 3
-                add_building_construction = {
-                    type = arms_factory
-                    level = 3
-                    instant_build = yes
-                }
-            }
-        }
+        prerequisite = { focus = SIA_abolish_the_legislation }
+        completion_reward = {}
     }
-
-    # Invest in Private Arms Factories
+    
+    # Purge Unloyal Officers
     focus = {
-        id = SIA_invest_in_private_arms_factories
-        icon = GFX_goal_munitions_factories
-        x = 3
+        id = SIA_purge_unloyal_officers
+        icon = GFX_goal_backstab
+        x = 4
         y = 2
         cost = 10
-        mutually_exclusive = { focus = SIA_construct_state_owned_weapon_factories }
-        prerequisite = { focus = SIA_focus_on_arms_production }
-        completion_reward = {
-            add_ideas = SIA_private_arms_factories
-        }
+        prerequisite = { focus = SIA_arrest_opposition }
+        completion_reward = {}
     }
 
-    # Construct State-owned Weapon Factories
+    #############################################
+    #                                           #
+    #              NATIONAL POPULIST            #
+    #                                           #
+    #############################################
+
+    # Phibunsongkhram in Command
     focus = {
-        id = SIA_construct_state_owned_weapon_factories
-        icon = GFX_goal_generic_construct_mil_factory
+        id = SIA_phibunsongkhram_in_command
+        icon = GFX_goal_ideology_national_populist
         x = 7
+        y = 0
+        cost = 0
+        available = { has_country_flag = SIA_PHIBUNSONGKHRAM_IN_COMMAND_FLAG }
+        completion_reward = {}
+    }
+
+    # Bureaucratic Reforms
+    focus = {
+        id = SIA_bureaucratic_reforms
+        icon = GFX_goal_government_icon
+        x = 7
+        y = 1
+        cost = 10
+        prerequisite = { focus = SIA_phibunsongkhram_in_command }
+        completion_reward = {
+            remove_ideas = SIA_ineffective_bureaucracy
+        }
+    }
+
+    # Merge the Parties
+    focus = {
+        id = SIA_merge_the_parties
+        icon = GFX_goal_generic_improve_relations
+        x = 6
         y = 2
         cost = 10
-        mutually_exclusive = { focus = SIA_invest_in_private_arms_factories }
-        prerequisite = { focus = SIA_focus_on_arms_production }
+        mutually_exclusive = { focus = SIA_the_figurehead_king }
+        prerequisite = { focus = SIA_bureaucratic_reforms }
         completion_reward = {
-            random_owned_controlled_state = {
-                limit = {
-                    free_building_slots = {
-                        building = arms_factory
-                        size > 0
-                        include_locked = yes
-                    }
-                }
-
-                add_extra_state_shared_building_slots = 3
-                add_building_construction = {
-                    type = arms_factory
-                    level = 3
-                    instant_build = yes
-                }
+            add_stability = 0.05
+            add_popularity = {
+                ideology = national_populist
+                popularity = 0.15
             }
         }
     }
 
-    # Tax Reform
+    # The Figurehead King
     focus = {
-        id = SIA_tax_reform
-        icon = GFX_DAH_Topke
+        id = SIA_the_figurehead_king
+        icon = GFX_focus_rom_handle_king
+        x = 8
+        y = 2
+        cost = 10
+        mutually_exclusive = { focus = SIA_merge_the_parties }
+        prerequisite = { focus = SIA_bureaucratic_reforms }
+        completion_reward = {
+            retire_ideology_leader = national_populist
+            add_ideas = SIA_figurehead_king
+        }
+    }
+
+    # Reintroduce Conscription
+    focus = {
+        id = SIA_reintroduce_conscription
+        icon = GFX_focus_generic_military_mission
         x = 5
         y = 3
         cost = 10
-        prerequisite = { 
-            focus = SIA_construct_state_owned_weapon_factories
-            focus = SIA_invest_in_private_arms_factories
+        prerequisite = {
+            focus = SIA_the_figurehead_king
+            focus = SIA_merge_the_parties
+            focus = SIA_purge_unloyal_officers
         }
-        completion_reward = {
-            add_ideas = SIA_stable_currency
-        }
+        completion_reward = {}
     }
 
-    # Government Partnerships
+    # Renewed Militarism
     focus = {
-        id = SIA_government_partnerships_focus
-        icon = GFX_goal_state_economy
-        x = 3
-        y = 3
-        cost = 10
-        prerequisite = { focus = SIA_invest_in_private_arms_factories }
-        completion_reward = {
-            add_ideas = SIA_government_partnerships
-        }
-    }
-
-    # Employment Benefits
-    focus = {
-        id  = SIA_employment_benefits
-        icon = GFX_goal_production
+        id = SIA_renewed_militarism
+        icon = GFX_goal_army_guy_2
         x = 7
         y = 3
         cost = 10
-        prerequisite = { focus = SIA_construct_state_owned_weapon_factories }
+        prerequisite = {
+            focus = SIA_merge_the_parties
+            focus = SIA_purge_unloyal_officers
+            focus = SIA_the_figurehead_king
+        }
+        completion_reward = {}
+    }
+
+    # New Siamese Schools
+    focus = {
+        id = SIA_new_siamese_schools
+        icon = GFX_goal_great_science
+        x = 9
+        y = 3
+        cost = 10
+        prerequisite = { focus = SIA_the_figurehead_king }
         completion_reward = {
-            add_ideas = SIA_state_welfare
+            add_research_slot = 1
         }
     }
 
+    # Loyalty to the King
+    focus = {
+        id = SIA_loyalty_to_the_king
+        icon = GFX_goal_monarchism
+        x = 6
+        y = 4
+        cost = 10
+        prerequisite = { focus = SIA_renewed_militarism }
+        prerequisite = { focus = SIA_reintroduce_conscription }
+        completion_reward = {}
+    }
+
+    # A Patriotic Nation
+    focus = { 
+        id = SIA_a_patriotic_nation
+        icon = GFX_goal_conscription
+        x = 8
+        y = 4
+        cost = 10
+        prerequisite = { focus = SIA_renewed_militarism }
+        prerequisite = { focus = SIA_new_siamese_schools }
+        completion_reward = {
+            remove_ideas = SIA_economic_mismanagement
+        }
+    }
+
+    # On Our Own
+    focus = {
+        id = SIA_on_our_own
+        icon = GFX_focus_generic_strike_at_democracy1
+        x = 7
+        y = 5
+        cost = 10
+        prerequisite = {
+            focus = SIA_loyalty_to_the_king
+            focus = SIA_a_patriotic_nation
+        }
+        completion_reward = {}
+    }
+
+    # Propaganda Leafets
+    focus = {
+        id = SIA_propaganda_leafets
+        icon = GFX_goal_generic_propaganda
+        x = 9
+        y = 5
+        cost = 10
+        prerequisite = { focus = SIA_a_patriotic_nation }
+        completion_reward = {}
+    }
+
+    #############################################
+    #                                           #
+    #                  DEMOCRATIC               #
+    #                                           #
+    #############################################
+
+    # Snap Elections
+    focus = {
+        id = SIA_snap_elections
+        icon = GFX_goal_generic_elections
+        x = 21
+        y = 0
+        cost = 0
+        available = { has_country_flag = SIA_SNAP_ELECTIONS_FLAG }
+    }
+
+     Opposition Victory
+    focus = {
+        id = SIA_opposition_victory
+        icon = GFX_goal_ideology_social_democrat
+        x = 15
+        y = 1
+        cost = 0
+        available = { has_country_flag = SIA_OPPOSITION_VICTORY_FLAG }
+        prerequisite = { focus = SIA_snap_elections }
+    }
+
+    # Fund the Farms
+    focus = {
+        id = SIA_fund_the_farms
+        icon = GFX_focus_AUS_agriculture
+        x = 12
+        y = 2
+        cost = 10
+        prerequisite = { focus = SIA_opposition_victory }
+        completion_reward = {
+            add_ideas = SIA_supported_farmers
+        }
+    }
+
+    # Give Loans to Small Businesses
+    focus = {
+        id = SIA_give_loans_to_small_businesses
+        icon = GFX_DAH_Topke
+        x = 12
+        y = 3
+        cost = 10
+        prerequisite = { focus = SIA_fund_the_farms }
+        completion_reward = {
+            remove_ideas = SIA_economic_mismanagement
+        }
+    }
+
+    # Kickstart Welfare Programs
+    focus = {
+        id = SIA_kickstart_welfare_programs
+        icon = GFX_goal_famine
+        x = 14
+        y = 2
+        cost = 10
+        prerequisite = { focus = SIA_opposition_victory }
+        completion_reward = {
+            remove_ideas = SIA_ineffective_bureaucracy
+        }
+    }
+
+    # Higher Corporate Tax
+    focus = {
+        id = SIA_higher_corporate_tax
+        icon = GFX_goal_factory_complex
+        x = 14
+        y = 3
+        cost = 10
+        mutually_exclusive = { focus = SIA_income_tax_exemption }
+        prerequisite = { focus = SIA_kickstart_welfare_programs }
+        completion_reward = {
+            add_ideas = SIA_corporate_taxes
+        }
+    }
+
+    # Income Tax Exemption
+    focus = {
+        id = SIA_income_tax_exemption
+        icon = GFX_goal_munitions_factories
+        x = 16
+        y = 3
+        cost = 10
+        prerequisite = { focus = SIA_kickstart_welfare_programs }
+        completion_reward = {
+            add_ideas = SIA_no_income_tax
+        }
+    }
+
+    # Housing Projects
+    focus = {
+        id = SIA_housing_projects
+        icon = GFX_focus_usa_guarantee_the_american_dream
+        x = 15
+        y = 4
+        cost = 10
+        prerequisite = {
+            focus = SIA_higher_corporate_tax
+            focus = SIA_income_tax_exemption    
+        }
+        prerequisite = {
+            focus = SIA_give_loans_to_small_businesses
+        }
+        completion_reward = {
+            random_owned_controlled_state = {
+                limit = {
+                    free_building_slots = {
+                        building = industrial_complex
+                        size > 0
+                        include_locked = yes
+                    }
+                }
+
+                add_extra_state_shared_building_slots = 2
+            }
+            random_owned_controlled_state = {
+                limit = {
+                    free_building_slots = {
+                        building = industrial_complex
+                        size > 0
+                        include_locked = yes
+                    }
+                }
+
+                add_extra_state_shared_building_slots = 2
+            }
+        }
+    }
+
+    # Free Education
+    focus = {
+        id = SIA_free_education
+        icon = GFX_focus_research
+        x = 13
+        y = 4
+        cost = 10
+        prerequisite = {
+            focus = SIA_higher_corporate_tax
+            focus = SIA_income_tax_exemption
+        }
+        completion_reward = {
+            add_research_slot = 1
+        }
+    }
+
+    # Pass the Labour Code
+    focus = {
+        id = SIA_pass_the_labour_code
+        icon = GFX_goal_red_star_gold_wreath
+        x = 18
+        y = 2
+        cost = 10
+        prerequisite = { 
+            focus = SIA_opposition_victory
+            focus = SIA_liberal_victory
+        }
+        completion_reward = {
+            add_ideas = SIA_labour_code
+        }
+    }
+
+    # Guarantee Workers Rights
+    focus = {
+        id = SIA_guarantee_workers_rights
+        icon = GFX_goal_DOM_End_Judicial_Corruption
+        x = 18
+        y = 3
+        cost = 10
+        prerequisite = {
+            focus = SIA_pass_the_labour_code
+        }
+        completion_reward = {
+            add_stability = 0.15
+        }
+    }
+
+    # Trade Union Cooperation
+    focus = {
+        id = SIA_trade_union_cooperation
+        icon = GFX_goal_red_star_dove
+        x = 17
+        y = 4
+        cost = 10
+        mutually_exclusive = { focus = SIA_trade_union_agreements }
+        prerequisite = { focus = SIA_guarantee_workers_rights }
+        prerequisite = { focus = SIA_income_tax_exemption }
+        completion_reward = {
+            add_ideas = SIA_government_union_cooperation
+        }
+    }
+
+    # Trade Union Agreements
+    focus = {
+        id = SIA_trade_union_agreements
+        icon = GFX_goal_production
+        x = 19
+        y = 4
+        cost = 10
+        mutually_exclusive = { focus = SIA_trade_union_cooperation }
+        prerequisite = { focus = SIA_guarantee_workers_rights }
+        prerequisite = { focus = SIA_judiciary_reforms }
+        completion_reward = {
+            add_ideas = SIA_liberal_economics
+        }
+    }
+
+    # Liberal Victory
+    focus = {
+        id = SIA_liberal_victory
+        icon = GFX_goal_ideology_social_liberal
+        x = 21
+        y = 1
+        cost = 0
+        available = { has_country_flag = SIA_LIBERAL_VICTORY_FLAG }
+        prerequisite = { focus = SIA_snap_elections }
+    }
+
+    # Protect the Indigenous Peoples
+    focus = {
+        id = SIA_protect_the_indigenous_peoples
+        icon = GFX_focus_generic_concessions
+        x = 21
+        y = 2
+        cost = 10
+        prerequisite = { focus = SIA_liberal_victory }
+        completion_reward = {
+            add_ideas = SIA_indigenous_integration
+        }
+    }
+
+    # Judiciary Reforms
+    focus = {
+        id = SIA_judiciary_reforms
+        icon = GFX_focus_generic_self_management
+        x = 20
+        y = 3
+        cost = 10
+        prerequisite = { focus = SIA_protect_the_indigenous_peoples }
+        completion_reward = {
+            remove_ideas = SIA_ineffective_bureaucracy
+        }
+    }
+
+    # Police Reforms
+    focus = {
+        id = SIA_police_reforms
+        icon = GFX_goal_break_rifle
+        x = 22
+        y = 3
+        cost = 10
+        prerequisite = { focus = SIA_protect_the_indigenous_peoples }
+        completion_reward = {
+            add_stability = 0.15
+        }
+   }
+
+   # More Rights for Women
+   focus = {
+       id = SIA_more_rights_for_women
+       icon = GFX_goal_DOM_End_Judicial_Corruption
+       x = 21
+       y = 4
+       cost = 10
+       prerequisite = { focus = SIA_judiciary_reforms }
+       prerequisite = { focus = SIA_police_reforms }
+       completion_reward = {
+           add_stability = 0.15
+           add_ideas = SIA_womens_sufferage
+       }
+   }
+
+   # Education Prioritization
+   focus = {
+       id = SIA_education_prioritization
+       icon = GFX_focus_research
+       x = 21
+       y = 5
+       cost = 10
+       prerequisite = { focus = SIA_more_rights_for_women }
+       completion_reward = {
+           add_research_slot = 1
+       }
+   }
+
+   # Economic Deregularization
+   focus = {
+       id = SIA_economic_deregularization
+        icon = GFX_goal_ideology_market_liberal
+       x = 23
+       y = 5
+       cost = 10
+       prerequisite = { focus = SIA_more_rights_for_women }
+       completion_reward = {
+           remove_ideas = SIA_economic_mismanagement
+       }
+   }
+
+   # Conservative Victory
+   focus = {
+       id = SIA_conservative_victory
+       icon = GFX_goal_ideology_social_conservative
+       x = 27
+       y = 1
+       cost = 0
+       available = { has_country_flag = SIA_CONSERVATIVE_VICTORY_FLAG }
+       prerequisite = { focus = SIA_snap_elections }
+   }
+
+   # Education Funding
+   focus = {
+       id = SIA_education_funding
+       icon = GFX_focus_research
+       x = 25
+       y = 2
+       cost = 10
+       prerequisite = { focus = SIA_conservative_victory }
+       completion_reward = {
+           add_research_slot = 1
+       }
+   } 
+
+   # Privatize Essential Sectors
+   focus = {
+       id = SIA_privatize_essential_sectors
+       icon = GFX_goal_state_economy
+       x = 25
+       y = 3
+       cost = 10
+       prerequisite = { focus = SIA_education_funding }
+       completion_reward = {
+           remove_ideas = SIA_economic_mismanagement
+       }
+   }
+
+   # Handle Inflation
+   focus = {
+       id = SIA_handle_inflation
+       icon = GFX_goal_gold_reserve
+       x = 24
+       y = 4
+       cost = 10
+       prerequisite = { focus = SIA_privatize_essential_sectors }
+       completion_reward = {
+           add_ideas = SIA_economic_protectionism
+       }
+   }
+
+   # Expand the Bureaucracy
+   focus = {
+       id = SIA_expand_the_bureaucracy
+       icon = GFX_goal_Centralised_Government
+       x = 26
+       y = 4
+       cost = 10
+       prerequisite = { focus = SIA_privatize_essential_sectors }
+       completion_reward = {
+           remove_ideas = SIA_ineffective_bureaucracy
+       }
+   }
+
+   # Socialist Crackdowns
+   focus = {
+       id = SIA_socialist_crackdowns
+       icon = GFX_goal_anti_comintern_pact
+       x = 29
+       y = 2
+       cost = 10
+       prerequisite = { focus = SIA_conservative_victory }
+       completion_reward = {
+            add_popularity = {
+               ideology = vanguardist
+               popularity = -0.15
+           }
+           add_popularity = {
+               ideology = collectivist
+               popularity = -0.15
+           }
+           add_popularity = {
+               ideology = libertarian_socialist
+               popularity = -0.15
+           }
+       }
+   }
+
+   # Reeducation Campaigns
+   focus = {
+       id = SIA_reeducation_campaigns
+       icon = GFX_focus_generic_military_academy
+       x = 28
+       y = 3
+       cost = 10
+       prerequisite = { focus = SIA_socialist_crackdowns }
+       prerequisite = { focus = SIA_education_funding }
+       completion_reward = {
+           add_popularity = {
+               ideology = social_conservative
+               popularity = 0.15
+           }
+       }
+   }
+
+   # Imprison the Radicals
+   focus = {
+       id = SIA_imprison_the_radicals
+       icon = GFX_goal_generic_attack_allies
+       x = 30
+       y = 3
+       cost = 10
+       prerequisite = { focus = SIA_socialist_crackdowns }
+       completion_reward = {
+           add_stability = 0.15
+       }
+   }
+
+   # Intelligence Services
+   focus = {
+       id = SIA_intelligence_services
+       icon = GFX_goal_secret_agents
+       x = 28
+       y = 4
+       cost = 10
+       prerequisite = { focus = SIA_imprison_the_radicals }
+       prerequisite = { focus = SIA_reeducation_campaigns }
+       completion_reward = {
+           add_ideas = SIA_special_higher_police
+       }
+   }
+
+    #############################################
+    #                                           #
+    #                FOREIGN POLICY             #
+    #                                           #
+    #############################################
+    
+    # Open up Foreign Relations 
+    focus = {
+        id = SIA_open_up_foreign_relations
+        icon = GFX_goal_generic_improve_relations
+        x = 37
+        y = 0
+        cost = 5
+        available = {
+            NOT = {
+                has_idea = SIA_ineffective_bureaucracy
+            }
+        }
+        completion_reward = {}
+    }
+
+    # Reaffirm Terrirorial Claims
+    focus = {
+        id = SIA_reaffirm_territorial_claims
+        icon = GFX_goal_generic_major_war
+        x = 36
+        y = 1
+        cost = 10
+        mutually_exclusive = { focus = SIA_abandon_territorial_claims }
+        prerequisite = { focus = SIA_open_up_foreign_relations }
+        completion_reward = {
+            add_state_claim = 1007
+            
+            add_state_claim = 962
+            add_state_claim = 963
+            add_state_claim = 741
+
+            add_state_claim = 959
+            add_state_claim = 960
+            add_state_claim = 670
+
+            ENG = {
+                add_opinion_modifier = {
+                    target = SIA
+                    modifier = SIA_reaffirmed_territorial_claims
+                }
+            }
+            FRA = {
+                add_opinion_modifier = {
+                    target = SIA
+                    modifier = SIA_reaffirmed_territorial_claims
+                }
+            }
+            FIC = {
+                add_opinion_modifier = {
+                    target = SIA
+                    modifier = SIA_reaffirmed_territorial_claims
+                }
+            }
+        }
+    }
+
+    # Abandon Territorial Claims
+    focus = {
+        id = SIA_abandon_territorial_claims
+        icon = GFX_goal_molotov_ribbentrop_pact
+        x = 38
+        y = 1
+        cost = 10
+        mutually_exclusive = { focus = SIA_reaffirm_territorial_claims }
+        prerequisite = { focus = SIA_open_up_foreign_relations }
+        completion_reward = {
+            ENG = {
+                add_opinion_modifier = {
+                    target = SIA
+                    modifier = SIA_abandoned_territorial_claims
+                }
+            }
+            FRA = {
+                add_opinion_modifier = {
+                    target = SIA
+                    modifier = SIA_abandoned_territorial_claims
+                }
+            }
+            FIC = {
+                add_opinion_modifier = {
+                    target = SIA
+                    modifier = SIA_abandoned_territorial_claims
+                }
+            }
+        }
+    }
+
+    # Demand our North Western Territories
+    focus = {
+        id = SIA_demand_our_north_western_territories
+        icon = GFX_focus_attack_britain
+        x = 34
+        y = 2
+        cost = 10
+        will_lead_to_war_with = ENG
+        prerequisite = { focus = SIA_reaffirm_territorial_claims }
+        completion_reward = {
+            ENG = { country_event = { id = siam.9 } }
+        }
+    }
+
+    # Demand our Eastern Territories
+    focus = {
+        id = SIA_demand_our_eastern_territories
+        icon = GFX_focus_attack_france
+        x = 36
+        y = 2
+        cost = 10
+        will_lead_to_war_with = FRA
+        prerequisite = { focus = SIA_reaffirm_territorial_claims }
+        completion_reward = {
+            FIC = { country_event = { id = siam.9 } }
+        }
+    }
+
+    # Restore Greater Siam
+    focus = {
+        id = SIA_restore_greater_siam
+        icon = GFX_goal_flag_siam
+        x = 35
+        y = 3
+        cost = 10
+        prerequisite = { focus = SIA_demand_our_north_western_territories }
+        prerequisite = { focus = SIA_demand_our_eastern_territories }
+        completion_reward = {}
+    }
+
+    # Imperial Trading
+    focus = {
+        id = SIA_imperial_trading
+        icon = GFX_focus_chi_british_cooperation
+        x = 38
+        y = 2
+        cost = 5
+        prerequisite = { focus = SIA_abandon_territorial_claims }
+        completion_reward = {
+            random_owned_controlled_state = {
+                limit = {
+                    free_building_slots = {
+                        building = industrial_complex
+                        size > 1
+                        include_locked = yes
+                    }
+                }
+
+                add_extra_state_shared_building_slots = 1
+                add_building_construction = {
+                    type = industrial_complex
+                    level = 1
+                    instant_build = yes
+                }
+            }
+        }
+    }
+
+    # Entente Trading
+    focus = {
+        id = SIA_entente_trading
+        icon = GFX_focus_chi_reach_out_to_france
+        x = 40
+        y = 2
+        cost = 5
+        prerequisite = { focus = SIA_abandon_territorial_claims }
+        completion_reward = {
+            random_owned_controlled_state = {
+                limit = {
+                    free_building_slots = {
+                        building = industrial_complex
+                        size > 1
+                        include_locked = yes
+                    }
+                }
+
+                add_extra_state_shared_building_slots = 1
+                add_building_construction = {
+                    type = industrial_complex
+                    level = 1
+                    instant_build = yes
+                }
+            }
+        }
+    }
+
+    # Japanese Trading
+    focus = {
+        id = SIA_japanese_trading
+        icon = GFX_focus_chi_collaboration_with_the_japanese
+        x = 39
+        y = 3
+        cost = 5
+        prerequisite = { focus = SIA_abandon_territorial_claims }
+        completion_reward = {
+            random_owned_controlled_state = {
+                limit = {
+                    free_building_slots = {
+                        building = industrial_complex
+                        size > 1
+                        include_locked = yes
+                    }
+                }
+
+                add_extra_state_shared_building_slots = 1
+                add_building_construction = {
+                    type = industrial_complex
+                    level = 1
+                    instant_build = yes
+                }
+            }
+        }
+    }
+
+    # Seek Friends
+    focus = {
+        id = SIA_seek_friends
+        x = 37
+        y = 4
+        cost = 2
+        prerequisite = { focus = SIA_open_up_foreign_relations }
+        completion_reward = {
+            PHI = {
+                add_opinion_modifier = {
+                    target = SIA
+                    modifier = SIA_brotherly_relations
+                }
+            }
+            INS = {
+                add_opinion_modifier = {
+                    target = SIA
+                    modifier = SIA_brotherly_relations
+                }
+            }
+        }
+    }
+
+    # Mission to the Philippines
+    focus = {
+        id = SIA_mission_to_the_philippines
+        icon = GFX_goal_philippines_democracy
+        x = 36
+        y = 5
+        cost = 10
+        available = {
+            PHI = {
+                exists = yes
+                is_in_faction = no
+                is_faction_leader = no
+            }
+        }
+        prerequisite = { focus = SIA_seek_friends }
+        completion_reward = {
+            PHI = { country_event = { id = siam.13 } }
+        }
+    }
+
+    # Mission to Insulindia
+    focus = {
+        id = SIA_mission_to_insulindia
+        icon = GFX_goal_INS_focus_stable_again
+        x = 38
+        y = 5
+        cost = 10
+        available = {
+            INS = {
+                exists = yes
+                is_in_faction = no
+                is_subject = no
+            }
+        }
+        prerequisite = { focus = SIA_seek_friends }
+        completion_reward = {
+            INS = { country_event = { id = siam.13 } }
+        }
+    }
+
+    #############################################
+    #                                           #
+    #                   INDUSTRY                #
+    #                                           #
+    #############################################
+
+    # Acquire Modern Tools
+    focus = {
+        id = SIA_acquire_modern_tools
+        icon = GFX_goal_generic_production2
+        x = 4
+        y = 6
+        cost = 10
+        completion_reward = {
+            add_tech_bonus = {
+                category = industry
+                bonus = 1.0
+                uses = 2
+            }
+        }
+    }
+
+    # Construct New Weapons Factories
+    focus = {
+        id = SIA_construct_new_weapons_factories
+        icon = GFX_goal_generic_construct_mil_factory
+        x = 2
+        y = 7
+        cost = 10
+        prerequisite = { focus = SIA_acquire_modern_tools }
+        completion_reward = {
+            random_owned_controlled_state = {
+                limit = {
+                    free_building_slots = {
+                        building = arms_factory
+                        size > 2
+                        include_locked = yes
+                    }
+                }
+
+                add_extra_state_shared_building_slots = 1
+                add_building_construction = {
+                    type = arms_factory
+                    level = 1
+                    instant_build = yes
+                }
+            }
+            random_owned_controlled_state = {
+                limit = {
+                    free_building_slots = {
+                        building = arms_factory
+                        size > 1
+                        include_locked = yes
+                    }
+                }
+
+                add_extra_state_shared_building_slots = 1
+                add_building_construction = {
+                    type = arms_factory
+                    level = 1
+                    instant_build = yes
+                }
+            }
+        }
+    }
+
+    # Construct New Infrastructure
+    focus = {
+        id = SIA_construct_new_infrastructure
+        icon = GFX_goal_generic_construct_infrastructure
+        x = 4
+        y = 7
+        cost = 10
+        prerequisite = { focus = SIA_acquire_modern_tools }
+        completion_reward = {
+            random_owned_controlled_state = {
+                limit = {
+                    free_building_slots = {
+                        building = infrastructure
+                        size > 1
+                        include_locked = yes
+                    }
+                }
+
+                add_extra_state_shared_building_slots = 1
+                add_building_construction = {
+                    type = infrastructure
+                    level = 1
+                    instant_build = yes
+                }
+            }
+            random_owned_controlled_state = {
+                limit = {
+                    free_building_slots = {
+                        building = infrastructure
+                        size > 1
+                        include_locked = yes
+                    }
+                }
+
+                add_extra_state_shared_building_slots = 1
+                add_building_construction = {
+                    type = infrastructure
+                    level = 1
+                    instant_build = yes
+                }
+            }
+            random_owned_controlled_state = {
+                limit = {
+                    free_building_slots = {
+                        building = infrastructure
+                        size > 1
+                        include_locked = yes
+                    }
+                }
+
+                add_extra_state_shared_building_slots = 1
+                add_building_construction = {
+                    type = infrastructure
+                    level = 1
+                    instant_build = yes
+                }
+            }
+        }
+    }
+
+    # Construct New Industries
+    focus = {
+        id = SIA_construct_new_industries
+        icon = GFX_goal_generic_construct_civ_factory
+        x = 6
+        y = 7
+        cost = 10
+        prerequisite = { focus = SIA_acquire_modern_tools }
+        completion_reward = {
+            random_owned_controlled_state = {
+                limit = {
+                    free_building_slots = {
+                        building = industrial_complex
+                        size > 1
+                        include_locked = yes
+                    }
+                }
+
+                add_extra_state_shared_building_slots = 1
+                add_building_construction = {
+                    type = industrial_complex
+                    level = 1
+                    instant_build = yes
+                }
+            }
+            random_owned_controlled_state = {
+                limit = {
+                    free_building_slots = {
+                        building = industrial_complex
+                        size > 1
+                        include_locked = yes
+                    }
+                }
+
+                add_extra_state_shared_building_slots = 1
+                add_building_construction = {
+                    type = industrial_complex
+                    level = 1
+                    instant_build = yes
+                }
+            }
+        }
+    }
+
+    # Research Funding
+    focus = {
+        id = SIA_research_funding
+        icon = GFX_focus_research
+        x = 3
+        y = 8
+        cost = 10
+        prerequisite = { focus = SIA_construct_new_industries }
+        prerequisite = { focus = SIA_construct_new_infrastructure }
+        prerequisite = { focus = SIA_construct_new_weapons_factories }
+        completion_reward = {
+            add_research_slot = 1
+        }
+    }
+
+    # Continue Public Works
+    focus = {
+        id = SIA_continue_public_works
+        icon = GFX_goal_generic_construction
+        x = 5
+        y = 8
+        cost = 10
+        prerequisite = { focus = SIA_construct_new_industries }
+        prerequisite = { focus = SIA_construct_new_infrastructure }
+        prerequisite = { focus = SIA_construct_new_weapons_factories }
+        completion_reward = {
+            add_ideas = SIA_the_public_works
+        }
+    }
+
+    # New Roads and Highways
+    focus = {
+        id = SIA_new_roads_and_highways
+        icon = GFX_goal_generic_construct_infrastructure
+        x = 6
+        y = 9
+        cost = 10
+        prerequisite = { focus = SIA_continue_public_works }
+        completion_reward = {
+            random_owned_controlled_state = {
+                limit = {
+                    free_building_slots = {
+                        building = infrastructure
+                        size > 1
+                        include_locked = yes
+                    }
+                }
+
+                add_extra_state_shared_building_slots = 1
+                add_building_construction = {
+                    type = infrastructure
+                    level = 1
+                    instant_build = yes
+                }
+            }
+            random_owned_controlled_state = {
+                limit = {
+                    free_building_slots = {
+                        building = infrastructure
+                        size > 1
+                        include_locked = yes
+                    }
+                }
+
+                add_extra_state_shared_building_slots = 1
+                add_building_construction = {
+                    type = infrastructure
+                    level = 1
+                    instant_build = yes
+                }
+            }
+        }
+    }
+
+    # Resource Extraction
+    focus = {
+        id = SIA_resource_extraction
+        icon = GFX_goal_generic_construction2
+        x = 6
+        y = 10
+        cost = 10
+        prerequisite = { focus = SIA_new_roads_and_highways }
+        completion_reward = {
+            random_owned_controlled_state = {
+                limit = { 
+                    has_resources_amount = { resource = tungsten amount < 10 } 
+                }
+
+                add_resource = { type = tungsten amount = 20 }
+            }
+            random_owned_controlled_state = {
+                limit = { 
+                    has_resources_amount = { resource = steel amount < 10 }
+                }
+
+                add_resource = { type = steel amount = 100 }
+            }
+            random_owned_controlled_state = {
+                limit = { 
+                    has_resources_amount = { resource = rubber amount < 50 }
+                }
+
+                add_resource = { type = rubber amount = 50 }
+            }
+        }
+    }
+
+    # Expand Industries
+    focus = {
+        id = SIA_expand_industries
+        icon = GFX_goal_generic_construct_civilian
+        x = 3
+        y = 9
+        cost = 10
+        prerequisite = { focus = SIA_continue_public_works }
+        completion_reward = {
+            random_owned_controlled_state = {
+                limit = {
+                    free_building_slots = {
+                        building = industrial_complex
+                        size > 1
+                        include_locked = yes
+                    }
+                }
+
+                add_extra_state_shared_building_slots = 1
+                add_building_construction = {
+                    type = arms_factory
+                    level = 1
+                    instant_build = yes
+                }
+            }
+            random_owned_controlled_state = {
+                limit = {
+                    free_building_slots = {
+                        building = industrial_complex
+                        size > 1
+                        include_locked = yes
+                    }
+                }
+
+                add_extra_state_shared_building_slots = 1
+                add_building_construction = {
+                    type = arms_factory
+                    level = 1
+                    instant_build = yes
+                }
+            }
+        }
+    }
+
+    # An Atom Divisible
+    focus = {
+        id = SIA_an_atom_divisible
+        icon = GFX_focus_wonderweapons
+        x = 2
+        y = 10
+        cost = 10
+        prerequisite = { focus = SIA_research_funding }
+        prerequisite = { focus = SIA_expand_industries }
+        completion_reward = {
+            add_tech_bonus = {
+                category = nuclear
+                bonus = 1.0
+                uses = 1
+            }
+        }
+    }
+
+    # Rocketry
+    focus = {
+        id = SIA_rocketry
+        icon = GFX_focus_rocketry
+        x = 4
+        y = 10
+        cost = 10
+        prerequisite = { focus = SIA_research_funding }
+        prerequisite = { focus = SIA_expand_industries }
+        completion_reward = {
+            add_tech_bonus = {
+                category = rocketry
+                bonus = 1.0
+                uses = 1
+            }
+        }
+    }
 
     #############################################
     #                                           #
@@ -321,315 +1346,342 @@ focus_tree = {
     #                                           #
     #############################################
 
-    # Reform the Army
+    # The Royal Siamese Army
     focus = {
-        id = SIA_reform_the_army
-        icon = GFX_goal_army_guy_2
-        x = 15
-        y = 0
-        cost = 10
-        completion_reward = {
-            army_experience = 10
-        }
-    }
-
-    # Equipment Standardization
-    focus = {
-        id = SIA_equipment_standardization
-        icon = GFX_goal_national_arsenal
+        id = SIA_the_royal_siamese_army
+        icon = GFX_goal_generic_axis_build_infantry
         x = 12
-        y = 1
-        cost = 10
-        prerequisite = { focus = SIA_reform_the_army }
-        completion_reward = {
-            add_tech_bonus = {
-				bonus = 1.0
-				uses = 1
-				category = infantry_weapons
-			}
-        }
-    }
-
-    # Start Small Arms Modernization
-    focus = {
-        id = SIA_start_small_arms_modernization
-        icon = GFX_goal_generic_small_arms
-        x = 11
-        y = 2
-        cost = 10
-        prerequisite = { focus = SIA_equipment_standardization }
-        completion_reward = {
-            add_tech_bonus = {
-				bonus = 1.0
-				uses = 1
-				category = infantry_weapons
-			}
-        }
-    }
-
-    # Big Guns Research
-    focus = {
-        id = SIA_big_guns_research
-        icon = GFX_goal_generic_army_artillery
-        x = 13
-        y = 2
-        cost = 10
-        prerequisite = { focus = SIA_equipment_standardization }
-        completion_reward = {
-            add_tech_bonus = {
-				bonus = 1.0
-				uses = 1
-				category = artillery
-			}
-        }
-    }
-
-    # Modern Doctrines
-    focus = {
-        id = SIA_modern_doctrines
-        icon = GFX_goal_generic_army_doctrines
-        x = 15
-        y = 1
-        cost = 10
-        prerequisite = { focus = SIA_reform_the_army }
-        completion_reward = {
-            add_tech_bonus = {
-				bonus = 1.0
-				uses = 2
-				category = land_doctrine
-			}
-        }
-    }
-
-    # War Games
-    focus = {
-        id = SIA_war_games
-        icon = GFX_goal_checkmate
-        x = 15
-        y = 2
-        cost = 10
-        prerequisite = { focus = SIA_modern_doctrines }
+        y = 6
+        cost = 3
         completion_reward = {
             army_experience = 10
         }
     }
 
-    # Improved Army Doctrine
+    # Modernize the Artillery
     focus = {
-        id = SIA_improved_army_doctrine
-        icon = GFX_goal_generic_army_doctrines
-        x = 15
-        y = 4
+        id = SIA_modernize_the_artillery
+        icon = GFX_goal_generic_army_artillery2
+        x = 11
+        y = 7
         cost = 10
-        prerequisite = { focus = SIA_war_games }
+        prerequisite = { focus = SIA_the_royal_siamese_army }
         completion_reward = {
             add_tech_bonus = {
-				bonus = 1.0
-				uses = 1
-				category = land_doctrine
-			}
+                category = artillery
+                bonus = 1.0
+                uses = 2
+            }
         }
     }
 
-    # Special Forces
+    # Conscription Efforts
     focus = {
-        id = SIA_special_forces
-        icon = GFX_goal_generic_special_forces
+        id = SIA_conscription_effort
+        icon = GFX_goal_army_guy_2
         x = 13
-        y = 3
+        y = 7
         cost = 10
-        prerequisite = { focus = SIA_war_games }
-        prerequisite = { focus = SIA_big_guns_research }
-        prerequisite = { focus = SIA_start_small_arms_modernization }
+        prerequisite = { focus = SIA_the_royal_siamese_army }
         completion_reward = {
-            add_tech_bonus = {
-				bonus = 1.0
-				uses = 1
-				category = para_tech
-			}
-            add_tech_bonus = {
-				bonus = 1.0
-				uses = 1
-				category = mountaineers_tech
-			}
-            add_tech_bonus = {
-				bonus = 1.0
-				uses = 1
-				category = marine_tech
-			}
+            manpower = 20000
         }
     }
 
-    # Army Modernization and Expansion
+    # An Motorized Army
     focus = {
-        id = SIA_army_modernization_and_expansion
-        icon = GFX_focus_generic_little_entente
-        x = 18
-        y = 1
-        cost = 2
-        prerequisite = { focus = SIA_reform_the_army }
+        id = SIA_a_motorized_army
+        icon = GFX_goal_generic_army_motorized
+        x = 10
+        y = 8
+        cost = 10
+        prerequisite = { focus = SIA_modernize_the_artillery }
         completion_reward = {
             add_tech_bonus = {
-				bonus = 1.0
-				uses = 1
-				category = motorized_equipment
-			}
+                category = motorized_equipment
+                bonus = 1.0
+                uses = 1
+            }
         }
     }
 
-    # Armour Divisions
+    # Siamese Doctrines
     focus = {
-        id = SIA_armour_divisions
-        icon = GFX_goal_generic_army_tanks
-        x = 17
-        y = 2
-        cost = 5
-        prerequisite = { focus = SIA_army_modernization_and_expansion }
+        id = SIA_siamese_doctrines
+        icon = GFX_goal_generic_army_doctrines
+        x = 12
+        y = 8
+        cost = 10
+        prerequisite = {
+            focus = SIA_modernize_the_artillery
+            focus = SIA_conscription_effort
+        }
         completion_reward = {
             add_tech_bonus = {
-				bonus = 1.0
-				uses = 1
-				category = armor
-			}
+                category = land_doctrine
+                bonus = 1.0
+                uses = 2
+            }
+        }
+    }
+
+    # Siamese Women's Army Service
+    focus = {
+        id = SIA_siamese_womens_army_service
+        icon = GFX_focus_generic_military_mission
+        x = 11
+        y = 9
+        cost = 10
+        prerequisite = { focus = SIA_siamese_doctrines }
+        completion_reward = {
+            add_ideas = SIA_womens_army_service_idea
         }
     }
 
     # Experimental Mechanized Divisions
     focus = {
         id = SIA_experimental_mechanized_divisions
-        icon = GFX_goal_generic_army_motorized
-        x = 19
-        y = 2
-        cost = 5
-        prerequisite = { focus = SIA_army_modernization_and_expansion }
-        completion_reward = {
-            add_tech_bonus = {
-				bonus = 1.0
-				uses = 1
-				category = motorized_equipment
-			}
-        }
-    }
-
-
-    # Signal Companies
-    focus = {
-        id = SIA_signal_companies
-        icon = GFX_goal_rhineland
-        x = 16
-        y = 3
-        cost = 5
-        prerequisite = { focus = SIA_armour_divisions }
-        prerequisite = { focus = SIA_experimental_mechanized_divisions }
-        completion_reward = {
-            add_tech_bonus = {
-				bonus = 1.0
-				uses = 1
-				category = signal_tech
-			}
-        }
-    }
-
-
-    # Improved Field Hospitals
-    focus = {
-        id = SIA_improved_field_hospitals
-        icon = GFX_focus_generic_commonwealth_build_infantry
-        x = 20
-        y = 3
-        cost = 5
-        prerequisite = { focus = SIA_armour_divisions }
-        prerequisite = { focus = SIA_experimental_mechanized_divisions }
-        completion_reward = {
-            add_tech_bonus = {
-				bonus = 1.0
-				uses = 1
-				category = hospital_tech
-			}
-        }
-    }
-
-    # Modern Logistics
-    focus = {
-        id = SIA_modern_logistics
-        icon = GFX_goal_generic_neutrality_focus
-        x = 18
-        y = 3
-        cost = 5
-        prerequisite = { focus = SIA_armour_divisions }
-        prerequisite = { focus = SIA_experimental_mechanized_divisions }
-        completion_reward = {
-            add_tech_bonus = {
-				bonus = 1.0
-				uses = 1
-				category = logistics_tech
-			}
-        }
-    }
-
-    # Establish a Military Academy
-    focus = {
-        id = SIA_establish_a_military_academy
-        icon = GFX_focus_generic_military_academy
-        x = 18
-        y = 4
+        icon = GFX_goal_generic_secret_weapon
+        x = 13
+        y = 9
         cost = 10
-        prerequisite = { focus = SIA_signal_companies }
-        prerequisite = { focus = SIA_modern_logistics }
-        prerequisite = { focus = SIA_improved_field_hospitals }
+        prerequisite = { focus = SIA_siamese_doctrines }
         completion_reward = {
-            add_ideas = SIA_bangkok_military_academy
+            add_tech_bonus = {
+                category = cat_mechanized_equipment
+                bonus = 1.0
+                uses = 1
+            }
+        }
+    }
+    
+    # Army Logistics
+    focus = {
+        id = SIA_army_logistics
+        icon = GFX_goal_generic_army_artillery
+        x = 12
+        y = 10
+        cost = 10
+        prerequisite = { focus = SIA_siamese_doctrines }
+        completion_reward = {
+            add_tech_bonus = {
+                category = logistics_tech
+                bonus = 1.0
+                uses = 1
+            }
+        }
+    }
+
+    # Standardized Equipment
+    focus = {
+        id = SIA_standardized_equipment
+        icon = GFX_goal_generic_small_arms
+        x = 14
+        y = 8
+        cost = 10
+        prerequisite = { focus = SIA_conscription_effort }
+        completion_reward = {
+            add_tech_bonus = {
+                category = infantry_weapons
+                bonus = 1.0
+                uses = 2
+            }
+        }
+    }
+
+    # Tank Projects
+    focus = {
+        id = SIA_tank_projects
+        icon = GFX_goal_generic_army_tanks
+        x = 10
+        y = 10
+        cost = 10
+        prerequisite = { focus = SIA_a_motorized_army }
+        completion_reward = {
+            add_tech_bonus = {
+                category = armor
+                bonus = 1.0
+                uses = 2
+            }
+        }
+    }
+
+    # Support Companies
+    focus = {
+        id = SIA_support_companies
+        icon = GFX_focus_RAJ_indian_gentlemen_offcers
+        x = 14
+        y = 10
+        cost = 10
+        prerequisite = { focus = SIA_standardized_equipment }
+        completion_reward = {
+            add_tech_bonus = {
+                category = support_tech
+                bonus = 1.0
+                uses = 2
+            }
+        }
+    }
+
+    # Improved Siamese Doctrines
+    focus = {
+        id = SIA_improved_siamese_doctrines
+        icon = GFX_goal_generic_army_doctrines
+        x = 12
+        y = 11
+        cost = 10
+        prerequisite = {
+            focus = SIA_tank_projects
+            focus = SIA_support_companies
+        }
+        completion_reward = {
+            add_tech_bonus = {
+                category = land_doctrine
+                bonus = 1.0
+                uses = 2
+            }
+        }
+    }
+
+    # Siamese Marines
+    focus = {
+        id = SIA_siamese_marines
+        icon = GFX_goal_generic_amphibious_assault
+        x = 11
+        y = 12
+        cost = 10
+        prerequisite = { focus = SIA_improved_siamese_doctrines }
+        completion_reward = {
+            add_tech_bonus = {
+                category = marine_tech
+                bonus = 1.0
+                uses = 1
+            }
+        }
+    }
+
+    # Siamese Paratroopers
+    focus = {
+        id = SIA_siamese_paratroopers
+        icon = GFX_focus_generic_paratrooper
+        x = 13
+        y = 12
+        cost = 10
+        prerequisite = { focus = SIA_improved_siamese_doctrines }
+        completion_reward = {
+            add_tech_bonus = {
+                category = para_tech
+                bonus = 1.0
+                uses = 1
+            }
         }
     }
 
     #############################################
     #                                           #
-    #                AIR FORCE                  #
+    #                 AIR FORCE                 #
     #                                           #
     #############################################
-
-    # Expand the Air Force
+    
+    # The Royal Siamese Air Force
     focus = {
-        id = SIA_expand_the_air_force
+        id = SIA_the_royal_siamese_air_force
         icon = GFX_goal_generic_build_airforce
-        x = 25
-        y = 0
-        cost = 10
+        x = 19
+        y = 6
+        cost = 3
         completion_reward = {
             air_experience = 10
         }
     }
 
-    # Fighter Modernization
+    # Fighter Research
     focus = {
-        id = SIA_fighter_modernization
+        id = SIA_fighter_research
         icon = GFX_goal_generic_air_fighter
-        x = 23
-        y = 1
+        x = 18
+        y = 7
         cost = 10
-        prerequisite = { focus = SIA_expand_the_air_force }
+        prerequisite = { focus = SIA_the_royal_siamese_air_force }
         completion_reward = {
             add_tech_bonus = {
+                category = light_fighter
                 bonus = 1.0
                 uses = 1
-                category = light_fighter
             }
         }
     }
 
-    # Bomber Modernization
+    # Bomber Research
     focus = {
-        id = SIA_bomber_modernization
+        id = SIA_bomber_research
         icon = GFX_goal_generic_air_bomber
-        x = 27
-        y = 1
+        x = 20
+        y = 7
         cost = 10
-        prerequisite = { focus = SIA_expand_the_air_force }
+        prerequisite = { focus = SIA_the_royal_siamese_air_force }
         completion_reward = {
             add_tech_bonus = {
+                category = tactical_bomber
                 bonus = 1.0
                 uses = 1
-                category = tactical_bomber
+            }
+        }
+    }
+
+    # Northern Airbases
+    focus = {
+        id = SIA_northern_airbases
+        icon = GFX_goal_generic_construct_military
+        x = 19
+        y = 8
+        cost = 5
+        prerequisite = { focus = SIA_the_royal_siamese_air_force }
+        completion_reward = {
+            random_owned_controlled_state = {
+                limit = {
+                    free_building_slots = {
+                        building = air_base
+                        size > 3
+                        include_locked = yes
+                    }
+                }
+
+                add_building_construction = {
+                    type = air_base
+                    level = 3
+                    instant_build = yes
+                }
+            }
+            random_owned_controlled_state = {
+                limit = {
+                    free_building_slots = {
+                        building = air_base
+                        size > 3
+                        include_locked = yes
+                    }
+                }
+
+                add_building_construction = {
+                    type = air_base
+                    level = 3
+                    instant_build = yes
+                }
+            }
+            random_owned_controlled_state = {
+                limit = {
+                    free_building_slots = {
+                        building = air_base
+                        size > 3
+                        include_locked = yes
+                    }
+                }
+
+                add_building_construction = {
+                    type = air_base
+                    level = 3
+                    instant_build = yes
+                }
             }
         }
     }
@@ -638,168 +1690,84 @@ focus_tree = {
     focus = {
         id = SIA_cas_research
         icon = GFX_goal_generic_CAS
-        x = 22
-        y = 2
-        cost = 5
-        prerequisite = { focus = SIA_fighter_modernization }
-        completion_reward = {
+        x = 18
+        y = 9
+        cost = 10
+        prerequisite = { focus = SIA_fighter_research }
+        prerequisite = { focus = SIA_northern_airbases }
+        completion_reward = {  
             add_tech_bonus = {
-                bonus = 1.0
-                uses = 1
                 category = cas_bomber
+                bonus = 1.0
+                uses = 1
             }
         }
     }
 
-    # Naval Bomber Research
+    # Radar Research
     focus = {
-        id = SIA_naval_bomber_research
-        icon = GFX_focus_jap_zero
-        x = 24 
-        y = 2
-        cost = 5
-        prerequisite = { focus = SIA_fighter_modernization }
-        completion_reward = {
-            add_tech_bonus = {
-                bonus = 1.0
-                uses = 1
-                category = naval_bomber
-            }
-        }
-    }
-
-    # Heavy Fighter Research
-    focus = {
-        id = SIA_heavy_fighter_research
-        icon = GFX_focus_chi_flying_tigers
-        x = 26
-        y = 2
-        cost = 5
-        prerequisite = { focus = SIA_bomber_modernization }
-        completion_reward = {
-            add_tech_bonus = {
-                bonus = 1.0
-                uses = 1
-                category = cat_heavy_fighter
-            }
-        }
-    }
-    
-    # Strategic Bomber Research
-    focus = {
-        id = SIA_strategic_bomber_research
-        icon = GFX_goal_generic_occupy_start_war
-        x = 28
-        y = 2
-        cost = 5
-        prerequisite = { focus = SIA_bomber_modernization }
-        completion_reward = {
-            add_tech_bonus = {
-                bonus = 1.0
-                uses = 1
-                category = cat_strategic_bomber
-            }
-        }
-    }
-
-    # Army Support Doctrine
-    focus = {
-        id = SIA_army_support_doctrine
-        icon = GFX_goal_air_armada
-        x = 23
-        y = 3
-        cost = 5
-        mutually_exclusive = { focus = SIA_balanced_doctrine }
-        mutually_exclusive = { focus = SIA_strategic_destruction_doctrine }
+        id = SIA_radar_research
+        icon = GFX_goal_generic_radar
+        x = 18
+        y = 11
+        cost = 10
         prerequisite = { focus = SIA_cas_research }
-        prerequisite = { focus = SIA_naval_bomber_research }
         completion_reward = {
             add_tech_bonus = {
+                category = radar
                 bonus = 1.0
                 uses = 1
-                category = cat_operational_integrity
             }
         }
     }
 
-    # Balanced Doctrine
+    # Naval Bombers Research
     focus = {
-        id = SIA_balanced_doctrine
+        id = SIA_naval_bombers_research
+        icon = GFX_goal_generic_air_naval_bomber
+        x = 20
+        y = 9
+        cost = 10
+        prerequisite = { focus = SIA_bomber_research }
+        completion_reward = {
+            add_tech_bonus = {
+                category = naval_bomber
+                bonus = 1.0
+                uses = 1
+            }
+        }
+    }
+
+    # Women in the Air Force
+    focus = {
+        id = SIA_women_in_the_air_force
+        icon = GFX_goal_generic_demand_territory
+        x = 19
+        y = 10
+        cost = 10
+        prerequisite = { focus = SIA_cas_research }
+        prerequisite = { focus = SIA_naval_bombers_research }
+        completion_reward = {
+            air_experience = 20
+            set_rule = {
+				can_generate_female_aces = yes
+			}
+        }
+    }
+
+    # Dominate the Skies
+    focus = {
+        id = SIA_dominate_the_skies
         icon = GFX_goal_generic_air_doctrine
-        x = 25
-        y = 3
-        cost = 5
-        mutually_exclusive = { focus = SIA_army_support_doctrine }
-        mutually_exclusive = { focus = SIA_strategic_destruction_doctrine }
-        prerequisite = {
-            focus = SIA_cas_research
-            focus = SIA_naval_bomber_research
-            focus = SIA_heavy_fighter_research
-            focus = SIA_strategic_bomber_research
-        }
-        completion_reward = {
-            add_tech_bonus = {
-                bonus = 1.0
-                uses = 1
-                category = cat_strategic_bomber
-            }
-        }
-    }
-
-    # Strategic Destruction Doctrine
-    focus = {
-        id = SIA_strategic_destruction_doctrine
-        icon = GFX_goal_bombs_away
-        x = 27
-        y = 3
-        cost = 5
-        mutually_exclusive = { focus = SIA_balanced_doctrine }
-        mutually_exclusive = { focus = SIA_army_support_doctrine }
-        prerequisite = { focus = SIA_heavy_fighter_modernization }
-        prerequisite = { focus = SIA_strategic_bomber_research }
-        completion_reward = {
-            add_tech_bonus = {
-                bonus = 1.0
-                uses = 1
-                category = cat_strategic_destruction
-            }
-        }
-    }
-
-    # Rockets
-    focus = {
-        id = SIA_rockets
-        icon = GFX_focus_rocketry
-        x = 25
-        y = 4
+        x = 20
+        y = 11
         cost = 10
-        prerequisite = { 
-            focus = SIA_army_support_doctrine
-            focus = SIA_balanced_doctrine
-            focus = SIA_strategic_destruction_doctrine
-        }
+        prerequisite = { focus = SIA_naval_bombers_research }
         completion_reward = {
             add_tech_bonus = {
+                category = air_doctrine
                 bonus = 1.0
                 uses = 1
-                category = rocketry
-            }
-        }
-    }
-
-    # Atomic Research
-    focus = {
-        id = SIA_atomic_research
-        icon = GFX_focus_research
-        x = 25
-        y = 5
-        cost = 10
-        prerequisite = { focus = SIA_rockets }
-        completion_reward = {
-            add_tech_bonus = {
-                bonus = 1.0
-                uses = 1
-                category = nuclear
             }
         }
     }
@@ -810,49 +1778,51 @@ focus_tree = {
     #                                           #
     #############################################
 
-    # Establish a Navy
+    # The Royal Siamese Navy
     focus = {
-        id = SIA_establish_a_navy
-        icon = GFX_goal_battleship
-        x = 32
-        y = 0
-        cost = 10
+        id = SIA_the_royal_siamese_navy
+        icon = GFX_goal_generic_build_navy
+        x = 25
+        y = 6
+        cost = 3
         completion_reward = {
-            naval_experience = 10
+            navy_experience = 10
         }
     }
 
-    # Large Fleet
+    # Protect the Convoys
     focus = {
-        id = SIA_large_fleet
-        icon = GFX_goal_generic_coastal_navy
-        x = 30
-        y = 1
+        id = SIA_protect_the_convoys
+        icon = GFX_goal_generic_navy_cruiser
+        x = 24
+        y = 7
         cost = 10
-        mutually_exclusive = { focus = SIA_flexible_fleet }
-        prerequisite = { focus = SIA_establish_a_navy }
+        mutually_exclusive = { focus = SIA_destroy_the_convoys }
+        prerequisite = { focus = SIA_the_royal_siamese_navy }
         completion_reward = {
             add_tech_bonus = {
-                category = naval_doctrine
+                category = cat_fleet_in_being
+                category = cat_base_strike
+                bonus = 1.0
                 uses = 2
-                bonus = 2.0
             }
         }
     }
 
-    # Submarine Research
+    # Destroy the Convoys
     focus = {
-        id = SIA_submarine_research
+        id = SIA_destroy_the_convoys
         icon = GFX_goal_generic_navy_submarine
-        x = 30
-        y = 2
-        cost = 5
-        prerequisite = { focus = SIA_large_fleet }
+        x = 26
+        y = 7
+        cost = 10
+        mutually_exclusive = { focus = SIA_protect_the_convoys }
+        prerequisite = { focus = SIA_the_royal_siamese_navy }
         completion_reward = {
             add_tech_bonus = {
-                bonus = 2.0
-                category = ss_tech
-                uses = 1
+                category = cat_trade_interdiction
+                bonus = 1.0
+                uses = 2
             }
         }
     }
@@ -860,11 +1830,14 @@ focus_tree = {
     # Destroyer Research
     focus = {
         id = SIA_destroyer_research
-        icon = GFX_focus_generic_destroyer
-        x = 30
-        y = 3
-        cost = 5
-        prerequisite = { focus = SIA_submarine_research }
+        icon = GFX_goal_generic_navy_battleship
+        x = 24
+        y = 8
+        cost = 10
+        prerequisite = {
+            focus = SIA_destroy_the_convoys
+            focus = SIA_protect_the_convoys
+        }
         completion_reward = {
             add_tech_bonus = {
                 bonus = 2.0
@@ -874,118 +1847,48 @@ focus_tree = {
         }
     }
 
-    # Flexible Fleet
+    # Submarine Research
     focus = {
-        id = SIA_flexible_fleet
-        icon = GFX_goal_generic_sea_focused_navy
-        x = 34
-        y = 1
-        cost = 10
-        mutually_exclusive = { focus = SIA_large_fleet}
-        prerequisite = { focus = SIA_establish_a_navy }
-        completion_reward = {
-            add_tech_bonus = {
-                category = naval_doctrine
-                uses = 2
-                bonus = 2.0
-            }
-        }
-    }
-
-    # Carrier Research
-    focus = {
-        id = SIA_carrier_research
-        icon = GFX_goal_generic_navy_carrier
-        x = 34
-        y = 2
-        cost = 5
-        prerequisite = { focus = SIA_flexible_fleet }
-        completion_reward = {
-            add_tech_bonus = {
-                bonus = 2.0
-                category = cv_tech
-                uses = 1
-            }
-        }
-    }
-
-    # Battleship Research
-    focus = {
-        id = SIA_battleship_research
-        icon = GFX_goal_generic_navy_battleship
-        x = 34
-        y = 3
-        cost = 5
-        prerequisite = { focus = SIA_carrier_research }
-        completion_reward = {
-            add_tech_bonus = {
-                bonus = 2.0
-                category = bb_tech
-                category = bc_tech
-                uses = 1
-            }
-        }
-    }
-
-    # Naval Excersises
-    focus = {
-        id = SIA_naval_excersises
-        icon = GFX_goal_generic_navy_doctrines_tactics
-        x = 32
-        y = 2
+        id = SIA_submarine_research
+        icon = GFX_goal_generic_navy_submarine
+        x = 26
+        y = 8
         cost = 10
         prerequisite = {
-            focus = SIA_large_fleet
-            focus = SIA_flexible_fleet
+            focus = SIA_destroy_the_convoys
+            focus = SIA_protect_the_convoys
         }
         completion_reward = {
             add_tech_bonus = {
                 bonus = 2.0
-                category = naval_doctrine
+                category = ss_tech
                 uses = 1
             }
         }
     }
 
-    # Expand the Dockyards
+    # Coastal Defense Preparations
     focus = {
-        id = SIA_expand_the_dockyards
-        icon = GFX_goal_generic_construct_naval_dockyard
-        x = 32
-        y = 3
+        id = SIA_coastal_defense_preparations
+        icon = GFX_goal_generic_construct_military
+        x = 25
+        y = 9
         cost = 10
-        prerequisite = { focus = SIA_naval_excersises }
+        prerequisite = { focus = SIA_destroyer_research }
+        prerequisite = { focus = SIA_submarine_research }
         completion_reward = {
-            random_owned_controlled_state = {
-				limit = { 
-					free_building_slots = { 
-						building = dockyard
-						size > 0
-						include_locked = yes 
-					}
-				}
-                add_extra_state_shared_building_slots = 2
-                add_building_construction = {
-                    type = dockyard
-                    level = 2
-                    instant_build = yes 
-                }
-            }
+            add_ideas = SIA_coastal_defense_preparations_idea
         }
     }
 
     # Cruiser Research
     focus = {
         id = SIA_cruiser_research
-        icon = GFX_goal_generic_navy_cruiser
-        x = 32
-        y = 4
+        icon = GFX_goal_generic_navy_battleship
+        x = 24
+        y = 10
         cost = 10
-        prerequisite = { focus = SIA_expand_the_dockyards }
-        prerequisite = {
-            focus = SIA_battleship_research
-            focus = SIA_destroyer_research
-        }
+        prerequisite = { focus = SIA_coastal_defense_preparations }
         completion_reward = {
             add_tech_bonus = {
                 bonus = 2.0
@@ -996,45 +1899,51 @@ focus_tree = {
         }
     }
 
-    #############################################
-    #                                           #
-    #                 ELECTIONS                 #
-    #                                           #
-    #############################################
-
-    # Snap Elections
+    # Naval Doctrines
     focus = {
-        id = SIA_snap_elections
-        icon = GFX_goal_generic_elections
-        x = 51
-        y = 0
-        cost = 0
-        available = { has_country_flag = SIA_SNAP_ELECTIONS_FLAG }
+        id = SIA_naval_doctrines
+        icon = GFX_goal_generic_navy_doctrines_tactics
+        x = 26
+        y = 10
+        cost = 10
+        prerequisite = { focus = SIA_coastal_defense_preparations }
+        completion_reward = {
+            add_tech_bonus = {
+                category = naval_doctrine
+                uses = 2
+                bonus = 2.0
+            }
+        }
     }
+
+    #############################################
+    #                                           #
+    #                 SOCIALIST                 #
+    #                                           #
+    #############################################
 
     # Worker's Victory
     focus = {
         id = SIA_workers_victory
         icon = GFX_goal_ideology_totalist
-        x = 41
-        y = 1
+        x = 33
+        y = 6
         cost = 0
         available = { has_country_flag = SIA_WORKERS_VICTORY_FLAG }
-        prerequisite = { focus = SIA_snap_elections }
     }
 
     # Force the Abdication
     focus = {
         id = SIA_force_the_abdication
         icon = GFX_focus_rom_abdicate
-        x = 41
-        y = 2
+        x = 33
+        y = 7
         cost = 10
         prerequisite = { focus = SIA_workers_victory }
         completion_reward = {
             set_cosmetic_tag = SIA_republic
             hidden_effect = {
-                set_country_flag = SIA_king_abdicated
+                set_country_flag = SIA_KING_ABDICATED
                 kill_ideology_leader = vanguardist
                 kill_ideology_leader = collectivist
                 kill_ideology_leader = libertarian_socialist
@@ -1046,8 +1955,8 @@ focus_tree = {
     focus = {
         id = SIA_suppress_the_opposition
         icon = GFX_goal_secret_agents
-        x = 39
-        y = 3
+        x = 31
+        y = 8
         cost = 10
         prerequisite = { focus = SIA_force_the_abdication }
         completion_reward = {
@@ -1060,12 +1969,12 @@ focus_tree = {
     focus = {
         id = SIA_nationalize_the_industries
         icon = GFX_goal_production
-        x = 38
-        y = 4
+        x = 30
+        y = 9
         cost = 10
         prerequisite = { focus = SIA_suppress_the_opposition }
         completion_reward = {
-            remove_ideas = SIA_high_unemployment_rate
+            remove_ideas = SIA_economic_mismanagement
         }
     }
 
@@ -1073,8 +1982,8 @@ focus_tree = {
     focus = {
         id = SIA_infrastructure_nationalization
         icon = GFX_goal_generic_construct_infrastructure
-        x = 38
-        y = 5
+        x = 30
+        y = 10
         cost = 10
         prerequisite = { focus = SIA_nationalize_the_industries }
         prerequisite = { focus = SIA_absorb_foreign_investments }
@@ -1131,8 +2040,8 @@ focus_tree = {
     focus = {
         id = SIA_absorb_foreign_investments
         icon = GFX_goal_gold_reserve
-        x = 40
-        y = 4
+        x = 32
+        y = 9
         cost = 10
         prerequisite = { focus = SIA_suppress_the_opposition }
         completion_reward = {
@@ -1147,8 +2056,8 @@ focus_tree = {
     focus = {
         id = SIA_exile_reactionaries
         icon = GFX_focus_generic_anti_fascist_diplomacy
-        x = 42
-        y = 3
+        x = 34
+        y = 8
         cost = 10
         mutually_exclusive = { focus = SIA_purge_reactionaries }
         prerequisite = { focus = SIA_force_the_abdication }
@@ -1177,8 +2086,8 @@ focus_tree = {
     focus = {
         id = SIA_purge_reactionaries
         icon = GFX_goal_backstab
-        x = 44
-        y = 3
+        x = 36
+        y = 8
         cost = 10
         mutually_exclusive = { focus = SIA_exile_reactionaries }
         prerequisite = { focus = SIA_force_the_abdication }
@@ -1207,8 +2116,8 @@ focus_tree = {
     focus = {
         id = SIA_pro_republican_propaganda
         icon = GFX_goal_generic_propaganda
-        x = 43
-        y = 4
+        x = 35
+        y = 9
         cost = 10
         prerequisite = {
             focus = SIA_exile_reactionaries
@@ -1226,8 +2135,8 @@ focus_tree = {
     focus = {
         id = SIA_ensure_military_loyalty
         icon = GFX_focus_generic_little_entente
-        x = 40
-        y = 5
+        x = 32
+        y = 10
         cost = 10
         prerequisite = { focus = SIA_pro_republican_propaganda }
         completion_reward = {
@@ -1239,12 +2148,11 @@ focus_tree = {
     focus = {
         id = SIA_rewrite_the_textbooks
         icon = GFX_focus_research
-        x = 42
-        y = 5
+        x = 34
+        y = 10
         cost = 10
         prerequisite = { focus = SIA_pro_republican_propaganda }
         completion_reward = {
-            remove_ideas = SIA_low_literacy_among_the_population
             add_research_slot = 1
         }
     }
@@ -1253,12 +2161,12 @@ focus_tree = {
     focus = {
         id = SIA_reform_the_bureaucracy
         icon = GFX_goal_government_icon
-        x = 44
-        y = 5
+        x = 36
+        y = 10
         cost = 10
         prerequisite = { focus = SIA_pro_republican_propaganda }
         completion_reward = {
-            remove_ideas = SIA_ineffective_governance
+            remove_ideas = SIA_ineffective_bureaucracy
         }
     }
 
@@ -1266,8 +2174,8 @@ focus_tree = {
     focus = {
         id = SIA_a_socialist_republic
         icon = GFX_goal_red_star_green_wreath
-        x = 41
-        y = 6
+        x = 33
+        y = 11
         cost = 10
         prerequisite = { focus = SIA_rewrite_the_textbooks }
         prerequisite = { focus = SIA_reform_the_bureaucracy }
@@ -1275,630 +2183,6 @@ focus_tree = {
         prerequisite = { focus = SIA_infrastructure_nationalization }
         completion_reward = {
             add_ideas = SIA_the_new_siam
-        }
-    }
-
-    # Opposition Victory
-    focus = {
-        id = SIA_opposition_victory
-        icon = GFX_goal_ideology_social_democrat
-        x = 47
-        y = 1
-        cost = 0
-        available = { has_country_flag = SIA_OPPOSITION_VICTORY_FLAG }
-        prerequisite = { focus = SIA_snap_elections }
-    }
-
-    # Fund the Farms
-    focus = {
-        id = SIA_fund_the_farms
-        icon = GFX_focus_AUS_agriculture
-        x = 46
-        y = 2
-        cost = 10
-        prerequisite = { focus = SIA_opposition_victory }
-        completion_reward = {
-            add_ideas = SIA_supported_farmers
-        }
-    }
-
-    # Give Loans to Small Businesses
-    focus = {
-        id = SIA_give_loans_to_small_businesses
-        icon = GFX_DAH_Topke
-        x = 46
-        y = 3
-        cost = 10
-        prerequisite = { focus = SIA_fund_the_farms }
-        completion_reward = {
-            remove_ideas = SIA_high_unemployment_rate
-        }
-    }
-
-    # Kickstart Welfare Programs
-    focus = {
-        id = SIA_kickstart_welfare_programs
-        icon = GFX_goal_famine
-        x = 48
-        y = 2
-        cost = 10
-        prerequisite = { focus = SIA_opposition_victory }
-        completion_reward = {
-            remove_ideas = SIA_ineffective_governance
-        }
-    }
-
-    # Higher Corporate Tax
-    focus = {
-        id = SIA_higher_corporate_tax
-        icon = GFX_goal_factory_complex
-        x = 48
-        y = 3
-        cost = 10
-        mutually_exclusive = { focus = SIA_income_tax_exemption }
-        prerequisite = { focus = SIA_kickstart_welfare_programs }
-        completion_reward = {
-            add_ideas = SIA_corporate_taxes
-        }
-    }
-
-    # Income Tax Exemption
-    focus = {
-        id = SIA_income_tax_exemption
-        icon = GFX_goal_munitions_factories
-        x = 50
-        y = 3
-        cost = 10
-        prerequisite = { focus = SIA_kickstart_welfare_programs }
-        completion_reward = {
-            add_ideas = SIA_no_income_tax
-        }
-    }
-
-    # Housing Projects
-    focus = {
-        id = SIA_housing_projects
-        icon = GFX_focus_usa_guarantee_the_american_dream
-        x = 49
-        y = 4
-        cost = 10
-        prerequisite = {
-            focus = SIA_higher_corporate_tax
-            focus = SIA_income_tax_exemption    
-        }
-        prerequisite = {
-            focus = SIA_give_loans_to_small_businesses
-        }
-        completion_reward = {
-            random_owned_controlled_state = {
-                limit = {
-                    free_building_slots = {
-                        building = industrial_complex
-                        size > 0
-                        include_locked = yes
-                    }
-                }
-
-                add_extra_state_shared_building_slots = 2
-            }
-            random_owned_controlled_state = {
-                limit = {
-                    free_building_slots = {
-                        building = industrial_complex
-                        size > 0
-                        include_locked = yes
-                    }
-                }
-
-                add_extra_state_shared_building_slots = 2
-            }
-        }
-    }
-
-    # Free Education
-    focus = {
-        id = SIA_free_education
-        icon = GFX_focus_research
-        x = 47
-        y = 4
-        cost = 10
-        prerequisite = {
-            focus = SIA_higher_corporate_tax
-            focus = SIA_income_tax_exemption
-        }
-        completion_reward = {
-            remove_ideas = SIA_low_literacy_among_the_population
-            add_research_slot = 1
-        }
-    }
-
-    # Pass the Labour Code
-    focus = {
-        id = SIA_pass_the_labour_code
-        icon = GFX_goal_red_star_gold_wreath
-        x = 52
-        y = 2
-        cost = 10
-        prerequisite = { 
-            focus = SIA_opposition_victory
-            focus = SIA_liberal_victory
-        }
-        completion_reward = {
-            add_ideas = SIA_labour_code
-        }
-    }
-
-    # Guarantee Workers Rights
-    focus = {
-        id = SIA_guarantee_workers_rights
-        icon = GFX_goal_DOM_End_Judicial_Corruption
-        x = 52
-        y = 3
-        cost = 10
-        prerequisite = {
-            focus = SIA_pass_the_labour_code
-        }
-        completion_reward = {
-            add_stability = 0.15
-        }
-    }
-
-    # Trade Union Cooperation
-    focus = {
-        id = SIA_trade_union_cooperation
-        icon = GFX_goal_red_star_dove
-        x = 51
-        y = 4
-        cost = 10
-        mutually_exclusive = { focus = SIA_trade_union_agreements }
-        prerequisite = { focus = SIA_guarantee_workers_rights }
-        prerequisite = { focus = SIA_income_tax_exemption }
-        completion_reward = {
-            add_ideas = SIA_government_union_cooperation
-        }
-    }
-
-    # Trade Union Agreements
-    focus = {
-        id = SIA_trade_union_agreements
-        icon = GFX_goal_production
-        x = 53
-        y = 4
-        cost = 10
-        mutually_exclusive = { focus = SIA_trade_union_cooperation }
-        prerequisite = { focus = SIA_guarantee_workers_rights }
-        prerequisite = { focus = SIA_judiciary_reforms }
-        completion_reward = {
-            add_ideas = SIA_liberal_economics
-        }
-    }
-
-    # Liberal Victory
-    focus = {
-        id = SIA_liberal_victory
-        icon = GFX_goal_ideology_social_liberal
-        x = 55
-        y = 1
-        cost = 0
-        available = { has_country_flag = SIA_LIBERAL_VICTORY_FLAG }
-        prerequisite = { focus = SIA_snap_elections }
-    }
-
-    # Protect the Indigenous Peoples
-    focus = {
-        id = SIA_protect_the_indigenous_peoples
-        icon = GFX_focus_generic_concessions
-        x = 55
-        y = 2
-        cost = 10
-        prerequisite = { focus = SIA_liberal_victory }
-        completion_reward = {
-            add_ideas = SIA_indigenous_integration
-        }
-    }
-
-    # Judiciary Reforms
-    focus = {
-        id = SIA_judiciary_reforms
-        icon = GFX_focus_generic_self_management
-        x = 54
-        y = 3
-        cost = 10
-        prerequisite = { focus = SIA_protect_the_indigenous_peoples }
-        completion_reward = {
-            remove_ideas = SIA_ineffective_governance
-        }
-    }
-
-    # Police Reforms
-    focus = {
-        id = SIA_police_reforms
-        icon = GFX_goal_break_rifle
-        x = 56
-        y = 3
-        cost = 10
-        prerequisite = { focus = SIA_protect_the_indigenous_peoples }
-        completion_reward = {
-            add_stability = 0.15
-        }
-   }
-
-   # More Rights for Women
-   focus = {
-       id = SIA_more_rights_for_women
-       icon = GFX_goal_DOM_End_Judicial_Corruption
-       x = 55
-       y = 4
-       cost = 10
-       prerequisite = { focus = SIA_judiciary_reforms }
-       prerequisite = { focus = SIA_police_reforms }
-       completion_reward = {
-           add_stability = 0.15
-           add_ideas = SIA_womens_sufferage
-       }
-   }
-
-   # Education Prioritization
-   focus = {
-       id = SIA_education_prioritization
-       icon = GFX_focus_research
-       x = 55
-       y = 5
-       cost = 10
-       prerequisite = { focus = SIA_more_rights_for_women }
-       completion_reward = {
-           remove_ideas = SIA_low_literacy_among_the_population
-           add_research_slot = 1
-       }
-   }
-
-   # Economic Deregularization
-   focus = {
-       id = SIA_economic_deregularization
-        icon = GFX_goal_ideology_market_liberal
-       x = 57
-       y = 5
-       cost = 10
-       prerequisite = { focus = SIA_more_rights_for_women }
-       completion_reward = {
-           remove_ideas = SIA_high_unemployment_rate
-       }
-   }
-
-   # Conservative Victory
-   focus = {
-       id = SIA_conservative_victory
-       icon = GFX_goal_ideology_social_conservative
-       x = 61
-       y = 1
-       cost = 0
-       available = { has_country_flag = SIA_CONSERVATIVE_VICTORY_FLAG }
-       prerequisite = { focus = SIA_snap_elections }
-   }
-
-   # Education Funding
-   focus = {
-       id = SIA_education_funding
-       icon = GFX_focus_research
-       x = 59
-       y = 2
-       cost = 10
-       prerequisite = { focus = SIA_conservative_victory }
-       completion_reward = {
-           remove_ideas = SIA_low_literacy_among_the_population
-           add_research_slot = 1
-       }
-   } 
-
-   # Privatize Essential Sectors
-   focus = {
-       id = SIA_privatize_essential_sectors
-       icon = GFX_goal_state_economy
-       x = 59
-       y = 3
-       cost = 10
-       prerequisite = { focus = SIA_education_funding }
-       completion_reward = {
-           remove_ideas = SIA_high_unemployment_rate
-       }
-   }
-
-   # Handle Inflation
-   focus = {
-       id = SIA_handle_inflation
-       icon = GFX_goal_gold_reserve
-       x = 58
-       y = 4
-       cost = 10
-       prerequisite = { focus = SIA_privatize_essential_sectors }
-       completion_reward = {
-           add_ideas = SIA_economic_protectionism
-       }
-   }
-
-   # Expand the Bureaucracy
-   focus = {
-       id = SIA_expand_the_bureaucracy
-       icon = GFX_goal_Centralised_Government
-       x = 60
-       y = 4
-       cost = 10
-       prerequisite = { focus = SIA_privatize_essential_sectors }
-       completion_reward = {
-           remove_ideas = SIA_ineffective_governance
-       }
-   }
-
-   # Socialist Crackdowns
-   focus = {
-       id = SIA_socialist_crackdowns
-       icon = GFX_goal_anti_comintern_pact
-       x = 63
-       y = 2
-       cost = 10
-       prerequisite = { focus = SIA_conservative_victory }
-       completion_reward = {
-            add_popularity = {
-               ideology = vanguardist
-               popularity = -0.15
-           }
-           add_popularity = {
-               ideology = collectivist
-               popularity = -0.15
-           }
-           add_popularity = {
-               ideology = libertarian_socialist
-               popularity = -0.15
-           }
-       }
-   }
-
-   # Reeducation Campaigns
-   focus = {
-       id = SIA_reeducation_campaigns
-       icon = GFX_focus_generic_military_academy
-       x = 61
-       y = 3
-       cost = 10
-       prerequisite = { focus = SIA_socialist_crackdowns }
-       prerequisite = { focus = SIA_education_funding }
-       completion_reward = {
-           add_popularity = {
-               ideology = social_conservative
-               popularity = 0.15
-           }
-       }
-   }
-
-   # Imprison the Radicals
-   focus = {
-       id = SIA_imprison_the_radicals
-       icon = GFX_goal_generic_attack_allies
-       x = 63
-       y = 3
-       cost = 10
-       prerequisite = { focus = SIA_socialist_crackdowns }
-       completion_reward = {
-           add_stability = 0.15
-       }
-   }
-
-   # Intelligence Services
-   focus = {
-       id = SIA_intelligence_services
-       icon = GFX_goal_secret_agents
-       x = 62
-       y = 4
-       cost = 10
-       prerequisite = { focus = SIA_imprison_the_radicals }
-       prerequisite = { focus = SIA_reeducation_campaigns }
-       completion_reward = {
-           add_ideas = SIA_special_higher_police
-       }
-   }
-
-    ######################################################
-    #                                                    #
-    #                    ROYALIST                        #
-    #                                                    #
-    ######################################################
-
-   # A Firm Hand
-   focus = {
-        id = SIA_a_firm_hand
-        icon = GFX_focus_generic_home_defense
-        x = 6
-        y = 5
-        cost = 0
-        available = { has_country_flag = SIA_ROYAL_INTERVENTION }
-        prerequisite = { focus = SIA_government_in_crisis }
-   }
-
-   # Guide the Government
-   focus = {
-       id = SIA_guide_the_government
-       icon = GFX_goal_ideology_authoritarian_democrat
-       x = 4
-       y = 6
-       cost = 10
-       mutually_exclusive = { focus = SIA_direct_rule }
-       prerequisite = { focus = SIA_a_firm_hand }
-       completion_reward = {
-            set_politics = {
-               ruling_party = authoritarian_democrat
-               elections_allowed = no 
-           }
-       }
-   }
-
-   # Appease the Corporations
-   focus = {
-       id = SIA_appease_the_corporations
-       icon = GFX_goal_factory_complex
-       x = 4
-       y = 7
-       cost = 10
-       prerequisite = { focus = SIA_guide_the_government }
-       completion_reward = {
-           add_ideas = SIA_corporations_appeased
-       }
-   }
-
-   # New Education Curriculum
-   focus = {
-       id = SIA_new_education_curriculum
-       icon = GFX_goal_HOL_crackdown_totalist
-       x = 4
-       y = 8
-       cost = 10
-       prerequisite = { focus = SIA_appease_the_corporations }
-       completion_reward = {
-            remove_ideas = SIA_low_literacy_among_the_population
-           add_research_slot = 1
-       }
-   }
-
-   # The Royal Portraits
-   focus = {
-       id = SIA_the_royal_portraits
-       icon = GFX_focus_rom_royal_dictatorship
-       x = 4
-       y = 9
-       cost = 10
-       prerequisite = { focus = SIA_new_education_curriculum }
-       completion_reward = {
-           add_stability = 0.15
-           add_war_support = 0.15
-       }
-   }
-
-   # Direct Rule
-   focus = {
-       id = SIA_direct_rule
-       icon = GFX_goal_ideology_paternal_autocrat
-       x = 8
-       y = 6
-       cost = 10
-       mutually_exclusive = { focus = SIA_guide_the_government }
-       prerequisite = { focus = SIA_a_firm_hand }
-       completion_reward = {
-           set_politics = {
-               ruling_party = paternal_autocrat
-               elections_allowed = no 
-           }
-       }
-   }
-
-   # Monarchist Propaganda
-   focus = {
-       id = SIA_monarchist_propaganda
-       icon = GFX_goal_generic_propaganda
-       x = 8
-       y = 7
-       cost = 10
-       prerequisite = { focus = SIA_direct_rule }
-       completion_reward = {
-           add_stability = 0.15
-           add_war_support = 0.15
-       }
-   }
-
-   # The Loyal Subjects
-   focus = {
-       id = SIA_the_loyal_subjects
-       icon = GFX_goal_tfv_strengthen_commonwealth_ties
-       x = 8
-       y = 8
-       cost = 10
-       prerequisite = { focus = SIA_monarchist_propaganda }
-       completion_reward = {
-           add_ideas = SIA_reserve_units
-       }
-   }
-
-   # The King cares for His People
-   focus = {
-       id = SIA_the_king_cares_for_his_people
-       icon = GFX_goal_monarchism
-       x = 8
-       y = 9
-       cost = 10
-       prerequisite = { focus = SIA_the_loyal_subjects }
-       completion_reward = {
-           remove_ideas = SIA_low_literacy_among_the_population
-           add_research_slot = 1
-       }
-   }
-
-   # Government Reforms
-   focus = {
-       id = SIA_government_reforms
-       icon = GFX_goal_government_icon
-       x = 6
-       y = 6
-       cost = 10
-       prerequisite = {
-           focus = SIA_guide_the_government
-           focus = SIA_direct_rule
-       }
-       completion_reward = {
-            remove_ideas = SIA_ineffective_governance
-       }
-   }
-
-   # Destroy Radicalism
-   focus = {
-       id = SIA_destroy_radicalism
-       icon = GFX_focus_generic_anti_fascist_diplomacy
-       x = 6
-       y = 7
-       cost = 10
-       prerequisite = { focus = SIA_government_reforms }
-       completion_reward = {
-           add_popularity = {
-               ideology = vanguardist
-               popularity = -0.15
-           }
-           add_popularity = {
-               ideology = collectivist
-               popularity = -0.15
-           }
-           add_popularity = {
-               ideology = libertarian_socialist
-               popularity = -0.15
-           }
-       }
-   }
-
-   # Establish a Special Higher Police
-   focus = {
-       id = SIA_establish_a_special_higher_police
-       icon = GFX_goal_secret_agents
-       x = 6
-       y = 8
-       cost = 10
-       prerequisite = { focus = SIA_destroy_radicalism }
-       completion_reward = {
-           add_ideas = SIA_special_higher_police
-       }
-   }
-
-    # For King and Country
-    focus = {
-        id = SIA_for_king_and_country
-        icon = GFX_goal_conscription
-        x = 6
-        y = 9
-        cost = 10
-        prerequisite = {
-            focus = SIA_the_king_cares_for_his_people
-            focus = SIA_the_royal_portraits
-        }
-        prerequisite = {
-            focus = SIA_establish_a_special_higher_police
-        }
-        completion_reward = {
-            add_ideas = SIA_nationalist_thoughts
         }
     }
 }

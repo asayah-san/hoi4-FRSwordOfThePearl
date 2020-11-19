@@ -656,7 +656,7 @@ ideas = {
             picture = generic_democratic_drift_bonus
 
             modifier = {
-                monthly_population = 0.05
+                monthly_population = 0.75
             }
         }
 
@@ -928,7 +928,7 @@ ideas = {
             modifier = {
                 consumer_goods_factor = 0.02
                 research_speed_factor = 0.05
-                monthly_population = 0.25
+                monthly_population = 1.5
                 valkist_drift = -0.02
             }
         }
@@ -937,10 +937,6 @@ ideas = {
             allowed = { original_tag = PHI }
 
             picture = ger_revive_the_kaiserreich
-
-            modifier = {
-                political_power_gain = 0.15
-            }
         }
         
         PHI_financial_support = {

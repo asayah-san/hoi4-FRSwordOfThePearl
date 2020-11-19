@@ -138,14 +138,13 @@ bookmarks = {
 			history = "SIA_FUHRERREICH_DESC"
 			ideology = national_populist
 			ideas = {
-				SIA_figurehead_monarch
-				SIA_ineffective_governance
-				SIA_high_unemployment_rate
+				SIA_ineffective_bureaucracy
+				SIA_economic_mismanagement
 			}
 			focuses = {
 				SIA_government_in_crisis
-				SIA_a_firm_hand
 				SIA_snap_elections
+				SIA_workers_victory
 			}
 		}
 

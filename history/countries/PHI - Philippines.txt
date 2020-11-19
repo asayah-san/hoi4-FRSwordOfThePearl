@@ -87,7 +87,7 @@ create_country_leader = {
 	picture = "Portrait_Philippines_Luis_Taruc.tga"
 	expire = "1943.6.2"
 	ideology = vanguardist_subtype
-	traits = { }
+	traits = { prince_of_terror }
 }
 create_country_leader = {
 	name = "Crisanto Evangelista"
@@ -95,7 +95,7 @@ create_country_leader = {
 	picture = "Portrait_Philippines_Crisanto_Evangelista.tga"
 	expire = "1943.6.2"
 	ideology = collectivist_subtype
-	traits = { }
+	traits = { reluctant_interventionist }
 }
 create_country_leader = {
 	name = "Crisanto Evangelista"
@@ -103,7 +103,7 @@ create_country_leader = {
 	picture = "Portrait_Philippines_Crisanto_Evangelista.tga"
 	expire = "1943.6.2"
 	ideology = libertarian_socialist_subtype
-	traits = { }
+	traits = { reluctant_interventionist }
 }
 create_country_leader = {
 	name = "Juan Sumulong"
@@ -111,15 +111,7 @@ create_country_leader = {
 	picture = "Portrait_Philippines_Juan_Sumulong.tga"
 	expire = "1942.1.9"
 	ideology = social_democrat_subtype
-	traits = { }
-}
-create_country_leader = {
-	name = "Jose P. Laurel"
-	desc = "POLITICS_JOSE_P_LAUREL_DESC"
-	picture = "Portrait_Philippines_Jose_P_Laurel.tga"
-	expire = "1970.1.26"
-	ideology = authoritarian_democrat_subtype
-	traits = { }
+	traits = { captain_of_industry }
 }
 create_country_leader = {
 	name = "Manuel Roxas"
@@ -127,7 +119,7 @@ create_country_leader = {
 	picture = "Portrait_Philippines_Manuel_Roxas.tga"
 	expire = "1955.2.1"
 	ideology = social_liberal_subtype
-	traits = {  }
+	traits = { financial_expert }
 }
 create_country_leader = {
 	name = "Manuel Roxas"
@@ -135,7 +127,7 @@ create_country_leader = {
 	picture = "Portrait_Philippines_Manuel_Roxas.tga"
 	expire = "1955.2.1"
 	ideology = market_liberal_subtype
-	traits = {  }
+	traits = { financial_expert }
 }
 create_country_leader = {
 	name = "Manuel Luis Quezón"
@@ -143,15 +135,15 @@ create_country_leader = {
 	picture = "Portrait_Philippines_Manuel_Luis_Quezon_KR.tga"
 	expire = "1964.2.6"
 	ideology = social_conservative_subtype
-	traits = { }
+	traits = { war_industrialist }
 }
 create_country_leader = {
-	name = "Emilio Aguinaldo"
-	desc = "POLITICS_EMILIO_AGUINALDO_DESC"
-	picture = "Portrait_Philippines_Emilio_Aguinaldo.tga"
-	expire = "1964.2.6"
-	ideology = national_populist_subtype
-	traits = { }
+	name = "Jose P. Laurel"
+	desc = "POLITICS_JOSE_P_LAUREL_DESC"
+	picture = "Portrait_Philippines_Jose_P_Laurel.tga"
+	expire = "1970.1.26"
+	ideology = authoritarian_democrat_subtype
+	traits = { the_absentee_president }
 }
 create_country_leader = {
 	name = "Basilio J. Valdez"
@@ -159,7 +151,15 @@ create_country_leader = {
 	picture = "Portrait_Philippines_Basilio_J_Valdez.tga"
 	expire = "1970.1.26"
 	ideology = paternal_autocrat_subtype
-	traits = { }
+	traits = { war_industrialist }
+}
+create_country_leader = {
+	name = "Emilio Aguinaldo"
+	desc = "POLITICS_EMILIO_AGUINALDO_DESC"
+	picture = "Portrait_Philippines_Emilio_Aguinaldo.tga"
+	expire = "1964.2.6"
+	ideology = national_populist_subtype
+	traits = { nationalist_symbol }
 }
 create_country_leader = {
 	name = "Jorge B. Vargas"
@@ -167,7 +167,7 @@ create_country_leader = {
 	picture = "Portrait_Philippines_Jorge_B_Vargas.tga"
 	expire = "1964.2.6"
 	ideology = valkist_subtype
-	traits = { }
+	traits = { dictator }
 }
 
 ### Field Marshal

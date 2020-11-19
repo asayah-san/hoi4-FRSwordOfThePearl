@@ -1,4 +1,4 @@
-﻿add_namespace = SIA
+﻿add_namespace = siam
 
 # Corruption Allegations
 country_event = {
@@ -7,125 +7,126 @@ country_event = {
     desc = siam.1.d
     picture = report_event_iww_demonstration
 
-    fire_only_once = yes
-
     mean_time_to_happen = {
         days = 1
     }
 
     trigger = {
         original_tag = SIA
-        date > 1937.2.20
-        NOT = { has_country_flag = SIA_AFTERMATH_OF_THE_CRISIS_FLAG }
+        date > 1936.4.5
     }
 
     option = {
         name = siam.1.a
 
-        add_political_power = -500
+        add_popularity = {
+            ideology = authoritarian_democrat
+            popularity = -0.02
+        }
         hidden_effect = {
-            country_event = { id = siam.2 days = 72 }
+            country_event = { id = siam.2 days = 14 }
         }
     }
 }
 
-# Documents released for Corruption allegations
+# Evidence shown by the Opposition
 country_event = {
     id = siam.2
     title = siam.2.t
     desc = siam.2.d
+    picture = report_event_iww_demonstration
 
     is_triggered_only = yes
 
     option = {
         name = siam.2.a
 
-        add_stability = -0.15
-        hidden_effect = {
-            country_event = { id = siam.3 days = 30 }
+        add_popularity = {
+            ideology = authoritarian_democrat
+            popularity = -0.05
         }
-    }
-
-    option = {
-        name = siam.2.b
-
-        add_stability = 0.15
-        retire_ideology_leader = national_populist
         hidden_effect = {
-            set_country_flag = SIA_SNAP_ELECTIONS_FLAG
-            country_event = { id = siam.4 days = 30 }
+            country_event = { id = siam.3 days = 7 }
         }
     }
 }
 
-# Government Strikes
+# Protests erupt!
 country_event = {
     id = siam.3
     title = siam.3.t
     desc = siam.3.d
+    picture = report_event_iww_demonstration
 
     is_triggered_only = yes
+
+    immediate = {
+        hidden_effect = {
+            add_ideas = SIA_strikes
+        }
+    }
 
     option = {
         name = siam.3.a
 
-        add_ideas = SIA_government_strikes
+        ai_factor = {
+            factor = 100
+        }
+
         hidden_effect = {
-            country_event = { id = siam.5 days = 15 }
+            country_event = { id = siam.4 days = 2 }
         }
     }
 
     option = {
         name = siam.3.b
 
-        retire_ideology_leader = national_populist
         hidden_effect = {
-            set_country_flag = SIA_SNAP_ELECTIONS_FLAG
-            country_event = { id = siam.4 days = 30 }
-            news_event = { id = news.11 }
+            country_event = { id = siam.6 days = 21 }
         }
     }
 }
 
-# Snap Elections
+# Government Resigns
 country_event = {
     id = siam.4
     title = siam.4.t
     desc = siam.4.d
+    picture = report_event_iww_demonstration
 
     is_triggered_only = yes
 
     option = {
         name = siam.4.a
 
-        remove_ideas = SIA_figurehead_monarch
-        remove_ideas = SIA_government_strikes
+        remove_ideas = SIA_strikes
         set_politics = {
-            ruling_party = social_democrat
+            ruling_party = paternal_autocrat
             elections_allowed = no
         }
-
         hidden_effect = {
+            set_country_flag = SIA_ROYAL_INTERVENTION_FLAG
+            
             add_popularity = {
-                ideology = social_democrat
-                popularity = 0.25
+                ideology = paternal_autocrat
+                popularity = 0.15
             }
-            set_country_flag = SIA_OPPOSITION_VICTORY_FLAG
+
             swap_ideas = {
-                remove_idea = GEN_HOG_Npo
-                add_idea = GEN_HOG_Sde
-            }
-            swap_ideas = {
-                remove_idea = GEN_ECO_Npo
-                add_idea = GEN_ECO_Sde
+                remove_idea = GEN_HOG_Ade
+                add_idea = GEN_HOG_Pau
             }
             swap_ideas = {
-                remove_idea = GEN_SEC_Npo
-                add_idea = GEN_SEC_Sde
+                remove_idea = GEN_FOR_Ade
+                add_idea = GEN_FOR_Pau
             }
             swap_ideas = {
-                remove_idea = GEN_FOR_Npo
-                add_idea = GEN_FOR_Sde
+                remove_idea = GEN_ECO_Ade
+                add_idea = GEN_ECO_Pau
+            }
+            swap_ideas = {
+                remove_idea = GEN_SEC_Ade
+                add_idea = GEN_SEC_Pau
             }
         }
     }
@@ -133,164 +134,604 @@ country_event = {
     option = {
         name = siam.4.b
 
-        remove_ideas = SIA_figurehead_monarch
-        remove_ideas = SIA_government_strikes
+        ai_factor = {
+            factor = 200
+        }
+
+        hidden_effect = {
+            set_country_flag = SIA_SNAP_ELECTIONS_FLAG
+            country_event = { id = siam.5 days = 30 }
+        }
+    }
+}
+
+# Siamese Election
+country_event = {
+    id = siam.5
+    title = siam.5.t
+    desc = siam.5.d
+    picture = GFX_report_event_election_vote
+
+    is_triggered_only = yes
+
+    immediate = {
+        hidden_effect = {
+            remove_ideas = SIA_strikes
+        }
+    }
+
+    option = {
+        name = siam.5.a
+
+        ai_factor = {
+            factor = 200
+        }
+
+        set_politics = {
+            ruling_party = social_democrat
+            elections_allowed = no
+        }
+        hidden_effect = {
+            set_country_flag = SIA_OPPOSITION_VICTORY_FLAG
+
+            add_popularity = {
+                ideology = social_democrat
+                popularity = 0.15
+            }
+
+            swap_ideas = {
+                remove_idea = GEN_HOG_Ade
+                add_idea = GEN_HOG_Sde
+            }
+            swap_ideas = {
+                remove_idea = GEN_FOR_Ade
+                add_idea = GEN_FOR_Sde
+            }
+            swap_ideas = {
+                remove_idea = GEN_ECO_Ade
+                add_idea = GEN_ECO_Sde
+            }
+            swap_ideas = {
+                remove_idea = GEN_SEC_Ade
+                add_idea = GEN_SEC_Sde
+            }
+        }
+    }
+
+    option = {
+        name = siam.5.b
+
         set_politics = {
             ruling_party = social_liberal
             elections_allowed = no
         }
-
         hidden_effect = {
+            set_country_flag = SIA_LIBERAL_VICTORY_FLAG
+
             add_popularity = {
                 ideology = social_liberal
                 popularity = 0.25
             }
-            set_country_flag = SIA_LIBERAL_VICTORY_FLAG
+
             swap_ideas = {
-                remove_idea = GEN_HOG_Npo
+                remove_idea = GEN_HOG_Ade
                 add_idea = GEN_HOG_Sli
             }
             swap_ideas = {
-                remove_idea = GEN_ECO_Npo
+                remove_idea = GEN_FOR_Ade
+                add_idea = GEN_FOR_Sli
+            }
+            swap_ideas = {
+                remove_idea = GEN_ECO_Ade
                 add_idea = GEN_ECO_Sli
             }
             swap_ideas = {
-                remove_idea = GEN_SEC_Npo
+                remove_idea = GEN_SEC_Ade
                 add_idea = GEN_SEC_Sli
-            }
-            swap_ideas = {
-                remove_idea = GEN_FOR_Npo
-                add_idea = GEN_FOR_Sli
             }
         }
     }
 
     option = {
-        name = siam.4.c
+        name = siam.5.c
 
-        remove_ideas = SIA_figurehead_monarch
-        remove_ideas = SIA_government_strikes
         set_politics = {
             ruling_party = social_conservative
             elections_allowed = no
         }
-
         hidden_effect = {
+            set_country_flag = SIA_CONSERVATIVE_VICTORY_FLAG
+
             add_popularity = {
                 ideology = social_conservative
                 popularity = 0.25
             }
-            set_country_flag = SIA_CONSERVATIVE_VICTORY_FLAG
+
             swap_ideas = {
-                remove_idea = GEN_HOG_Npo
+                remove_idea = GEN_HOG_Ade
                 add_idea = GEN_HOG_Sco
             }
             swap_ideas = {
-                remove_idea = GEN_ECO_Npo
+                remove_idea = GEN_FOR_Ade
+                add_idea = GEN_FOR_Sco
+            }
+            swap_ideas = {
+                remove_idea = GEN_ECO_Ade
                 add_idea = GEN_ECO_Sco
             }
             swap_ideas = {
-                remove_idea = GEN_SEC_Npo
+                remove_idea = GEN_SEC_Ade
                 add_idea = GEN_SEC_Sco
             }
-            swap_ideas = {
-                remove_idea = GEN_FOR_Npo
-                add_idea = GEN_FOR_Sco
-            }
+        }
+    }
+}
+
+# Protest Speading
+country_event = {
+    id = siam.6
+    title = siam.6.t
+    desc = siam.6.d
+    picture = report_event_iww_demonstration
+
+    is_triggered_only = yes
+
+    immediate = {
+        hidden_effect = {
+            remove_ideas = SIA_strikes
+            add_ideas = SIA_widespread_strikes
         }
     }
 
     option = {
-        name = siam.4.e
+        name = siam.6.a
 
-        trigger = {
-            has_idea = SIA_government_strikes
+        hidden_effect = {
+            set_country_flag = SIA_PHIBUNSONGKHRAM_IN_COMMAND_FLAG
+            
+            set_politics = {
+                ruling_party = national_populist
+                elections_allowed = no
+            }
+
+            add_popularity = {
+                ideology = national_populist
+                popularity = 0.15
+            }
+            
+            swap_ideas = {
+                remove_idea = GEN_HOG_Ade
+                add_idea = GEN_HOG_Npo
+            }
+            swap_ideas = {
+                remove_idea = GEN_FOR_Ade
+                add_idea = GEN_FOR_Npo
+            }
+            swap_ideas = {
+                remove_idea = GEN_ECO_Ade
+                add_idea = GEN_ECO_Npo
+            }
+            swap_ideas = {
+                remove_idea = GEN_SEC_Ade
+                add_idea = GEN_SEC_Npo
+            }
+            country_event = { id = siam.7 days = 7 }
         }
+    }
 
-        set_politics = {
-            ruling_party = vanguardist
-            elections_allowed = no
+    option = {
+        name = siam.6.b
+
+        hidden_effect = {
+            country_event = { id = siam.8 days = 3 }
         }
+    }
+}
 
-        remove_ideas = SIA_government_strikes
+# Phibunsongkhram's Speech
+country_event = {
+    id = siam.7
+    title = siam.7.t
+    desc = siam.7.d
+    picture = report_event_iww_demonstration
+
+    is_triggered_only = yes
+
+    option = {
+        name = siam.7.a
+
+        add_popularity = {
+            ideology = national_populist
+            popularity = 0.05
+        }
+        remove_ideas = SIA_widespread_strikes
+    }
+}
+
+# Coup
+country_event = {
+    id = siam.8
+    title = siam.8.t
+    desc = siam.8.d
+    picture = GFX_report_event_romanian_soldiers
+
+    is_triggered_only = yes
+
+    immediate = {
         hidden_effect = {
             add_popularity = {
                 ideology = vanguardist
                 popularity = 0.25
             }
+
+            set_politics = {
+                ruling_party = vanguardist
+                elections_allowed = no
+            }
+
+            swap_ideas = {
+                remove_idea = GEN_HOG_Ade
+                add_idea = GEN_HOG_Van
+            }
+            swap_ideas = {
+                remove_idea = GEN_FOR_Ade
+                add_idea = GEN_HOG_Col
+            }
+            swap_ideas = {
+                remove_idea = GEN_ECO_Ade
+                add_idea = GEN_ECO_Van
+            }
+            swap_ideas = {
+                remove_idea = GEN_SEC_Ade
+                add_idea = GEN_ECO_Van
+            }
             set_country_flag = SIA_WORKERS_VICTORY_FLAG
-            swap_ideas = {
-                remove_idea = GEN_HOG_Npo
-                add_idea = GEN_HOG_Van
+        }
+    }
+
+    option = {
+        name = siam.8.a
+
+        remove_ideas = SIA_widespread_strikes
+    }
+}
+
+# Demand the Former Territories
+country_event = {
+    id = siam.9
+    title = siam.9.t
+    desc = siam.9.d
+    picture = GFX_report_event_dutch_soldiers_indonesia
+
+    is_triggered_only = yes
+
+    option = {
+        name = siam.9.a
+
+        SIA = { country_event = { id = siam.10 } }
+    }
+
+    option = {
+        name = siam.9.b
+
+        add_political_power = 100
+    }
+}
+
+# Accept the Demands
+country_event = {
+    id = siam.10
+    title = siam.10.t
+    desc = siam.10.d
+    picture = GFX_report_event_dutch_soldiers_indonesia
+
+    is_triggered_only = yes
+
+    option = {
+        name = siam.10.a
+
+        if = {
+            limit = {
+                FROM = { tag = ENG }
             }
-            swap_ideas = {
-                remove_idea = GEN_ECO_Npo
-                add_idea = GEN_HOG_Van
+            transfer_state = 1007
+        }
+        if = {
+            limit = {
+                FROM = { tag = FRA }
             }
-            swap_ideas = {
-                remove_idea = GEN_SEC_Npo
-                add_idea = GEN_SEC_Van
+            transfer_state = 962
+            transfer_state = 963
+            transfer_state = 741
+
+            transfer_state = 959
+            transfer_state = 960
+            transfer_state = 670
+        }
+    }
+}
+
+# Reject the Demands
+country_event = {
+    id = siam.11
+    title = siam.11.t
+    desc = siam.11.d
+    picture = GFX_report_event_dutch_soldiers_indonesia
+
+    is_triggered_only = yes
+
+    option = {
+        name = siam.11.a
+
+        if = {
+            limit = {
+                FROM = { tag = ENG }
             }
-            swap_ideas = {
-                remove_idea = GEN_FOR_Npo
-                add_idea = GEN_FOR_Van
+            create_wargoal = {
+                type = take_state_focus
+                target = ENG
+                generator = { 1007 }
+            }
+        }
+
+        if = {
+            limit = {
+                FROM = { tag = FRA }
+            }
+            create_wargoal = {
+                type = take_state_focus
+                target = FIC
+                generator = { 962 963 741 959 960 670 }
+            }
+        }
+    }
+
+    option = {
+        name = siam.11.a
+
+        add_political_power = -50
+    }
+}
+
+# Propose Peace
+country_event = {
+    id = siam.12
+    title = siam.12.t
+    desc = siam.12.d
+    picture = GFX_report_event_dutch_soldiers_indonesia
+
+    mean_time_to_happen = {
+        days = 1
+    }
+
+    trigger = {
+        original_tag = SIA
+        if = {
+            limit = { has_war_with = ENG }
+            controls_state = 1007
+        }
+
+        if = {
+            limit = {
+                has_war_with = FRA
+                has_war_with = FIC
+            }
+            OR = {
+                AND = {
+                    controls_state = 962
+                    controls_state = 963
+                    controls_state = 741
+
+                    controls_state = 959
+                    controls_state = 960
+                    controls_state = 670
+                }
+                FIC = { has_capitulated = yes }
+            }
+        }
+    }
+
+    option = {
+        name = siam.12.a
+
+        if = {
+            limit = { has_war_with = ENG }
+            every_country = {
+                limit = { is_in_faction_with = ENG }
+                whitepeace = SIA
+            }
+        }
+
+        if = {
+            limit = { has_war_with = FRA }
+            every_country = {
+                limit = { is_in_faction_with = FRA }
+                whitepeace = FRA
             }
         }
     }
 }
 
-# King's Coup Preparation
+# Mission
 country_event = {
-    id = siam.5
-    title = siam.5.t
-    desc = siam.5.d
+    id = siam.13
+    title = siam.13.t
+    desc = siam.13.d
+    picture = GFX_report_event_dutch_soldiers_indonesia
 
     is_triggered_only = yes
 
     option = {
-        name = siam.5.a
+        name = siam.13.a
 
-        add_popularity = {
-            ideology = paternal_autocrat
-            popularity = 0.05
+        SIA = {
+            diplomatic_relation = {
+                country = PREV
+                relation = military_access
+                active = yes
+            }
+            give_guarantee = PREV
+
+            country_event = { id = siam.14 }
         }
-        hidden_effect = {
-            country_event = { id = siam.6 days = 30 }
+    }
+
+    option = {
+        name = siam.13.b
+
+        SIA = {
+            country_event = { id = siam.15 }
         }
     }
 }
 
-# King's Coup
+# Mission Accepted
 country_event = {
-    id = siam.6
-    title = siam.6.t
-    desc = siam.6.d
+    id = siam.14
+    title = siam.14.t
+    desc = siam.14.d
+    picture = GFX_report_event_dutch_soldiers_indonesia
 
     is_triggered_only = yes
 
     option = {
-        name = siam.6.a
+        name = siam.14.a
 
-        remove_ideas = SIA_figurehead_monarch
-        remove_ideas = SIA_government_strikes
+        FROM = {
+            diplomatic_relation = {
+                country = SIA
+                relation = military_access
+                active = yes
+            }
+            give_guarantee = SIA
+        }
+    }
+}
+
+# Mission Refused
+country_event = {
+    id = siam.15
+    title = siam.15.t
+    desc = siam.15.d
+    picture = GFX_report_event_dutch_soldiers_indonesia
+
+    is_triggered_only = yes
+
+    option = {
+        name = siam.15.a
+    }
+}
+
+# Death of Rama VII
+country_event = {
+    id = siam.16
+    title = siam.16.t
+    desc = {
+        text = siam.16.d
+        trigger = {
+            NOT = { has_country_flag = SIA_KING_ABDICATED }
+        }
+    }
+    desc = {
+        text = siam.16.d.exiled
+        trigger = {
+            has_country_flag = SIA_KING_ABDICATED
+        }
+    }
+    picture = report_event_iww_demonstration
+
+    is_triggered_only = yes
+
+    immediate = {
         hidden_effect = {
-            set_country_flag = SIA_ROYAL_INTERVENTION
-            swap_ideas = {
-                remove_idea = GEN_HOG_Npo
-                add_idea = GEN_HOG_Pau
+            create_country_leader = {
+                name = "Rama VIII"
+                desc = "POLITICS_RAMA_VIII_DESC"
+                picture = "Portrait_Siam_Rama_VIII.tga"
+                expire = "1946.6.9"
+                ideology = authoritarian_democrat_subtype
             }
-            swap_ideas = {
-                remove_idea = GEN_ECO_Npo
-                add_idea = GEN_ECO_Pau
+            create_country_leader = {
+                name = "Rama VIII"
+                desc = "POLITICS_RAMA_VIII_DESC"
+                picture = "Portrait_Siam_Rama_VIII.tga"
+                expire = "1946.6.9"
+                ideology = social_democrat_subtype
             }
-            swap_ideas = {
-                remove_idea = GEN_SEC_Npo
-                add_idea = GEN_SEC_Pau
+            create_country_leader = {
+                name = "Rama VIII"
+                desc = "POLITICS_RAMA_VIII_DESC"
+                picture = "Portrait_Siam_Rama_VIII.tga"
+                expire = "1946.6.9"
+                ideology = social_liberal_subtype
             }
-            swap_ideas = {
-                remove_idea = GEN_FOR_Npo
-                add_idea = GEN_FOR_Pau
+            create_country_leader = {
+                name = "Rama VIII"
+                desc = "POLITICS_RAMA_VIII_DESC"
+                picture = "Portrait_Siam_Rama_VIII.tga"
+                expire = "1946.6.9"
+                ideology = market_liberal_subtype
+            }
+            create_country_leader = {
+                name = "Rama VIII"
+                desc = "POLITICS_RAMA_VIII_DESC"
+                picture = "Portrait_Siam_Rama_VIII.tga"
+                expire = "1946.6.9"
+                ideology = social_conservative_subtype
+            }
+            create_country_leader = {
+                name = "Rama VIII"
+                desc = "POLITICS_RAMA_VIII_DESC"
+                picture = "Portrait_Siam_Rama_VIII.tga"
+                expire = "1946.6.9"
+                ideology = paternal_autocrat_subtype
+            }
+
+            if = {
+                limit = {
+                    NOT = { has_country_flag = SIA_IRON_MARSHAL }
+                }
+
+                create_country_leader = {
+                    name = "Rama VIII"
+                    desc = "POLITICS_RAMA_VIII_DESC"
+                    picture = "Portrait_Siam_Rama_VIII.tga"
+                    expire = "1946.6.9"
+                    ideology = national_populist_subtype
+                }
+            }
+
+            if = {
+                limit = {
+                    NOT = { has_country_flag = SIA_KING_ABDICATED }
+                }
+
+                create_country_leader = {
+                    name = "Rama VIII"
+                    desc = "POLITICS_RAMA_VIII_DESC"
+                    picture = "Portrait_Siam_Rama_VIII.tga"
+                    expire = "1946.6.9"
+                    ideology = vanguardist_subtype
+                }
+                create_country_leader = {
+                    name = "Rama VIII"
+                    desc = "POLITICS_RAMA_VIII_DESC"
+                    picture = "Portrait_Siam_Rama_VIII.tga"
+                    expire = "1946.6.9"
+                    ideology = collectivist_subtype
+                }
+                create_country_leader = {
+                    name = "Rama VIII"
+                    desc = "POLITICS_RAMA_VIII_DESC"
+                    picture = "Portrait_Siam_Rama_VIII.tga"
+                    expire = "1946.6.9"
+                    ideology = libertarian_socialist_subtype
+                }
             }
         }
+    }
+
+    option = {
+        name = siam.16.a  
     }
 }

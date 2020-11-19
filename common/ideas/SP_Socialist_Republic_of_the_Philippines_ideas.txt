@@ -13,7 +13,7 @@ ideas = {
             }
         }
 
-        SRP_decentralized_command = {
+        SRP_political_factionism = {
             allowed = { original_tag = SRP }
 
             picture = UK_politics_syn_idea

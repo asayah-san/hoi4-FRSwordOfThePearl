@@ -1,5 +1,31 @@
 on_actions = {
 
+    on_capitulation = {
+        effect = {
+            if = {
+                limit = { 
+                    ROOT = { tag = FIC }
+                    FROM = {
+                        OR = {
+                            tag = CAM
+                            tag = LAO
+                            tag = VIN
+                        }
+                    }
+                }
+                every_country = {
+                    limit = {
+                        is_in_faction_with = ROOT
+                        has_war_with = FROM
+                    }
+                    whitepeace = CAM
+                    whitepeace = LAO
+                    whitepeace = VIN
+                }
+            }
+        }
+    }
+
     # ROOT is the winner
     # FROM gets annexed
     on_annex = {
@@ -9,10 +35,7 @@ on_actions = {
                     ROOT = { tag = SRP }
                     FROM = { tag = PHI }
                 } 
-                every_state = {
-                    limit = { is_core_of = PHI }
-                    add_core_of = SRP
-                }
+                ROOT = { country_event = { id = srp.1 days = 2 } }
             }
 
             if = {
@@ -20,11 +43,8 @@ on_actions = {
                     ROOT = { tag = PHI }
                     FROM = { tag = SRP }
                 }
-                every_state = {
-                    limit = { is_core_of = SRP }
-                    add_core_of = PHI
-                    remove_core_of = SRP
-                }
+                
+                ROOT = { country_event = { id = phi.49 days = 2 } }
             }
         }
     }

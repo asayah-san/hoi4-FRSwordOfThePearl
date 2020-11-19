@@ -5,7 +5,7 @@ news_event = {
     id = news.1
     title = news.1.t
     desc = news.1.d
-    picture = GFX_news_event_PHI_quezon_inaugurated
+    picture = GFX_news_event_SP_PHI_quezon_inaugurated
 
     is_triggered_only = yes
 
@@ -21,7 +21,7 @@ news_event = {
     id = news.2
     title = news.2.t
     desc = news.2.d
-    picture = GFX_news_event_PHI_roxas_inaugurated
+    picture = GFX_news_event_SP_PHI_roxas_inaugurated
 
     is_triggered_only = yes
 
@@ -37,7 +37,7 @@ news_event = {
     id = news.3
     title = news.3.t
     desc = news.3.d
-    picture = GFX_news_event_PHI_magsaysay_inaugurated
+    picture = GFX_news_event_SP_PHI_magsaysay_inaugurated
 
     is_triggered_only = yes
 
@@ -53,7 +53,7 @@ news_event = {
     id = news.4
     title = news.4.t
     desc = news.4.d
-    picture = GFX_news_event_PHI_manila_uprising2
+    picture = GFX_news_event_SP_PHI_manila_uprising
 
     is_triggered_only = yes
 
@@ -69,7 +69,7 @@ news_event = {
     id = news.5
     title = news.5.t
     desc = news.5.d
-    picture = GFX_news_event_PHI_army_coup
+    picture = GFX_news_event_SP_PHI_army_coup
 
     is_triggered_only = yes
     
@@ -85,7 +85,7 @@ news_event = {
     id = news.6
     title = news.6.t
     desc = news.6.d
-    picture = GFX_news_event_PHI_manila_uprising2
+    picture = GFX_news_event_SP_PHI_manila_uprising2
 
     is_triggered_only = yes
     
@@ -101,7 +101,7 @@ news_event = {
     id = news.7
     title = news.7.t
     desc = news.7.d
-    picture = GFX_news_event_PHI_aguinaldo_coup
+    picture = GFX_news_event_SP_PHI_aguinaldo_coup
     
     major = yes
 
@@ -117,7 +117,7 @@ news_event = {
     id = news.8
     title = news.8.t
     desc = news.8.d
-    picture = GFX_news_event_ASEAN_founded
+    picture = GFX_news_event_SP_ASEAN_founded
 
     major = yes
 
@@ -133,7 +133,7 @@ news_event = {
     id = news.9
     title = news.9.t
     desc = news.9.d
-    picture = GFX_news_event_ASEAN_country_left
+    picture = GFX_news_event_SP_ASEAN_country_left
 
     major = yes
 
@@ -149,7 +149,7 @@ news_event = {
     id = news.10
     title = news.10.t
     desc = news.10.d
-    picture = GFX_news_event_PHI_sabah_occupied
+    picture = GFX_news_event_SP_PHI_sabah_occupied
 
     major = yes
 
@@ -187,7 +187,7 @@ news_event = {
     id = news.11
     title = news.11.t
     desc = news.11.d
-    picture = GFX_news_event_PHI_manila_uprising2
+    picture = GFX_news_event_SP_PHI_manila_uprising
 
     major = yes
 
@@ -198,4 +198,36 @@ news_event = {
     option = {
         name = news.11.a
     }
+}
+
+# Socialist Victory in Siam
+news_event = {
+    id = news.12
+    title = news.12.t
+    desc = news.12.d
+    picture = GFX_news_event_SP_PHI_manila_uprising
+
+    major = yes
+
+    show_major = { NOT = { tag = SIA } }
+
+    is_triggered_only = yes
+
+    option = { name = news.12.a }
+}
+
+# Communist Uprising
+news_event = {
+    id = news.13
+    title = news.13.t
+    desc = news.13.d
+    picture = GFX_news_event_SP_PHI_manila_uprising
+
+    major = yes
+
+    show_major = { NOT = { tag = PHI } }
+
+    is_triggered_only = yes
+
+    option = { name = news.13.a }
 }

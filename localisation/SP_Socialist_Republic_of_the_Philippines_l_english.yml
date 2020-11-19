@@ -1,0 +1,38 @@
+﻿l_english:
+
+##### Parties #####
+SRP_vanguardist_party:0 "Radical Faction"
+SRP_vanguardist_party_long:0 "Radical Faction of the Communist Party of the Philippines"
+SRP_collectivist_party:0 "Moderate Faction"
+SRP_collectivist_party_long:0 "Moderate Faction of the Communist Party of the Philippines"
+SRP_libertarian_socialist_party:0 "Liberal Faction"
+SRP_libertarian_socialist_party_long:0 "Liberal Faction of the Communist Party of the Philippines"
+SRP_social_democrat_party:0 "PP"
+SRP_social_democrat_party_long:0 "Partido Progresista"
+SRP_social_liberal_party:0 "LP"
+SRP_social_liberal_party_long:0 "Partido Liberal"
+SRP_market_liberal_party:0 "LP"
+SRP_market_liberal_party_long:0 "Partido Liberal"
+SRP_social_conservative_party:0 "NP"
+SRP_social_conservative_party_long:0 "Partido Nacionalista"
+SRP_authoritarian_democrat_party:0 "KTP"
+SRP_authoritarian_democrat_party_long:0 "Komisyong Tagapagpaganap ng Pilipinas"
+SRP_paternal_autocrat_party:0 "AFP"
+SRP_paternal_autocrat_party_long:0 "Armed Forces of the Philippines"
+SRP_national_populist_party:0 "BK"
+SRP_national_populist_party_long:0 "Bagong Katipunan"
+SRP_valkist_party:0 "KALIBAPI"
+SRP_valkist_party_long:0 "Kapisanan sa Paglilingkod sa Bagong Pilipinas"
+
+##### Ideas #####
+SRP_the_second_revolution:0 "The Second Revolution"
+SRP_the_second_revolution_desc:0 ""
+SRP_political_factionism:0 "Political Factionism"
+SRP_political_factionism_desc:0 ""
+SRP_no_proper_army:0 "Untrained Army"
+SRP_no_proper_army_desc:0 "Our current army is composed of untrained militias, workers and farmers, and many officers have no experience in leading them."
+
+##### Events #####
+srp.1.t:0 "Revolution Triumphiant!"
+srp.1.d:0 "Our forces have been successfully defeated government forces who we drove back to the Northern and Southern regions of Luzon. The Government have accepted to negotiate peace and have chosen to surrender."
+srp.1.a:0 "Break the chains!"

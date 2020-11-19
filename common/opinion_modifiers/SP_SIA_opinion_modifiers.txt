@@ -1,0 +1,11 @@
+opinion_modifiers = {
+
+    SIA_reaffirmed_territorial_claims = { value = -75 }
+    SIA_abandoned_territorial_claims = { value = 75 }
+
+    SIA_trade_accepted = { value = 50 }
+    SIA_trade_refused = { value = -50 }
+
+    SIA_brotherly_relations = { value = 100 }
+
+}
