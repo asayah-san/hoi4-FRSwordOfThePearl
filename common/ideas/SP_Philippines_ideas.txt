@@ -19,7 +19,6 @@ ideas = {
             picture = generic_agrarian_society
 
             modifier = {
-                consumer_goods_factor = 0.05
 				production_factory_max_efficiency_factor = -0.1
                 industrial_capacity_factory = -0.25
                 industrial_capacity_dockyard = -0.25
@@ -69,7 +68,7 @@ ideas = {
         }
 
         PHI_marxist_professors_reformed = {
-            picture = generic_victors_of_ww1
+            picture = generic_army_war_college
 
             allowed = { original_tag = PHI }
 
@@ -92,6 +91,7 @@ ideas = {
             allowed = { original_tag = PHI }
 
             picture = generic_research_bonus
+
             modifier = {
                 consumer_goods_factor = 0.05
                 research_speed_factor = 0.15
@@ -141,7 +141,6 @@ ideas = {
                 industrial_capacity_factory = 0.05
 				industrial_capacity_dockyard = 0.05
             }
-
         }
 
         PHI_dpwh = {
@@ -330,7 +329,8 @@ ideas = {
         PHI_pma = {
             allowed = { original_tag = PHI }
 
-            picture = generic_army_war_college
+            picture = HUN_secret_rearmament
+
             modifier = {
                 army_attack_factor = 0.15
                 army_defence_factor = 0.15
@@ -388,7 +388,7 @@ ideas = {
         PHI_dfa = {
             allowed = { original_tag = PHI }
 
-            picture = generic_flexible_foreign_policy2
+            picture = SOV_scientist_defect
 
             modifier = {
                 improve_relations_maintain_cost_factor = -0.25
@@ -398,7 +398,7 @@ ideas = {
         PHI_tax_reform = {
             allowed = { original_tag = PHI }
 
-            picture = capital_outflow
+            picture = generic_foreign_capital
 
             modifier = {
                 consumer_goods_factor = -0.05
@@ -406,37 +406,29 @@ ideas = {
         }
 
         PHI_weakened_oligarchy = {
-            allowed = {
-                original_tag = PHI
-            }
+            allowed = { original_tag = PHI }
 
             picture = ROM_king_carol_ii_hedonist
 
             modifier = {
                 political_power_gain = -0.05
-                consumer_goods_factor = -0.1
+                consumer_goods_factor = -0.05
             }
         }
 
         PHI_reformed_government = {
-            allowed = {
-                original_tag = PHI
-            }
+            allowed = { original_tag = PHI }
 
             picture = generic_pp_unity_bonus
 
             modifier = {
-                political_power_gain = 0.05
-                stability_weekly = 0.1
-                war_support_weekly = 0.1
-                paternal_autocrat_drift = 0.05
+                stability_weekly = 0.05
+                war_support_weekly = 0.05
             }
         }
 
         PHI_nationalism = {
-            allowed = {
-                original_tag = PHI
-            }
+            allowed = { original_tag = PHI }
 
             picture = ast_abandon_the_westminster_system_fascism
 
@@ -449,9 +441,7 @@ ideas = {
         }
 
         PHI_corporatist_economic_policy = {
-            allowed = {
-                original_tag = PHI
-            }
+            allowed = { original_tag = PHI }
 
             picture = generic_goods_red_bonus
 
@@ -463,24 +453,19 @@ ideas = {
         }
 
         PHI_tradition_and_culture = {
-            allowed = {
-                original_tag = PHI
-            }
+            allowed = { original_tag = PHI }
 
-            picture = saf_ossewabrandwag
+            picture = BRA_faith_unity
 
             modifier = {
                 drift_defence_factor = 0.15
                 local_resources_factor = 0.25
                 monthly_population = 0.25
             }
-
         }
 
         PHI_a_contented_worker = {
-            allowed = {
-                original_tag = PHI
-            }
+            allowed = { original_tag = PHI }
 
             picture = ROM_king_carol_ii_hedonist
 
@@ -492,9 +477,7 @@ ideas = {
         }
 
         PHI_living_the_dream = {
-            allowed = {
-                original_tag = PHI
-            }
+            allowed = { original_tag = PHI }
 
             picture = new_deal
 
@@ -505,9 +488,7 @@ ideas = {
         }
 
         PHI_japanese_support = {
-            allowed = {
-                original_tag = PHI
-            }
+            allowed = { original_tag = PHI }
 
             picture = warrior_traditions_idea
 
@@ -520,9 +501,7 @@ ideas = {
         }
 
         PHI_british_support = {
-            allowed = {
-                original_tag = PHI
-            }
+            allowed = { original_tag = PHI }
 
             picture = stiff_upper_lip
 
@@ -535,9 +514,7 @@ ideas = {
         }
 
         PHI_german_support = {
-            allowed = {
-                original_tag = PHI
-            }
+            allowed = { original_tag = PHI }
 
             picture = german_advisors
 
@@ -558,9 +535,7 @@ ideas = {
         }
 
         PHI_american_support = {
-            allowed = {
-                original_tag = PHI
-            }
+            allowed = { original_tag = PHI }
 
             picture = air_support_focus
 
@@ -581,10 +556,7 @@ ideas = {
         }
 
         PHI_government_unions = {
-            
-            allowed = {
-                original_tag = PHI
-            }
+            allowed = { original_tag = PHI }
 
             picture = generic_fascism_drift_bonus
 
@@ -596,9 +568,7 @@ ideas = {
         }
 
         PHI_state_youth_organizations = {
-            allowed = {
-                original_tag = PHI
-            }
+            allowed = { original_tag = PHI }
 
             picture = eng_imperial_conscription
 
@@ -608,9 +578,7 @@ ideas = {
         }
 
         PHI_for_the_country = {
-            allowed = {
-                original_tag = PHI
-            }
+            allowed = { original_tag = PHI }
 
             picture = triumphant_will
 
@@ -622,11 +590,9 @@ ideas = {
         }
 
         PHI_valkist_labour_policy = {
-            allowed = {
-                original_tag = PHI
-            }
+            allowed = { original_tag = PHI }
 
-            picture = generic_production_bonus
+            picture = HUN_treaty_of_triannon
 
             modifier = {
                 consumer_goods_factor = 0.05
@@ -637,11 +603,9 @@ ideas = {
         }
 
         PHI_foreign_culture_tolerance = {
-            allowed = {
-                original_tag = PHI
-            }
+            allowed = { original_tag = PHI }
 
-            picture = FRA_scw_intervention_nationalists_focus
+            picture = generic_democratic_drift_bonus
 
             modifier = {
                 research_speed_factor = 0.05
@@ -649,11 +613,9 @@ ideas = {
         }
 
         PHI_own_culture_promotion = {
-            allowed = {
-                original_tag = PHI
-            }
+            allowed = { original_tag = PHI }
 
-            picture = generic_democratic_drift_bonus
+            picture = generic_volunteer_expedition_bonus
 
             modifier = {
                 monthly_population = 0.75
@@ -661,9 +623,7 @@ ideas = {
         }
 
         PHI_valkist_campaigns = {
-            allowed = {
-                original_tag = PHI
-            }
+            allowed = { original_tag = PHI }
 
             picture = GFX_idea_generic_valkist_support
 
@@ -673,9 +633,7 @@ ideas = {
         }
 
         PHI_public_education_funding = {
-            allowed = {
-                original_tag = PHI
-            }
+            allowed = { original_tag = PHI }
 
             picture = jap_supremacy_of_technology
 
@@ -685,55 +643,47 @@ ideas = {
         }
 
         PHI_worker_strikes1 = {
-            allowed = {
-                original_tag = PHI
-            }
+            allowed = { original_tag = PHI }
 
             picture = NOR_labour_conflicts
 
             modifier = {
-                stability_factor = -0.2
-                war_support_factor = -0.2
+                stability_factor = -0.15
+                war_support_factor = -0.15
+                production_speed_buildings_factor = -0.15
+                industrial_capacity_factory = -0.15
+                industrial_capacity_dockyard = -0.15
+            }
+        }
+
+        PHI_worker_strikes2 = {
+            allowed = { original_tag = PHI }
+
+            picture = NOR_labour_conflicts
+
+            modifier = {
+                stability_factor = -0.25
+                war_support_factor = -0.25
                 production_speed_buildings_factor = -0.25
                 industrial_capacity_factory = -0.25
                 industrial_capacity_dockyard = -0.25
             }
         }
 
-        PHI_worker_strikes2 = {
-            allowed = {
-                original_tag = PHI
-            }
-
-            picture = NOR_labour_conflicts
-
-            modifier = {
-                stability_factor = -0.4
-                war_support_factor = -0.4
-                production_speed_buildings_factor = -0.5
-                industrial_capacity_factory = -0.5
-                industrial_capacity_dockyard = -0.5
-            }
-        }
-
         PHI_government_housing = {
-            allowed = {
-                original_tag = PHI
-            }
+            allowed = { original_tag = PHI }
 
             picture = generic_build_infrastructure
 
             modifier = {
-                monthly_population = 0.25
+                monthly_population = 0.75
             }
         }
 
         PHI_government_corporations = {
-            allowed = {
-                original_tag = PHI
-            }
+            allowed = { original_tag = PHI }
 
-            picture = generic_production_bonus
+            picture = generic_political_support
 
             modifier = {
                 industrial_capacity_factory = 0.15
@@ -743,23 +693,19 @@ ideas = {
         }
 
         PHI_seized_wealth = {
-            allowed = {
-                original_tag = PHI
-            }
+            allowed = { original_tag = PHI }
 
-            picture = capital_outflow
+            picture = ROM_king_carol_emptied_accounts
 
             modifier = {
-                consumer_goods_factor = -0.1
+                consumer_goods_factor = -0.15
             }
         }
 
         PHI_pcps = {
-            allowed = {
-                original_tag = PHI
-            }
+            allowed = { original_tag = PHI }
 
-            picture = generic_secret_police
+            picture = NOR_secret_police_idea_1
 
             modifier = {
                 stability_factor = 0.2
@@ -770,11 +716,9 @@ ideas = {
         }
 
         PHI_forced_conscription = {
-            allowed = {
-                original_tag = PHI
-            }
+            allowed = { original_tag = PHI }
 
-            picture = generic_infantry_bonus
+            picture = generic_communist_army
 
             modifier = {
                 conscription = 0.15
@@ -786,11 +730,9 @@ ideas = {
         }
 
         PHI_state_atheism = {
-            allowed = {
-                original_tag = PHI
-            }
+            allowed = { original_tag = PHI }
 
-            picture = generic_collectivism_rising
+            picture = chi_war_of_resistance3
 
             modifier = {
                 stability_factor = -0.15
@@ -800,22 +742,19 @@ ideas = {
         }
 
         PHI_new_quotas = {
-            allowed = {
-                original_tag = PHI
-            }
+            allowed = { original_tag = PHI }
 
-            picture = generic_production_bonus
+            picture = saf_history_of_segregation_2
 
             modifier = {
                 production_factory_max_efficiency_factor = 0.1
+                production_speed_buildings_factor = 0.1
                 political_power_gain = -0.1
             }
         }
 
         PHI_secular_state = {
-            allowed = {
-                original_tag = PHI
-            }
+            allowed = { original_tag = PHI }
 
             picture = generic_victors_of_ww1
 
@@ -823,62 +762,16 @@ ideas = {
                 stability_factor = 0.05
                 industrial_capacity_factory = 0.05
                 industrial_capacity_dockyard = 0.05
-                production_speed_buildings_factor = 0.05
-            }
-        }
-
-        PHI_soviet_aid_military = {
-            allowed = {
-                original_tag = PHI
-            }
-
-            picture = UK_military_syn_idea
-
-            research_bonus = {
-                infantry_equipment = 0.2
-				motorized = 0.2
-                artillery_equipment = 0.2 
-            }
-
-            equipment_bonus = {
-                infantry_equipment = {
-					build_cost_ic = -0.15
-					instant = yes
-				}
-				motorized = {
-					build_cost_ic = -0.15
-					instant = yes
-				}
-                artillery_equipment = {
-					build_cost_ic = -0.15
-					instant = yes
-				}
-            }
-        }
-
-        PHI_soviet_aid_industrial = {
-            allowed = {
-                original_tag = PHI
-            }
-
-            picture = UK_economy_syn_idea
-
-            research_bonus = {
-                industry = 0.2
-                electronics = 0.2
-                synthetic_resources = 0.2
             }
         }
 
         PHI_unity_and_equality = {
-            allowed = {
-                original_tag = PHI
-            }
+            allowed = { original_tag = PHI }
 
             picture = home_of_revolution
 
             modifier = {
-                surrender_limit = 0.2
+                surrender_limit = 0.15
             }
         }
 
@@ -931,12 +824,6 @@ ideas = {
                 monthly_population = 1.5
                 valkist_drift = -0.02
             }
-        }
-
-        PHI_german_imperial_family = {
-            allowed = { original_tag = PHI }
-
-            picture = ger_revive_the_kaiserreich
         }
         
         PHI_financial_support = {

@@ -48,7 +48,6 @@ PHI_prioritize_construction:0 "Prioritize Constructions"
 PHI_aid_workers:0 "Aid Workers"
 PHI_start_social_services:0 "Start New Social Services"
 
-
 ##### Parties ######
 PHI_vanguardist_party:0 "PKP"
 PHI_vanguardist_party_long:0 "Partido Komunista ng Pilipinas"
@@ -207,31 +206,10 @@ PHI_financial_support:0 "Financial Support"
 PHI_the_loan_red_star_idea:0 "The Lone Red Star"
 
 ##### Opinion Modifiers #####
-accepted_economic_investment:0 "Accepted to Provide Economic Investments"
-refused_economic_investment:0 "Refused to Provide Economic Investments"
-
-us_accepted_military_alliance:0 "Accepted Military Support"
-us_rejected_military_alliance:0 "Rejected Military Support"
-
-eng_accepted_air_equipment:0 "Accepted Air Equipment Purchase"
-eng_rejected_air_equipment:0 "Rejected Air Equipment Purchase"
-
-jap_accepted_naval_vessels:0 "Accepted Naval Vessel Request"
-jap_rejected_naval_vessels:0 "Rejected Naval Vessel Request"
-
-sov_accepted_support:0 "Accepted Foreign Support"
-sov_rejected_support:0 "Rejected Foreign Support"
-
-diplomatic_mission:0 "Filipino Diplomatic Mission"
-
-trade_treaty_accepted:0 "Accepted Trade Treaty"
-trade_treaty_refused:0 "Refused Trade Treaty"
-
-aid_accepted:0 "Provided Aid"
-
-renounced_imperialism:0 "Renounced Our Imperialism"
-restored_the_kaiser:0 "Restored the Kaiserreich"
-seato_our_liberators:0 "Our Liberators"
+PHI_economic_investment:0 "Provided Economic Investments"
+PHI_trade_treaty_accepted:0 "Trade Treaty Accepted"
+PHI_trade_treaty_refused:0 "Trade Treaty Refused"
+PHI_aid_accepted:0 "Provided Aid"
 
 ##### Focus #####
 # Democratic

@@ -103,7 +103,7 @@ country_event = {
         add_political_power = 100
         add_opinion_modifier = {
             target = PHI
-            modifier = asean_accepted_entry
+            modifier = ASEAN_accepted_invite
         }
     }
 }
@@ -120,7 +120,7 @@ country_event = {
         name = asean.6.a
         add_opinion_modifier = {
             target = PHI
-            modifier = asean_refused_entry
+            modifier = ASEAN_refused_invite
         }
     }
 }

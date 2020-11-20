@@ -1,4 +1,4 @@
-﻿capital = 1013
+﻿capital = 1014
 
 oob = "SIA_1936"
 
@@ -207,7 +207,7 @@ create_corps_commander = {
 }
 create_corps_commander = {
 	name = "Phraya Songsuradet"
-	portrait = "Portrait_Siam_Phraya_Songsuradet.tga"
+	picture = "Portrait_Siam_Phraya_Songsuradet.tga"
 	traits = { SIA_four_musketeers career_officer trait_engineer }
 	skill = 2
 	attack_skill = 2
@@ -217,7 +217,7 @@ create_corps_commander = {
 }
 create_corps_commander = {
 	name = "Luang Kriengsakpichit"
-	portrait = "Portrait_Siam_Luang_Kriengsakpichit.tga"
+	picture = "Portrait_Siam_Luang_Kriengsakpichit.tga"
 	traits = { infantry_officer }
 	skill = 2
 	attack_skill = 2
@@ -227,14 +227,13 @@ create_corps_commander = {
 }
 create_corps_commander = {
 	name = "Phraya Phahonphonpayuhasena"
-	portrait = "Portrait_Siam_Phraya_Phaholponpayuhasena.tga"
+	picture = "Portrait_Siam_Phraya_Phaholponpayuhasena.tga"
 	traits = { SIA_four_musketeers artillery_officer }
 	skill = 1
 	attack_skill = 1
 	defense_skill = 1
 	planning_skill = 1
 	logistics_skill = 1
-	id = 51409
 }
 
 country_event = { id = siam.16 days = 1948 } # Death of Rama VII

@@ -48,7 +48,9 @@ focus_tree = {
         y = 2
         cost = 10
         prerequisite = { focus = SIA_divine_right }
-        completion_reward = {}
+        completion_reward = {
+            add_ideas = SIA_kings_sword_and_shield
+        }
     }
 
     # New Education Curriculum
@@ -88,7 +90,17 @@ focus_tree = {
         mutually_exclusive = { focus = SIA_privatize_public_sectors }
         prerequisite = { focus = SIA_new_education_curriculum }
         completion_reward = {
-            remove_ideas = SIA_economic_mismanagement
+            random_owned_controlled_state = {
+                limit = {
+                    free_building_slots = {
+                        building = industrial_complex
+                        size > 0
+                        include_locked = yes
+                    }
+                }
+
+                add_extra_state_shared_building_slots = 2
+            }
         }
     }
 
@@ -100,7 +112,12 @@ focus_tree = {
         y = 1
         cost = 10
         prerequisite = { focus = SIA_abolish_the_legislation }
-        completion_reward = {}
+        completion_reward = {
+            add_popularity = {
+                ideology = paternal_autocrat
+                popularity = 0.05
+            }
+        }
     }
     
     # Purge Unloyal Officers
@@ -111,7 +128,9 @@ focus_tree = {
         y = 2
         cost = 10
         prerequisite = { focus = SIA_arrest_opposition }
-        completion_reward = {}
+        completion_reward = {
+            add_stability = 0.05
+        }
     }
 
     #############################################
@@ -173,7 +192,6 @@ focus_tree = {
         prerequisite = { focus = SIA_bureaucratic_reforms }
         completion_reward = {
             retire_ideology_leader = national_populist
-            add_ideas = SIA_figurehead_king
         }
     }
 
@@ -189,7 +207,9 @@ focus_tree = {
             focus = SIA_merge_the_parties
             focus = SIA_purge_unloyal_officers
         }
-        completion_reward = {}
+        completion_reward = {
+            add_ideas = SIA_reintroduced_conscription
+        }
     }
 
     # Renewed Militarism
@@ -204,7 +224,9 @@ focus_tree = {
             focus = SIA_purge_unloyal_officers
             focus = SIA_the_figurehead_king
         }
-        completion_reward = {}
+        completion_reward = {
+            add_war_support = 0.15
+        }
     }
 
     # New Siamese Schools
@@ -223,13 +245,15 @@ focus_tree = {
     # Loyalty to the King
     focus = {
         id = SIA_loyalty_to_the_king
-        icon = GFX_goal_monarchism
+        icon = GFX_focus_generic_home_defense
         x = 6
         y = 4
         cost = 10
         prerequisite = { focus = SIA_renewed_militarism }
         prerequisite = { focus = SIA_reintroduce_conscription }
-        completion_reward = {}
+        completion_reward = {
+            add_ideas = SIA_for_the_king
+        }
     }
 
     # A Patriotic Nation
@@ -257,7 +281,9 @@ focus_tree = {
             focus = SIA_loyalty_to_the_king
             focus = SIA_a_patriotic_nation
         }
-        completion_reward = {}
+        completion_reward = {
+            add_ideas = SIA_on_our_own
+        }
     }
 
     # Propaganda Leafets
@@ -268,7 +294,10 @@ focus_tree = {
         y = 5
         cost = 10
         prerequisite = { focus = SIA_a_patriotic_nation }
-        completion_reward = {}
+        completion_reward = {
+            add_stability = 0.05
+            add_war_support = 0.05 
+        }
     }
 
     #############################################
@@ -923,23 +952,13 @@ focus_tree = {
     # Seek Friends
     focus = {
         id = SIA_seek_friends
+        icon = GFX_goal_generic_national_unity
         x = 37
         y = 4
-        cost = 2
+        cost = 5
         prerequisite = { focus = SIA_open_up_foreign_relations }
         completion_reward = {
-            PHI = {
-                add_opinion_modifier = {
-                    target = SIA
-                    modifier = SIA_brotherly_relations
-                }
-            }
-            INS = {
-                add_opinion_modifier = {
-                    target = SIA
-                    modifier = SIA_brotherly_relations
-                }
-            }
+            add_ideas = SIA_seeking_friends
         }
     }
 

@@ -545,7 +545,7 @@ PHI_occupation_of_germany = {
                     give_guarantee = PHI
 
                     set_politics = {
-                        ruling_party = authoritarian_democrat
+                        ruling_party = paternal_autocrat
                         elections_allowed = no
                     }
                     set_popularities = {
@@ -556,38 +556,21 @@ PHI_occupation_of_germany = {
                         social_liberal = 8
                         market_liberal = 4
                         social_conservative = 14
-                        authoritarian_democrat = 26
-                        paternal_autocrat = 2
+                        authoritarian_democrat = 2
+                        paternal_autocrat = 26
                         national_populist = 8
                         valkist = 14
                     }
 
-                    set_party_name = {
-                        ideology = authoritarian_democrat
-                        name = DEU_authoritarian_democrat_transitionary
-                        long_name = DEU_authoritarian_democrat_transitionary_long
-                    }
-
-                    create_country_leader = {
-                        name = "Armed Forces of the Philippines"
-                        desc = "POLITICS_ARMED_FORCES_OF_THE_PHILIPPINES_DESC"
-                        picture = "Portrait_Germany_Armed_Forces_of_the_Philippines.tga"
-                        expire = "1965.1.1"
-                        ideology = authoritarian_democrat_subtype
-                        traits = {}
-                    }
                     load_oob = DEU_1936
-                }
-                diplomatic_relation = {
-                    country = DEU
-                    relation = military_access
-                    active = yes
                 }
             }
         }
     }
 
     PHI_restore_the_kaiserreich = {
+        allowed = { always = no }
+
         icon = GFX_decision_eng_ally_imperialist_coup
 
         visible = { has_full_control_of_state = 64 }
@@ -624,14 +607,9 @@ PHI_occupation_of_germany = {
                 }
                 DEU = { 
                     set_cosmetic_tag = DEU_kaiser
-                    give_guarantee = PHI
-                    add_opinion_modifier = {
-                        target = PHI
-                        modifier = restored_the_kaiser
-                    }
 
                    set_politics = {
-                        ruling_party = authoritarian_democrat
+                        ruling_party = paternal_autocrat
                         elections_allowed = no
                     }
                     set_popularities = {
@@ -642,96 +620,13 @@ PHI_occupation_of_germany = {
                         social_liberal = 8
                         market_liberal = 4
                         social_conservative = 14
-                        authoritarian_democrat = 26
-                        paternal_autocrat = 2
+                        authoritarian_democrat = 2
+                        paternal_autocrat = 26
                         national_populist = 8
                         valkist = 14
                     }
 
-                    set_party_name = {
-                        ideology = authoritarian_democrat
-                        name = DEU_authoritarian_democrat_transitionary
-                        long_name = DEU_authoritarian_democrat_transitionary_long
-                    }
-
-                    create_country_leader = {
-                        name = "Wilhelm III"
-                        desc = "POLITICS_WILHELM_III_DESC"
-                        picture = "Portrait_Germany_Wilhelm_III.tga"
-                        expire = "1965.1.1"
-                        ideology = social_democrat_subtype
-                        traits = {
-                        }
-                    }
-                    create_country_leader = {
-                        name = "Wilhelm III"
-                        desc = "POLITICS_WILHELM_III_DESC"
-                        picture = "Portrait_Germany_Wilhelm_III.tga"
-                        expire = "1965.1.1"
-                        ideology = social_liberal_subtype
-                        traits = {
-                        }
-                    }
-                    create_country_leader = {
-                        name = "Wilhelm III"
-                        desc = "POLITICS_WILHELM_III_DESC"
-                        picture = "gfx/leaders/DKR/Portrait_Germany_Wilhelm_III.tga"
-                        expire = "1965.1.1"
-                        ideology = market_liberal_subtype
-                        traits = {
-                        }
-                    }
-                    create_country_leader = {
-                        name = "Wilhelm III"
-                        desc = "POLITICS_WILHELM_III_DESC"
-                        picture = "Portrait_Germany_Wilhelm_III.tga"
-                        expire = "1965.1.1"
-                        ideology = social_conservative_subtype
-                        traits = {
-                        }
-                    }
-                    create_country_leader = {
-                        name = "Wilhelm III"
-                        desc = "POLITICS_WILHELM_III_DESC"
-                        picture = "Portrait_Germany_Wilhelm_III.tga"
-                        expire = "1965.1.1"
-                        ideology = authoritarian_democrat_subtype
-                        traits = {
-                        }
-                    }
-                    create_country_leader = {
-                        name = "Wilhelm III"
-                        desc = "POLITICS_WILHELM_III_DESC"
-                        picture = "Portrait_Germany_Wilhelm_III.tga"
-                        expire = "1965.1.1"
-                        ideology = paternal_autocrat_subtype
-                        traits = {
-                        }
-                    }
-                    create_country_leader = {
-                        name = "Wilhelm III"
-                        desc = "POLITICS_WILHELM_III_DESC"
-                        picture = "Portrait_Germany_Wilhelm_III.tga"
-                        expire = "1965.1.1"
-                        ideology = national_populist_subtype
-                        traits = {
-                        }
-                    }
-                    create_country_leader = {
-                        name = "Wilhelm III"
-                        desc = "POLITICS_WILHELM_III_DESC"
-                        picture = "Portrait_Germany_Wilhelm_III.tga"
-                        expire = "1965.1.1"
-                        ideology = valkist_subtype
-                        traits = {
-                        }
-                    }
                     load_oob = DEU_1936
-                }
-                diplomatic_relation = {
-                    country = DKR
-                    relation = military_access
-                    active = yes
                 }
             }
         }

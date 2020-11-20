@@ -437,3 +437,85 @@ country_event = {
         }
     }
 }
+
+# Annexation of the Philippines
+country_event = {
+    id = annex.10
+    title = annex.10.t
+    desc = annex.10.d
+    
+    is_triggered_only = yes
+
+    option = {
+        name = annex.10.a
+        trigger = {
+            tag = USA
+        }
+
+        release = PHI
+        if = {
+            limit = { has_dlc = "Together for Victory" }
+            set_autonomy = {
+                autonomy_state = autonomy_colony
+                target = PHI
+            }
+        }
+        if = {
+            limit = {
+                NOT = { has_dlc = "Together for Victory" }
+            }
+            puppet = PHI
+        }
+        PHI = { set_cosmetic_tag = PHI_USA }
+    }
+
+    option = {
+        name = annex.10.b
+        trigger = {
+            tag = ENG
+        }
+
+        release = PHI
+        if = {
+            limit = { has_dlc = "Together for Victory" }
+            set_autonomy = {
+                autonomy_state = autonomy_dominion
+                target = PHI
+            }
+        }
+        if = {
+            limit = {
+                NOT = { has_dlc = "Together for Victory" }
+            }
+            puppet = PHI
+        }
+        PHI = { set_cosmetic_tag = PHI_ENG }
+    }
+
+    option = {
+        name = annex.10.c
+        trigger = {
+            OR = {
+                NOT = {
+                    tag = USA
+                    tag = ENG
+                }
+            }
+        }
+
+        release = PHI
+        if = {
+            limit = { has_dlc = "Together for Victory" }
+            set_autonomy = {
+                autonomy_state = autonomy_colony
+                target = PHI
+            }
+        }
+        if = {
+            limit = {
+                NOT = { has_dlc = "Together for Victory" }
+            }
+            puppet = PHI
+        }
+    }
+}

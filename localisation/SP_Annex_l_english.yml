@@ -1,4 +1,19 @@
 ﻿l_english:
+ ##### Decisions #####
+ annex_decisions_cat:0 "Annexation Options"
+ annex_sabah_decision:0 "Question of the Sabah Territory"
+ annex_phi_decision:0 "The [PHI.GetAdjective] Territories"
+ annex_ins_decision:0 "The [INS.GetAdjective] Territories"
+ annex_brm_decision:0 "The [BRM.GetAdjective] Territories"
+ annex_mal_decision:0 "The [MAL.GetAdjective] Territories"
+ annex_vin_decision:0 "The [VIN.GetAdjective] Territories"
+ annex_cam_decision:0 "The [CAM.GetAdjective] Territories"
+ annex_lao_decision:0 "The [LAO.GetAdjective] Territories"
+ annex_jap_decision:0 "The [JAP.GetAdjective] Territories"
+ annex_kor_decision:0 "The [KOR.GetAdjective] Territories"
+ annex_sia_decision:0 "The [SIA.GetAdjective] Territories"
+
+ ##### Annex Events #####
  annex.1.t:0 "Fate of Burma"
  annex.1.d:0 "The recent events has left us in control of [BRM.GetAdjective] territories; and now the fate of these territories and its citizens now rests in our hands."
  annex.1.a:0 "Supervise a [BRM.GetAdjective] State"
@@ -40,3 +55,9 @@
  annex.9.t:0 "Fate of Korea"
  annex.9.d:0 "The recent events has left us in control of [KOR.GetAdjective] territories; and now the fate of theese territories and its citizens now rests in our hands."
  annex.9.a:0 "Supervise a [KOR.GetAdjective] State"
+
+ annex.10.t:0 "Fate of the Philippines"
+ annex.10.d:0 "The recent events has left us in control of [PHI.GetAdjective] territories; and now the fate of theese territories and its citizens now rests in our hands."
+ annex.10.a:0 "Bring back the Insular Government"
+ annex.10.b:0 "Create a Dominion of the Philippines"
+ annex.10.c:0 "Supervise a [PHI.GetAdjective] State"

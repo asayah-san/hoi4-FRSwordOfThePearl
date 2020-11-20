@@ -52,6 +52,10 @@
  SIA_the_figurehead_king:0 "Figurehead King"
  SIA_coastal_defense_preparations_idea:0 "Coastal Defense Preparations"
  SIA_womens_army_service_idea:0 "Women's Army Service"
+ SIA_for_the_king:0 "For the King!"
+ SIA_reintroduced_conscription:0 "Reintroduced Conscription"
+ SIA_kings_sword_and_shield:0 "The King's Sword and Shield"
+ SIA_seeking_friends:0 "Seeking New Friends"
 
  ##### Flags #####
  SIA_ROYAL_INTERVENTION_FLAG:0 "The King have intervened and have taken control of the Government"

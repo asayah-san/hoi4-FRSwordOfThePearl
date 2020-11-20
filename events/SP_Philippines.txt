@@ -854,7 +854,7 @@ country_event = {
     option = {
         name = phi.19.a
         hidden_effect = {
-            country_event = { id = phi.21 days = 7 }
+            country_event = { id = phi.20 days = 7 }
         }
     }
 
@@ -874,19 +874,20 @@ country_event = {
     is_triggered_only = yes
 
     immediate = {
-        trasfer_state = 785
-
+        PHI = {
+            trasfer_state = 785
+        }
         INS = {
             remove_state_core = 785
             add_state_claim = 785
 
-            country_event = { id = phi.21 }
+            country_event = { id = phi.21 days = 1 }
         }
         BEA = {
             remove_state_core = 785
             add_state_claim = 785
 
-            country_event = { id = phi.21 }
+            country_event = { id = phi.21 days = 1 }
         }
 
         news_event = { id = news.10 }
@@ -916,8 +917,8 @@ country_event = {
 
             modifier = {
                 factor = 10
-                num_of_divisions < 50
-                num_of_factories < 100
+                num_of_divisions > 50
+                num_of_factories > 100
             }
         }
 
@@ -963,7 +964,7 @@ country_event = {
             hidden_effect = {
                 add_opinion_modifier = {
                     target = ROOT
-                    modifier = accepted_economic_investment
+                    modifier = PHI_economic_investment
                 } 
             }
             random_owned_controlled_state = {
@@ -989,12 +990,6 @@ country_event = {
         name = phi.22.b
 
         PHI = {
-            hidden_effect = {
-                add_opinion_modifier = {
-                    target = ROOT
-                    modifier = refused_economic_investment
-                }
-            }
             country_event = { id = phi.24 }
         }
     }
@@ -1577,7 +1572,7 @@ country_event = {
 
         add_opinion_modifier = {
             target = FROM
-            modifier = trade_treaty_accepted
+            modifier = PHI_trade_treaty_accepted
         }
 
         if = {
@@ -1627,7 +1622,7 @@ country_event = {
 
         add_opinion_modifier = {
             target = FROM
-            modifier = trade_treaty_refused
+            modifier = PHI_trade_treaty_refused
         }
     }
 }

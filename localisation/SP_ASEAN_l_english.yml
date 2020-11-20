@@ -5,10 +5,8 @@ ASEAN_member:0 "ASEAN Member"
 ASEAN_member_desc:0 "Being a member of ASEAN means we can freely trade with neighboring members which can greatly help develop our economy and industrial capabilities."
 
 ### Opinion Modifiers ###
-asean_accepted:0 "Member of ASEAN"
-asean_refused:0 "Refused to Join ASEAN"
-asean_accepted_entry:0 "Accepted our entry to ASEAN"
-asean_refused_entry:0 "Refused our entry to ASEAN"
+ASEAN_accepted_invite:0 "Member of ASEAN"
+ASEAN_refused_invite:0 "Refused to Join ASEAN"
 
 ### Decisions ###
 ASEAN_decisions:0 "ASEAN"

@@ -182,7 +182,6 @@ create_field_marshal = {
     	planning_skill = 3
     	logistics_skill = 4
 } 
-
 create_field_marshal = {
 	name = "Basilio J. Valdez"
 	picture = "Portrait_Philippines_Basilio_J_Valdez.tga"
@@ -195,8 +194,7 @@ create_field_marshal = {
 }
 
 
-### Corps Commander
-
+# Corps Commander
 create_corps_commander = {
 	name = "Alfredo M. Santos"
 	picture = "Portrait_Philippines_Alfredo_M_Santos.tga"
@@ -207,7 +205,6 @@ create_corps_commander = {
     planning_skill = 3
     logistics_skill = 2
 }
-
 create_corps_commander = {
 	name = "Paulino Santos"
 	picture = "Portrait_Philippines_Paulino_Santos.tga"
@@ -218,7 +215,6 @@ create_corps_commander = {
     planning_skill = 3
     logistics_skill = 3
 }
-
 create_corps_commander = { 
 	name = "Mateo Capinpin"
 	picture = "Portrait_Philippines_Mateo_Capinpin.tga"
@@ -229,7 +225,6 @@ create_corps_commander = {
     planning_skill = 3
     logistics_skill = 4
 }
-
 create_corps_commander = {
 	name = "Rafael Jalandoni"
 	picture = "Portrait_Philippines_Rafael_Jalandoni.tga"
@@ -240,7 +235,6 @@ create_corps_commander = {
     planning_skill = 3
     logistics_skill = 1
 }
-
 create_corps_commander = {
 	name = "Manuel F. Cabal"
 	picture = "Portrait_Philippines_Manuel_F_Cabal.tga"
@@ -251,7 +245,6 @@ create_corps_commander = {
     planning_skill = 5
     logistics_skill = 2
 }
-
 create_corps_commander = {
 	name = "Carlos P. Romulo"
 	picture = "Portrait_Philippines_Carlos_P_Romulo.tga"
@@ -262,7 +255,6 @@ create_corps_commander = {
     planning_skill = 1
     logistics_skill = 1
 }
-
 create_corps_commander = {
 	name = "Salipada Pendatun"
 	picture = Portrait_Philippines_Salipada_Pendatun.tga"
@@ -273,6 +265,17 @@ create_corps_commander = {
     planning_skill = 2
     logistics_skill = 1
 }
+create_corps_commander = {
+	name = "Ruperto Kangleon"
+	picture = "Portrait_Philippines_Ruperto_Kangleon.tga"
+	traits = { infantry_officer }
+	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+}
+
 
 create_navy_leader = {
 	name = "Santiago Nuval"
@@ -284,7 +287,6 @@ create_navy_leader = {
 	maneuvering_skill = 2
 	coordination_skill = 3
 }
-
 create_navy_leader = {
 	name = "Eustacio Orobia"
 	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_navy_3.dds"
@@ -295,8 +297,6 @@ create_navy_leader = {
 	maneuvering_skill = 2
 	coordination_skill = 3
 }
-
-
 create_navy_leader = {
 	name = "Jose V. Andrada"
 	portrait_path = "gfx/leaders/JAP/Portrait_Japan_Generic_navy_3.dds"

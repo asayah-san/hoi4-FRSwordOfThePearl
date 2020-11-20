@@ -19,15 +19,10 @@ DEU_social_conservative_party:0 "Zentrum"
 DEU_social_conservative_party_long:0 "Zentrumspartei"
 DEU_authoritarian_democrat_party:0 "OkBw"
 DEU_authoritarian_democrat_party_long:0 "Oberstkommando der Bundeswehr"
-DEU_paternal_autocrat_party:0 "DF"
-DEU_paternal_autocrat_party_long:0 "Deutschnationale Front"
+DEU_paternal_autocrat_party:0 "Transitionary Government"
+DEU_paternal_autocrat_party_long:0 "German Transitionary Government"
 DEU_national_populist_party:0 "RSWR"
 DEU_national_populist_party_long:0 "Reichspartei Schwarz-Weiß-Rot"
-
-DEU_authoritarian_democrat_transitionary:0 "Transitionary Government"
-DEU_authoritarian_democrat_transitionary_long:0 "German Transitionary Government"
-DEU_authoritarian_democrat_okw:0 "OkBw"
-DEU_authoritarian_democrat_okw_long:0 "Oberstkommando der Bundeswehr"
 
 #### Ideas ####
 DEU_valkist_society:0 "Legacy of Valkism in the Society"

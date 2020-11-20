@@ -228,5 +228,60 @@ ideas = {
                 conscription_factor = 0.15
             }
         }
+
+        SIA_for_the_king = {
+            allowed = { original_tag = SIA }
+
+            picture = ast_abandon_the_westminster_system
+
+            modifier = {
+                surrender_limit = 0.05
+            }
+        }
+
+        SIA_reintroduced_conscription = {
+            allowed = { original_tag = SIA }
+
+            picture = chi_army_corruption3
+
+            modifier = {
+                conscription = 0.05
+                conscription_factor = 0.15
+                non_core_manpower = 0.05
+            }
+        }
+
+        SIA_kings_sword_and_shield = {
+            allowed = { original_tag = SIA }
+
+            picture = generic_secret_police
+
+            modifier = {
+                enemy_partisan_effect = -0.25
+				subversive_activites_upkeep = -0.25
+				foreign_subversive_activites = -0.25
+            }
+        }
+
+        SIA_on_our_own = {
+            allowed = { original_tag = SIA }
+
+            picture = triumphant_will
+
+            modifier = {
+                army_core_attack_factor = 0.05
+	            army_core_defence_factor = 0.05
+            }
+        }
+
+        SIA_seeking_friends = {
+            allowed = { original_tag = SIA }
+
+            picture = generic_democratic_drift_bonus
+
+            modifier = {
+                trade_deal_opinion_factor = 0.25
+            }
+        }
     }
 }

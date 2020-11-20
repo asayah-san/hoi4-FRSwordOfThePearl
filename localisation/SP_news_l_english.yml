@@ -53,3 +53,7 @@
  news.13.t:0 "Communist uprising in the [PHI.GetName]"
  news.13.d:0 "[This.GetNewspaperHeader]Fresh news from the [PHI.GetName], communist rebels have seized several government facilities and have successfully taken control over the capital city, [PHI.Capital.GetName]. However, many important government officials have evacuated the city and are in the safety of the Northern region.\n\nGovernment troops are now preparing to counter-attack to take control of the capital city. With the new chaos created by the uprising, most Filipinos find themselves in a new conflict, most of them still remember the horrors of the Filipino-American War."
  news.13.a:0 "What is happening in the world?"
+
+ news.14.t:0 "Direct Rule in Siam"
+ news.14.d:0 "[This.GetNewspaperHeader]The King of Siam, [SIA.GetLeader] has ordered the dissolution of the [SIA.GetAdjective] Legislation and have successfully taken full control of the [SIA.GetAdjective] Government.\n\nMany people are not shocked however, as many of them lived through the years when the King of Siam has ruled with absolute power. The transition was generally peaceful as many within the [SIA.GetAdjective] citizens are still loyal to the King."
+ news.14.a:0 "Asians are so conservative."
