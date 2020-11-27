@@ -49,6 +49,9 @@ if = {
 	}
 }
 
+# 54th Independence Day
+country_event = { id = phi.51 days = 893 }
+
 add_ideas = {
 	PHI_thirst_for_democracy
 	PHI_agriculture_economy
@@ -257,7 +260,7 @@ create_corps_commander = {
 }
 create_corps_commander = {
 	name = "Salipada Pendatun"
-	picture = Portrait_Philippines_Salipada_Pendatun.tga"
+	picture = "Portrait_Philippines_Salipada_Pendatun.tga"
 	traits = { armor_officer commando }
 	skill = 2
 	attack_skill = 2
@@ -399,6 +402,3 @@ if = {
 		}
 	}
 }
-
-# 54th Independence Day
-country_event = { id = phi.51 days = 893 }

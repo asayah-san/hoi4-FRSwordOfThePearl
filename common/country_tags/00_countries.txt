@@ -1,6 +1,7 @@
 # Additions
 DEU = "countries/German Federation.txt"
 SRP = "countries/Socialist Republic of the Philippines.txt"
+SBH = "countries/Sabah.txt"
 
 # Base
 GER	= "countries/Germany.txt"

@@ -73,7 +73,6 @@ focus_tree = {
         x = 1
         y = 4
         cost = 10
-        mutually_exclusive = { focus = SIA_subsidize_corporations }
         prerequisite = { focus = SIA_new_education_curriculum }
         completion_reward = {
             remove_ideas = SIA_economic_mismanagement
@@ -87,7 +86,6 @@ focus_tree = {
         x = 3
         y = 4
         cost = 10
-        mutually_exclusive = { focus = SIA_privatize_public_sectors }
         prerequisite = { focus = SIA_new_education_curriculum }
         completion_reward = {
             random_owned_controlled_state = {

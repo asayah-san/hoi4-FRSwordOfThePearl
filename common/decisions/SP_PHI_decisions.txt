@@ -306,7 +306,7 @@ PHI_seato = {
         visible = { 
             VIN = { 
                 exists = yes
-                NOT = { is_in_faction_with = ROOT }
+                NOT = { is_in_faction_with = PHI }
             } 
         }
 
@@ -328,7 +328,7 @@ PHI_seato = {
         visible = {
             BRM = {
                 exists = yes
-                NOT = { is_in_faction_with = ROOT }
+                NOT = { is_in_faction_with = PHI }
             }
         }
 
@@ -350,7 +350,7 @@ PHI_seato = {
         visible = {
             LAO = {
                 exists = yes
-                NOT = { is_in_faction_with = ROOT }
+                NOT = { is_in_faction_with = PHI }
             }
         }
 
@@ -372,7 +372,7 @@ PHI_seato = {
         visible = {
             CAM = {
                 exists = yes
-                NOT = { is_in_faction_with = ROOT }
+                NOT = { is_in_faction_with = PHI }
             }
         }
 
@@ -394,7 +394,7 @@ PHI_seato = {
         visible = {
             INS = {
                 exists = yes
-                NOT = { is_in_faction_with = ROOT }
+                NOT = { is_in_faction_with = PHI }
             }
         }
 
@@ -416,7 +416,7 @@ PHI_seato = {
         visible = {
             SIA = {
                 exists = yes
-                NOT = { is_in_faction_with = ROOT }
+                NOT = { is_in_faction_with = PHI }
             }
         }
 
@@ -438,7 +438,7 @@ PHI_seato = {
         visible = {
             MAL = {
                 exists = yes
-                NOT = { is_in_faction_with = ROOT }
+                NOT = { is_in_faction_with = PHI }
             }
         }
 
@@ -470,7 +470,7 @@ PHI_question_of_occupied_territories = {
         cost = 150
 
         complete_effect = {
-            add_state_core = 785
+            country_event = { id = annex.11 }
         }
     }
 

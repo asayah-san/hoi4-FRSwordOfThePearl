@@ -11,6 +11,10 @@ PHI = {
 	color = rgb { 200 200 100 }
 	color_ui = rgb { 200 200 100 }
 }
+SBH = {
+	color = rgb { 126 203 120 }
+	color_ui = rgb { 126 203 120 }
+}
 
 # base
 GER = {

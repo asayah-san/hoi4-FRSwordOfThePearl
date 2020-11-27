@@ -1,7 +1,9 @@
 PHI_department_of_foreign_affairs_decisions = {
     allowed = { original_tag = PHI }
 
-    visible = { has_completed_focus = PHI_department_of_foreign_affairs }
+    visible = { 
+        has_completed_focus = PHI_department_of_foreign_affairs
+    }
 
     priority = { base = 10 }
 
@@ -13,7 +15,6 @@ PHI_seato_decisions = {
 
     visible = { 
         has_completed_focus = PHI_no_more_colonialism
-        is_faction_leader = yes
     }
 
     priority = { base = 10 }
@@ -32,7 +33,9 @@ PHI_question_of_occupied_territories = {
 PHI_state_fundings = {
     allowed = { original_tag = PHI }
 
-    visible = { has_completed_focus = PHI_funding_for_state_investments }
+    visible = { 
+        has_completed_focus = PHI_funding_for_state_investments
+    }
 
     priority = { base = 5 }
 

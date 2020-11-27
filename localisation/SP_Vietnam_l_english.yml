@@ -17,7 +17,7 @@
  VIN_social_conservative_party_long:0 "Progressive Party"
  VIN_authoritarian_democrat_party:0 "Khoi Quoc Gia Lian Hiep"
  VIN_authoritarian_democrat_party_long:0 "National Union Bloc"
- VIN_paternal_autocrat_party:0 Dang Bao Hoang"
+ VIN_paternal_autocrat_party:0 "Dang Bao Hoang"
  VIN_paternal_autocrat_party_long:0 "Royalist Party"
  VIN_national_populist_party:0 "Cao Dai"
  VIN_national_populist_party_long:0 "The Great Faith for the Third Universal Redemption"
@@ -45,7 +45,6 @@
  VIN_DEMOCRAT_VICTORY_FLAG:0 "The Democrats have won the first elections"
  VIN_LIBERAL_VICTORY_FLAG:0 "The Liberals have won the first elections"
  VIN_CONSERVATIVE_VICTORY_FLAG:0 "The Conservatives have won the first elections"
- VIN_RADICAL_VICTORY_FLAG:0 "The Radicals have won the first elections"
 
  ##### Focus #####
  VIN_independence:0 "Independence!"
@@ -237,8 +236,15 @@
  VIN_a_functioning_government_desc:0 ""
 
  ##### Events #####
- viet.1.t:0 "Question of Union Activities"
- viet.1.d:0 "The Trade Unions were indirectly responsible in some unfortunate events that happened; they can even be linked to the Socialist Party which can endanger the very freedom of the public or the government itself."
- viet.1.a:0 "Ban them outright"
- viet.1.b:0 "Just ignore them"
+ viet.1.t:0 "First Elections"
+ viet.1.d:0 "Today marks a historic day for the [VIN.GetAdjective] nation, as the country is helding its first election since our independence. People are gathering up in election polls to choose their preferred party."
+ viet.1.a:0 "The Democrats"
+ viet.1.b:0 "The Liberals"
+ viet.1.c:0 "The Conservatives"
+ viet.1.e:0 "The Socialists"
+
+ viet.2.t:0 "Question of Union Activities"
+ viet.2.d:0 "The Trade Unions were indirectly responsible in some unfortunate events that happened; they can even be linked to the Socialist Party which can endanger the very freedom of the public or the government itself."
+ viet.2.a:0 "Ban them outright"
+ viet.2.b:0 "Just ignore them"
  

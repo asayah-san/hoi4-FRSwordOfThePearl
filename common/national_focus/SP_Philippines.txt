@@ -504,7 +504,10 @@ focus_tree = {
         prerequisite = { focus = PHI_control_trade_unions }
         completion_reward = {
             every_country = {
-                limit = { is_major = yes }
+                limit = { 
+                    is_major = yes
+                    NOT = { tag = PHI }
+                }
                 country_event = { id = phi.22 }
             }
         }
@@ -1952,7 +1955,7 @@ focus_tree = {
             JAP = {
                 add_opinion_modifier = {
                     target = PHI
-                    modifier = diplomatic_mission
+                    modifier = PHI_diplomatic_mission
                 } 
             }
         }
@@ -2044,7 +2047,7 @@ focus_tree = {
             ENG = {
                 add_opinion_modifier = {
                     target = PHI
-                    modifier = diplomatic_mission
+                    modifier = PHI_diplomatic_mission
                 }
             }
         }
@@ -2159,10 +2162,6 @@ focus_tree = {
                 set_country_flag = PHI_DECLARED_SELF_RELIANCE
                 set_major = yes
             }
-            ENG = { add_opinion_modifier = { target = PHI modifier = renounced_imperialism } }
-            GER = { add_opinion_modifier = { target = PHI modifier = renounced_imperialism } }
-            JAP = { add_opinion_modifier = { target = PHI modifier = renounced_imperialism } }
-            USA = { add_opinion_modifier = { target = PHI modifier = renounced_imperialism } }
         }
     }
 
@@ -2184,7 +2183,7 @@ focus_tree = {
             SOV = {
                 add_opinion_modifier = {
                     target = PHI
-                    modifier = diplomatic_mission
+                    modifier = PHI_diplomatic_mission
                 }
                 country_event = { id = phi.33 }
             }
@@ -2419,7 +2418,7 @@ focus_tree = {
         bypass = { LAO = { exists = yes } }
         prerequisite = { focus = PHI_demand_french_colonial_holdings }
         completion_reward = {
-            country_event = { id = annex.5 }
+            country_event = { id = annex.4 }
         }
     }
 
@@ -2473,7 +2472,7 @@ focus_tree = {
             GER = {
                 add_opinion_modifier = {
                     target = PHI
-                    modifier = diplomatic_mission
+                    modifier = PHI_diplomatic_mission
                 }
             }
         }
@@ -2568,7 +2567,7 @@ focus_tree = {
             USA = {
                 add_opinion_modifier = {
                     target = PHI
-                    modifier = diplomatic_mission
+                    modifier = PHI_diplomatic_mission
                 }
             }
         }
@@ -3327,7 +3326,7 @@ focus_tree = {
     # Abolish the Assembly
     focus = {
         id = PHI_abolish_the_assembly
-        icon = GFX_focus_renounce_the_treaty_of_triannon
+        icon = GFX_goal_COS_Ferrer_Coup
         x = 36
         y = 9
         cost = 5

@@ -970,7 +970,7 @@ focus_tree = {
                 limit = { is_subject_of = PHI }
                 PHI = { end_puppet = VIN }
             }
-            country_event = { id = vietnam.1 }
+            country_event = { id = viet.1 }
         }
     }
 
@@ -1616,7 +1616,7 @@ focus_tree = {
         y = 5
         prerequisite = { focus = VIN_arrest_radical_elements }
         completion_reward = {
-            country_event = { id = viet.1 }
+            country_event = { id = viet.2 }
         }
     }
 

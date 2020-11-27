@@ -8,6 +8,7 @@ POLITICS_MANUEL_LUIS_QUEZON_DESC:0 "Manuel Quezon was born on Aug. 19, 1878, to 
 POLITICS_MANUEL_ROXAS_DESC:0 "Manuel A. Roxas was governor of the province of Capiz in 1919–21 and was then elected to the Philippine House of Representatives, subsequently serving as Speaker of the House and a member of the Council of State. In 1923 he and Manuel Quezon, the president of the Senate, resigned in protest from the Council of State when the U.S. governor-general (Leonard Wood) began vetoing bills passed by the Philippine legislature. In 1932 Roxas and Sergio Osmeña, the Nacionalista Party leader, led the Philippine Independence Mission to Washington, D.C., where they influenced the passage of the Hare-Hawes-Cutting Act. Roxas was later opposed by Quezon, who held that the act compromised future Philippine independence; the Nacionalista Party was split between them on this issue. In 1934, however, Roxas was a member of the convention that drew up a constitution under the revised Philippine Independence and Commonwealth Act."
 POLITICS_EMILIO_AGUINALDO_DESC:0 "Emilio Aguinaldo was born on March 22, 1869, in Kawit, Cavite, Philippines. Nicknamed Miong, Aguinaldo was the seventh of eight children. His parents were of Chinese and Tagalog descent. His father, Carlos, died when Aguinaldo was just nine years old. Widowed, his mother, Trinidad, sent him to attend public school in Manila.\n\nWhile serving as the head of barter in Manila, he joined the Pilar Lodge chapter of the Freemasonry in 1895. The Freemasonry was a government- and church-banned resistance group. It was through his role as municipal captain of this fraternity that Aguinaldo met Andres Bonifacio, a key figure in the fight to overthrow Spanish rule."
 POLITICS_BASILIO_J_VALDEZ_DESC:0 "Basilio J. Valdes was professor of Surgery at the University of Santo Tomas (UST), Manila and Medical Director of Our Lady of Lourdes Hospital. He was appointed chief-of-staff of the Philippine Constabulary in the 1930s.\n\nHonest, hardworking, and conscientious, Dr. Valdes and his achievements here and abroad have given prestige to his country and to himself. He went to France and joined the French Army as medical volunteer in 1916. He transferred to the U.S. Army a year after and continued to serve as surgeon until 1919. In February of the same year, he was appointed member of the Inter- Allied Commission to Germany; made chief of the Medical Service of the American Red Cross Commission to Germany, and later appointed Deputy Commissioner of the American Red Cross in Europe."
+POLITICS_JOSE_P_LAUREL_DESC:0 "Jose P. Laurel, in full José Paciano Laurel, was born March 9, 1891, Tanauan, Luzon. Laurel was born and raised in a town south of Manila. His father served in the cabinet of Emilio Aguinaldo in the late 1890s. The younger Laurel received a law degree from the University of the Philippines in 1915 and an advanced jurisprudence degree in 1919 before earning a doctorate in civil law from Yale University in the United States in 1920. He entered politics and was elected to the Philippine Senate in 1925, serving there until he was appointed as Interim President of the new Philippine Republic."
 
 ##### Decisions #####
 PHI_department_of_foreign_affairs_decisions:0 "Department of Foreign Affairs"
@@ -82,7 +83,7 @@ PHI_libertarian_socialist_factions_long:0 "Liberal Faction of the Communist Part
 PHI_authoritarian_democrat_post_war:0 "Occupational Authority"
 PHI_authoritarian_democrat_post_war_long:0 "Filipino Occupational Authority"
 
-###  Flags ###
+#####  Flags #####
 PHI_DEMOCRACY_RETURNS_FLAG:0 "Elections are being prepared by the Interim Government"
 PHI_LP_VICTORY_FLAG:0 "Partido Liberal has won the [GetYear] Elections"
 PHI_PP_VICTORY_FLAG:0 "Partido Progressista has won the [GetYear] Elections"
@@ -203,13 +204,14 @@ PHI_soviet_aid_military:0 "Soviet Aid for the Army"
 PHI_soviet_aid_industry:0 "Soviet Aid for the Industries"
 PHI_tax_reform:0 "Tax Reform"
 PHI_financial_support:0 "Financial Support"
-PHI_the_loan_red_star_idea:0 "The Lone Red Star"
+PHI_the_lone_red_star_idea:0 "The Lone Red Star"
 
 ##### Opinion Modifiers #####
 PHI_economic_investment:0 "Provided Economic Investments"
 PHI_trade_treaty_accepted:0 "Trade Treaty Accepted"
 PHI_trade_treaty_refused:0 "Trade Treaty Refused"
 PHI_aid_accepted:0 "Provided Aid"
+PHI_diplomatic_mission:0 "Diplomatic Mission"
 
 ##### Focus #####
 # Democratic

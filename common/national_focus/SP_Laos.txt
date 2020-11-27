@@ -18,124 +18,248 @@ focus_tree = {
     focus = {
         id = LAO_the_armed_forces
         icon = GFX_focus_RAJ_indian_gentlemen_offcers   
-        x = 7
+        x = 6
         y = 0
-        cost = 10
-        completion_reward = {}
+        cost = 5
+        completion_reward = {
+            army_experience = 5
+            navy_experience = 5
+            air_experience = 5
+        }
     }
 
     # Army
     focus = {
         id = LAO_army_focus
         icon = GFX_goal_generic_allies_build_infantry
-        x = 4
+        x = 3
         y = 1
         cost = 3
         prerequisite = { focus = LAO_the_armed_forces }
+        completion_reward = {
+            army_experience = 10
+        }
     }
 
     # Fortify the Borders
     focus = {
         id = LAO_fortify_the_borders
         icon = GFX_goal_fortify_the_westwall
-        x = 2
+        x = 1
         y = 2
         cost = 10
         prerequisite = { focus = LAO_army_focus }
+        completion_reward = {
+            960 = {
+                add_building_construction = {
+                    province = 4568
+                    type = bunker
+                    level = 5
+                }
+                add_building_construction = {
+                    province = 12433
+                    type = bunker
+                    level = 5
+                }
+                add_building_construction = {
+                    province = 12392
+                    type = bunker
+                    level = 5
+                }
+                add_building_construction = {
+                    province = 7103
+                    type = bunker
+                    level = 5
+                }
+                add_building_construction = {
+                    province = 1507
+                    type = bunker
+                    level = 5
+                }
+            }
+            959 = {
+                add_building_construction = {
+                    province = 10456
+                    type = bunker
+                    level = 5
+                }
+                add_building_construction = {
+                    province = 10330
+                    type = bunker
+                    level = 5
+                }
+                add_building_construction = {
+                    province = 10356
+                    type = bunker
+                    level = 5
+                }
+            }
+            670 = {
+                add_building_construction = {
+                    province = 1464
+                    type = bunker
+                    level = 5
+                }
+                add_building_construction = {
+                    province = 12332
+                    type = bunker
+                    level = 5
+                }
+            }
+        }
     }
 
     # Army Motorization
     focus = {
         id = LAO_army_motorization
         icon = GFX_goal_generic_army_motorized
-        x = 4
+        x = 3
         y = 2
         cost = 10
         prerequisite = { focus = LAO_army_focus }
+        completion_reward = {
+            add_tech_bonus = {
+                category = motorized_equipment
+                bonus = 1.0
+                uses = 1
+            }
+        }
     }
 
     # Firepower
     focus = {
         id = LAO_firepower_focus
         icon = GFX_goal_generic_army_artillery
-        x = 2
+        x = 1
         y = 3
         cost = 10
         mutually_exclusive = { focus = LAO_speed_focus }
         prerequisite = { focus = LAO_army_motorization }
+        completion_reward = {
+            add_tech_bonus = {
+                category = cat_superior_firepower
+                bonus = 1.0
+                uses = 2
+            }
+        }
     }
 
     # Equipment Standardization
     focus = {
         id = LAO_equipment_standardization
         icon = GFX_goal_generic_small_arms
-        x = 2
+        x = 1
         y = 4
         cost = 5
         prerequisite = { focus = LAO_firepower_focus }
+        completion_reward = {
+            add_tech_bonus = {
+                category = infantry_equipment
+                bonus = 1.0
+                uses = 1
+            }
+        }
     }
 
     # Artillery Modernization
     focus = {
         id = LAO_artillery_modernization
         icon = GFX_goal_generic_army_artillery2
-        x = 2
+        x = 1
         y = 5
         cost = 5
         prerequisite = { focus = LAO_equipment_standardization }
+        completion_reward = {
+            add_tech_bonus = {
+                category = artillery_equipment
+                bonus = 1.0
+                uses = 1
+            }
+        }
     }
 
     # Speed
     focus = {
         id = LAO_speed_focus
         icon = GFX_goal_generic_cavalry
-        x = 4
+        x = 3
         y = 3
         cost = 10
         mutually_exclusive = { focus = LAO_firepower_focus }
         prerequisite = { focus = LAO_army_focus }
+        completion_reward = {
+            add_tech_bonus = {
+                category = cat_mobile_warfare
+                bonus = 1.0
+                uses = 2
+            }
+        }
     }
 
     # Improved Reconnaissance
     focus = {
         id = LAO_improved_reconnaissance
         icon = GFX_goal_generic_more_territorial_claims
-        x = 4
+        x = 3
         y = 4
         cost = 5
         prerequisite = { focus = LAO_speed_focus }
+        completion_reward = {
+            add_tech_bonus = {
+                category = recon_tech
+                bonus = 1.0
+                uses = 1
+            }
+        }
     }
 
     # Tank Experimentation
     focus = {
-        id = LAO_tank_exprimentation
+        id = LAO_tank_experimentation
         icon = GFX_goal_generic_army_tanks
-        x = 4
+        x = 3
         y = 5
         cost = 5
         prerequisite = { focus = LAO_improved_reconnaissance }
+        completion_reward = {
+            add_tech_bonus = {
+                category = armor
+                bonus = 1.0
+                uses = 1
+            }
+        }
     }
 
     # New Tactics
     focus = {
         id = LAO_new_tactics
         icon = GFX_goal_generic_army_doctrines
-        x = 1
+        x = 0
         y = 6
         cost = 10
         prerequisite = { focus = LAO_artillery_modernization }
+        completion_reward = {
+            add_tech_bonus = {
+                category = cat_superior_firepower
+                bonus = 1.0
+                uses = 1
+            }
+        }
     }
 
     # Organize the General Staff
     focus = {
         id = LAO_organize_the_general_staff
         icon = GFX_focus_generic_little_entente
-        x = 3
+        x = 2
         y = 6
         cost = 10
         prerequisite = {
-            focus = LAO_tank_exprimentation
+            focus = LAO_tank_experimentation
             focus = LAO_artillery_modernization
+        }
+        completion_reward = {
+            add_ideas = LAO_general_staff
         }
     }
 
@@ -143,11 +267,18 @@ focus_tree = {
     focus = {
         id = LAO_lightning_war
         icon = GFX_goal_planning_bonus
-        x = 5
+        x = 4
         y = 6
         cost = 10
         prerequisite = {
             focus = LAO_tank_exprimentation
+        }
+        completion_reward = {
+            add_tech_bonus = {
+                category = cat_mobile_warfare
+                bonus = 1.0
+                uses = 2
+            }
         }
     }
 
@@ -155,102 +286,164 @@ focus_tree = {
     focus = {
         id = LAO_navy_focus
         icon = GFX_goal_generic_build_navy
-        x = 7
+        x = 6
         y = 1
         cost = 3
         prerequisite = { focus = LAO_the_armed_forces }
+        completion_reward = {
+            navy_experience = 10
+        }
     }
 
     # Marines
     focus = {
         id = LAO_marines_focus
         icon = GFX_goal_generic_amphibious_assault
-        x = 6
+        x = 5
         y = 3
         cost = 10
         prerequisite = { focus = LAO_navy_focus }
         prerequisite = { focus = LAO_army_motorization }
+        completion_reward = {
+            add_tech_bonus = {
+                category = marine_tech
+                bonus = 1.0
+                uses = 1
+            }
+        }
     }
 
     # Naval Bombers
     focus = {
         id = LAO_naval_bombers_research
         icon = GFX_goal_generic_air_naval_bomber
-        x = 8
+        x = 7
         y = 3
         cost = 10
         prerequisite = { focus = LAO_navy_focus }
         prerequisite = { focus = LAO_fighter_research }
+        completion_reward = {
+            add_tech_bonus = {
+                category = naval_bomber
+                bonus = 1.0
+                uses = 1
+            }
+        }
     }
 
     # Air Force
     focus = {
         id = LAO_air_force_focus
         icon = GFX_goal_generic_build_airforce
-        x = 10
+        x = 9
         y = 1
         cost = 3
         prerequisite = { focus = LAO_the_armed_forces }
+        completion_reward = {
+            air_experience = 10
+        }
     }
 
     # Fighter Research
     focus = {
         id = LAO_fighter_research
         icon = GFX_goal_generic_air_fighter
-        x = 10
+        x = 9
         y = 2
         cost = 10
         prerequisite = { focus = LAO_air_force_focus }
+        completion_reward = {
+            add_tech_bonus = {
+                category = light_fighter
+                bonus = 1.0
+                uses = 1
+            }
+        }
     }
 
     # CAS Research
     focus = {
         id = LAO_cas_research
         icon = GFX_goal_generic_CAS
-        x = 10
+        x = 9
         y = 3
         cost = 10
         prerequisite = { focus = LAO_fighter_research }
+        completion_reward = {
+            add_tech_bonus = {
+                category = cas_bomber
+                bonus = 1.0
+                uses = 1
+            }
+        }
     }
 
     # Bomber Research
     focus = {
         id = LAO_bomber_research
         icon = GFX_goal_generic_air_bomber
-        x = 12
+        x = 11
         y = 2
         cost = 10
         prerequisite = { focus = LAO_air_force_focus }
+        completion_reward = {
+            add_tech_bonus = {
+                category = tactical_bomber
+                bonus = 1.0
+                uses = 1
+            }
+        }
     }
 
     # Strategic Bomber Research
     focus = {
         id = LAO_strategic_bomber_research
         icon = GFX_goal_generic_occupy_start_war
-        x = 12
+        x = 11
         y = 3
         cost = 10
         prerequisite = { focus = LAO_bomber_research }
+        completion_reward = {
+            add_tech_bonus = {
+                category = cat_strategic_bomber
+                bonus = 1.0
+                uses = 1
+            }
+        }
     }
 
     # Air to Ground Doctrines
     focus = {
         id = LAO_air_to_ground_doctrines
         icon = GFX_goal_generic_air_doctrine
-        x = 11
+        x = 10
         y = 4
         cost = 10
         prerequisite = { focus = LAO_cas_research }
         prerequisite = { focus = LAO_strategic_bomber_research }
+        completion_reward = {
+            add_tech_bonus = {
+                category = air_doctrine
+                bonus = 1.0
+                uses = 2
+            }
+        }
     }
 
     # Rocketry Investments
     focus = {
         id = LAO_rocketry_investments
         icon = GFX_focus_rocketry
-        x = 11
+        x = 10
         y = 5
         cost = 10
         prerequisite = { focus = LAO_air_to_ground_doctrines }
+        completion_reward = {
+            add_tech_bonus = {
+                category = rocketry
+                bonus = 1.0
+                uses = 2
+            }
+        }
     }
 }

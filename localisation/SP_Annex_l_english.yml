@@ -49,15 +49,22 @@
  annex.7.a:0 "Supervise a [SIA.GetAdjective] State"
 
  annex.8.t:0 "Fate of Japan"
- annex.8.d:0 "The recent events has left us in control of [JAP.GetAdjective] territories; and now the fate of theese territories and its citizens now rests in our hands."
+ annex.8.d:0 "The recent events has left us in control of [JAP.GetAdjective] territories; and now the fate of these territories and its citizens now rests in our hands."
  annex.8.a:0 "Supervise a [JAP.GetAdjective] State"
 
  annex.9.t:0 "Fate of Korea"
- annex.9.d:0 "The recent events has left us in control of [KOR.GetAdjective] territories; and now the fate of theese territories and its citizens now rests in our hands."
+ annex.9.d:0 "The recent events has left us in control of [KOR.GetAdjective] territories; and now the fate of these territories and its citizens now rests in our hands."
  annex.9.a:0 "Supervise a [KOR.GetAdjective] State"
 
  annex.10.t:0 "Fate of the Philippines"
- annex.10.d:0 "The recent events has left us in control of [PHI.GetAdjective] territories; and now the fate of theese territories and its citizens now rests in our hands."
+ annex.10.d:0 "The recent events has left us in control of [PHI.GetAdjective] territories; and now the fate of these territories and its citizens now rests in our hands."
  annex.10.a:0 "Bring back the Insular Government"
  annex.10.b:0 "Create a Dominion of the Philippines"
  annex.10.c:0 "Supervise a [PHI.GetAdjective] State"
+
+ annex.11.t:0 "Fate of Sabah"
+ annex.11.d:0 "The recent events has left us in control of [SBH.GetAdjective] territories; and now the fate of these territories and its citizens now rests in our hands."
+ annex.11.a:0 "Annex it completely"
+ annex.11.b:0 "Create the Autonomous Region of [SBH.GetName]"
+ annex.11.c:0 "Give it to [PHI.GetName]"
+ annex.11.e:0 "Give it to [INS.GetName]"

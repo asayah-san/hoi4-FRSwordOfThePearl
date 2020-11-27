@@ -27,7 +27,7 @@ country_event = {
         if = {
             limit = { has_dlc = "Together for Victory" }
             set_autonomy = {
-                autonomy_state = autonomy_dominion
+                autonomy_state = SP_sponsored_state
                 target = BRM
             }
         }
@@ -78,7 +78,7 @@ country_event = {
             limit = { has_dlc = "Together for Victory" }
             set_autonomy = {
                 target = CAM
-                autonomy_state = autonomy_dominion
+                autonomy_state = SP_sponsored_state
             }
         }
         if = {
@@ -145,7 +145,7 @@ country_event = {
             limit = { has_dlc = "Together for Victory" } 
             set_autonomy = {
                 target = INS
-                autonomy_state = autonomy_dominion
+                autonomy_state = SP_sponsored_state
             }
         }
         if = {
@@ -193,7 +193,7 @@ country_event = {
             limit = { has_dlc = "Together for Victory" }
             set_autonomy = {
                 target = LAO
-                autonomy_state = autonomy_dominion
+                autonomy_state = SP_sponsored_state
             }
         }
         if = {
@@ -241,7 +241,7 @@ country_event = {
                 limit = { has_dlc = "Together for Victory" } 
                 set_autonomy = {
                     target = MAL
-                    autonomy_state = autonomy_dominion
+                    autonomy_state = SP_sponsored_state
                 }
             }
             if = {
@@ -293,7 +293,7 @@ country_event = {
             limit = { has_dlc = "Together for Victory" } 
             set_autonomy = {
                 target = VIN
-                autonomy_state = autonomy_dominion
+                autonomy_state = SP_sponsored_state
             }
         }
         if = {
@@ -479,7 +479,7 @@ country_event = {
         if = {
             limit = { has_dlc = "Together for Victory" }
             set_autonomy = {
-                autonomy_state = autonomy_dominion
+                autonomy_state = SP_sponsored_state
                 target = PHI
             }
         }
@@ -516,6 +516,81 @@ country_event = {
                 NOT = { has_dlc = "Together for Victory" }
             }
             puppet = PHI
+        }
+    }
+}
+
+# Sabah
+country_event = {
+    id = annex.11
+    title = annex.11.t
+    desc = annex.11.d
+    
+    is_triggered_only = yes
+
+    option = {
+        name = annex.11.a
+        trigger = {
+            tag = PHI
+        }
+
+        PHI = { add_state_core = 785 }
+    }
+
+    option = {
+        name = annex.11.b
+
+        SBH = { 
+            add_state_core = 785
+            transfer_state = 785
+        }
+
+        if = {
+            limit = { has_dlc = "Together for Victory" }
+            set_autonomy = {
+                target = SBH
+                autonomy_state = SP_administrative_region
+            }
+        }
+        if = {
+            limit = {
+                NOT = { has_dlc = "Together for Victory" }
+            }
+            puppet = SBH
+        }
+    }
+
+    option = {
+        name = annex.11.c
+
+        trigger = {
+            NOT = { tag = PHI }
+        }
+
+        PHI = {
+            transfer_state = 785
+            add_state_core = 785
+        }
+        INS = {
+            remove_state_core = 785
+            add_state_claim = 785
+        }
+    }
+
+    option = {
+        name = annex.11.e
+
+        trigger = {
+            NOT = { tag = INS }
+        }
+
+        INS = {
+            transfer_state = 785
+            add_state_core = 785
+        }
+        PHI = {
+            remove_state_core = 785
+            add_state_claim = 785
         }
     }
 }

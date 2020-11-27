@@ -9,6 +9,7 @@ opinion_modifiers = {
     PHI_trade_treaty_accepted = { value = 50 }
     PHI_trade_treaty_refused = { value = -50 }
     PHI_aid_accepted = { value = 50 }
+    PHI_diplomatic_mission = { value = 25 }
 
     # Siam
     SIA_reaffirmed_territorial_claims = { value = -75 }
