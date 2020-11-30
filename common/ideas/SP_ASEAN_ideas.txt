@@ -13,6 +13,5 @@ ideas = {
 		        local_resources = 0.1
             }
         }
-
     }
 }

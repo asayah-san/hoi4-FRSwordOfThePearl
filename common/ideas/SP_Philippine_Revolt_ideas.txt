@@ -1,8 +1,8 @@
 ideas = {
     country = {
 
-        SRP_the_second_revolution = {
-            allowed = { original_tag = SRP }
+        PHR_the_second_revolution = {
+            allowed = { original_tag = PHR }
 
             picture = generic_victors_of_ww1
 
@@ -13,8 +13,8 @@ ideas = {
             }
         }
 
-        SRP_political_factionism = {
-            allowed = { original_tag = SRP }
+        PHR_political_factionism = {
+            allowed = { original_tag = PHR }
 
             picture = UK_politics_syn_idea
 
@@ -25,8 +25,8 @@ ideas = {
             }
         }
 
-        SRP_no_proper_army = {
-            allowed = { original_tag = SRP }
+        PHR_no_proper_army = {
+            allowed = { original_tag = PHR }
 
             picture = MEX_revolutionary_army
 

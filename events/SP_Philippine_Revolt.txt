@@ -1,9 +1,9 @@
-add_namespace = srp
+add_namespace = phr
 
 country_event = {
-    id = srp.1
-    title = srp.1.t
-    desc = srp.1.d
+    id = phr.1
+    title = phr.1.t
+    desc = phr.1.d
     picture = GFX_report_event_german_troops_paris
 
     is_triggered_only = yes
@@ -18,7 +18,7 @@ country_event = {
     }
 
     option = {
-        name = srp.1.a
+        name = phr.1.a
 
         every_owned_state = {
             damage_building = {

@@ -1497,7 +1497,7 @@ focus_tree = {
         prerequisite = { focus = CHI_attack_fengtian }
         prerequisite = { focus = CHI_attack_the_beijing_government }
         completion_reward = {
-            set_cosmetic_tag = CHI_unified
+            remove_cosmetic_tag = CHI_fragmented
             every_state = {
                 limit = { is_core_of = MAL }
                 remove_core_of = MAL
@@ -1516,6 +1516,16 @@ focus_tree = {
         x = 32
         y = 4
         cost = 10
+        available = {
+            custom_trigger_tooltip = {
+                tooltip = CHI_is_china_unified_tt
+                MAL = { exists = no }
+                ZHI = { exists = no }
+                SCH = { exists = no }
+                YUN = { exists = no }
+                XSM = { exists = no }
+            }
+        }
         prerequisite = { focus = CHI_unification_of_china }
         completion_reward = {
             create_wargoal = {

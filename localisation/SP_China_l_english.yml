@@ -198,6 +198,9 @@
  CHI_macau_claim:0 "Macau Claim"
  CHI_macau_claim_desc:0 ""
 
+ #### Custom Triggers #####
+ CHI_is_china_unified_tt:0 "Warlord Cliques have been subjugated and rival governments have been dissolved"
+
  ##### Events #####
  china.1.t:0 "Generalissimo assumes control"
  china.1.d:0 "Today marks a new era for China, as Generalissimo Chiang have succeeded taking full control over the National Government. It seems however, that various groups are opposing these change, as some argued that the National Government have successfully became another warlord state in China."

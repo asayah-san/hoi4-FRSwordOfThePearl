@@ -860,7 +860,19 @@ focus_tree = {
         cost = 10
         prerequisite = { focus = SIA_demand_our_north_western_territories }
         prerequisite = { focus = SIA_demand_our_eastern_territories }
-        completion_reward = {}
+        completion_reward = {
+            SIA = {
+                add_state_core = 1007
+            
+                add_state_core = 962
+                add_state_core = 963
+                add_state_core = 741
+
+                add_state_core = 959
+                add_state_core = 960
+                add_state_core = 670
+            }
+        }
     }
 
     # Imperial Trading
@@ -967,6 +979,11 @@ focus_tree = {
         x = 36
         y = 5
         cost = 10
+        bypass = {
+            PHI = {
+                is_in_faction_with = SIA
+            }
+        }
         available = {
             PHI = {
                 exists = yes
@@ -987,6 +1004,11 @@ focus_tree = {
         x = 38
         y = 5
         cost = 10
+        bypass = {
+            INS = {
+                is_in_faction_with = SIA
+            }
+        }
         available = {
             INS = {
                 exists = yes

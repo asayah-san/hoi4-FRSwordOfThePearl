@@ -207,6 +207,7 @@ country_event = {
 
         custom_effect_tooltip = PHI_lp_victory_effect
         hidden_effect = {
+            set_country_flag = coalition_social_liberal
             add_popularity = {
                 ideology = market_liberal
                 popularity = 0.2
@@ -1038,10 +1039,10 @@ country_event = {
         custom_effect_tooltip = PHI_communist_revolt_effect
         hidden_effect = {
 
-            release = SRP
-            SRP = {
-                set_cosmetic_tag = SRP_uprising
-                load_oob = "SRP_civil_war" 
+            release = PHR
+            PHR = {
+                set_cosmetic_tag = PHR_uprising
+                load_oob = "PHR_revolt" 
 
                 add_state_core = 327
                 transfer_state = 327

@@ -392,6 +392,7 @@ ideas = {
 
             modifier = {
                 improve_relations_maintain_cost_factor = -0.25
+                trade_opinion_factor = 0.15
             }
         }
 

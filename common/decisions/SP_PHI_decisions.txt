@@ -519,10 +519,14 @@ PHI_occupation_of_germany = {
         complete_effect = {
             every_state = {
                 limit = {
-                    is_core_of = GER
+                    OR = {
+                        is_core_of = GER
+                        is_core_of = GRP
+                    }
                 }
                 add_core_of = DEU
                 remove_core_of = GER
+                remove_core_of = GRP
             }
 
             release = DEU

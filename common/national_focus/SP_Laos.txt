@@ -154,7 +154,7 @@ focus_tree = {
         prerequisite = { focus = LAO_firepower_focus }
         completion_reward = {
             add_tech_bonus = {
-                category = infantry_equipment
+                category = infantry_weapons
                 bonus = 1.0
                 uses = 1
             }
@@ -171,7 +171,7 @@ focus_tree = {
         prerequisite = { focus = LAO_equipment_standardization }
         completion_reward = {
             add_tech_bonus = {
-                category = artillery_equipment
+                category = artillery
                 bonus = 1.0
                 uses = 1
             }

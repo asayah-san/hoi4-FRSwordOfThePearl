@@ -1,6 +1,6 @@
 
 # Default #
-PHI_default_plan_1 = {
+PHI_default_plan = {
     name = "Brothers United"
     desc = "AI will prioritise liberating neighbouring asian nations and creating an economic and military alliance"
 
@@ -33,7 +33,7 @@ PHI_default_plan_1 = {
         PHI_finish_industrialization_program                    # 70 days
   
         PHI_department_of_finance_focus                         # 35 days
-        PHI_increase_research                                   # 35 days
+        PHI_department_of_science_and_technology_focus          # 70 days
 
         # Focus on other buffs
         PHI_department_of_labour_and_employment_focus           # 35 days
@@ -42,11 +42,9 @@ PHI_default_plan_1 = {
         PHI_valdez_reform                                       # 35 days
         PHI_expand_the_navy                                     # 21 days 
         PHI_large_navy                                          # 35 days
-        PHI_submarine_modernization                             # 70 days
         PHI_expand_the_air_force                                # 21 days
         PHI_filipino_high_command                               # 70 days
         PHI_worker_subsidies_focus                              # 70 days
-        PHI_destroyer_modernization                             # 70 days
         
         PHI_department_of_foreign_affairs                       # 21 days
         PHI_no_more_colonialism                                 # 35 days
@@ -56,13 +54,13 @@ PHI_default_plan_1 = {
         PHI_soviet_engineering                                  # 14 days
         PHI_demand_french_colonial_holdings                     # 70 days
         PHI_demand_british_colonial_holdings                    # 70 days
-        PHI_indonesian_independence
-        PHI_vietnamese_independence
-        PHI_lao_independence
-        PHI_malayan_independence
-        PHI_burmese_independence
-        PHI_cambodian_independence
-        PHI_asean_focus
+        PHI_indonesian_independence                             # 35 days
+        PHI_vietnamese_independence                             # 35 days
+        PHI_lao_independence                                    # 35 days
+        PHI_malayan_independence                                # 35 days
+        PHI_burmese_independence                                # 35 days
+        PHI_cambodian_independence                              # 35 days
+        PHI_asean_focus                                         # 35 days
     }
 
     weight = {
@@ -77,14 +75,13 @@ PHI_default_plan_1 = {
         cat_superior_firepower = 20.0
         industry = 10.0
         electronics = 10.0
-
+        infantry_weapons = 5.0
     }
 
     focus_factors = {
         PHI_rotc_focus
         PHI_root_out_communists
     }
-
 }
 
 PHI_alternate_plan_1 = {

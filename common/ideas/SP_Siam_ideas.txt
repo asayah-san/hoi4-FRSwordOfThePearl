@@ -280,7 +280,8 @@ ideas = {
             picture = generic_democratic_drift_bonus
 
             modifier = {
-                trade_deal_opinion_factor = 0.25
+                trade_opinion_factor = 0.25
+                improve_relations_maintain_cost_factor = -0.25
             }
         }
     }

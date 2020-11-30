@@ -1,6 +1,6 @@
 ﻿capital = 327
 
-oob = "SRP"
+oob = "PHR_revolt"
 
 # Starting tech
 set_technology = {
