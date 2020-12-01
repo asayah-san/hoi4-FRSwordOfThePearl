@@ -47,7 +47,7 @@ add_ideas = {
 	GEN_ECO_Ade
 	GEN_SEC_Ade
 
-	colonial_government
+	parliamentary_republic
 }
 
 set_politics = {	
@@ -74,7 +74,7 @@ set_popularities = {
 create_country_leader = {
 	name = "Administrative Council"
 	desc = "POLITICS_SABAH_ADMINISTRATIVE_COUNCIL_DESC"
-	picture = ""
+	picture = "Portrait_Sabah_Administrative_Council.tga"
 	expire = "1960.6.2"
 	ideology = social_democrat_subtype
 	traits = {}
@@ -82,15 +82,7 @@ create_country_leader = {
 create_country_leader = {
 	name = "Administrative Council"
 	desc = "POLITICS_SABAH_ADMINISTRATIVE_COUNCIL_DESC"
-	picture = ""
-	expire = "1960.6.2"
-	ideology = social_democrat_subtype
-	traits = {}
-}
-create_country_leader = {
-	name = "Administrative Council"
-	desc = "POLITICS_SABAH_ADMINISTRATIVE_COUNCIL_DESC"
-	picture = ""
+	picture = "Portrait_Sabah_Administrative_Council.tga"
 	expire = "1960.6.2"
 	ideology = social_liberal_subtype
 	traits = {}
@@ -98,7 +90,7 @@ create_country_leader = {
 create_country_leader = {
 	name = "Administrative Council"
 	desc = "POLITICS_SABAH_ADMINISTRATIVE_COUNCIL_DESC"
-	picture = ""
+	picture = "Portrait_Sabah_Administrative_Council.tga"
 	expire = "1960.6.2"
 	ideology = market_liberal_subtype
 	traits = {}
@@ -106,7 +98,7 @@ create_country_leader = {
 create_country_leader = {
 	name = "Administrative Council"
 	desc = "POLITICS_SABAH_ADMINISTRATIVE_COUNCIL_DESC"
-	picture = ""
+	picture = "Portrait_Sabah_Administrative_Council.tga"
 	expire = "1960.6.2"
 	ideology = social_conservative_subtype
 	traits = {}
@@ -114,7 +106,7 @@ create_country_leader = {
 create_country_leader = {
 	name = "Administrative Council"
 	desc = "POLITICS_SABAH_ADMINISTRATIVE_COUNCIL_DESC"
-	picture = ""
+	picture = "Portrait_Sabah_Administrative_Council.tga"
 	expire = "1960.6.2"
 	ideology = authoritarian_democrat_subtype
 	traits = {}

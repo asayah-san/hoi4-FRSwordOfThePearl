@@ -1,8 +1,8 @@
 spriteTypes = {
 
     spriteType = {
-        name = "GFX_SP_administrative_region_icon"
-        textureFile = "gfx/interface/autonomy/autonomy_administrative_region.dds"
+        name = "GFX_SP_autonomous_region_icon"
+        textureFile = "gfx/interface/autonomy/autonomy_autonomous_region.dds"
     }
 
     spriteType = {

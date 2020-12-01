@@ -1016,3 +1016,7 @@ phi.52.c:0 "Nothing"
 phi.53.t:0 "Sightings of Aswang"
 phi.53.d:0 "Reports have been circulating in the remote and rural areas around the Visayan region; that people have been seeing a strange entity that eats human guts and other grusome acts. Some citizens have been reporting an 'aswang', a creature in Philippine folklores, however some suggests the sightings have a scientific explanation; however this doens't convince the minds of the people that is determined that they have seen an 'aswang'."
 phi.53.a:0 "Good grief"
+
+phi.54.t:0 "Propose Peace to the [PHI.GetName]"
+phi.54.d:0 "The island of Borneo have fallen to [PHI.GetAdjective]. As we don't have the capacity to fight them the government decides to make peace with them."
+phi.54.a:0 "Propose peace"

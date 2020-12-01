@@ -1423,7 +1423,7 @@ focus_tree = {
         cost = 10
         prerequisite = { focus = SIA_the_royal_siamese_army }
         completion_reward = {
-            manpower = 20000
+            add_manpower = 20000
         }
     }
 

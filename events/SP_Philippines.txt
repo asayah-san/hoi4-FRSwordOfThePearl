@@ -875,23 +875,25 @@ country_event = {
     is_triggered_only = yes
 
     immediate = {
-        PHI = {
-            trasfer_state = 785
-        }
-        INS = {
-            remove_state_core = 785
-            add_state_claim = 785
+        hidden_effect = {
+            PHI = {
+                transfer_state = 785
+            }
+            INS = {
+                remove_state_core = 785
+                add_state_claim = 785
 
-            country_event = { id = phi.21 days = 1 }
-        }
-        BEA = {
-            remove_state_core = 785
-            add_state_claim = 785
+                country_event = { id = phi.21 days = 1 }
+            }
+            BEA = {
+                remove_state_core = 785
+                add_state_claim = 785
 
-            country_event = { id = phi.21 days = 1 }
-        }
+                country_event = { id = phi.21 days = 1 }
+            }
 
-        news_event = { id = news.10 }
+            news_event = { id = news.10 days = 1 }
+        }
     }
 
     option = {
@@ -914,12 +916,12 @@ country_event = {
         name = phi.21.a
 
         ai_chance = {
-            factor = 4
+            factor = 2
 
             modifier = {
                 factor = 10
-                num_of_divisions > 50
-                num_of_factories > 100
+                num_of_divisions < 50
+                num_of_factories < 100
             }
         }
 
@@ -931,6 +933,22 @@ country_event = {
 
     option = {
         name = phi.21.b
+        
+        ai_chance = {
+            factor = 20
+
+            modifier = {
+                factor = 100
+                tag = INS
+                has_idea = INS_non_existing_economy_idea
+            }
+            modifier = {
+                factor = 100
+                tag = BEA
+                has_idea = BEA_effect_london_crash_idea
+            }
+        }
+
         add_political_power = -10
     }
 }
@@ -2346,5 +2364,44 @@ country_event = {
 
     option = {
         name = phi.53.a
+    }
+}
+
+# Peace with PHI
+country_event = {
+    id = phi.54
+    title = phi.54.t
+    desc = phi.54.d
+    picture = GFX_report_event_german_troops_paris
+
+    fire_only_once = yes
+
+    mean_time_to_happen = {
+        days = 1
+    }
+
+    trigger = {
+        original_tag = BEA
+        BEA = { has_war_with = PHI }
+        PHI = {
+            controls_state = 333
+            controls_state = 334
+            controls_state = 943
+        }
+    }
+
+    option = {
+        name = phi.54.a
+
+        every_country = {
+            limit = {
+                OR = {
+                    tag = PHI
+                    is_subject_of = PHI
+                    is_in_faction_with = PHI
+                }
+            }
+            whitepeace = BEA
+        }
     }
 }
