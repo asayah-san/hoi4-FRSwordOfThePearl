@@ -82,7 +82,7 @@ focus_tree = {
         icon = GFX_goal_backstab
         x = 0
         y = 4
-        cost = 10
+        cost = 5
         prerequisite = { focus = CHI_restructure_the_government }
         completion_reward = {
             swap_ideas = {
@@ -98,7 +98,7 @@ focus_tree = {
         icon = GFX_goal_state_economy
         x = 0
         y = 5
-        cost = 10
+        cost = 5
         prerequisite = { focus = CHI_purge_socialist_elements }
         completion_reward = {
             remove_ideas = CHI_socialist_opposition2
@@ -111,7 +111,7 @@ focus_tree = {
         icon = GFX_goal_generic_political_pressure
         x = 2
         y = 4
-        cost = 10
+        cost = 5
         prerequisite = { focus = CHI_restructure_the_government }
         completion_reward = {
             swap_ideas = {
@@ -127,7 +127,7 @@ focus_tree = {
         icon = GFX_goal_generic_attack_allies
         x = 2
         y = 5
-        cost = 10
+        cost = 5
         prerequisite = { focus = CHI_hunt_down_the_blue_shirts }
         completion_reward = {
             remove_ideas = CHI_bsb_opposition2
@@ -177,7 +177,7 @@ focus_tree = {
         icon = GFX_focus_prc_social_democracy
         x = 4
         y = 3
-        cost = 10
+        cost = 5
         mutually_exclusive = { focus = CHI_cooperate_with_the_blue_shirts }
         prerequisite = { focus = CHI_government_reforms }
         completion_reward = {
@@ -191,7 +191,7 @@ focus_tree = {
         icon = GFX_focus_HOL_deal_with_right
         x = 6
         y = 3
-        cost = 10
+        cost = 5
         mutually_exclusive = { focus = CHI_cooperate_with_the_socialists }
         prerequisite = { focus = CHI_government_reforms }
         completion_reward = {
@@ -1305,14 +1305,17 @@ focus_tree = {
     focus = {
         id = CHI_unification_of_china
         icon = GFX_goal_china_deal
-        x = 33
+        x = 32
         y = 0
         cost = 5
         available = {
-            NOT = {
-                has_idea = CHI_backwards_economy1
-                has_idea = CHI_backwards_economy2
-                has_idea = CHI_factionism
+            custom_trigger_tooltip = {
+                tooltip = CHI_can_china_be_unified_tt
+                NOT = {
+                    has_idea = CHI_factionism
+                    has_idea = CHI_backwards_economy1
+                    has_idea = CHI_backwards_economy2
+                }
             }
         }
         completion_reward = {
@@ -1324,7 +1327,7 @@ focus_tree = {
     focus = {
         id = CHI_subjugate_the_warlords
         icon = GFX_focus_generic_support_the_left_right
-        x = 37
+        x = 36
         y = 1
         cost = 5
         prerequisite = { focus = CHI_unification_of_china }
@@ -1341,7 +1344,7 @@ focus_tree = {
     focus = {
         id = CHI_integrate_yunnan
         icon = GFX_goal_generic_forceful_treaty
-        x = 34
+        x = 33
         y = 2
         cost = 5
         available = { YUN = { exists = no } }
@@ -1369,7 +1372,7 @@ focus_tree = {
     focus = {
         id = CHI_integrate_sichuan
         icon = GFX_goal_generic_forceful_treaty
-        x = 36
+        x = 35
         y = 2
         cost = 5
         available = { SCH = { exists = no } }
@@ -1397,7 +1400,7 @@ focus_tree = {
     focus = {
         id = CHI_integrate_ma
         icon = GFX_goal_generic_forceful_treaty
-        x = 38
+        x = 37
         y = 2
         cost = 5
         available = { XSM = { exists = no } }
@@ -1425,7 +1428,7 @@ focus_tree = {
     focus = {
         id = CHI_integrate_shanxi
         icon = GFX_goal_generic_forceful_treaty
-        x = 40
+        x = 39
         y = 2
         cost = 5
         available = { SHX = { exists = no } }
@@ -1453,7 +1456,7 @@ focus_tree = {
     focus = {
         id = CHI_attack_the_beijing_government
         icon = GFX_goal_generic_occupy_states_ongoing_war
-        x = 36
+        x = 35
         y = 3
         cost = 5
         will_lead_to_war_with = ZHI
@@ -1473,7 +1476,7 @@ focus_tree = {
     focus = {
         id = CHI_attack_fengtian
         icon = GFX_goal_generic_occupy_states_ongoing_war
-        x = 38
+        x = 37
         y = 3
         cost = 5
         will_lead_to_war_with = MAN
@@ -1493,7 +1496,7 @@ focus_tree = {
     focus = {
         id = CHI_a_united_china
         icon = GFX_goal_tripartite_pact
-        x = 37
+        x = 36
         y = 4
         cost = 10
         prerequisite = { focus = CHI_attack_fengtian }
@@ -1544,6 +1547,7 @@ focus_tree = {
         x = 30
         y = 5
         cost = 10
+        available = { has_full_control_of_state = 326 }
         prerequisite = { focus = CHI_claims_on_tibet }
         completion_reward = {
             ENG = { country_event = { id = china.4 } }
@@ -1557,19 +1561,23 @@ focus_tree = {
         x = 32
         y = 5
         cost = 10
+        available = {
+            OR = {
+                POR = { has_full_control_of_state = 729 }
+                PRR = { has_full_control_of_state = 729 }
+            }
+        }
         prerequisite = { focus = CHI_claims_on_tibet }
         completion_reward = {
             if = {
                 limit = {
-                    POR = { exists = yes }
-                    PRR = { exists = no }
+                    POR = { has_full_control_of_state = 729 }
                 }
                 POR = { country_event = { id = china.4 } }
             }
             if = {
                 limit = {
-                    PRR = { exists = yes }
-                    POR = { exists = no }
+                    PRR = { has_full_control_of_state = 729 }
                 }
                 PRR = { country_event = { id = china.4 } }
             }
@@ -1583,6 +1591,7 @@ focus_tree = {
         x = 34
         y = 5
         cost = 10
+        available = { has_full_control_of_state = 524 }
         prerequisite = { focus = CHI_claims_on_tibet }
         completion_reward = {
             JAP = { country_event = { id = china.5 } }

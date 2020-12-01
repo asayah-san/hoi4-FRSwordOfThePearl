@@ -559,21 +559,23 @@ country_event = {
             puppet = SBH
         }
 
-        SBH = {
-            load_oob = SBH_1936
-            set_politics = {
-                ruling_party = authoritarian_democrat
-                elections_allowed = no
-            }
-            set_popularities = {
-                vanguardist = 2
-                collectivist = 2
-                libertarian_socialist = 6
-                social_democrat = 16
-                social_liberal = 14
-                market_liberal = 20
-                social_conservative = 11
-                authoritarian_democrat = 29
+        hidden_effect = {
+            SBH = {
+                load_oob = SBH_1936
+                set_politics = {
+                    ruling_party = authoritarian_democrat
+                    elections_allowed = no
+                }
+                set_popularities = {
+                    vanguardist = 2
+                    collectivist = 2
+                    libertarian_socialist = 6
+                    social_democrat = 16
+                    social_liberal = 14
+                    market_liberal = 20
+                    social_conservative = 11
+                    authoritarian_democrat = 29
+                }
             }
         }
     }

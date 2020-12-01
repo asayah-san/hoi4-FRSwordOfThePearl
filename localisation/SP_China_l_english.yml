@@ -199,7 +199,8 @@
  CHI_macau_claim_desc:0 ""
 
  #### Custom Triggers #####
- CHI_is_china_unified_tt:0 "Warlord Cliques have been subjugated and rival governments have been dissolved"
+ CHI_can_china_be_unified_tt:0 "The Government and Economy is stable and we are ready to unite China"
+ CHI_is_china_unified_tt:0 "China have been unified"
 
  ##### Events #####
  china.1.t:0 "Generalissimo assumes control"

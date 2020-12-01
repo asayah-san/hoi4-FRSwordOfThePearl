@@ -45,7 +45,8 @@ add_ideas = {
 	GEN_FOR_Ade
 	GEN_ECO_Ade
 	GEN_SEC_Ade
-	constitutional_monarchy
+
+	presidential_republic
 }
 
 set_politics = {	
@@ -53,7 +54,6 @@ set_politics = {
 	last_election = "1934.3.26"
 	election_frequency = 60
 	elections_allowed = no
-
 }
 
 set_popularities = {
