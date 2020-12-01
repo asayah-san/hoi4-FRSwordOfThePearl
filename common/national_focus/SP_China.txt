@@ -1035,6 +1035,7 @@ focus_tree = {
         x = 25
         y = 1
         cost = 10
+        mutually_exclusive = { focus = CHI_planning_focus }
         prerequisite = { focus = CHI_the_chinese_army }
         completion_reward = {
             add_tech_bonus = {
@@ -1155,6 +1156,7 @@ focus_tree = {
         x = 27
         y = 1
         cost = 10
+        mutually_exclusive = { focus = CHI_speed_focus }
         prerequisite = { focus = CHI_the_chinese_army }
         completion_reward = {
             add_tech_bonus = {
