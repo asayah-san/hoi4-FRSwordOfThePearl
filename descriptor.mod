@@ -10,3 +10,4 @@ tags={
 }
 supported_version="1.10.*"
 remote_file_id="2244542661"
+path="mod/sword"
