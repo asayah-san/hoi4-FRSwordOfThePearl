@@ -120,10 +120,7 @@ country_event = {
 
     trigger = {
         original_tag = PHI
-        date > 1936.9.24
-        NOT = {
-            has_government = valkist
-        }
+        date > 1936.7.24
     }
 
     immediate = {
@@ -179,7 +176,7 @@ country_event = {
 
         custom_effect_tooltip = PHI_new_elections_suppressed_effect
         hidden_effect = {
-            country_event = { id = phi.6 days = 14 }
+            country_event = { id = phi.6 days = 2 }
         }
     }
 }
@@ -376,6 +373,9 @@ country_event = {
             ideology = authoritarian_democrat
             popularity = -0.05
         }
+        hidden_effect = {
+            country_event = { id = phi.7 days = 21 }
+        }
     }
 }
 
@@ -437,7 +437,7 @@ country_event = {
             factor = 10
 
             modifier = {
-                factor = 2
+                factor = 20
                 has_country_flag = PHI_PRUSSIA_OF_THE_EAST_BEHAVIOR
             }
         }
@@ -454,7 +454,7 @@ country_event = {
             factor = 10
             
             modifier = {
-                factor = 2
+                factor = 20
                 has_country_flag = PHI_TESTING_IMPERIALISM_BEHAVIOR
             }
         }

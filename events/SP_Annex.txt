@@ -466,7 +466,99 @@ country_event = {
             }
             puppet = PHI
         }
-        PHI = { set_cosmetic_tag = PHI_USA }
+        PHI = { 
+            set_cosmetic_tag = PHI_USA
+            hidden_effect = {
+                create_country_leader = {
+                    name = "Douglas MacArthur"
+                    desc = "POLITICS_DOUGLAS_MACARTHUR_DESC"
+                    picture = "gfx/leaders/USA/Portrait_USA_Douglas_MacArthur.dds"
+                    expire = "1964.2.6"
+                    ideology = vanguardist_subtype
+                    traits = { }
+                }
+                create_country_leader = {
+                    name = "Douglas MacArthur"
+                    desc = "POLITICS_DOUGLAS_MACARTHUR_DESC"
+                    picture = "gfx/leaders/USA/Portrait_USA_Douglas_MacArthur.dds"
+                    expire = "1964.2.6"
+                    ideology = collectivist_subtype
+                    traits = { }
+                }
+                create_country_leader = {
+                    name = "Douglas MacArthur"
+                    desc = "POLITICS_DOUGLAS_MACARTHUR_DESC"
+                    picture = "gfx/leaders/USA/Portrait_USA_Douglas_MacArthur.dds"
+                    expire = "1964.2.6"
+                    ideology = libertarian_socialist_subtype
+                    traits = { }
+                }
+                create_country_leader = {
+                    name = "Douglas MacArthur"
+                    desc = "POLITICS_DOUGLAS_MACARTHUR_DESC"
+                    picture = "gfx/leaders/USA/Portrait_USA_Douglas_MacArthur.dds"
+                    expire = "1964.2.6"
+                    ideology = social_democrat_subtype
+                    traits = { }
+                }
+                create_country_leader = {
+                    name = "Douglas MacArthur"
+                    desc = "POLITICS_DOUGLAS_MACARTHUR_DESC"
+                    picture = "gfx/leaders/USA/Portrait_USA_Douglas_MacArthur.dds"
+                    expire = "1964.2.6"
+                    ideology = social_liberal_subtype
+                    traits = { }
+                }
+                create_country_leader = {
+                    name = "Douglas MacArthur"
+                    desc = "POLITICS_DOUGLAS_MACARTHUR_DESC"
+                    picture = "gfx/leaders/USA/Portrait_USA_Douglas_MacArthur.dds"
+                    expire = "1964.2.6"
+                    ideology = market_liberal_subtype
+                    traits = { }
+                }
+                create_country_leader = {
+                    name = "Douglas MacArthur"
+                    desc = "POLITICS_DOUGLAS_MACARTHUR_DESC"
+                    picture = "gfx/leaders/USA/Portrait_USA_Douglas_MacArthur.dds"
+                    expire = "1964.2.6"
+                    ideology = social_conservative_subtype
+                    traits = { }
+                }
+                create_country_leader = {
+                    name = "Douglas MacArthur"
+                    desc = "POLITICS_DOUGLAS_MACARTHUR_DESC"
+                    picture = "gfx/leaders/USA/Portrait_USA_Douglas_MacArthur.dds"
+                    expire = "1964.2.6"
+                    ideology = authoritarian_democrat_subtype
+                    traits = { }
+                }
+                create_country_leader = {
+                    name = "Douglas MacArthur"
+                    desc = "POLITICS_DOUGLAS_MACARTHUR_DESC"
+                    picture = "gfx/leaders/USA/Portrait_USA_Douglas_MacArthur.dds"
+                    expire = "1964.2.6"
+                    ideology = paternal_autocrat_subtype
+                    traits = { }
+                }
+                create_country_leader = {
+                    name = "Douglas MacArthur"
+                    desc = "POLITICS_DOUGLAS_MACARTHUR_DESC"
+                    picture = "gfx/leaders/USA/Portrait_USA_Douglas_MacArthur.dds"
+                    expire = "1964.2.6"
+                    ideology = national_populist_subtype
+                    traits = { }
+                }
+                create_country_leader = {
+                    name = "Douglas MacArthur"
+                    desc = "POLITICS_DOUGLAS_MACARTHUR_DESC"
+                    picture = "gfx/leaders/USA/Portrait_USA_Douglas_MacArthur.dds"
+                    expire = "1964.2.6"
+                    ideology = valkist_subtype
+                    traits = { }
+                }
+            }
+        }
     }
 
     option = {

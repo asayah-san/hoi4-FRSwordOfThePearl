@@ -9,8 +9,8 @@ PHI_ai_behavior = {
 	}
 	option = {
 		name = PRUSSIA_OF_THE_EAST
-		text = PHI_PRUSSIA_OF_THE_EAST
-		desc = PHI_PRUSSIA_OF_THE_EAST_DESC
+		text = PHI_RULE_PRUSSIA_OF_THE_EAST
+		desc = PHI_RULE_PRUSSIA_OF_THE_EAST_DESC
 		allow_achievements = yes
 	}
 	option = {

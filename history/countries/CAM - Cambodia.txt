@@ -12,7 +12,8 @@ add_ideas = {
 	GEN_FOR_Mli
 	GEN_ECO_Mli
 	GEN_SEC_Mli
-	constitutional_monarchy
+
+	presidential_republic
 }
 
 # Starting tech

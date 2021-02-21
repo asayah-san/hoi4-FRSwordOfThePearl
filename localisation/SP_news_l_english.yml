@@ -57,3 +57,7 @@
  news.14.t:0 "Direct Rule in Siam"
  news.14.d:0 "[This.GetNewspaperHeader]The King of Siam, [SIA.GetLeader] has ordered the dissolution of the [SIA.GetAdjective] Legislation and have successfully taken full control of the [SIA.GetAdjective] Government.\n\nMany people are not shocked however, as many of them lived through the years when the King of Siam has ruled with absolute power. The transition was generally peaceful as many within the [SIA.GetAdjective] citizens are still loyal to the King."
  news.14.a:0 "Asians are so conservative."
+
+ news.15.t:0 "Protests in the Philippines"
+ news.15.d:0 "[This.GetNewspaperHeader]After cancelling the scheduled elections this year, the government of the [PHI.GetName] is now facing a full-blown strike and protests across the archipelago. The protests however, are not going off anytime soon as more and more [PHI.GetAdjective]s are going into the streets.\n\nThe Catholic Church however, have announced their support to the protesters and denounced the current government's decisions to cancel the upcoming elections. This puts the current government more pressure in accepting the demands of their people."
+ news.15.a:0 "Just accept their demands"

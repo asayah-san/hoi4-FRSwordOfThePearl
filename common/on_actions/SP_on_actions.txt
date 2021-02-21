@@ -30,6 +30,17 @@ on_actions = {
     # FROM gets annexed
     on_annex = {
         effect = {
+            if = {
+                limit = {
+                    FROM = { tag = PHI }
+                    ROOT = {
+                        has_full_control_of_state = 327
+                        has_war = no
+                    }
+                }
+                ROOT = { country_event = { annex.10 days = 1 } }
+            }
+
             if = { 
                 limit = { 
                     ROOT = { tag = SRP }

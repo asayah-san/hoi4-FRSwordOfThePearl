@@ -2650,8 +2650,8 @@ focus_tree = {
         cost = 10
         available_if_capitulated = yes
         prerequisite = { 
-            focus = PHI_acquire_foreign_firepower
-            focus = PHI_purchase_tank_equipment
+            focus = PHI_learn_from_the_germans
+            focus = PHI_learn_from_the_americans
         }
         completion_reward = {
             add_tech_bonus = {
