@@ -2,26 +2,29 @@ annex_decisions_cat = {
     annex_sabah_decision = {
         visible = {
             has_full_control_of_state = 785
+            NOT = { original_tag = SBH }
         }
 
         complete_effect = {
-            country_event = { id = annex.11 days = 1 }
+            country_event = annex.11
         }
     }
 
     annex_phi_decision = {
         visible = {
             has_full_control_of_state = 327
+            NOT = { original_tag = PHI }
         }
 
         complete_effect = {
-            country_event = { id = annex.10 days = 1 }
+            country_event = annex.10
         }
     }
 
     annex_brm_decision = {
         visible = {
             has_full_control_of_state = 288
+            NOT = { original_tag = BRM }
         }
 
         available = {
@@ -32,13 +35,14 @@ annex_decisions_cat = {
         }
 
         complete_effect = {
-            country_event = { id = annex.1 days = 1 }
+            country_event = annex.1
         }
     }
 
     annex_cam_decision = {
         visible = {
             has_full_control_of_state = 741
+            NOT = { original_tag = CAM }
         }
 
         available = {
@@ -49,14 +53,29 @@ annex_decisions_cat = {
         }
 
         complete_effect = {
-            country_event = { id = annex.2 days = 1 }
+            country_event = annex.2
         }
     }
 
     annex_lao_decision = {
+        visible = {
+            has_full_control_of_state = 670
+            NOT = { original_tag = LAO }
+        }
 
         complete_effect = {
-            country_event = { id = annex.4 days = 1 }
+            country_event = annex.4
+        }
+    }
+
+    annex_vin_decision = {
+        visible = {
+            has_full_control_of_state = 958
+            NOT = { original_tag = VIN }
+        }
+
+        complete_effect = {
+            country_event = annex.6
         }
     }
 

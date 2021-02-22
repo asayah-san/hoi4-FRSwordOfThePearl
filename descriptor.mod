@@ -9,5 +9,5 @@ tags={
 	"National Focuses"
 }
 supported_version="1.10.*"
+path="/home/isaiahcollins/.local/share/Paradox Interactive/Hearts of Iron IV/mod/sword"
 remote_file_id="2244542661"
-path="mod/sword"
